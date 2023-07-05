@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:scrollbars="none"
+    tools:context=".ui.fragments.TomorrowFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/star_bg">
+
+        <ImageView
+            android:id="@+id/zodiac_logo"
+            android:layout_width="20dp"
+            android:layout_height="0dp"
+            android:layout_margin="3dp"
+            android:background="@drawable/zodiac_bg_purple"
+            android:src="@drawable/scorpio"
+            app:layout_constraintBottom_toBottomOf="@+id/zodiac_name"
+            app:layout_constraintEnd_toStartOf="@+id/zodiac_name"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/zodiac_name" />
+
+        <TextView
+            android:id="@+id/zodiac_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Scorpio"
+            android:textAllCaps="true"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.53"
+            app:layout_constraintStart_toEndOf="@id/zodiac_logo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="@id/zodiac_name"
+            app:layout_constraintStart_toStartOf="@id/zodiac_logo"
+            app:layout_constraintTop_toBottomOf="@id/zodiac_name" />
+
+        <com.astrocure.utils.HoroscopeView
+            android:id="@+id/horo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/line" />
+
+        <include
+            android:id="@+id/zodiac"
+            layout="@layout/zodiac_description_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            app:layout_constraintTop_toBottomOf="@id/horo" />
+
+        <include
+            android:id="@+id/zodiac1"
+            layout="@layout/zodiac_2_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            app:layout_constraintTop_toBottomOf="@id/zodiac" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

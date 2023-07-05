@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">AstroCure</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="dummy_1">Embracing an adventurous mindset can lead to exciting discoveries about yourself and others. Engage in activities that challenge your intellect, broaden your knowledge, and push your boundaries. Explore new hobbies, or delve into subjects that pique your curiosity. By expanding your mental horizons, you\'ll better understand the world around you and discover hidden possibilities for love within yourself.</string>
+    <string name="dummy_2">Maintain a positive mindset throughout the day. Avoid getting caught up in pessimistic thoughts or self-doubt that may undermine your progress. Focus on your strengths, achievements, and the potential that lies ahead. Cultivate gratitude and celebrate even the most minor victories along the way. This positive outlook will attract favourable opportunities and increase your motivation when faced with challenges.</string>
+    <string name="dummy_3">Your life will have the fragrance of love today. You will fall in love mostly in the second half of the day. Female Scorpios may get a proposal that can change their life. Male Scorpios may meet an interesting person at a bus stop, while traveling, at an official function, restaurant, or a family gathering. Approach the girl to propose and you can be sure about the positive response. Those who are already in love can even decide about marriage today.</string>
+    <string name="name_label">Name<sup><font fgcolor='#FFFF3B30'>*</font></sup></string>
+    <string name="tob_label">TIME OF BIRTH<sup><font fgcolor='#FFFF3B30'>*</font></sup></string>
+    <string name="dob_label">DATE OF BIRTH<sup><font fgcolor='#FFFF3B30'>*</font></sup></string>
+    <string name="location_label">Location<sup><font fgcolor='#FFFF3B30'>*</font></sup></string>
+    <string name="yesterday">Yesterday</string>
+    <string name="today">Today</string>
+    <string name="tomorrow">Tomorrow</string>
+    <string name="fortune_cookie"><font fgcolor='#ffffff'>FORTUNE</font> <font fgcolor='#FFDB72'>COOKIE</font></string>
+    <string name="color_therapy"><font fgcolor='#F0153C'>C</font><font fgcolor='#FFFFFF'>o</font><font fgcolor='#ECFF0F'>l</font><font fgcolor='#964B00'>o</font><font fgcolor='#690971'>r</font><font fgcolor='#C61FA1'> T</font><font fgcolor='#808080'>h</font><font fgcolor='#000000'>era</font><font fgcolor='#168E01'>py</font></string>
+    <string name="instructions">1.Your Question must be relevant to the topic.\n2.Don\'t use an obscene or vulgar language, Including racist remarks.\n3.Do not post anything that verbally or Physically incites violence or hatred against An individual or a group of individuals.\n4.Do not advertise any products, services, etc \n5.A Message that does not comply with the rules Will be deleted.</string>
+</resources>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragments.FeedsFragment">
+
+    <!--<com.google.android.material.button.MaterialButton
+        android:id="@+id/newest"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="New Feed"
+        app:strokeColor="@color/white"
+        app:strokeWidth="1dp"
+        android:textSize="12sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/most_commented"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/most_commented"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Most Commented"
+        app:strokeColor="@color/white"
+        app:strokeWidth="1dp"
+        android:textSize="12sp"
+        app:layout_constraintTop_toTopOf="@id/newest"
+        app:layout_constraintEnd_toStartOf="@id/most_liked"
+        app:layout_constraintStart_toEndOf="@id/newest"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/most_liked"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Most Liked"
+        app:strokeColor="@color/white"
+        app:strokeWidth="1dp"
+        android:textSize="12sp"
+        app:layout_constraintTop_toTopOf="@id/newest"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/most_commented"/>-->
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        app:tabPaddingStart="10dp"
+        app:tabPaddingEnd="10dp"
+        app:tabTextAppearance="@style/MineCustomTabText"
+        android:background="@color/btn_inactive"
+        app:tabSelectedTextColor="@color/black"
+        app:tabTextColor="@color/white"
+        app:tabIndicatorColor="@color/btn_inactive"
+        app:tabIndicatorAnimationDuration="@integer/material_motion_duration_medium_1"
+        android:backgroundTint="@color/btn_inactive"
+        app:tabBackground="@drawable/feed_tab_bg"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/feed_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        tools:listitem="@layout/item_feed_text_layout"
+        app:layout_constraintTop_toBottomOf="@id/tab_layout"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_post"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:fabSize="mini"
+        app:backgroundTint="#7015A8"
+        android:src="@drawable/baseline_add"
+        app:shapeAppearance="?attr/shapeAppearance"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

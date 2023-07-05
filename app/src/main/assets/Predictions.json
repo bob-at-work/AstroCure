@@ -1,0 +1,1096 @@
+{
+  "single": [
+    {
+      "Sun": "Suuuuuuuuuuuuuuuuuuuuuuuuuuuuun"
+    },
+    {
+      "Moon": "MOOOOOOOOOOOOOOOOOOOOOOOOOOON"
+    },
+    {
+      "Mars": "Maaaaaaaaaaaaaaaaaaaaaaaaaaaaaars"
+    },
+    {
+      "Mercury": "Meeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeercuuuuuuuuuuuury"
+    },
+    {
+      "Jupiter": "Juuuuuuuuuuuuuuuuuuupiiiiiiiiiiiiiiteeeeeeeeeer"
+    },
+    {
+      "Venus": "Veeeeeeeeeeeeeeeeeeeeeeeeeeenuuuuuuuuuuuuuuuuuuuuuuuuuus"
+    },
+    {
+      "Saturn": "Saaaaaaaaaaaaatuuuuuuuuuuuuuuuuuuuurn"
+    },
+    {
+      "Rahu": "Raaaaaaaaaaaaaaaaaaaaaaaahuuuuuuuuuuuuuuuuuuuuuuuuu"
+    },
+    {
+      "Ketu": "Keeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeetuuuuuuuuuuuuuuuuuuuuuuuuuuu"
+    }
+  ],
+  "double": [
+    {
+      "11": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "12": {
+        "Nature": "Neutral",
+        "Prediction": ""
+      },
+      "13": {
+        "Nature": "Enemy",
+        "Prediction": ""
+      },
+      "14": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "15": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "16": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "17": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "18": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "21": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "22": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "23": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "24": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "25": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "26": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "27": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "28": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "29": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "31": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "32": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "33": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "34": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "35": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "36": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "37": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "38": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "39": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "41": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "42": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "43": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "44": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "45": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "46": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "47": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "48": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "49": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "51": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "52": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "53": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "54": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "55": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "56": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "57": {
+        "Nature": "Neutral",
+        "Prediction": "It is Neutral"
+      },
+      "58": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "59": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "61": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "62": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "63": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "64": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "65": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "66": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "67": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "68": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "69": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "71": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "72": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "73": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "74": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "75": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "76": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "77": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "78": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "79": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "81": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "82": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "83": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "84": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "85": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "86": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "87": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "88": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "89": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "91": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "92": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "93": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "94": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "95": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "96": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "97": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "98": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "99": {
+        "Nature": "Friend",
+        "Prediction": ""
+      }
+    },
+    {
+      "11": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "12": {
+        "Nature": "Neutral",
+        "Prediction": ""
+      },
+      "13": {
+        "Nature": "Enemy",
+        "Prediction": ""
+      },
+      "14": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "15": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "16": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "17": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "18": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "21": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "22": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "23": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "24": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "25": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "26": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "27": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "28": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "29": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "31": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "32": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "33": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "34": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "35": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "36": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "37": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "38": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "39": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "41": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "42": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "43": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "44": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "45": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "46": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "47": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "48": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "49": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "51": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "52": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "53": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "54": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "55": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "56": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "57": {
+        "Nature": "Neutral",
+        "Prediction": "It is Neutral"
+      },
+      "58": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "59": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "61": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "62": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "63": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "64": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "65": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "66": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "67": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "68": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "69": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "71": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "72": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "73": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "74": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "75": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "76": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "77": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "78": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "79": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "81": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "82": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "83": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "84": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "85": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "86": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "87": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "88": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "89": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "91": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "92": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "93": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "94": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "95": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "96": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "97": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "98": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "99": {
+        "Nature": "Friend",
+        "Prediction": ""
+      }
+    },
+    {
+      "11": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "12": {
+        "Nature": "Neutral",
+        "Prediction": ""
+      },
+      "13": {
+        "Nature": "Enemy",
+        "Prediction": ""
+      },
+      "14": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "15": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "16": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "17": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "18": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "21": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "22": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "23": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "24": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "25": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "26": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "27": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "28": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "29": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "31": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "32": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "33": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "34": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "35": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "36": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "37": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "38": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "39": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "41": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "42": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "43": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "44": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "45": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "46": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "47": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "48": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "49": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "51": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "52": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "53": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "54": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "55": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "56": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "57": {
+        "Nature": "Neutral",
+        "Prediction": "It is Neutral"
+      },
+      "58": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "59": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "61": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "62": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "63": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "64": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "65": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "66": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "67": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "68": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "69": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "71": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "72": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "73": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "74": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "75": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "76": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "77": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "78": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "79": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "81": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "82": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "83": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "84": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "85": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "86": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "87": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "88": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "89": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "91": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "92": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "93": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "94": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "95": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "96": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "97": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "98": {
+        "Nature": "Friend",
+        "Prediction": ""
+      },
+      "99": {
+        "Nature": "Friend",
+        "Prediction": ""
+      }
+    }
+  ],
+  "zodiac-ruling-planet": [
+    {
+      "1": {
+        "zodiac": "Aries",
+        "planet": "Mars",
+        "prediction": ""
+      },
+      "2": {
+        "zodiac": "Taurus",
+        "planet": "Venus",
+        "prediction": ""
+      },
+      "3": {
+        "zodiac": "Gemini",
+        "planet": "Mercury",
+        "prediction": ""
+      },
+      "4": {
+        "zodiac": "Cancer",
+        "planet": "Moon",
+        "prediction": ""
+      },
+      "5": {
+        "zodiac": "Leo",
+        "planet": "Sun",
+        "prediction": ""
+      },
+      "6": {
+        "zodiac": "Virgo",
+        "planet": "Mercury",
+        "prediction": ""
+      },
+      "7": {
+        "zodiac": "Libra",
+        "planet": "Venus",
+        "prediction": ""
+      },
+      "8": {
+        "zodiac": "Scorpio",
+        "planet": "Mars",
+        "prediction": ""
+      },
+      "9": {
+        "zodiac": "Sagittarius",
+        "planet": "Jupiter",
+        "prediction": ""
+      },
+      "10": {
+        "zodiac": "Capricorn",
+        "planet": "Saturn",
+        "prediction": ""
+      },
+      "11": {
+        "zodiac": "Aquarius",
+        "planet": "Saturn",
+        "prediction": ""
+      },
+      "12": {
+        "zodiac": "Pisces",
+        "planet": "Jupiter",
+        "prediction": ""
+      }
+    }
+  ],
+  "love_planet_effect": {
+    "Sun": "0",
+    "Moon": "1",
+    "Mars": "0",
+    "Mercury": "1",
+    "Jupiter": "1",
+    "Venus": "1",
+    "Saturn": "0",
+    "Rahu": "0",
+    "Ketu": "0"
+  },
+  "career_planet_effect": {
+    "Sun": "0",
+    "Moon": "1",
+    "Mars": "0",
+    "Mercury": "1",
+    "Jupiter": "1",
+    "Venus": "1",
+    "Saturn": "0",
+    "Rahu": "0",
+    "Ketu": "0"
+  },
+  "health_planet_effect": {
+    "Sun": "0",
+    "Moon": "1",
+    "Mars": "0",
+    "Mercury": "1",
+    "Jupiter": "1",
+    "Venus": "1",
+    "Saturn": "0",
+    "Rahu": "0",
+    "Ketu": "0"
+  }
+}
