@@ -13,8 +13,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:src="@drawable/ic_back_circle"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -22,11 +22,11 @@
         android:layout_marginStart="10dp"
         android:text="Post Personalized Feeds"
         android:textColor="@color/white"
-        android:textStyle="bold"
         android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/back"
         app:layout_constraintStart_toEndOf="@id/back"
-        app:layout_constraintTop_toTopOf="@id/back"
-        app:layout_constraintBottom_toBottomOf="@id/back"/>
+        app:layout_constraintTop_toTopOf="@id/back" />
 
     <View
         android:id="@+id/line"
@@ -34,53 +34,68 @@
         android:layout_height=".5dp"
         android:layout_marginTop="20dp"
         android:background="@color/white"
-        app:layout_constraintTop_toBottomOf="@id/back"/>
+        app:layout_constraintTop_toBottomOf="@id/back" />
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/profile_image"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginTop="30dp"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
         android:background="@color/white"
         android:src="@drawable/likes"
-        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/line"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent" />
 
     <TextView
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="20dp"
         android:text="Zendaya"
         android:textColor="@color/white"
         android:textSize="16sp"
-        android:layout_margin="20dp"
+        app:layout_constraintBottom_toBottomOf="@id/profile_image"
         app:layout_constraintStart_toEndOf="@id/profile_image"
-        app:layout_constraintTop_toTopOf="@id/profile_image"
-        app:layout_constraintBottom_toBottomOf="@id/profile_image"/>
+        app:layout_constraintTop_toTopOf="@id/profile_image" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="150dp"
+        android:layout_height="0dp"
         android:layout_margin="20dp"
         android:background="@drawable/feed_edittext_bg"
-        app:layout_constraintTop_toBottomOf="@id/profile_image">
+        app:layout_constraintBottom_toTopOf="@+id/appCompatButton"
+        app:layout_constraintHeight_percent=".5"
+        app:layout_constraintTop_toBottomOf="@id/profile_image"
+        app:layout_constraintVertical_bias=".05">
 
         <EditText
             android:id="@+id/post_input"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:minHeight="200dp"
+            android:layout_height="0dp"
+            android:background="@color/white"
+            android:gravity="start"
             android:hint="What do you feel like sharing?"
+            android:maxLength="470"
+            android:minHeight="200dp"
+            android:padding="10dp"
             android:textColor="#35176C"
             android:textColorHint="#858585"
-            android:gravity="start"
-            android:background="@color/white"
-            android:maxLength="470"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintBottom_toTopOf="@+id/image_list"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="5dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/image_list"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/camera"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:listitem="@layout/item_feed_post_layout" />
 
         <ImageView
             android:id="@+id/camera"
@@ -88,32 +103,32 @@
             android:layout_height="wrap_content"
             android:padding="5dp"
             android:src="@drawable/camera"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/post_input"/>
+            app:layout_constraintBottom_toTopOf="@id/input_size"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
             android:id="@+id/input_size"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:textColor="#3A2F2F"
-            android:text="0/470"
             android:maxLength="470"
-            app:layout_constraintTop_toBottomOf="@id/camera"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            android:padding="5dp"
+            android:text="0/470"
+            android:textColor="#3A2F2F"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    <com.google.android.material.button.MaterialButton
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/appCompatButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/button_bg"
         android:text="Post"
-        android:layout_marginBottom="20dp"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

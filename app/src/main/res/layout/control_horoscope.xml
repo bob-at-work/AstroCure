@@ -9,9 +9,9 @@
         android:id="@+id/image_bg"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="fitCenter"
+        android:scaleType="centerCrop"
         android:padding="30dp"
-        android:src="@drawable/horo_circle_bg"/>
+        android:src="@drawable/chart"/>
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/shapeableImageView"
@@ -19,9 +19,9 @@
         android:layout_height="120dp"
         android:background="#06123e"
         android:padding="2dp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@id/image_bg"
         app:layout_constraintEnd_toEndOf="@id/image_bg"
-        app:layout_constraintHorizontal_bias=".4"
         app:layout_constraintStart_toStartOf="@id/image_bg"
         app:layout_constraintTop_toTopOf="@id/image_bg"
         app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent" />
@@ -40,8 +40,8 @@
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/shapeableImageView1_bg"
-        android:layout_width="83dp"
-        android:layout_height="83dp"
+        android:layout_width="78dp"
+        android:layout_height="78dp"
         android:background="@drawable/sun_gradient_bg"
         app:layout_constraintBottom_toBottomOf="@+id/shapeableImageView1"
         app:layout_constraintEnd_toEndOf="@id/shapeableImageView1"
@@ -51,8 +51,8 @@
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/shapeableImageView1"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:background="#06123e"
         android:padding="2dp"
         app:layout_constraintBottom_toTopOf="@+id/shapeableImageView"
@@ -78,8 +78,8 @@
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/shapeableImageView2_bg"
-        android:layout_width="83dp"
-        android:layout_height="83dp"
+        android:layout_width="78dp"
+        android:layout_height="78dp"
         android:background="@drawable/sun_gradient_bg"
         app:layout_constraintBottom_toBottomOf="@+id/shapeableImageView2"
         app:layout_constraintEnd_toEndOf="@id/shapeableImageView2"
@@ -89,8 +89,8 @@
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/shapeableImageView2"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:background="#06123e"
         android:padding="2dp"
         app:layout_constraintVertical_bias=".69"
@@ -116,8 +116,8 @@
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/shapeableImageView3_bg"
-        android:layout_width="83dp"
-        android:layout_height="83dp"
+        android:layout_width="78dp"
+        android:layout_height="78dp"
         android:background="@drawable/sun_gradient_bg"
         app:layout_constraintBottom_toBottomOf="@+id/shapeableImageView3"
         app:layout_constraintEnd_toEndOf="@id/shapeableImageView3"
@@ -127,8 +127,8 @@
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/shapeableImageView3"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:background="#06123e"
         android:padding="2dp"
         app:layout_constraintHorizontal_bias=".59"
@@ -154,8 +154,8 @@
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/shapeableImageView4_bg"
-        android:layout_width="83dp"
-        android:layout_height="83dp"
+        android:layout_width="78dp"
+        android:layout_height="78dp"
         android:background="@drawable/sun_gradient_bg"
         app:layout_constraintBottom_toBottomOf="@+id/shapeableImageView4"
         app:layout_constraintEnd_toEndOf="@id/shapeableImageView4"
@@ -165,8 +165,8 @@
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/shapeableImageView4"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:background="#06123e"
         android:padding="2dp"
         app:layout_constraintHorizontal_bias=".34"
@@ -192,8 +192,8 @@
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/shapeableImageView5_bg"
-        android:layout_width="83dp"
-        android:layout_height="83dp"
+        android:layout_width="78dp"
+        android:layout_height="78dp"
         android:background="@drawable/sun_gradient_bg"
         app:layout_constraintBottom_toBottomOf="@+id/shapeableImageView5"
         app:layout_constraintEnd_toEndOf="@id/shapeableImageView5"
@@ -203,8 +203,8 @@
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/shapeableImageView5"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:background="#06123e"
         android:padding="2dp"
         app:layout_constraintHorizontal_bias=".06"

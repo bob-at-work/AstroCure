@@ -2,6 +2,7 @@ package com.astrocure.ui.fragments;
 
 import static com.astrocure.utils.AppConstants.OPEN_DRAWER;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -21,6 +22,7 @@ import com.astrocure.adapters.ZodiacViewpagerAdapter;
 import com.astrocure.callback.SideNavigationCallback;
 import com.astrocure.databinding.FragmentHoroscopeBinding;
 import com.astrocure.models.HomeZodiacModel;
+import com.astrocure.ui.WalletActivity;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -117,11 +119,8 @@ public class HoroscopeFragment extends Fragment implements Toolbar.OnMenuItemCli
 
     @Override
     public boolean onMenuItemClick(MenuItem item) {
-        switch (item.getItemId()){
-
-        }
         if (item.getItemId() == R.id.wallet) {
-//            startActivity(new Intent(getContext(), FeedsActivity.class));
+            startActivity(new Intent(getContext(), WalletActivity.class));
             return true;
         } else if (item.getItemId() == R.id.menu) {
 

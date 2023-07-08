@@ -33,6 +33,11 @@ public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.FeedViewHold
     @Override
     public void onBindViewHolder(@NonNull FeedsAdapter.FeedViewHolder holder, int position) {
 
+        holder.binding.comment.setOnClickListener(v -> {
+            Intent intent = new Intent(context, FeedDetailActivity.class);
+            context.startActivity(intent);
+        });
+
         holder.binding.getRoot().setOnClickListener(v -> {
             Intent intent = new Intent(context, FeedDetailActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

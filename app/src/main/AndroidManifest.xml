@@ -16,6 +16,15 @@
         android:theme="@style/Theme.AstroCure"
         tools:targetApi="31">
         <activity
+            android:name=".ui.PaymentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.WalletActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.CompatibilityActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.AstrologerChatActivity"
             android:exported="false" />
         <activity

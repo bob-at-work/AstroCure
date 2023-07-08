@@ -926,9 +926,6 @@
         android:fillType="evenOdd"
         android:fillAlpha="0.35"/>
     <path
-        android:pathData="M128.35,382.27L129.04,383.51L126.4,384.61L129.06,385.69L128.33,386.96L126.04,385.29L126.34,388.16H124.91L125.2,385.29L122.9,386.98L122.16,385.69L124.8,384.59L122.16,383.52L122.86,382.25L125.22,383.94L124.91,381.05H126.36L126.04,383.94L128.35,382.27Z"
-        android:fillColor="#931D1D"/>
-    <path
         android:pathData="M157.8,62.91a5.61,5.93 0,1 0,11.22 0a5.61,5.93 0,1 0,-11.22 0z"
         android:strokeAlpha="0.35"
         android:fillColor="#ffffff"
