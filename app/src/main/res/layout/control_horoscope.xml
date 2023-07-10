@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="450dp"
-    android:background="@drawable/sun_center_gradient_bg"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:background="@drawable/sun_center_gradient_bg">
 
     <ImageView
         android:id="@+id/image_bg"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="centerCrop"
         android:padding="30dp"
-        android:src="@drawable/chart"/>
+        android:scaleType="centerCrop"
+        android:src="@drawable/chart" />
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/shapeableImageView"
@@ -30,9 +30,9 @@
         android:id="@+id/mood"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="Mood\n89%"
         android:textColor="@color/white"
-        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="@+id/shapeableImageView"
         app:layout_constraintEnd_toEndOf="@+id/shapeableImageView"
         app:layout_constraintStart_toStartOf="@+id/shapeableImageView"
@@ -67,9 +67,9 @@
         android:id="@+id/love"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="Love\n59%"
         android:textColor="@color/white"
-        android:gravity="center"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@+id/shapeableImageView1"
         app:layout_constraintEnd_toEndOf="@+id/shapeableImageView1"
@@ -93,21 +93,21 @@
         android:layout_height="75dp"
         android:background="#06123e"
         android:padding="2dp"
-        app:layout_constraintVertical_bias=".69"
-        app:layout_constraintHorizontal_bias=".24"
         app:layout_constraintBottom_toTopOf="@+id/mood"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias=".24"
         app:layout_constraintStart_toEndOf="@+id/shapeableImageView"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias=".69"
         app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent" />
 
     <TextView
         android:id="@+id/well_being"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="Well Being\n100%"
         android:textColor="@color/white"
-        android:gravity="center"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@+id/shapeableImageView2"
         app:layout_constraintEnd_toEndOf="@+id/shapeableImageView2"
@@ -131,21 +131,21 @@
         android:layout_height="75dp"
         android:background="#06123e"
         android:padding="2dp"
-        app:layout_constraintHorizontal_bias=".59"
-        app:layout_constraintVertical_bias=".27"
         app:layout_constraintBottom_toBottomOf="@+id/shapeableImageView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias=".59"
         app:layout_constraintStart_toEndOf="@+id/shapeableImageView"
         app:layout_constraintTop_toTopOf="@+id/shapeableImageView"
+        app:layout_constraintVertical_bias=".27"
         app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent" />
 
     <TextView
         android:id="@+id/social_life"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="Social Life\n17%"
         android:textColor="@color/white"
-        android:gravity="center"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@+id/shapeableImageView3"
         app:layout_constraintEnd_toEndOf="@+id/shapeableImageView3"
@@ -169,21 +169,21 @@
         android:layout_height="75dp"
         android:background="#06123e"
         android:padding="2dp"
-        app:layout_constraintHorizontal_bias=".34"
-        app:layout_constraintVertical_bias=".17"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias=".34"
         app:layout_constraintStart_toEndOf="@+id/shapeableImageView"
         app:layout_constraintTop_toBottomOf="@+id/mood"
+        app:layout_constraintVertical_bias=".17"
         app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent" />
 
     <TextView
         android:id="@+id/career"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="Career\n67%"
         android:textColor="@color/white"
-        android:gravity="center"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@+id/shapeableImageView4"
         app:layout_constraintEnd_toEndOf="@+id/shapeableImageView4"
@@ -207,21 +207,21 @@
         android:layout_height="75dp"
         android:background="#06123e"
         android:padding="2dp"
-        app:layout_constraintHorizontal_bias=".06"
-        app:layout_constraintVertical_bias=".46"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/mood"
         app:layout_constraintTop_toBottomOf="@+id/shapeableImageView"
+        app:layout_constraintVertical_bias="0.477"
         app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent" />
 
     <TextView
         android:id="@+id/finance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="Finances\n45%"
         android:textColor="@color/white"
-        android:gravity="center"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@+id/shapeableImageView5"
         app:layout_constraintEnd_toEndOf="@+id/shapeableImageView5"

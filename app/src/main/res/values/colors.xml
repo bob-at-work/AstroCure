@@ -2,5 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="btn_inactive">#1AFFFFFF</color>
+    <color name="btn_inactive">#5C8336B0</color>
+    <color name="btn_transparent">#1A8336B0</color>
+    <color name="btn_txt_color"></color>
 </resources>

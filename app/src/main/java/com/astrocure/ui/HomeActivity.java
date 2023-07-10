@@ -1,5 +1,7 @@
 package com.astrocure.ui;
 
+import static com.astrocure.utils.AppConstants.OPEN_DRAWER;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
@@ -9,6 +11,8 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
@@ -17,6 +21,7 @@ import android.widget.Toolbar;
 import com.astrocure.R;
 import com.astrocure.adapters.HomeZodiacAdapter;
 import com.astrocure.adapters.ZodiacViewpagerAdapter;
+import com.astrocure.callback.SideNavigationCallback;
 import com.astrocure.databinding.ActivityHomeBinding;
 import com.astrocure.ui.fragments.EntertainmentFragment;
 import com.astrocure.ui.fragments.HomeFeedFragment;
@@ -30,13 +35,14 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, SideNavigationCallback {
     ActivityHomeBinding binding;
     HomeZodiacAdapter homeZodiacAdapter;
     List<HomeZodiacModel> modelList;
     Fragment fragment = null;
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
+    boolean doubleBackToExitPressedOnce = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +57,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         fragmentTransaction.commit();
 
         binding.bottomNav.setOnNavigationItemSelectedListener(this::onNavigationItemSelected);
+        binding.sideNav.setNavigationItemSelectedListener(this::onNavigationItemSelected);
         binding.sideNav.getHeaderView(0).findViewById(R.id.close_drawer).setOnClickListener(v -> binding.drawer.closeDrawer(GravityCompat.END));
 
     }
@@ -83,7 +90,42 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         } else if (item.getItemId() == R.id.profile) {
             Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show();
             return true;
+        } else if (item.getItemId() == R.id.logout) {
+            startActivity(new Intent(getApplicationContext(), AuthActivity.class));
         }
         return false;
+    }
+
+    @Override
+    public void callBackAction(String action) {
+        switch (action){
+            case OPEN_DRAWER:
+                binding.drawer.openDrawer(GravityCompat.END);
+                break;
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (binding.drawer.isDrawerOpen(GravityCompat.END)) {
+            binding.drawer.closeDrawer(GravityCompat.END);
+        } else {
+            if (doubleBackToExitPressedOnce) {
+                super.onBackPressed();
+                finishAffinity();
+                finish();
+                return;
+            }
+            this.doubleBackToExitPressedOnce = true;
+            Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_LONG).show();
+
+            new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+
+                @Override
+                public void run() {
+                    doubleBackToExitPressedOnce = false;
+                }
+            }, 2000);
+        }
     }
 }

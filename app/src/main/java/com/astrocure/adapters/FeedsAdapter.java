@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.astrocure.R;
 import com.astrocure.databinding.ItemFeedTextLayoutBinding;
 import com.astrocure.ui.FeedDetailActivity;
+import com.bumptech.glide.Glide;
 
 public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.FeedViewHolder> {
     Context context;
@@ -38,11 +39,23 @@ public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.FeedViewHold
             context.startActivity(intent);
         });
 
-        holder.binding.getRoot().setOnClickListener(v -> {
-            Intent intent = new Intent(context, FeedDetailActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            context.startActivity(intent);
-        });
+        Glide.with(context).load("https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80")
+                        .centerCrop()
+                                .into(holder.binding.profile);
+        Glide.with(context).load("https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80")
+                        .centerCrop()
+                                .into(holder.binding.profileImage);
+
+        Glide.with(context)
+                .load("https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80")
+                .centerCrop()
+                .into(holder.binding.image);
+
+//        holder.binding.getRoot().setOnClickListener(v -> {
+//            Intent intent = new Intent(context, FeedDetailActivity.class);
+//            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//            context.startActivity(intent);
+//        });
         holder.binding.moreOption.setOnClickListener(v -> {
             Dialog dialog = new Dialog(context);
             dialog.setContentView(R.layout.dialog_more_option);

@@ -2,6 +2,7 @@ package com.astrocure.ui.fragments;
 
 import static com.astrocure.utils.AppConstants.OPEN_DRAWER;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,10 +12,9 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
+import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.astrocure.R;
 import com.astrocure.adapters.HomeZodiacAdapter;
@@ -34,15 +34,21 @@ public class HoroscopeFragment extends Fragment implements Toolbar.OnMenuItemCli
     FragmentHoroscopeBinding binding;
     HomeZodiacAdapter homeZodiacAdapter;
     List<HomeZodiacModel> modelList;
-    Fragment fragment = null;
-    FragmentManager fragmentManager;
-    FragmentTransaction fragmentTransaction;
-    SideNavigationCallback callBackAction;
+    SideNavigationCallback callback;
 
     public HoroscopeFragment() {
         // Required empty public constructor
     }
 
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        try {
+            callback = (SideNavigationCallback) context;
+        }catch (ClassCastException e){
+            throw new ClassCastException(context +"implementation failed");
+        }
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -55,7 +61,7 @@ public class HoroscopeFragment extends Fragment implements Toolbar.OnMenuItemCli
         binding = FragmentHoroscopeBinding.inflate(inflater, container, false);
 
         binding.toolbar.setOnMenuItemClickListener(this::onMenuItemClick);
-        binding.toolbar.setNavigationOnClickListener(view -> callBackAction.callBackAction(OPEN_DRAWER));
+        binding.toolbar.setNavigationOnClickListener(view -> callback.callBackAction(OPEN_DRAWER));
 
         modelList = new ArrayList<>();
         modelList.add(new HomeZodiacModel("Aries", R.drawable.aries_top));
@@ -90,27 +96,27 @@ public class HoroscopeFragment extends Fragment implements Toolbar.OnMenuItemCli
             binding.zodiacLayout2.description.setText(R.string.dummy_1);
             binding.zodiacLayout2.loveBtn.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.white));
             binding.zodiacLayout2.loveBtn.setTextColor(ContextCompat.getColor(getContext(), R.color.black));
-            binding.zodiacLayout2.careerBtn.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.btn_inactive));
+            binding.zodiacLayout2.careerBtn.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.btn_transparent));
             binding.zodiacLayout2.careerBtn.setTextColor(ContextCompat.getColor(getContext(), R.color.white));
-            binding.zodiacLayout2.healthBtn.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.btn_inactive));
+            binding.zodiacLayout2.healthBtn.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.btn_transparent));
             binding.zodiacLayout2.healthBtn.setTextColor(ContextCompat.getColor(getContext(), R.color.white));
         });
         binding.zodiacLayout2.careerBtn.setOnClickListener(v -> {
             binding.zodiacLayout2.description.setText(R.string.dummy_2);
             binding.zodiacLayout2.careerBtn.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.white));
             binding.zodiacLayout2.careerBtn.setTextColor(ContextCompat.getColor(getContext(), R.color.black));
-            binding.zodiacLayout2.loveBtn.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.btn_inactive));
+            binding.zodiacLayout2.loveBtn.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.btn_transparent));
             binding.zodiacLayout2.loveBtn.setTextColor(ContextCompat.getColor(getContext(), R.color.white));
-            binding.zodiacLayout2.healthBtn.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.btn_inactive));
+            binding.zodiacLayout2.healthBtn.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.btn_transparent));
             binding.zodiacLayout2.healthBtn.setTextColor(ContextCompat.getColor(getContext(), R.color.white));
         });
         binding.zodiacLayout2.healthBtn.setOnClickListener(v -> {
             binding.zodiacLayout2.description.setText(R.string.dummy_3);
             binding.zodiacLayout2.healthBtn.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.white));
             binding.zodiacLayout2.healthBtn.setTextColor(ContextCompat.getColor(getContext(), R.color.black));
-            binding.zodiacLayout2.careerBtn.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.btn_inactive));
+            binding.zodiacLayout2.careerBtn.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.btn_transparent));
             binding.zodiacLayout2.careerBtn.setTextColor(ContextCompat.getColor(getContext(), R.color.white));
-            binding.zodiacLayout2.loveBtn.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.btn_inactive));
+            binding.zodiacLayout2.loveBtn.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.btn_transparent));
             binding.zodiacLayout2.loveBtn.setTextColor(ContextCompat.getColor(getContext(), R.color.white));
         });
 
@@ -123,7 +129,7 @@ public class HoroscopeFragment extends Fragment implements Toolbar.OnMenuItemCli
             startActivity(new Intent(getContext(), WalletActivity.class));
             return true;
         } else if (item.getItemId() == R.id.menu) {
-
+            callback.callBackAction(OPEN_DRAWER);
 //            binding.drawer.openDrawer(GravityCompat.END);
             return true;
         } else if (item.getItemId() == R.id.horoscope) {

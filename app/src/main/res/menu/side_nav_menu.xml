@@ -7,12 +7,14 @@
     <item android:title="Rate The App" />
     <item android:title="Feedback" />
     <item android:title="Terms &amp; conditions" />
-    <group>
+    <group >
         <item android:title="Help center"/>
         <item android:title="Privacy Policy"/>
         <item android:title="About us"/>
     </group>
 
     <item android:title="Settings"/>
-    <item android:title="Logout"/>
+    <item
+        android:id="@+id/logout"
+        android:title="Logout"/>
 </menu>

@@ -46,4 +46,5 @@ dependencies {
 //    implementation 'com.github.mirrajabi:view-effects:e355a1bac4'
 //    implementation 'com.vlstr:fluentappbar:1.1.0'
     implementation 'np.com.susanthapa:curved_bottom_navigation:0.6.5'
+    implementation 'com.hbb20:ccp:2.7.0'
 }
