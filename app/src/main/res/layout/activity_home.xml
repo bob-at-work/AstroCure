@@ -34,6 +34,8 @@
         android:layout_gravity="end"
         android:backgroundTint="@color/white"
         app:itemTextColor="#280A5B"
+        app:itemIconTint="#130132"
+        app:itemRippleColor="#4D055B7D"
         app:menu="@menu/side_nav_menu"
         app:headerLayout="@layout/item_header"/>
 

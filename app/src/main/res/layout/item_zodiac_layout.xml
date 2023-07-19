@@ -32,8 +32,7 @@
             android:layout_height="68dp"
             android:background="#040F2D"
             android:padding="10dp"
-            android:src="@drawable/aquarius_top"
-            app:tint="@color/white" />
+            android:src="@drawable/aquarius_top"/>
     </androidx.cardview.widget.CardView>
 
 

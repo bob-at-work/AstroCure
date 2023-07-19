@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/entertainment_bg"
+    tools:context=".ui.FeedbackActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#34055A"
+        app:navigationIcon="@drawable/ic_arrow_back_white"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Feedback"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="22sp"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Share your experience in scaling"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="We’ve been working hard on our new app,\nso your feedback is important to us."
+        android:textColor="#D1D1D5"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:strokeColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView19">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="30dp"
+            android:background="@drawable/content_box_bg">
+
+            <ImageView
+                android:id="@+id/emo_worst"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/worst_emoji"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/label_worst"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Worst"
+                android:textColor="#B08450"
+                app:layout_constraintTop_toBottomOf="@id/emo_worst"
+                app:layout_constraintStart_toStartOf="@id/emo_worst"
+                app:layout_constraintEnd_toEndOf="@id/emo_worst"/>
+
+            <ImageView
+                android:id="@+id/emo_not_good"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/not_good_emoji"
+                app:layout_constraintTop_toTopOf="@id/emo_worst"
+                app:layout_constraintStart_toEndOf="@id/emo_worst"
+                app:layout_constraintEnd_toStartOf="@id/emo_fine"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Not\nGood"
+                android:textColor="@color/white"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/emo_not_good"
+                app:layout_constraintStart_toStartOf="@id/emo_not_good"
+                app:layout_constraintEnd_toEndOf="@id/emo_not_good"/>
+
+            <ImageView
+                android:id="@+id/emo_fine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/fine_emoji"
+                app:layout_constraintTop_toTopOf="@id/emo_worst"
+                app:layout_constraintStart_toEndOf="@id/emo_not_good"
+                app:layout_constraintEnd_toStartOf="@id/emo_look_good"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fine"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/emo_fine"
+                app:layout_constraintStart_toStartOf="@id/emo_fine"
+                app:layout_constraintEnd_toEndOf="@id/emo_fine"/>
+
+            <ImageView
+                android:id="@+id/emo_look_good"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/look_good_emoji"
+                app:layout_constraintTop_toTopOf="@id/emo_worst"
+                app:layout_constraintStart_toEndOf="@id/emo_fine"
+                app:layout_constraintEnd_toStartOf="@id/emo_very_good"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Look\nGood"
+                android:textColor="@color/white"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/emo_look_good"
+                app:layout_constraintStart_toStartOf="@id/emo_look_good"
+                app:layout_constraintEnd_toEndOf="@id/emo_look_good"/>
+
+            <ImageView
+                android:id="@+id/emo_very_good"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/very_good_emoji"
+                app:layout_constraintTop_toTopOf="@id/emo_worst"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Very\nGood"
+                android:textColor="@color/white"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/emo_very_good"
+                app:layout_constraintStart_toStartOf="@id/emo_very_good"
+                app:layout_constraintEnd_toEndOf="@id/emo_very_good"/>
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/rating"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:progress="2"
+                android:max="4"
+                android:splitTrack="false"
+                android:thumb="@drawable/seekbar_thumb"
+                android:progressDrawable="@drawable/seekbar_style"
+                app:layout_constraintTop_toBottomOf="@id/label_worst"/>
+
+            <EditText
+                android:id="@+id/feedback_text"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/black"
+                android:hint="If you have any additional feedback, please type it in here..."
+                android:textColorHint="#AAAAAA"
+                android:gravity="top"
+                android:background="@drawable/wallet_edittext_bg"
+                app:layout_constraintTop_toBottomOf="@id/rating" />
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="SUBMIT"
+                android:textSize="16sp"
+                android:backgroundTint="#FFBA08"
+                app:cornerRadius="12dp"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/feedback_text"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

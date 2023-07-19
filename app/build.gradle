@@ -47,4 +47,5 @@ dependencies {
 //    implementation 'com.vlstr:fluentappbar:1.1.0'
     implementation 'np.com.susanthapa:curved_bottom_navigation:0.6.5'
     implementation 'com.hbb20:ccp:2.7.0'
+    implementation 'com.airbnb.android:lottie:6.0.1'
 }

@@ -5,14 +5,18 @@ import static com.astrocure.utils.AppConstants.OPEN_DRAWER;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
+import androidx.core.view.MenuCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
@@ -26,8 +30,10 @@ import com.astrocure.databinding.ActivityHomeBinding;
 import com.astrocure.ui.fragments.EntertainmentFragment;
 import com.astrocure.ui.fragments.HomeFeedFragment;
 import com.astrocure.ui.fragments.HoroscopeFragment;
+import com.astrocure.ui.fragments.ProfileFragment;
 import com.astrocure.ui.fragments.TodayFragment;
 import com.astrocure.models.HomeZodiacModel;
+import com.astrocure.ui.fragments.VideosFragment;
 import com.google.android.material.navigation.NavigationView;
 
 import java.text.SimpleDateFormat;
@@ -49,6 +55,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        binding.sideNav.getMenu().addSubMenu(R.id.center,R.id.help_center,0,"");
 
         fragment = new HoroscopeFragment();
         fragmentManager = getSupportFragmentManager();
@@ -78,7 +86,11 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             fragmentTransaction.commit();
             return true;
         }else if (item.getItemId() == R.id.videos){
-            Toast.makeText(this, "Videos", Toast.LENGTH_SHORT).show();
+            fragment = new VideosFragment();
+            fragmentManager = getSupportFragmentManager();
+            fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(binding.mainContainer.getId(),fragment);
+            fragmentTransaction.commit();
             return true;
         }else if (item.getItemId()==R.id.entertainment){
             fragment = new EntertainmentFragment();
@@ -88,11 +100,33 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             fragmentTransaction.commit();
             return true;
         } else if (item.getItemId() == R.id.profile) {
-            Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show();
+            fragment = new ProfileFragment();
+            fragmentManager = getSupportFragmentManager();
+            fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(binding.mainContainer.getId(),fragment);
+            fragmentTransaction.commit();
             return true;
         } else if (item.getItemId() == R.id.logout) {
             startActivity(new Intent(getApplicationContext(), AuthActivity.class));
+        } else if (item.getItemId() == R.id.transaction_history) {
+            startActivity(new Intent(getApplicationContext(), TransactionHistoryActivity.class));
+        }else if (item.getItemId() == R.id.wallet_nav){
+            startActivity(new Intent(getApplicationContext(),WalletActivity.class));
+        }else if (item.getItemId() == R.id.rate_the_app){
+            Uri uri = Uri.parse("market://details?id=" + getPackageName());
+            Intent myAppLinkToMarket = new Intent(Intent.ACTION_VIEW, uri);
+            try {
+                startActivity(myAppLinkToMarket);
+            } catch (ActivityNotFoundException e) {
+//                Toast.makeText(this, " unable to find market app", Toast.LENGTH_LONG).show();
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://play.google.com/store/apps/details?id=" + getPackageName())));
+            }
+        } else if (item.getItemId() == R.id.feedback) {
+            startActivity(new Intent(getApplicationContext(), FeedbackActivity.class));
+        }else if (item.getItemId()==R.id.help_center){
+            startActivity(new Intent(getApplicationContext(), HelpCenterActivity.class));
         }
+        binding.drawer.closeDrawer(GravityCompat.END);
         return false;
     }
 
@@ -128,4 +162,5 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             }, 2000);
         }
     }
+
 }

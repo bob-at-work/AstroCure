@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/video_filter_bg">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/line"
+        android:layout_width="50dp"
+        android:layout_height="3dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:text="Sort &amp; Filter"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line" />
+
+    <ImageView
+        android:id="@+id/close"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:src="@drawable/round_close"
+        android:layout_marginEnd="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView15"
+        app:tint="@color/white" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="Sort by"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/filter_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#120c28"
+        app:layout_constraintTop_toBottomOf="@id/textView17">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/category_list"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:minHeight="200dp"
+            android:layout_marginTop="20dp"
+            android:background="#413d50"
+            tools:itemCount="5"
+            tools:listitem="@layout/item_video_category"
+            app:layout_constraintWidth_percent=".35"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/category_list"
+            app:layout_constraintTop_toTopOf="@id/category_list" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:background="#26203a"
+        app:layout_constraintTop_toBottomOf="@id/filter_container">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/reset"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#3d354f"
+            android:outlineAmbientShadowColor="@color/white"
+            android:outlineSpotShadowColor="@color/white"
+            android:shadowColor="@color/white"
+            android:shadowRadius="5"
+            android:text="Reset"
+            android:textColor="@color/white"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/apply_filter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent=".4" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/apply_filter"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#660887"
+            android:shadowColor="@color/white"
+            android:shadowRadius="5"
+            android:text="Apply Filter"
+            android:textColor="@color/white"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/reset"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/reset"
+            app:layout_constraintTop_toTopOf="@id/reset"
+            app:layout_constraintWidth_percent=".4" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

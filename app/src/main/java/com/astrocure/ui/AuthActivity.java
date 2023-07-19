@@ -1,10 +1,10 @@
 package com.astrocure.ui;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
 
-import com.astrocure.R;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.astrocure.databinding.ActivityAuthBinding;
 
 public class AuthActivity extends AppCompatActivity {
@@ -17,6 +17,9 @@ public class AuthActivity extends AppCompatActivity {
         binding = ActivityAuthBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        binding.send.setOnClickListener(v -> {
+            startActivity(new Intent(getApplicationContext(), OtpActivity.class));
+        });
 
     }
 }

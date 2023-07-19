@@ -11,4 +11,9 @@
         <attr name="careerPercent" format="string"/>
         <attr name="financePercent" format="string"/>
     </declare-styleable>
+
+    <declare-styleable name="AppEditText">
+        <attr name="active_hint" format="string"/>
+        <attr name="hint" format="string"/>
+    </declare-styleable>
 </resources>

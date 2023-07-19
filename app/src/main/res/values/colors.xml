@@ -5,4 +5,6 @@
     <color name="btn_inactive">#5C8336B0</color>
     <color name="btn_transparent">#1A8336B0</color>
     <color name="btn_txt_color"></color>
+
+    <color name="otp_base">#FFFFFF</color>
 </resources>

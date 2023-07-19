@@ -17,6 +17,7 @@
             android:layout_height="wrap_content"
             android:paddingBottom="?attr/actionBarSize"
             android:background="@drawable/homepage_1_">
+<!--            android:background="@drawable/homepage_1_"-->
 
             <com.google.android.material.appbar.AppBarLayout
                 android:id="@+id/appbar"

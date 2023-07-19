@@ -4,12 +4,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Paint;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.astrocure.databinding.ItemQNAAdminBinding;
+import com.astrocure.databinding.ItemQNAAstrologerBinding;
 import com.astrocure.databinding.ItemQNAUserBinding;
 import com.astrocure.models.QuestionAnswerChatModel;
 import com.astrocure.ui.AstrologerChatActivity;
@@ -28,13 +31,16 @@ public class QuestionAnswerAdapter extends RecyclerView.Adapter {
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        ItemQNAUserBinding userBinding = ItemQNAUserBinding.inflate(LayoutInflater.from(context),parent,false);
-        ItemQNAAdminBinding adminBinding = ItemQNAAdminBinding.inflate(LayoutInflater.from(context),parent,false);
+        ItemQNAUserBinding userBinding = ItemQNAUserBinding.inflate(LayoutInflater.from(context), parent, false);
+        ItemQNAAdminBinding adminBinding = ItemQNAAdminBinding.inflate(LayoutInflater.from(context), parent, false);
+        ItemQNAAstrologerBinding astrologerBinding = ItemQNAAstrologerBinding.inflate(LayoutInflater.from(context), parent, false);
         switch (viewType) {
             case 0:
                 return new UserViewHolder(userBinding);
             case 1:
                 return new AdminViewHolder(adminBinding);
+            case 2:
+                return new AstrologerViewHolder(astrologerBinding);
             default:
                 return null;
         }
@@ -43,30 +49,41 @@ public class QuestionAnswerAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         QuestionAnswerChatModel model = models.get(position);
-        if (model.getSentBy().matches("user")){
+        if (model.getSentBy().matches("user")) {
             UserViewHolder userViewHolder = (UserViewHolder) holder;
             userViewHolder.binding.message.setText(model.getMessage());
             userViewHolder.binding.time.setText(model.getTime());
+        } else if (model.isLink()) {
+            AstrologerViewHolder astrologerViewHolder = (AstrologerViewHolder) holder;
+            astrologerViewHolder.binding.call.setOnClickListener(v -> Toast.makeText(context, "Unavailable, Please try after some time.", Toast.LENGTH_SHORT).show());
+            astrologerViewHolder.binding.chat.setOnClickListener(v -> {
+                Intent intent = new Intent(context, AstrologerChatActivity.class);
+                context.startActivity(intent);
+            });
+
         }else {
             AdminViewHolder adminViewHolder = (AdminViewHolder) holder;
             adminViewHolder.binding.message.setText(model.getMessage());
             adminViewHolder.binding.time.setText(model.getTime());
-            if (model.isLink()){
-                adminViewHolder.binding.message.setPaintFlags(Paint.UNDERLINE_TEXT_FLAG);
-                adminViewHolder.binding.getRoot().setOnClickListener(v -> {
-                    Intent intent = new Intent(context, AstrologerChatActivity.class);
-                    context.startActivity(intent);
-                });
-            }
+//            adminViewHolder.binding.message.setPaintFlags(Paint.UNDERLINE_TEXT_FLAG);
+//            adminViewHolder.binding.getRoot().setOnClickListener(v -> {
+//                Intent intent = new Intent(context, AstrologerChatActivity.class);
+//                context.startActivity(intent);
+//            });
         }
 
     }
 
     @Override
     public int getItemViewType(int position) {
-        switch (models.get(position).getSentBy()){
+        switch (models.get(position).getSentBy()) {
             case "admin":
-                return 1;
+                if (!models.get(position).isLink()) {
+                    return 1;
+                } else {
+                    return 2;
+                }
+
             default:
                 return 0;
         }
@@ -91,6 +108,15 @@ public class QuestionAnswerAdapter extends RecyclerView.Adapter {
         ItemQNAAdminBinding binding;
 
         public AdminViewHolder(ItemQNAAdminBinding binding) {
+            super(binding.getRoot());
+            this.binding = binding;
+        }
+    }
+
+    public class AstrologerViewHolder extends RecyclerView.ViewHolder {
+        ItemQNAAstrologerBinding binding;
+
+        public AstrologerViewHolder(ItemQNAAstrologerBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
         }

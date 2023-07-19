@@ -62,7 +62,7 @@
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:src="@drawable/logo_2"
-        app:layout_constraintBottom_toTopOf="@+id/appCompatButton2"
+        app:layout_constraintBottom_toTopOf="@id/send"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
@@ -74,7 +74,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/border_phone_num"
         android:padding="5dp"
-        app:layout_constraintBottom_toTopOf="@+id/appCompatButton2"
+        app:layout_constraintBottom_toTopOf="@id/send"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView5"
@@ -115,13 +115,13 @@
         android:text="@string/recover_account"
         android:textColor="@color/white"
         app:layout_constraintVertical_bias=".1"
-        app:layout_constraintBottom_toTopOf="@+id/appCompatButton2"
+        app:layout_constraintBottom_toTopOf="@+id/send"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/appCompatButton2"
+        android:id="@+id/send"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"

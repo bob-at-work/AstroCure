@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="10dp"
+    android:theme="@style/Theme.Material3.Dark"
+    android:outlineSpotShadowColor="#3C3C3C"
+    android:outlineAmbientShadowColor="#3C3C3C"
+    app:strokeColor="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:background="@drawable/content_box_bg">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/border"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:background="@color/white"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/logo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/wallet_transaction"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
+            app:layout_constraintTop_toTopOf="@id/border"
+            app:layout_constraintStart_toStartOf="@id/border"
+            app:layout_constraintEnd_toEndOf="@id/border"
+            app:layout_constraintBottom_toBottomOf="@id/border"/>
+
+        <TextView
+            android:id="@+id/plan_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Paid to Basic Plan"
+            android:textColor="@color/white"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@id/border"
+            app:layout_constraintTop_toTopOf="@id/border"/>
+
+        <TextView
+            android:id="@+id/validity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Duration Period : 7 July 2023 to 7 August 2023"
+            android:textColor="#FFF50C"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/price"
+            app:layout_constraintStart_toStartOf="@id/plan_name"
+            app:layout_constraintTop_toBottomOf="@id/plan_name" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="06 July, 02:34PM"
+            android:textColor="#87898E"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/plan_name"
+            app:layout_constraintTop_toBottomOf="@id/validity" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Payable Amount"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/plan_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/plan_name" />
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₹10000"
+            android:textColor="#D5D5D5"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView14"
+            app:layout_constraintEnd_toEndOf="@id/textView13"
+            app:layout_constraintStart_toStartOf="@id/textView13" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

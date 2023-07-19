@@ -16,4 +16,6 @@
     <string name="color_therapy"><font fgcolor='#F0153C'>C</font><font fgcolor='#FFFFFF'>o</font><font fgcolor='#ECFF0F'>l</font><font fgcolor='#964B00'>o</font><font fgcolor='#690971'>r</font><font fgcolor='#C61FA1'> T</font><font fgcolor='#808080'>h</font><font fgcolor='#000000'>era</font><font fgcolor='#168E01'>py</font></string>
     <string name="instructions">1.Your Question must be relevant to the topic.\n2.Don\'t use an obscene or vulgar language, Including racist remarks.\n3.Do not post anything that verbally or Physically incites violence or hatred against An individual or a group of individuals.\n4.Do not advertise any products, services, etc \n5.A Message that does not comply with the rules Will be deleted.</string>
     <string name="recover_account">Do you want to Recover your Account ? <font fgcolor='#13CEC3'><u>Recover Account</u></font></string>
+    <string name="create_account"><font fgcolor='#D3CB1E'>C</font>reate <font fgcolor='#D3CB1E'>A</font>ccount</string>
+    <string name="terms_condition">By creating an account, you agree to our <font fgcolor='#13CEC3'>Terms &amp; Conditions</font> and <font fgcolor='#13CEC3'>Privacy policy</font>.</string>
 </resources>
