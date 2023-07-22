@@ -4,12 +4,13 @@
     android:layout_height="wrap_content"
     app:cardCornerRadius="20dp"
     android:layout_margin="40dp"
+    app:strokeWidth="0dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
+        android:background="#0A0321"
         android:padding="20dp">
 
         <androidx.appcompat.widget.AppCompatButton
@@ -31,10 +32,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="Delete"
-            android:textColor="#9425C9"
-            app:strokeColor="#9425C9"
+            android:textColor="@color/white"
+            app:strokeColor="@color/white"
             app:strokeWidth="1dp"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="#0A0321"
             app:layout_constraintWidth_percent=".7"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"

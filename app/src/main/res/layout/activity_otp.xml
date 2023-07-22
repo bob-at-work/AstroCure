@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.OtpActivity"
-    android:background="@drawable/login_bg">
+    android:background="@drawable/background_2"
+    tools:context=".ui.OtpActivity">
 
     <ImageView
         android:id="@+id/imageView6"
@@ -65,14 +65,15 @@
         android:cursorVisible="false"
         android:inputType="number"
         android:maxLength="6"
-        android:text="123456"
-        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:textIsSelectable="false"
+        android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintWidth_percent=".7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+        app:layout_constraintTop_toBottomOf="@+id/textView11"
+        app:layout_constraintWidth_percent=".7" />
 
     <TextView
         android:id="@+id/timer"
@@ -85,23 +86,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/otp" />
 
-
     <LinearLayout
         android:id="@+id/container"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintVertical_bias=".6"
+        android:layout_marginTop="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/timer"
-        app:layout_constraintBottom_toTopOf="@id/send">
+        app:layout_constraintTop_toTopOf="@id/lottieAnimationView">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Didn't receive an OTP?"
             android:textColor="@color/white"
-            android:textSize="18sp"/>
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/resend"
@@ -109,25 +109,45 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="Resend OTP"
-            android:textSize="18sp"
-            android:textColor="#FF6565"/>
+            android:textColor="#FF6565"
+            android:textSize="18sp" />
 
     </LinearLayout>
 
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/bg_demo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_percent=".4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias=".8" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieAnimationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/view2"
+        app:layout_constraintTop_toTopOf="@+id/view2"
+        app:layout_constraintVertical_bias=".7"
+        app:lottie_autoPlay="true"
+        app:lottie_speed="0.3"
+        app:lottie_rawRes="@raw/progress_anim_2nd_stop" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/send"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:textColor="@color/white"
+        android:background="@drawable/button_bg"
         android:text="Send"
         android:textAllCaps="false"
-        android:background="@drawable/button_bg"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
-
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

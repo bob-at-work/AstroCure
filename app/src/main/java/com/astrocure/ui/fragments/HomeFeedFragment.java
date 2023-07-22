@@ -41,7 +41,7 @@ public class HomeFeedFragment extends Fragment {
         binding.feeds.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.white));
         binding.feeds.setOnClickListener(v -> {
             fragment = new FeedsFragment();
-            binding.getRoot().setBackground(getContext().getDrawable(R.drawable.feeds_bg));
+            binding.getRoot().setBackground(getContext().getDrawable(R.drawable.background_2));
             fragmentTransaction = getFragmentManager().beginTransaction();
             fragmentTransaction.replace(binding.container.getId(), fragment);
             fragmentTransaction.commit();

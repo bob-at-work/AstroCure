@@ -1,9 +1,11 @@
 package com.astrocure.ui.fragments;
 
+import android.animation.Animator;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.shapes.Shape;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.os.Handler;
@@ -35,26 +37,37 @@ public class ProfileFragment extends Fragment {
         binding = FragmentProfileBinding.inflate(inflater,container,false);
 
 
-//        binding.animDemo.setAnimation(R.raw.animation);
+//        binding.animDemo.setAnimation(R.raw.progress_anim);
         binding.execution.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 binding.animDemo.resumeAnimation();
-//                try {
-                    Log.i("TAG", "onCreateView: "+binding.animDemo.getDuration());
-//                }catch (Exception e){
-//                    Log.i("TAG", "onCreateView: ");
-//                }
             }
         });
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                binding.animDemo.pauseAnimation();
-            }
-        },500);
+        new Handler().postDelayed(() -> binding.animDemo.pauseAnimation(),750);
 
+        binding.animDemo.addAnimatorListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(@NonNull Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(@NonNull Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationCancel(@NonNull Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(@NonNull Animator animation) {
+
+            }
+        });
 
         ShapeAppearanceModel.Builder shape = ShapeAppearanceModel.builder().setAllCornerSizes(16);
 //        Drawable drawable = MaterialShapeDrawable.

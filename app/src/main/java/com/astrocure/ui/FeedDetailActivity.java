@@ -4,7 +4,6 @@ import android.app.Dialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.astrocure.R;
 import com.astrocure.adapters.FeedCommentAdapter;
 import com.astrocure.databinding.ActivityFeedDetailBinding;
+import com.bumptech.glide.Glide;
 
 public class FeedDetailActivity extends AppCompatActivity {
     ActivityFeedDetailBinding binding;
@@ -28,6 +28,10 @@ public class FeedDetailActivity extends AppCompatActivity {
         adapter = new FeedCommentAdapter(getApplicationContext());
         binding.commentList.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
         binding.commentList.setAdapter(adapter);
+        Glide.with(getApplicationContext())
+                .load(getIntent().getStringExtra("image"))
+                .centerCrop()
+                .into(binding.post.image);
         binding.post.moreOption.setOnClickListener(v -> {
             Dialog dialog = new Dialog(FeedDetailActivity.this);
             dialog.setContentView(R.layout.dialog_more_option);

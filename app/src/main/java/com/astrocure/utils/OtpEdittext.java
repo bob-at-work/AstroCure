@@ -8,6 +8,7 @@ import android.util.AttributeSet;
 import android.view.ActionMode;
 
 import androidx.appcompat.widget.AppCompatEditText;
+import androidx.core.content.ContextCompat;
 
 import com.astrocure.R;
 
@@ -44,7 +45,7 @@ public class OtpEdittext extends AppCompatEditText implements com.astrocure.call
         mSpace = multi * mSpace; //convert to pixels for our density
         mLineSpacing = multi * mLineSpacing; //convert to pixels for our density
         mNumChars = mMaxLength;
-        setTextColor(getResources().getColor(R.color.white));
+        setTextColor(ContextCompat.getColor(getContext(),R.color.white));
         super.setOnClickListener(v -> {
             // When tapped, move cursor to end of text.
             setSelection(getText().length());

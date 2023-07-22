@@ -36,6 +36,7 @@ public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.FeedViewHold
 
         holder.binding.comment.setOnClickListener(v -> {
             Intent intent = new Intent(context, FeedDetailActivity.class);
+            intent.putExtra("image","https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80");
             context.startActivity(intent);
         });
 
