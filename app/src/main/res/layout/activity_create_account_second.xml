@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login_bg"
+    android:background="@drawable/background_2"
     tools:context=".ui.CreateAccountSecondActivity">
 
     <TextView
@@ -107,6 +107,7 @@
         android:maxLines="1"
         android:inputType="text"
         android:imeOptions="actionDone"
+        android:enabled="false"
         android:background="@drawable/text_input_unfocused"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -132,6 +133,27 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/camera_path" />
 
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/bg_demo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_percent=".4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias=".8" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieAnimationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/view2"
+        app:layout_constraintTop_toTopOf="@+id/view2"
+        app:layout_constraintVertical_bias=".7"
+        app:lottie_autoPlay="true"
+        app:lottie_speed="0.3"
+        app:lottie_rawRes="@raw/progress_anim_3rd_stop" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/next"

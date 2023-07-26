@@ -19,6 +19,7 @@
         android:text="MORE HOROSCOPE FOR YOU"
         android:textSize="18sp"
         android:textStyle="bold"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -95,6 +96,7 @@
         android:text="Thursday, June 1"
         android:textStyle="bold"
         android:textSize="16sp"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/career_btn" />
@@ -115,6 +117,7 @@
         android:layout_marginTop="20dp"
         android:lineSpacingExtra="5dp"
         android:gravity="center"
+        android:textColor="@color/white"
         android:text="Today's aspect at play may mean that you are put on the spot and have to make a very fast decision, one that you possibly don't feel ready to make. Naturally this involves your love life and your sense of commitment, and perhaps we never feel really ready to make this kind of choice. However, you have to choose one way or another - so listen to your heart."
         app:layout_constraintTop_toBottomOf="@id/time"
         app:layout_constraintBottom_toBottomOf="parent"/>

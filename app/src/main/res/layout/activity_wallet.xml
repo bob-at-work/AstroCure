@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/entertainment_bg"
+    android:background="@drawable/background_2"
     tools:context=".ui.WalletActivity">
 
     <ImageView
@@ -96,6 +96,18 @@
         app:layout_constraintTop_toBottomOf="@+id/amount"
         app:drawableStartCompat="@drawable/star_yellow"
         app:drawableEndCompat="@drawable/star_yellow" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/bg_demo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_percent=".4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias=".8" />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/price_list"

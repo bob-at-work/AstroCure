@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:padding="30dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/chart" />
+        android:src="@drawable/ic_sun" />
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/shapeableImageView"

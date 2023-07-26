@@ -1,10 +1,17 @@
 package com.astrocure.ui.fragments;
 
+import static com.astrocure.utils.AppConstantMethods.loadJSONFromAsset;
 import static com.astrocure.utils.AppConstants.OPEN_DRAWER;
+import static com.astrocure.utils.AstrologyApiConstants.LAHIRI;
+import static com.astrocure.utils.AstrologyApiConstants.LOVE_HOUSE;
+import static com.astrocure.utils.AstrologyApiConstants.TOPOCENTRIC;
 
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,14 +27,31 @@ import com.astrocure.R;
 import com.astrocure.adapters.HomeZodiacAdapter;
 import com.astrocure.adapters.ZodiacViewpagerAdapter;
 import com.astrocure.callback.SideNavigationCallback;
+import com.astrocure.databinding.CheckHoroBottomSheetBinding;
 import com.astrocure.databinding.FragmentHoroscopeBinding;
 import com.astrocure.models.HomeZodiacModel;
+import com.astrocure.models.PlanetsRequestModel;
+import com.astrocure.models.PlanetsResponseModel;
+import com.astrocure.models.ZodiacViewPagerModel;
+import com.astrocure.network.RetrofitClient;
 import com.astrocure.ui.WalletActivity;
+import com.astrocure.utils.PlanetsHouse;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.android.material.tabs.TabLayout;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class HoroscopeFragment extends Fragment implements Toolbar.OnMenuItemClickListener {
 
@@ -35,6 +59,10 @@ public class HoroscopeFragment extends Fragment implements Toolbar.OnMenuItemCli
     HomeZodiacAdapter homeZodiacAdapter;
     List<HomeZodiacModel> modelList;
     SideNavigationCallback callback;
+    ZodiacViewPagerModel zodiacViewPagerModel;
+    String health;
+    String love;
+    String career;
 
     public HoroscopeFragment() {
         // Required empty public constructor
@@ -45,8 +73,8 @@ public class HoroscopeFragment extends Fragment implements Toolbar.OnMenuItemCli
         super.onAttach(context);
         try {
             callback = (SideNavigationCallback) context;
-        }catch (ClassCastException e){
-            throw new ClassCastException(context +"implementation failed");
+        } catch (ClassCastException e) {
+            throw new ClassCastException(context + "implementation failed");
         }
     }
 
@@ -62,7 +90,7 @@ public class HoroscopeFragment extends Fragment implements Toolbar.OnMenuItemCli
 
         binding.toolbar.setOnMenuItemClickListener(this::onMenuItemClick);
         binding.toolbar.setNavigationOnClickListener(view -> callback.callBackAction(OPEN_DRAWER));
-
+        setPercentData(17, 30, 0, 24, 6, 2000, 22.11f, 85.34f);
         modelList = new ArrayList<>();
         modelList.add(new HomeZodiacModel("Aries", R.drawable.aries_top));
         modelList.add(new HomeZodiacModel("Taurus", R.drawable.taurus_top));
@@ -80,17 +108,50 @@ public class HoroscopeFragment extends Fragment implements Toolbar.OnMenuItemCli
         binding.zodiacList.setAdapter(homeZodiacAdapter);
 
         binding.time.setText(new SimpleDateFormat("EEEE,dd MMM").format(new Date()));
+        binding.zodiacLayout2.time.setText(new SimpleDateFormat("EEEE,MMMM d ").format(new Date()));
+        binding.zodiacLayout1.currentDate.setText(new SimpleDateFormat("EEEE d MMMM").format(new Date()));
         binding.tabLayout.addTab(binding.tabLayout.newTab().setText("Yesterday"));
         binding.tabLayout.addTab(binding.tabLayout.newTab().setText("Today"));
         binding.tabLayout.addTab(binding.tabLayout.newTab().setText("Tomorrow"));
+        binding.tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                Calendar calendar = Calendar.getInstance();
+                switch (tab.getPosition()){
+                    case 0:
+                        calendar.add(Calendar.DATE,-1);
+                        binding.zodiacLayout2.time.setText(new SimpleDateFormat("EEEE,MMMM d ").format(calendar.getTime()));
+                        binding.zodiacLayout1.currentDate.setText(new SimpleDateFormat("EEEE d MMMM").format(calendar.getTime()));
+                        break;
+                    case 1:
+//                        calendar.add(Calendar.DATE,-1);
+                        binding.zodiacLayout2.time.setText(new SimpleDateFormat("EEEE,MMMM d ").format(new Date()));
+                        binding.zodiacLayout1.currentDate.setText(new SimpleDateFormat("EEEE d MMMM").format(new Date()));
+                        break;
+                    case 2:
+                        calendar.add(Calendar.DATE,1);
+                        binding.zodiacLayout2.time.setText(new SimpleDateFormat("EEEE,MMMM d ").format(calendar.getTime()));
+                        binding.zodiacLayout1.currentDate.setText(new SimpleDateFormat("EEEE d MMMM").format(calendar.getTime()));
+                        break;
+                }
+            }
 
-        ZodiacViewpagerAdapter viewpagerAdapter = new ZodiacViewpagerAdapter(getContext());
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+        zodiacViewPagerModel = new ZodiacViewPagerModel("Cancer");
+        ZodiacViewpagerAdapter viewpagerAdapter = new ZodiacViewpagerAdapter(getContext(),zodiacViewPagerModel);
         binding.chartPercent.setAdapter(viewpagerAdapter);
         binding.tabLayout.setupWithViewPager(binding.chartPercent);
         binding.tabLayout.selectTab(binding.tabLayout.getTabAt(1));
 
-        binding.zodiacLayout2.time.setText(new SimpleDateFormat("EEEE,MMMM d ").format(new Date()));
-        binding.zodiacLayout1.currentDate.setText(new SimpleDateFormat("EEEE d MMMM").format(new Date()));
         binding.zodiacLayout2.loveBtn.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.white));
         binding.zodiacLayout2.loveBtn.setOnClickListener(v -> {
             binding.zodiacLayout2.description.setText(R.string.dummy_1);
@@ -120,7 +181,107 @@ public class HoroscopeFragment extends Fragment implements Toolbar.OnMenuItemCli
             binding.zodiacLayout2.loveBtn.setTextColor(ContextCompat.getColor(getContext(), R.color.white));
         });
 
+        binding.seeNew.setOnClickListener(v -> {
+            CheckHoroBottomSheetBinding dialogBinding = CheckHoroBottomSheetBinding.inflate(getLayoutInflater());
+            BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(getContext());
+            bottomSheetDialog.setContentView(dialogBinding.getRoot());
+            dialogBinding.tob.setOnClickListener(v1 -> {
+                Calendar mcurrentTime = Calendar.getInstance();
+                int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);
+                int minute = mcurrentTime.get(Calendar.MINUTE);
+                TimePickerDialog mTimePicker;
+                mTimePicker = new TimePickerDialog(getContext(), android.R.style.Theme_Holo_Dialog_NoActionBar, (timePicker, selectedHour, selectedMinute) -> dialogBinding.tob.setText(selectedHour + ":" + selectedMinute), hour, minute, true);
+                mTimePicker.setTitle("Select Time");
+                mTimePicker.show();
+            });
+            dialogBinding.dob.setOnClickListener(v12 -> {
+                int selectedYear = 2000;
+                int selectedMonth = 5;
+                int selectedDayOfMonth = 10;
+                DatePickerDialog datePickerDialog = new DatePickerDialog(getContext(),
+                        android.R.style.Theme_Holo_Dialog_NoActionBar,
+                        (view, year, month, dayOfMonth) -> dialogBinding.dob.setText(dayOfMonth + "/" + month + "/" + year), selectedYear, selectedMonth, selectedDayOfMonth);
+                datePickerDialog.show();
+            });
+
+            /*dialogBinding.checkHoro.setOnClickListener(v13 -> {
+                HoroResultBottomSheetBinding binding1 = HoroResultBottomSheetBinding.inflate(inflater);
+                BottomSheetDialog bottomDialog = new BottomSheetDialog(getContext());
+                bottomDialog.setContentView(binding1.getRoot());
+                binding1.tabLayout.addTab(binding1.tabLayout.newTab().setText("Yesterday"));
+                binding1.tabLayout.addTab(binding1.tabLayout.newTab().setText("Today"));
+                binding1.tabLayout.addTab(binding1.tabLayout.newTab().setText("Tomorrow"));
+                BottomSheetHoroscopeAdapter adapter1 = new BottomSheetHoroscopeAdapter(getFragmentManager(),getContext(),binding1.tabLayout.getTabCount());
+                binding1.viewPager.setAdapter(adapter1);
+                binding1.viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(binding1.tabLayout));
+                binding1.tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+                    @Override
+                    public void onTabSelected(TabLayout.Tab tab) {
+                        binding1.viewPager.setCurrentItem(tab.getPosition());
+                    }
+
+                    @Override
+                    public void onTabUnselected(TabLayout.Tab tab) {
+
+                    }
+
+                    @Override
+                    public void onTabReselected(TabLayout.Tab tab) {
+
+                    }
+                });
+                bottomDialog.show();
+            });*/
+            bottomSheetDialog.show();
+        });
+
         return binding.getRoot();
+    }
+
+    private void setPercentData(int hour, int min, int sec, int date, int month, int year, float latitude, float longitude) {
+        PlanetsRequestModel requestModel = new PlanetsRequestModel();
+        requestModel.setYear(year);
+        requestModel.setMonth(month);
+        requestModel.setDate(date);
+        requestModel.setHours(hour);
+        requestModel.setMinutes(min);
+        requestModel.setSeconds(sec);
+        requestModel.setLatitude(latitude);
+        requestModel.setLongitude(longitude);
+        requestModel.setTimezone(5.5f);
+        requestModel.setSettings(new PlanetsRequestModel.Settings(TOPOCENTRIC, LAHIRI));
+        RetrofitClient.getKundliClient().planetDetails(requestModel).enqueue(new Callback<PlanetsResponseModel>() {
+            @Override
+            public void onResponse(Call<PlanetsResponseModel> call, Response<PlanetsResponseModel> response) {
+                try {
+                    if (response.isSuccessful()) {
+                        PlanetsHouse healthPlanet = new PlanetsHouse(getContext(),response.body());
+                        String planets = healthPlanet.getLovePlanetNum();
+                        String zodiac = healthPlanet.getZodiacSign();
+//                        binding.zodiacName.setText(zodiac);
+                        binding.zodiacLayout1.zodiac.setText(zodiac);
+                        if(!planets.isEmpty()){
+                            healthPlanet.getHouseCurrentSign(LOVE_HOUSE);
+                            JSONObject jsonObject = new JSONObject(Objects.requireNonNull(loadJSONFromAsset(requireActivity(), "Predictions.json")));
+                            JSONArray jsonArray = jsonObject.getJSONArray("double");
+                            love = jsonArray.getJSONObject(0).getJSONObject(planets).get("Prediction").toString();
+                        }else {
+                            JSONObject jsonObject = new JSONObject(Objects.requireNonNull(loadJSONFromAsset(requireActivity(), "Predictions.json")));
+                            JSONArray jsonArray = jsonObject.getJSONArray("zodiac-ruling-planet");
+                            love = jsonArray.getJSONObject(0).getJSONObject(planets).get("Prediction").toString();
+                        }
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<PlanetsResponseModel> call, Throwable t) {
+
+            }
+        });
+
     }
 
     @Override

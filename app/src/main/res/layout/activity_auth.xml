@@ -136,7 +136,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="@+id/view2"
         app:layout_constraintTop_toTopOf="@+id/view2"
-        app:lottie_rawRes="@raw/progress_anim_2nd_stop"
+        app:lottie_rawRes="@raw/progress_anim_1st_stop"
         app:layout_constraintVertical_bias=".7"/>
 
     <androidx.appcompat.widget.AppCompatButton

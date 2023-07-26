@@ -12,39 +12,42 @@ import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.astrocure.R;
+import com.astrocure.databinding.ItemZodiacPercentLayoutBinding;
 import com.astrocure.models.ZodiacViewPagerModel;
 
 import java.util.List;
 
 public class ZodiacViewpagerAdapter extends PagerAdapter {
     Context context;
-    List<ZodiacViewPagerModel> models;
+    ZodiacViewPagerModel model;
 
-    public ZodiacViewpagerAdapter(Context context/*, List<ZodiacViewPagerModel> models*/) {
+    public ZodiacViewpagerAdapter(Context context, ZodiacViewPagerModel model) {
         this.context = context;
-//        this.models = models;
+        this.model = model;
     }
 
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
-        View view = LayoutInflater.from(container.getContext()).inflate(R.layout.item_zodiac_percent_layout,container,false);
-        TextView textView = view.findViewById(R.id.day_indicator);
+        ItemZodiacPercentLayoutBinding binding = ItemZodiacPercentLayoutBinding.inflate(LayoutInflater.from(context),container,false);
         switch (position){
             case 0:
-                textView.setText("Horoscope For Yesterday");
+                binding.dayIndicator.setText("Horoscope For Yesterday");
+                binding.zodiacName.setText(model.getZodiacName());
                 break;
             case 1:
-                textView.setText("Horoscope For Today");
+                binding.dayIndicator.setText("Horoscope For Today");
+                binding.zodiacName.setText(model.getZodiacName());
                 break;
             case 2:
-                textView.setText("Horoscope For Tomorrow");
+                binding.dayIndicator.setText("Horoscope For Tomorrow");
+                binding.zodiacName.setText(model.getZodiacName());
                 break;
             default:
-                textView.setText("Horoscope");
+                binding.dayIndicator.setText("Horoscope");
         }
-        container.addView(view,0);
-        return view;
+        container.addView(binding.getRoot(),0);
+        return binding.getRoot();
     }
 
     @Override

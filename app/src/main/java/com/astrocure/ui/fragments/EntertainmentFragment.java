@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import com.astrocure.R;
 import com.astrocure.databinding.FragmentEntertainmentBinding;
 import com.astrocure.ui.CompatibilityActivity;
+import com.astrocure.ui.CompatibilitySecondActivity;
 import com.astrocure.ui.games.AstroGenieActivity;
 import com.astrocure.ui.games.BookOfLoveActivity;
 import com.astrocure.ui.games.ColorTherapyActivity;
@@ -44,7 +45,8 @@ public class EntertainmentFragment extends Fragment {
         binding.colorTherapy.setOnClickListener(v -> startActivity(new Intent(getContext(), ColorTherapyActivity.class)));
         binding.games.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.white));
         binding.games.setOnClickListener(v -> {
-            binding.getRoot().setBackground(getContext().getDrawable(R.drawable.feeds_bg));
+//            binding.getRoot().setBackground(getContext().getDrawable(R.drawable.background_2));
+            binding.view2.setVisibility(View.GONE);
             binding.games.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.white));
             binding.games.setTextColor(ContextCompat.getColor(getContext(), R.color.black));
             binding.compatibility.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.btn_inactive));
@@ -53,13 +55,21 @@ public class EntertainmentFragment extends Fragment {
             binding.gamesContainer.setVisibility(View.VISIBLE);
         });
         binding.compatibility.setOnClickListener(v -> {
-            binding.getRoot().setBackground(getContext().getDrawable(R.drawable.entertainment_bg));
+//            binding.getRoot().setBackground(getContext().getDrawable(R.drawable.entertainment_bg));
+            binding.view2.setVisibility(View.VISIBLE);
             binding.compatibility.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.white));
             binding.compatibility.setTextColor(ContextCompat.getColor(getContext(), R.color.black));
             binding.games.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.btn_inactive));
             binding.games.setTextColor(ContextCompat.getColor(getContext(), R.color.white));
             binding.compatibilityContainer.setVisibility(View.VISIBLE);
             binding.gamesContainer.setVisibility(View.GONE);
+        });
+
+        binding.gotoMatch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), CompatibilitySecondActivity.class));
+            }
         });
 
         binding.go.setOnClickListener(v -> startActivity(new Intent(getContext(), CompatibilityActivity.class)));

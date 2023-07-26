@@ -1,5 +1,6 @@
 package com.astrocure.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -42,5 +43,7 @@ public class PaymentActivity extends AppCompatActivity {
             dialog.setContentView(netBankingBinding.getRoot());
             dialog.show();
         });
+
+        binding.proceed.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(), PaymentSuccessActivity.class)));
     }
 }
