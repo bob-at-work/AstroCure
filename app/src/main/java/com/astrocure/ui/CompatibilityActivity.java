@@ -32,5 +32,24 @@ public class CompatibilityActivity extends AppCompatActivity {
         binding.firstList.setLayoutManager(manager);
         snapHelper.attachToRecyclerView(binding.firstList);
         binding.firstList.setAdapter(adapter);
+        binding.firstList.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                int firstItemVisible = ((LinearLayoutManager)recyclerView.getLayoutManager()).findFirstVisibleItemPosition();
+                if (firstItemVisible != 1 && firstItemVisible % /*itemList.size()*/12 == 1) {
+                    ((LinearLayoutManager)recyclerView.getLayoutManager()).scrollToPosition(1);
+                }
+                int firstCompletelyItemVisible = ((LinearLayoutManager)recyclerView.getLayoutManager()).findFirstCompletelyVisibleItemPosition();
+                if (firstCompletelyItemVisible == 0)
+                {}
+
+                if (firstItemVisible != RecyclerView.NO_POSITION
+                        && firstItemVisible== recyclerView.getAdapter().getItemCount()%/*itemList.size()*/12 - 1)
+                {
+                    ((LinearLayoutManager)recyclerView.getLayoutManager()).scrollToPositionWithOffset(/*itemList.size()*/12 + 1, 0);
+                }
+            }
+        });
     }
 }

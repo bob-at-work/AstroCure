@@ -35,7 +35,7 @@ public class CompatibilityAdapter extends RecyclerView.Adapter<CompatibilityAdap
 
     @Override
     public int getItemCount() {
-        return 12;
+        return 12*2+1;
     }
 
     public class ZodiacViewHolder extends RecyclerView.ViewHolder {
