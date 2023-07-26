@@ -125,6 +125,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             startActivity(new Intent(getApplicationContext(), FeedbackActivity.class));
         }else if (item.getItemId()==R.id.help_center){
             startActivity(new Intent(getApplicationContext(), HelpCenterActivity.class));
+        } else if (item.getItemId()==R.id.favourites) {
+            startActivity(new Intent(getApplicationContext(),FavouritesActivity.class));
         }
         binding.drawer.closeDrawer(GravityCompat.END);
         return false;

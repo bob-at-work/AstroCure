@@ -48,6 +48,11 @@
             android:icon="@drawable/side_terms_and_condition"
             android:title="Terms &amp; conditions" />
 
+        <item
+            android:id="@+id/favourites"
+            android:icon="@drawable/side_favourite"
+            android:title="Favourites" />
+
     </group>
 
     <group>
