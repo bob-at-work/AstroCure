@@ -79,6 +79,7 @@ public class QuestionAnswerFragment extends Fragment {
             } else {
                 binding.askContainer.setVisibility(View.GONE);
                 binding.send.setVisibility(View.GONE);
+                binding.view2.setVisibility(View.GONE);
                 binding.chatContainer.setVisibility(View.VISIBLE);
             }
         });

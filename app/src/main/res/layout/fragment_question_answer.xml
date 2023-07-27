@@ -68,6 +68,17 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/bg_demo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_percent=".4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias=".8" />
+
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/ask_container"
         android:layout_width="match_parent"
