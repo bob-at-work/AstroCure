@@ -21,5 +21,8 @@
     <string name="full_name">Full Name<sup><font fgcolor='#931D1D'>*</font></sup></string>
     <string name="date_of_birth">Date Of Birth<sup><font fgcolor='#931D1D'>*</font></sup></string>
     <string name="time_of_birth">Time Of Birth<sup><font fgcolor='#931D1D'>*</font></sup></string>
+    <string name="email">Email<sup><font fgcolor='#931D1D'>*</font></sup></string>
     <string name="location">Location<sup><font fgcolor='#931D1D'>*</font></sup></string>
+    <string name="edit_profile"><u><font fgcolor='#CBBA1E'>Edit Profile</font></u></string>
+
 </resources>

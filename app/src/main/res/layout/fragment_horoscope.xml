@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="?attr/actionBarSize"
-            android:background="@drawable/homepage_1_">
+            android:background="@drawable/background_3">
 <!--            android:background="@drawable/homepage_1_"-->
 
             <com.google.android.material.appbar.AppBarLayout

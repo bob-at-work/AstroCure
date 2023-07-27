@@ -1,9 +1,9 @@
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:aapt="http://schemas.android.com/aapt"
-    android:width="375dp"
-    android:height="1416dp"
-    android:viewportWidth="375"
-    android:viewportHeight="1416">
+    android:width="400dp"
+    android:height="1450dp"
+    android:viewportWidth="400"
+    android:viewportHeight="1450">
   <group>
     <clip-path
         android:pathData="M0,0h375v1416h-375z"/>

@@ -58,8 +58,13 @@
             app:strokeWidth="0dp"
             app:layout_constraintTop_toBottomOf="@id/time">
 
+            <VideoView
+                android:id="@+id/video"
+                android:layout_width="match_parent"
+                android:layout_height="266dp"/>
+
             <ImageView
-                android:id="@+id/video_view"
+                android:id="@+id/thumbnail"
                 android:layout_width="match_parent"
                 android:layout_height="266dp"
                 android:src="@drawable/compatibility_bg"
@@ -83,6 +88,16 @@
             android:src="@drawable/ic_video_play"
             app:layout_constraintBottom_toBottomOf="@+id/video_container"
             app:layout_constraintStart_toStartOf="@+id/video_container" />
+
+        <TextView
+            android:id="@+id/duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="07:13"
+            android:textColor="@color/white"
+            android:layout_margin="20dp"
+            app:layout_constraintBottom_toBottomOf="@id/video_container"
+            app:layout_constraintEnd_toEndOf="@id/video_container"/>
 
         <TextView
             android:id="@+id/likes"

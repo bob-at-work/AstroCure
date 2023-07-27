@@ -80,10 +80,6 @@
         android:fillColor="#FFEDB2"
         android:fillType="evenOdd"/>
     <path
-        android:pathData="M94,590m-8,0a8,8 0,1 1,16 0a8,8 0,1 1,-16 0"
-        android:fillColor="#E63DD5"
-        android:fillAlpha="0.38"/>
-    <path
         android:pathData="M289.8,758.9a5.6,5.9 0,1 0,11.2 0a5.6,5.9 0,1 0,-11.2 0z"
         android:strokeAlpha="0.35"
         android:fillColor="#ffffff"
@@ -372,7 +368,7 @@
         android:pathData="M-269,29a331,131 0,1 0,662 0a331,131 0,1 0,-662 0z"
         android:fillAlpha="0.19">
       <aapt:attr name="android:fillColor">
-        <gradient 
+        <gradient
             android:startX="62"
             android:startY="-102"
             android:endX="62"

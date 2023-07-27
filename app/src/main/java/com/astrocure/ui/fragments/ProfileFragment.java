@@ -37,41 +37,6 @@ public class ProfileFragment extends Fragment {
         binding = FragmentProfileBinding.inflate(inflater,container,false);
 
 
-//        binding.animDemo.setAnimation(R.raw.progress_anim);
-        binding.execution.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                binding.animDemo.resumeAnimation();
-            }
-        });
-
-        new Handler().postDelayed(() -> binding.animDemo.pauseAnimation(),750);
-
-        binding.animDemo.addAnimatorListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(@NonNull Animator animation) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(@NonNull Animator animation) {
-
-            }
-
-            @Override
-            public void onAnimationCancel(@NonNull Animator animation) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(@NonNull Animator animation) {
-
-            }
-        });
-
-        ShapeAppearanceModel.Builder shape = ShapeAppearanceModel.builder().setAllCornerSizes(16);
-//        Drawable drawable = MaterialShapeDrawable.
-
         return binding.getRoot();
     }
 }
