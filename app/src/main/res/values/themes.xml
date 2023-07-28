@@ -19,6 +19,9 @@
     <style name="ShapeAppearanceOverlay.App.CornerSize10Percent" parent="">
         <item name="cornerSize">10%</item>
     </style>
+    <style name="ShapeAppearanceOverlay.App.CornerSize5Percent" parent="">
+        <item name="cornerSize">5%</item>
+    </style>
     <style name="ShapeAppearanceOverlay.App.CornerSize20Percent" parent="">
         <item name="cornerSize">20%</item>
     </style>
@@ -29,6 +32,11 @@
     <style name="TabTextSize" parent="TextAppearance.Design.Tab">
         <item name="android:textSize">18sp</item>
         <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="animation">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
     </style>
 
 </resources>

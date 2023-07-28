@@ -18,8 +18,8 @@
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/border"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
             android:background="@color/white"
             app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
             app:layout_constraintTop_toTopOf="parent"
@@ -27,8 +27,8 @@
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/logo"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
             android:background="@drawable/wallet_transaction"
             app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
             app:layout_constraintTop_toTopOf="@id/border"
@@ -43,8 +43,7 @@
             android:text="Paid to Basic Plan"
             android:textColor="@color/white"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
-            android:textSize="18sp"
+            android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@id/border"
             app:layout_constraintTop_toTopOf="@id/border"/>
 
@@ -52,10 +51,12 @@
             android:id="@+id/validity"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Duration Period : 7 July 2023 to 7 August 2023"
+            android:text="Duration Period : 7 September 2023 to 7 August 2023"
             android:textColor="#FFF50C"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toStartOf="@+id/price"
+            android:textSize="11sp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:layout_constraintEnd_toStartOf="@+id/textView13"
             app:layout_constraintStart_toStartOf="@id/plan_name"
             app:layout_constraintTop_toBottomOf="@id/plan_name" />
 
@@ -65,7 +66,6 @@
             android:layout_height="wrap_content"
             android:text="06 July, 02:34PM"
             android:textColor="#87898E"
-            android:textSize="14sp"
             app:layout_constraintStart_toStartOf="@id/plan_name"
             app:layout_constraintTop_toBottomOf="@id/validity" />
 
