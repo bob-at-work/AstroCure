@@ -9,13 +9,18 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.astrocure.databinding.ItemVideoHighlightLayoutBinding;
+import com.astrocure.models.StoryModel;
 import com.bumptech.glide.Glide;
+
+import java.util.List;
 
 public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHolder> {
     Context context;
+    List<StoryModel> storyList;
 
-    public StoryAdapter(Context context) {
+    public StoryAdapter(Context context, List<StoryModel> storyList) {
         this.context = context;
+        this.storyList = storyList;
     }
 
     @NonNull
@@ -27,13 +32,14 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHol
 
     @Override
     public void onBindViewHolder(@NonNull StoryViewHolder holder, int position) {
-        Glide.with(context).load("https://media.istockphoto.com/id/913219882/photo/financial-graph-on-technology-abstract-background.jpg?s=612x612&w=0&k=20&c=0P0vbPiPsHOH_uzZEzL6CmpZwIDIArtNj_PsQVwxkEM=")
+        Glide.with(context).load(storyList.get(position).getImage())
                 .into(holder.binding.logo);
+        holder.binding.storyCatName.setText(storyList.get(position).getName());
     }
 
     @Override
     public int getItemCount() {
-        return 6;
+        return storyList.size();
     }
 
     public class StoryViewHolder extends RecyclerView.ViewHolder {

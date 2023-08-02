@@ -8,11 +8,13 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.astrocure.R;
 import com.astrocure.adapters.StoryAdapter;
 import com.astrocure.adapters.VideoCategoryAdapter;
 import com.astrocure.adapters.VideoContentAdapter;
 import com.astrocure.databinding.DialogVideoFilterBinding;
 import com.astrocure.databinding.FragmentVideosBinding;
+import com.astrocure.models.StoryModel;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import java.util.ArrayList;
@@ -24,6 +26,7 @@ public class VideosFragment extends Fragment {
     StoryAdapter adapter;
     VideoContentAdapter contentAdapter;
     List<String> category;
+    List<StoryModel> storyList;
 
     public VideosFragment() {
         // Required empty public constructor
@@ -39,7 +42,13 @@ public class VideosFragment extends Fragment {
                              Bundle savedInstanceState) {
         binding = FragmentVideosBinding.inflate(inflater,container,false);
 
-        adapter = new StoryAdapter(getContext());
+        storyList = new ArrayList<>();
+        storyList.add(new StoryModel(R.drawable.video_gold,"Commodities"));
+        storyList.add(new StoryModel(R.drawable.video_sports,"Sports"));
+        storyList.add(new StoryModel(R.drawable.video_stock,"Stock"));
+        storyList.add(new StoryModel(R.drawable.video_bolly,"Bollywood"));
+        storyList.add(new StoryModel(R.drawable.video_bolly,"Miscellaneous"));
+        adapter = new StoryAdapter(getContext(),storyList);
         binding.storyList.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
         binding.storyList.setAdapter(adapter);
 
