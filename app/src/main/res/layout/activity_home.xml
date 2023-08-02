@@ -7,7 +7,7 @@
     android:id="@+id/drawer"
     tools:context=".ui.HomeActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <!--<androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -24,7 +24,49 @@
             android:layout_height="?attr/actionBarSize"
             app:menu="@menu/bottom_nav_menu"
             app:layout_constraintBottom_toBottomOf="parent"/>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/main_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/bottom_nav"/>
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottomAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:contentInsetStart="0dp"
+            android:layout_gravity="bottom"
+            android:backgroundTint="#F2F8F8F8"
+            style="@style/Widget.MaterialComponents.BottomAppBar.Colored">
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottomNav"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                app:menu="@menu/bottom_nav_menu"
+                app:itemTextColor="@color/bottom_nav_text_color"
+                android:background="@android:color/transparent"
+                app:itemActiveIndicatorStyle="@style/App.BottomNav.Indicator"/>
+
+        </com.google.android.material.bottomappbar.BottomAppBar>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/videos_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bottom_nav_outline_video"
+            app:layout_anchor="@id/bottomAppBar"
+            android:backgroundTint="#F2F8F8F8"
+            app:shapeAppearance="?attr/shapeAppearance"/>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 
     <com.google.android.material.navigation.NavigationView

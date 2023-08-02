@@ -15,7 +15,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="?attr/actionBarSize"
+            android:paddingBottom="104dp"
             android:background="@drawable/background_3">
 <!--            android:background="@drawable/homepage_1_"-->
 
@@ -159,7 +159,8 @@
         android:id="@+id/see_new"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="70dp"
         app:fabSize="mini"
         app:backgroundTint="#7015A8"
         android:src="@drawable/baseline_add"

@@ -25,16 +25,16 @@ public class CompatibilityAdapter extends RecyclerView.Adapter {
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        if (viewType == VIEW_TYPE_ITEM) {
+//        if (viewType == VIEW_TYPE_ITEM) {
             ItemCompatibilityFirstBinding binding = ItemCompatibilityFirstBinding.inflate(LayoutInflater.from(context), parent, false);
             return new ZodiacViewHolder(binding);
-        }else {
-            ItemCompatibilitySecondBinding binding = ItemCompatibilitySecondBinding.inflate(LayoutInflater.from(context), parent, false);
-            RecyclerView.LayoutParams layoutParams = (RecyclerView.LayoutParams) binding.getRoot().getLayoutParams();
-            layoutParams.width = paddingWidthDate;
-            binding.getRoot().setLayoutParams(layoutParams);
-            return new ZodiacTextViewHolder(binding);
-        }
+//        }else {
+//            ItemCompatibilitySecondBinding binding = ItemCompatibilitySecondBinding.inflate(LayoutInflater.from(context), parent, false);
+//            RecyclerView.LayoutParams layoutParams = (RecyclerView.LayoutParams) binding.getRoot().getLayoutParams();
+//            layoutParams.width = paddingWidthDate;
+//            binding.getRoot().setLayoutParams(layoutParams);
+//            return new ZodiacTextViewHolder(binding);
+//        }
     }
 
     @Override

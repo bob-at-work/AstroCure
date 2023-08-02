@@ -30,7 +30,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="75dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/top_container"
@@ -121,6 +122,7 @@
                 app:layout_constraintStart_toStartOf="@id/top_container"/>
 
             <TextView
+                android:id="@+id/edit_profile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -149,6 +151,8 @@
                 android:text="Shakespeare"
                 android:textColor="#80838E"
                 android:enabled="false"
+                android:inputType="textPersonName"
+                android:imeOptions="actionNext"
                 android:background="@drawable/text_profile_border_white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -174,6 +178,8 @@
                 android:background="@drawable/text_profile_border_white"
                 android:text="12/12/1996"
                 android:textColor="#80838E"
+                android:inputType="date"
+                android:imeOptions="actionNext"
                 android:enabled="false"
                 app:layout_constraintEnd_toStartOf="@+id/time_of_birth"
                 app:layout_constraintStart_toStartOf="@+id/full_name"
@@ -198,6 +204,8 @@
                 android:background="@drawable/text_profile_border_white"
                 android:text="00:00 AM"
                 android:textColor="#80838E"
+                android:inputType="time"
+                android:imeOptions="actionNext"
                 android:enabled="false"
                 app:layout_constraintStart_toEndOf="@id/date_of_birth"
                 app:layout_constraintEnd_toEndOf="@+id/full_name"
@@ -221,6 +229,8 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginTop="5dp"
                 android:text="Delhi"
+                android:inputType="textCapCharacters"
+                android:imeOptions="actionNext"
                 android:textColor="#80838E"
                 android:enabled="false"
                 android:background="@drawable/text_profile_border_white"
@@ -247,6 +257,8 @@
                 android:layout_marginTop="5dp"
                 android:text="shakespeare@gmail.com"
                 android:textColor="#80838E"
+                android:inputType="textEmailAddress"
+                android:imeOptions="actionNext"
                 android:enabled="false"
                 android:background="@drawable/text_profile_border_white"
                 app:layout_constraintStart_toStartOf="parent"
@@ -272,6 +284,8 @@
                 android:layout_marginTop="5dp"
                 android:text="Hindi"
                 android:textColor="#80838E"
+                android:inputType="textCapCharacters"
+                android:imeOptions="actionDone"
                 android:enabled="false"
                 android:drawableEnd="@drawable/ccp_ic_arrow_drop_down"
                 android:background="@drawable/text_profile_border_white"
@@ -280,7 +294,7 @@
                 app:layout_constraintTop_toBottomOf="@id/label_language"/>
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/send"
+                android:id="@+id/save_profile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="25dp"

@@ -53,8 +53,6 @@ public class VideosFragment extends Fragment {
         category.add("Stock");
         category.add("Bollywood");
         category.add("Miscellaneous");
-        category.add("Stock");
-        category.add("Bollywood");
 
         binding.filter.setOnClickListener(v -> {
             DialogVideoFilterBinding cardBinding = DialogVideoFilterBinding.inflate(getLayoutInflater());

@@ -1,5 +1,7 @@
 package com.astrocure.ui.games;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -9,6 +11,7 @@ import android.os.Bundle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.view.View;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -49,6 +52,14 @@ public class FortuneCookieActivity extends AppCompatActivity implements SensorEv
             binding.output.setVisibility(View.GONE);
             binding.askAgain.setVisibility(View.GONE);
             binding.outputImage.setVisibility(View.GONE);
+        });
+
+        binding.animation.addAnimatorListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+//                binding.animation.setScaleType(ImageView.ScaleType.CENTER);
+            }
         });
     }
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/entertainment_bg"
+    android:background="@drawable/background_2"
     tools:context=".ui.games.FortuneCookieActivity">
 
     <ImageView
@@ -50,6 +50,7 @@
         android:id="@+id/image"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:visibility="gone"
         android:src="@drawable/fortune_cookie"
         app:layout_constraintWidth_percent=".6"
         app:layout_constraintHeight_percent=".5"
@@ -70,6 +71,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title" />
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animation"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:layout_constraintWidth_percent=".6"
+        app:layout_constraintHeight_percent=".5"
+        app:lottie_rawRes="@raw/fortune_cookie_anim"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
     <TextView
         android:id="@+id/output"
         android:layout_width="match_parent"
@@ -81,6 +96,17 @@
         android:visibility="gone"
         app:layout_constraintTop_toBottomOf="@id/output_image"
         app:layout_constraintBottom_toTopOf="@id/ask_again"/>
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/bg_demo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_percent=".4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias=".8" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/ask_again"

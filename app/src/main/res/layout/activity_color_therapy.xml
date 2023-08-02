@@ -44,7 +44,6 @@
         android:layout_height="0dp"
         android:layout_margin="20dp"
         android:src="@drawable/red"
-        android:background="@color/btn_inactive"
         app:layout_constraintBottom_toTopOf="@id/brown"
         app:layout_constraintTop_toBottomOf="@id/label"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,8 +75,8 @@
         android:id="@+id/brown"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_margin="20dp"
         android:src="@drawable/brown"
+        android:layout_margin="20dp"
         app:layout_constraintBottom_toTopOf="@id/gray"
         app:layout_constraintTop_toBottomOf="@id/red"
         app:layout_constraintStart_toStartOf="parent"
@@ -110,7 +109,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="20dp"
-        android:src="@drawable/grey"
+        android:src="@drawable/color_therapy_grey"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/brown"
         app:layout_constraintStart_toStartOf="parent"
@@ -132,9 +131,10 @@
         android:layout_height="0dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:src="@drawable/green"
+        android:src="@drawable/color_therapy_green"
         app:layout_constraintBottom_toBottomOf="@+id/gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/black"
         app:layout_constraintTop_toTopOf="@id/gray" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

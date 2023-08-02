@@ -53,6 +53,7 @@
             android:exported="false" />
         <activity
             android:name=".ui.WalletActivity"
+            android:windowSoftInputMode="adjustPan"
             android:exported="false" />
         <activity
             android:name=".ui.CompatibilityActivity"
@@ -71,7 +72,7 @@
             android:exported="false" />
         <activity
             android:name=".ui.games.ColorTherapyActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".ui.games.AstroGenieActivity"
             android:exported="false" />
@@ -83,9 +84,6 @@
             android:exported="false" />
         <activity
             android:name=".ui.games.FortuneCookieActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.EntertainmentActivity"
             android:exported="false" />
         <activity
             android:name=".ui.HomeActivity"

@@ -77,6 +77,7 @@
         android:inputType="numberDecimal"
         android:textColor="@color/black"
         android:textColorHint="#757070"
+        android:imeOptions="actionDone"
         app:layout_constraintTop_toBottomOf="@id/text_wallet"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>

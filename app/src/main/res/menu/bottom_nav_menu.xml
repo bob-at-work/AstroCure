@@ -5,27 +5,21 @@
     <item
         android:id="@+id/horoscope"
         android:title="Horoscope"
-        android:icon="@drawable/ic_hamburger"
-        android:iconTint="@color/white"/>
+        android:icon="@drawable/selector_horoscope"/>
     <item
         android:id="@+id/feeds"
         android:title="Feeds"
-        android:icon="@drawable/ic_hamburger"
-        android:iconTint="@color/white"/>
+        android:icon="@drawable/selector_feed"/>
     <item
         android:id="@+id/videos"
-        android:title="Videos"
-        android:icon="@drawable/ic_hamburger"
-        android:iconTint="@color/white"/>
+        android:title="" />
     <item
         android:id="@+id/entertainment"
         android:title="Games"
-        android:icon="@drawable/ic_hamburger"
-        android:iconTint="@color/white"/>
+        android:icon="@drawable/selector_games"/>
 
     <item
         android:id="@+id/profile"
         android:title="Profile"
-        android:icon="@drawable/ic_hamburger"
-        android:iconTint="@color/white"/>
+        android:icon="@drawable/selector_profile"/>
 </menu>

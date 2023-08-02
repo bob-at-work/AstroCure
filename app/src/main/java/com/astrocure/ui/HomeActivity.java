@@ -2,43 +2,35 @@ package com.astrocure.ui;
 
 import static com.astrocure.utils.AppConstants.OPEN_DRAWER;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.GravityCompat;
-import androidx.core.view.MenuCompat;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
-import android.widget.Toolbar;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.astrocure.R;
 import com.astrocure.adapters.HomeZodiacAdapter;
-import com.astrocure.adapters.ZodiacViewpagerAdapter;
 import com.astrocure.callback.SideNavigationCallback;
 import com.astrocure.databinding.ActivityHomeBinding;
+import com.astrocure.models.HomeZodiacModel;
 import com.astrocure.ui.fragments.EntertainmentFragment;
 import com.astrocure.ui.fragments.HomeFeedFragment;
 import com.astrocure.ui.fragments.HoroscopeFragment;
 import com.astrocure.ui.fragments.ProfileFragment;
-import com.astrocure.ui.fragments.TodayFragment;
-import com.astrocure.models.HomeZodiacModel;
 import com.astrocure.ui.fragments.VideosFragment;
 import com.google.android.material.navigation.NavigationView;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, SideNavigationCallback {
@@ -49,6 +41,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
     boolean doubleBackToExitPressedOnce = false;
+    boolean isVideoFabClicked = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,63 +49,81 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.sideNav.getMenu().addSubMenu(R.id.center,R.id.help_center,0,"");
+        binding.sideNav.getMenu().addSubMenu(R.id.center, R.id.help_center, 0, "");
 
         fragment = new HoroscopeFragment();
         fragmentManager = getSupportFragmentManager();
         fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(binding.mainContainer.getId(),fragment);
+        fragmentTransaction.replace(binding.mainContainer.getId(), fragment);
         fragmentTransaction.commit();
 
+        binding.bottomNav.setItemIconTintList(null);
+        binding.videosFab.setImageTintList(null);
         binding.bottomNav.setOnNavigationItemSelectedListener(this::onNavigationItemSelected);
         binding.sideNav.setNavigationItemSelectedListener(this::onNavigationItemSelected);
         binding.sideNav.getHeaderView(0).findViewById(R.id.close_drawer).setOnClickListener(v -> binding.drawer.closeDrawer(GravityCompat.END));
 
+        binding.videosFab.setOnClickListener(v -> {
+            if (!isVideoFabClicked){
+                isVideoFabClicked = true;
+                binding.videosFab.setImageResource(R.drawable.bottom_nav_video);
+                binding.bottomNav.setSelectedItemId(R.id.videos);
+            }
+        });
     }
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId()==R.id.horoscope){
+        if (item.getItemId() == R.id.horoscope) {
+            isVideoFabClicked = false;
+            binding.videosFab.setImageResource(R.drawable.bottom_nav_outline_video);
             fragment = new HoroscopeFragment();
             fragmentManager = getSupportFragmentManager();
             fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(binding.mainContainer.getId(),fragment);
+            fragmentTransaction.replace(binding.mainContainer.getId(), fragment);
             fragmentTransaction.commit();
             return true;
         } else if (item.getItemId() == R.id.feeds) {
+            isVideoFabClicked = false;
+            binding.videosFab.setImageResource(R.drawable.bottom_nav_outline_video);
             fragment = new HomeFeedFragment();
             fragmentManager = getSupportFragmentManager();
             fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(binding.mainContainer.getId(),fragment);
+            fragmentTransaction.replace(binding.mainContainer.getId(), fragment);
             fragmentTransaction.commit();
             return true;
-        }else if (item.getItemId() == R.id.videos){
+        } else if (item.getItemId() == R.id.videos) {
             fragment = new VideosFragment();
             fragmentManager = getSupportFragmentManager();
             fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(binding.mainContainer.getId(),fragment);
+            fragmentTransaction.replace(binding.mainContainer.getId(), fragment);
             fragmentTransaction.commit();
             return true;
-        }else if (item.getItemId()==R.id.entertainment){
+        } else if (item.getItemId() == R.id.entertainment) {
+            isVideoFabClicked = false;
+            binding.videosFab.setImageResource(R.drawable.bottom_nav_outline_video);
             fragment = new EntertainmentFragment();
             fragmentManager = getSupportFragmentManager();
             fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(binding.mainContainer.getId(),fragment);
+            fragmentTransaction.replace(binding.mainContainer.getId(), fragment);
             fragmentTransaction.commit();
             return true;
         } else if (item.getItemId() == R.id.profile) {
+            isVideoFabClicked = false;
+            binding.videosFab.setImageResource(R.drawable.bottom_nav_outline_video);
             fragment = new ProfileFragment();
             fragmentManager = getSupportFragmentManager();
             fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(binding.mainContainer.getId(),fragment);
+            fragmentTransaction.replace(binding.mainContainer.getId(), fragment);
             fragmentTransaction.commit();
             return true;
         } else if (item.getItemId() == R.id.logout) {
             startActivity(new Intent(getApplicationContext(), AuthActivity.class));
         } else if (item.getItemId() == R.id.transaction_history) {
             startActivity(new Intent(getApplicationContext(), TransactionHistoryActivity.class));
-        }else if (item.getItemId() == R.id.wallet_nav){
-            startActivity(new Intent(getApplicationContext(),WalletActivity.class));
-        }else if (item.getItemId() == R.id.rate_the_app){
+        } else if (item.getItemId() == R.id.wallet_nav) {
+            startActivity(new Intent(getApplicationContext(), WalletActivity.class));
+        } else if (item.getItemId() == R.id.rate_the_app) {
             Uri uri = Uri.parse("market://details?id=" + getPackageName());
             Intent myAppLinkToMarket = new Intent(Intent.ACTION_VIEW, uri);
             try {
@@ -123,10 +134,10 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             }
         } else if (item.getItemId() == R.id.feedback) {
             startActivity(new Intent(getApplicationContext(), FeedbackActivity.class));
-        }else if (item.getItemId()==R.id.help_center){
+        } else if (item.getItemId() == R.id.help_center) {
             startActivity(new Intent(getApplicationContext(), HelpCenterActivity.class));
-        } else if (item.getItemId()==R.id.favourites) {
-            startActivity(new Intent(getApplicationContext(),FavouritesActivity.class));
+        } else if (item.getItemId() == R.id.favourites) {
+            startActivity(new Intent(getApplicationContext(), FavouritesActivity.class));
         }
         binding.drawer.closeDrawer(GravityCompat.END);
         return false;
@@ -134,7 +145,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public void callBackAction(String action) {
-        switch (action){
+        switch (action) {
             case OPEN_DRAWER:
                 binding.drawer.openDrawer(GravityCompat.END);
                 break;

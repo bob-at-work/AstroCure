@@ -1,5 +1,7 @@
 package com.astrocure.ui.games;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Shader;
@@ -9,12 +11,16 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.text.TextPaint;
 import android.view.View;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.transition.AutoTransition;
+import androidx.transition.TransitionManager;
 
 import com.astrocure.R;
 import com.astrocure.databinding.ActivityBookOfLoveBinding;
@@ -44,18 +50,43 @@ public class BookOfLoveActivity extends AppCompatActivity{
         binding.title.getPaint().setShader(textShader);
 
         binding.mainImage.setOnClickListener(v -> {
-            binding.mainImage.setImageDrawable(getDrawable(R.drawable.book_of_love_note));
-            binding.output.setText(randomString());
-            binding.output.setVisibility(View.VISIBLE);
-            binding.askAgain.setVisibility(View.VISIBLE);
-            binding.textView6.setVisibility(View.GONE);
+            if (binding.askAgain.getVisibility() == View.GONE){
+                binding.animationView.setMinAndMaxProgress(0.0f,0.67f);
+                binding.animationView.setVisibility(View.VISIBLE);
+                binding.mainImage.animate().alpha(0.0f);
+                binding.animationView.playAnimation();
+                binding.output.setText(randomString());
+                binding.askAgain.setVisibility(View.VISIBLE);
+                binding.textView6.setVisibility(View.GONE);
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        binding.output.setVisibility(View.VISIBLE);
+                    }
+                },1000);
+            }
         });
         binding.askAgain.setOnClickListener(v -> {
-            binding.mainImage.setImageDrawable(getDrawable(R.drawable.book_of_love));
-            binding.output.setVisibility(View.GONE);
-            binding.askAgain.setVisibility(View.GONE);
-            binding.textView6.setVisibility(View.VISIBLE);
+            binding.animationView.setMinAndMaxProgress(0.67f,1.0f);
+            binding.animationView.playAnimation();
+
+            binding.animationView.addAnimatorListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    super.onAnimationEnd(animation);
+                    binding.animationView.setVisibility(View.GONE);
+                    binding.output.setVisibility(View.GONE);
+                    binding.askAgain.setVisibility(View.GONE);
+                    binding.textView6.setVisibility(View.VISIBLE);
+                    binding.mainImage.animate().alpha(1.0f);
+                    binding.mainImage.setVisibility(View.VISIBLE);
+                    binding.mainImage.setImageDrawable(getDrawable(R.drawable.book_of_love));
+                    binding.animationView.removeAllAnimatorListeners();
+                }
+            });
         });
+
+
     }
 
     public String randomString(){

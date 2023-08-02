@@ -13,9 +13,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.astrocure.R;
 import com.astrocure.databinding.FragmentProfileBinding;
+import com.bumptech.glide.Glide;
 import com.google.android.material.shape.MaterialShapeDrawable;
 import com.google.android.material.shape.ShapeAppearanceModel;
 
@@ -36,6 +38,25 @@ public class ProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         binding = FragmentProfileBinding.inflate(inflater,container,false);
 
+        Glide.with(getContext()).load("https://images.pexels.com/photos/227294/pexels-photo-227294.jpeg?auto=compress&cs=tinysrgb&w=600")
+                .into(binding.profileImg);
+
+        binding.editProfile.setOnClickListener(v -> {
+            binding.fullName.setEnabled(true);
+            binding.dateOfBirth.setEnabled(true);
+            binding.timeOfBirth.setEnabled(true);
+            binding.location.setEnabled(true);
+            binding.emailAddress.setEnabled(true);
+            binding.language.setEnabled(true);
+            binding.fullName.requestFocus();
+        });
+        
+        binding.saveProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(), "Profile Updated Successfully", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         return binding.getRoot();
     }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="450dp"
     android:background="@drawable/sun_center_gradient_bg">
@@ -8,10 +9,11 @@
     <ImageView
         android:id="@+id/image_bg"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:padding="30dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/ic_sun" />
+        android:src="@drawable/ic_sun"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/shapeableImageView"
@@ -133,10 +135,10 @@
         android:padding="2dp"
         app:layout_constraintBottom_toBottomOf="@+id/shapeableImageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias=".59"
+        app:layout_constraintHorizontal_bias=".6"
         app:layout_constraintStart_toEndOf="@+id/shapeableImageView"
         app:layout_constraintTop_toTopOf="@+id/shapeableImageView"
-        app:layout_constraintVertical_bias=".27"
+        app:layout_constraintVertical_bias="0.45"
         app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent" />
 
     <TextView
@@ -169,12 +171,12 @@
         android:layout_height="75dp"
         android:background="#06123e"
         android:padding="2dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/image_bg"
+        app:layout_constraintEnd_toEndOf="@+id/shapeableImageView2_bg"
         app:layout_constraintHorizontal_bias=".34"
-        app:layout_constraintStart_toEndOf="@+id/shapeableImageView"
-        app:layout_constraintTop_toBottomOf="@+id/mood"
-        app:layout_constraintVertical_bias=".17"
+        app:layout_constraintStart_toStartOf="@+id/shapeableImageView2_bg"
+        app:layout_constraintTop_toTopOf="@+id/mood"
+        app:layout_constraintVertical_bias=".45"
         app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent" />
 
     <TextView
@@ -208,11 +210,9 @@
         android:background="#06123e"
         android:padding="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/mood"
+        app:layout_constraintEnd_toEndOf="@+id/shapeableImageView1_bg"
         app:layout_constraintTop_toBottomOf="@+id/shapeableImageView"
-        app:layout_constraintVertical_bias="0.477"
+        app:layout_constraintVertical_bias=".64"
         app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent" />
 
     <TextView

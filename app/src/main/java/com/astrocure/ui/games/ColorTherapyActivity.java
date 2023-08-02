@@ -7,15 +7,18 @@ import android.graphics.Shader;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.TextPaint;
+import android.util.Log;
 import android.view.ViewGroup;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.ContextCompat;
 
 import com.astrocure.R;
 import com.astrocure.databinding.ActivityColorTherapyBinding;
 import com.astrocure.databinding.DialogColorTherapyBinding;
 import com.astrocure.utils.AppConstantMethods;
+import com.bumptech.glide.Glide;
 
 public class ColorTherapyActivity extends AppCompatActivity {
     ActivityColorTherapyBinding binding;
@@ -39,7 +42,6 @@ public class ColorTherapyActivity extends AppCompatActivity {
 //                        Color.parseColor("#8446CC"),
                 }, null, Shader.TileMode.MIRROR);
         binding.title.getPaint().setShader(textShader);
-
 
         binding.red.setOnClickListener(v -> {
             setFlipCard(R.drawable.red,R.string.dummy_1);
