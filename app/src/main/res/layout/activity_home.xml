@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             app:contentInsetStart="0dp"
             android:layout_gravity="bottom"
-            android:backgroundTint="#F2F8F8F8"
+            android:backgroundTint="#E67015A8"
             style="@style/Widget.MaterialComponents.BottomAppBar.Colored">
 
             <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -63,7 +63,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/bottom_nav_outline_video"
             app:layout_anchor="@id/bottomAppBar"
-            android:backgroundTint="#F2F8F8F8"
+            android:backgroundTint="#E67015A8"
             app:shapeAppearance="?attr/shapeAppearance"/>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>

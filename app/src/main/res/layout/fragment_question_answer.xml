@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="?attr/actionBarSize"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragments.QuestionAnswerFragment">
 
@@ -116,6 +117,8 @@
                 android:gravity="start"
                 android:maxLength="470"
                 android:textStyle="bold"
+                android:imeOptions="actionDone"
+                android:inputType="text"
                 android:background="@android:color/transparent"
                 app:layout_constraintStart_toEndOf="@id/image"
                 app:layout_constraintTop_toTopOf="parent"
