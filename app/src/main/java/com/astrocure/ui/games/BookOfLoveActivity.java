@@ -16,6 +16,7 @@ import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.text.TextPaint;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -69,13 +70,12 @@ public class BookOfLoveActivity extends AppCompatActivity{
         binding.askAgain.setOnClickListener(v -> {
             binding.animationView.setMinAndMaxProgress(0.67f,1.0f);
             binding.animationView.playAnimation();
-
+            binding.output.setVisibility(View.GONE);
             binding.animationView.addAnimatorListener(new AnimatorListenerAdapter() {
                 @Override
                 public void onAnimationEnd(Animator animation) {
                     super.onAnimationEnd(animation);
                     binding.animationView.setVisibility(View.GONE);
-                    binding.output.setVisibility(View.GONE);
                     binding.askAgain.setVisibility(View.GONE);
                     binding.textView6.setVisibility(View.VISIBLE);
                     binding.mainImage.animate().alpha(1.0f);

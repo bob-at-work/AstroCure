@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:padding="5dp"
-        android:src="@drawable/ic_back_circle"
+        android:src="@drawable/back_app"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -21,15 +21,14 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="10dp"
+        android:layout_marginTop="5dp"
         android:text="@string/fortune_cookie"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintVertical_bias=".05"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="30sp"
+        android:fontFamily="@font/poppins_semibold"
+        app:layout_constraintBottom_toBottomOf="@+id/back"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/back"/>
 
     <TextView
         android:id="@+id/textView4"
@@ -39,45 +38,18 @@
         android:gravity="center"
         android:text="Shake your phone a few times to open your cookie"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:textStyle="bold"
+        android:fontFamily="@font/poppins_semibold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title"
-        app:layout_constraintWidth_percent=".7" />
-
-    <ImageView
-        android:id="@+id/image"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:visibility="gone"
-        android:src="@drawable/fortune_cookie"
-        app:layout_constraintWidth_percent=".6"
-        app:layout_constraintHeight_percent=".5"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/output_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/fortune_cookie_broken"
-        android:visibility="gone"
-        app:layout_constraintVertical_bias=".3"
-        app:layout_constraintBottom_toTopOf="@id/ask_again"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title" />
+        app:layout_constraintWidth_percent=".8" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animation"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
-        app:layout_constraintWidth_percent=".6"
         app:layout_constraintHeight_percent=".5"
         app:lottie_rawRes="@raw/fortune_cookie_anim"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -90,12 +62,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:gravity="center"
         android:padding="20dp"
         android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@id/output_image"
-        app:layout_constraintBottom_toTopOf="@id/ask_again"/>
+        android:fontFamily="@font/poppins_semibold"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintTop_toTopOf="@id/animation"
+        app:layout_constraintBottom_toBottomOf="@id/animation"/>
 
     <View
         android:id="@+id/view2"

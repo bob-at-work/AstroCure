@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/crystal_ball_bg"
+    android:background="@drawable/crystall_ball_bg"
     tools:context=".ui.games.CrystalBallActivity">
 
     <ImageView
         android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_back_circle"
+        android:src="@drawable/back_app"
         android:padding="5dp"
         android:layout_margin="20dp"
         app:layout_constraintTop_toTopOf="parent"
@@ -21,15 +21,16 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:text="CRYSTAL BALL"
-        android:textStyle="bold"
-        android:textSize="22sp"
         android:textColor="@color/white"
-        app:layout_constraintVertical_bias=".05"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/poppins_semibold"
+        app:layout_constraintBottom_toBottomOf="@+id/back"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/back" />
 
     <TextView
         android:id="@+id/textView5"
@@ -41,6 +42,7 @@
         android:text="Unlock the Mysteries Within Crystal Ball\nand Reveal Your Fate,\nTap the Crystal and Get your Answer !"
         android:textColor="@color/white"
         android:textSize="22sp"
+        android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/title" />
 
     <ImageView
@@ -62,8 +64,10 @@
         android:gravity="center"
         android:text="Unlock the Mysteries Within Crystal Ball\nand Reveal Your Fate,\nTap the Crystal and Get your Answer !"
         android:textColor="@color/white"
-        android:textSize="22sp"
+        android:textSize="26sp"
+        android:fontFamily="@font/quintessential"
         android:visibility="gone"
+        android:textStyle="bold"
         app:layout_constraintWidth_percent=".6"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -71,19 +75,32 @@
         app:layout_constraintTop_toBottomOf="@id/title" />
 
 
-    <com.google.android.material.button.MaterialButton
+    <soup.neumorphism.NeumorphCardView
         android:id="@+id/ask_again"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Try Again"
-        android:textColor="@color/black"
-        android:textAllCaps="false"
         android:visibility="gone"
-        android:backgroundTint="#F6FB0C"
+        app:neumorph_shadowColorLight="#33FFFFFF"
+        app:neumorph_shadowColorDark="#80FFFFFF"
         app:layout_constraintVertical_bias=".95"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title" />
+        app:layout_constraintTop_toBottomOf="@+id/title">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Try Again"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:paddingStart="30dp"
+            android:paddingEnd="30dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:background="#F6FB0C"/>
+
+    </soup.neumorphism.NeumorphCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

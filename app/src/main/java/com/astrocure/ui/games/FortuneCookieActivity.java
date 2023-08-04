@@ -11,10 +11,10 @@ import android.os.Bundle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.view.View;
-import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.astrocure.R;
 import com.astrocure.databinding.ActivityFortuneCookieBinding;
 
 import java.util.Random;
@@ -46,21 +46,22 @@ public class FortuneCookieActivity extends AppCompatActivity implements SensorEv
         binding.back.setOnClickListener(v -> onBackPressed());
 
         binding.askAgain.setOnClickListener(v -> {
-            isShaken = false;
-            binding.image.setVisibility(View.VISIBLE);
-            binding.textView4.setVisibility(View.VISIBLE);
             binding.output.setVisibility(View.GONE);
             binding.askAgain.setVisibility(View.GONE);
-            binding.outputImage.setVisibility(View.GONE);
+            binding.animation.reverseAnimationSpeed();
+            binding.animation.playAnimation();
+            binding.animation.addAnimatorListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    super.onAnimationEnd(animation);
+                    isShaken = false;
+                    binding.animation.reverseAnimationSpeed();
+                    binding.textView4.setVisibility(View.VISIBLE);
+                    binding.animation.removeAllAnimatorListeners();
+                }
+            });
         });
 
-        binding.animation.addAnimatorListener(new AnimatorListenerAdapter() {
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                super.onAnimationEnd(animation);
-//                binding.animation.setScaleType(ImageView.ScaleType.CENTER);
-            }
-        });
     }
 
     public String randomString() {
@@ -109,13 +110,18 @@ public class FortuneCookieActivity extends AppCompatActivity implements SensorEv
                 if (acceleration > SHAKE_THRESHOLD) {
                     if (!isShaken) {
                         mLastShakeTime = curTime;
-                        binding.outputImage.setVisibility(View.VISIBLE);
-                        binding.output.setVisibility(View.VISIBLE);
                         binding.textView4.setVisibility(View.GONE);
                         binding.askAgain.setVisibility(View.VISIBLE);
-                        binding.output.setText(randomString());
-                        binding.image.setVisibility(View.GONE);
-//                        binding.imageView.setImageDrawable(getDrawable(R.drawable.open_fortune_cookie));
+                        binding.animation.playAnimation();
+                        binding.animation.addAnimatorListener(new AnimatorListenerAdapter() {
+                            @Override
+                            public void onAnimationEnd(Animator animation) {
+                                super.onAnimationEnd(animation);
+                                binding.output.setVisibility(View.VISIBLE);
+                                binding.output.setText(randomString());
+                                binding.animation.removeAllAnimatorListeners();
+                            }
+                        });
                         isShaken = true;
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                             vibrator.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
