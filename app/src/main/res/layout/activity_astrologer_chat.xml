@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:background="#38055E"
         app:menu="@menu/astrologer_chat_menu"
-        app:navigationIcon="@drawable/ic_back_circle"
+        app:navigationIcon="@drawable/back_app"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
