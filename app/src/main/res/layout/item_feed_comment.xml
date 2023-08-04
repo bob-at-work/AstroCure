@@ -2,6 +2,13 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    android:paddingBottom="10dp"
+    android:background="@drawable/border_comment_bg"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <com.google.android.material.imageview.ShapeableImageView
@@ -10,6 +17,7 @@
         android:layout_height="50dp"
         android:layout_margin="20dp"
         android:src="@drawable/genie"
+        android:background="@color/white"
         app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
@@ -29,17 +37,18 @@
         android:id="@+id/time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:textColor="#9A99A2"
+        android:layout_marginStart="20dp"
         android:text="6 days"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:textColor="#9A99A2"
+        app:layout_constraintBottom_toBottomOf="@+id/username"
+        app:layout_constraintStart_toEndOf="@+id/username"
+        app:layout_constraintTop_toTopOf="@id/username" />
 
     <TextView
         android:id="@+id/comment"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
         android:textColor="#FDFDFD"
         android:text="Это комментарий номер 1. Я первый. Класс! Я написал комментарий."
@@ -47,12 +56,69 @@
         app:layout_constraintTop_toBottomOf="@id/username"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height=".5dp"
-        android:layout_marginTop="20dp"
-        android:background="@color/white"
-        app:layout_constraintTop_toBottomOf="@id/comment"
+    <ImageView
+        android:id="@+id/more_option"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/more_horiz_red"
+        app:layout_constraintBottom_toTopOf="@+id/comment"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/reply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="Reply"
+        android:textColor="@color/white"
+        android:drawableStart="@drawable/ic_reply"
+        app:layout_constraintStart_toStartOf="@id/comment"
+        app:layout_constraintTop_toTopOf="@+id/like"/>
+
+    <TextView
+        android:id="@+id/comment_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5sp"
+        android:text="Comments"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@id/like"
+        app:layout_constraintStart_toEndOf="@id/reply"
+        app:layout_constraintTop_toTopOf="@id/like" />
+
+    <TextView
+        android:id="@+id/like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_marginTop="10dp"
+        android:text="8098"
+        android:drawablePadding="5dp"
+        android:textColor="@color/white"
+        android:drawableLeft="@drawable/ic_heart_like"
+        app:layout_constraintEnd_toEndOf="@id/comment"
+        app:layout_constraintTop_toBottomOf="@+id/comment" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/reply_list"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        tools:listitem="@layout/item_feed_reply"
+        app:layout_constraintEnd_toEndOf="@id/like"
+        app:layout_constraintStart_toEndOf="@id/logo"
+        app:layout_constraintTop_toBottomOf="@id/reply" />
+
+    <RelativeLayout
+        android:id="@+id/thread_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@id/reply_list"
+        app:layout_constraintTop_toBottomOf="@id/logo"
+        app:layout_constraintStart_toStartOf="@id/logo"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

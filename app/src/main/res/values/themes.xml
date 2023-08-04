@@ -57,4 +57,7 @@
 <!--        <item name="neumorph_cornerSizeBottomLeft">16dp</item>-->
 <!--        <item name="neumorph_cornerSizeBottomRight">16dp</item>-->
     </style>
+    <style name="VideoCardNeumorphismShapeAppearance">
+        <item name="neumorph_cornerSize">40dp</item>
+    </style>
 </resources>

@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/color_card"
-        android:layout_width="350dp"
-        android:layout_height="550dp"
+        android:layout_width="380dp"
+        android:layout_height="560dp"
         android:src="@drawable/green"
         app:layout_constraintHeight_percent=".5"
         app:layout_constraintWidth_percent=".7"

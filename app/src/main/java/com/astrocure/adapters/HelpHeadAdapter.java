@@ -2,7 +2,6 @@ package com.astrocure.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -20,7 +19,7 @@ public class HelpHeadAdapter extends RecyclerView.Adapter<HelpHeadAdapter.HelpHe
     @NonNull
     @Override
     public HelpHeadViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        ItemHelpHeadBinding binding = ItemHelpHeadBinding.inflate(LayoutInflater.from(context),parent,false);
+        ItemHelpHeadBinding binding = ItemHelpHeadBinding.inflate(LayoutInflater.from(context), parent, false);
         return new HelpHeadViewHolder(binding);
     }
 
@@ -36,6 +35,7 @@ public class HelpHeadAdapter extends RecyclerView.Adapter<HelpHeadAdapter.HelpHe
 
     public class HelpHeadViewHolder extends RecyclerView.ViewHolder {
         ItemHelpHeadBinding binding;
+
         public HelpHeadViewHolder(ItemHelpHeadBinding binding) {
             super(binding.getRoot());
             this.binding = binding;

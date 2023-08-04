@@ -4,18 +4,14 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewpager.widget.PagerAdapter;
-import androidx.viewpager.widget.ViewPager;
 
 import com.astrocure.R;
 import com.astrocure.databinding.ItemZodiacPercentLayoutBinding;
 import com.astrocure.models.ZodiacViewPagerModel;
-
-import java.util.List;
 
 public class ZodiacViewpagerAdapter extends PagerAdapter {
     Context context;
@@ -29,8 +25,8 @@ public class ZodiacViewpagerAdapter extends PagerAdapter {
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
-        ItemZodiacPercentLayoutBinding binding = ItemZodiacPercentLayoutBinding.inflate(LayoutInflater.from(context),container,false);
-        switch (position){
+        ItemZodiacPercentLayoutBinding binding = ItemZodiacPercentLayoutBinding.inflate(LayoutInflater.from(context), container, false);
+        switch (position) {
             case 0:
                 binding.dayIndicator.setText("Horoscope For Yesterday");
                 binding.zodiacName.setText(model.getZodiacName());
@@ -46,7 +42,7 @@ public class ZodiacViewpagerAdapter extends PagerAdapter {
             default:
                 binding.dayIndicator.setText("Horoscope");
         }
-        container.addView(binding.getRoot(),0);
+        container.addView(binding.getRoot(), 0);
         return binding.getRoot();
     }
 
@@ -64,10 +60,11 @@ public class ZodiacViewpagerAdapter extends PagerAdapter {
     public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
         container.removeView((View) object);
     }
+
     @Nullable
     @Override
     public CharSequence getPageTitle(int position) {
-        switch (position){
+        switch (position) {
             case 0:
                 return context.getString(R.string.yesterday);
             case 1:

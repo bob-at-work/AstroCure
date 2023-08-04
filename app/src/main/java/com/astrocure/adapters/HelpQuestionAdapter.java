@@ -22,17 +22,17 @@ public class HelpQuestionAdapter extends RecyclerView.Adapter<HelpQuestionAdapte
     @NonNull
     @Override
     public AnswerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        ItemHelpQuestionAnswerBinding binding = ItemHelpQuestionAnswerBinding.inflate(LayoutInflater.from(context),parent,false);
+        ItemHelpQuestionAnswerBinding binding = ItemHelpQuestionAnswerBinding.inflate(LayoutInflater.from(context), parent, false);
         return new AnswerViewHolder(binding);
     }
 
     @Override
     public void onBindViewHolder(@NonNull AnswerViewHolder holder, int position) {
         holder.binding.expand.setOnClickListener(v -> {
-            if (holder.binding.answers.getVisibility() == View.VISIBLE){
+            if (holder.binding.answers.getVisibility() == View.VISIBLE) {
                 holder.binding.answers.setVisibility(View.GONE);
                 holder.binding.expand.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_round_line));
-            }else {
+            } else {
                 holder.binding.answers.setVisibility(View.VISIBLE);
                 holder.binding.expand.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_round_add));
             }
@@ -46,6 +46,7 @@ public class HelpQuestionAdapter extends RecyclerView.Adapter<HelpQuestionAdapte
 
     public class AnswerViewHolder extends RecyclerView.ViewHolder {
         ItemHelpQuestionAnswerBinding binding;
+
         public AnswerViewHolder(ItemHelpQuestionAnswerBinding binding) {
             super(binding.getRoot());
             this.binding = binding;

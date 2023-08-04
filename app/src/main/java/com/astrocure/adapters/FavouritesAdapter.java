@@ -2,7 +2,6 @@ package com.astrocure.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -22,7 +21,7 @@ public class FavouritesAdapter extends RecyclerView.Adapter<FavouritesAdapter.Fa
     @NonNull
     @Override
     public FavouriteViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        ItemFavouriteVideoBinding binding = ItemFavouriteVideoBinding.inflate(LayoutInflater.from(context),parent,false);
+        ItemFavouriteVideoBinding binding = ItemFavouriteVideoBinding.inflate(LayoutInflater.from(context), parent, false);
         return new FavouriteViewHolder(binding);
     }
 
@@ -43,6 +42,7 @@ public class FavouritesAdapter extends RecyclerView.Adapter<FavouritesAdapter.Fa
 
     public class FavouriteViewHolder extends RecyclerView.ViewHolder {
         ItemFavouriteVideoBinding binding;
+
         public FavouriteViewHolder(ItemFavouriteVideoBinding binding) {
             super(binding.getRoot());
             this.binding = binding;

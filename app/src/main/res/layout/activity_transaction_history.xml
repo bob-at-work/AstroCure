@@ -11,7 +11,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:navigationIcon="@drawable/ic_back_circle"
+        app:navigationIcon="@drawable/back_app"
         android:background="#54147E"
         app:layout_constraintTop_toTopOf="parent">
 

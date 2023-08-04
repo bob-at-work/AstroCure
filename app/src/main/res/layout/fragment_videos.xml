@@ -37,6 +37,7 @@
                     android:paddingBottom="10dp"
                     android:paddingStart="25dp"
                     android:paddingEnd="20dp"
+                    android:textSize="14sp"
                     android:hint="Search Commodities,Sports,Stock .etc"
                     android:textColorHint="#7D7F88"
                     android:drawablePadding="10dp"
@@ -52,11 +53,13 @@
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/filter"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
                     android:backgroundTint="@color/white"
                     android:drawableLeft="@drawable/ic_filter"
                     android:text="Filter"
                     android:textColor="@color/black"
+                    android:insetBottom="0dp"
+                    android:insetTop="0dp"
                     app:layout_constraintBottom_toBottomOf="@+id/search_view"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/search_view" />

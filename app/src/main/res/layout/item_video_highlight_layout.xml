@@ -3,7 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:padding="3dp">
+    android:paddingTop="3dp"
+    android:paddingBottom="3dp"
+    android:paddingStart="3dp"
+    android:paddingEnd="6dp">
 
     <ImageView
         android:id="@+id/imageView8"
@@ -21,7 +24,7 @@
         android:id="@+id/logo"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:src="@drawable/brown"
+        android:src="@drawable/sports"
         android:layout_margin="6dp"
         android:scaleType="centerCrop"
         app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize10Percent"
@@ -38,9 +41,11 @@
         android:background="@drawable/video_higlight_text_bg"
         android:text="Commodities"
         android:textColor="@color/white"
+        android:minWidth="70dp"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView8"
+        app:layout_constraintStart_toStartOf="@+id/imageView8"
         app:layout_constraintTop_toBottomOf="@+id/imageView8" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

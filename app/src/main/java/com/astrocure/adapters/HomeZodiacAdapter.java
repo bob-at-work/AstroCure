@@ -13,7 +13,7 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
-public class HomeZodiacAdapter extends RecyclerView.Adapter<HomeZodiacAdapter.ZodiacViewHolder>{
+public class HomeZodiacAdapter extends RecyclerView.Adapter<HomeZodiacAdapter.ZodiacViewHolder> {
     Context context;
     List<HomeZodiacModel> zodiacModels;
 
@@ -25,7 +25,7 @@ public class HomeZodiacAdapter extends RecyclerView.Adapter<HomeZodiacAdapter.Zo
     @NonNull
     @Override
     public ZodiacViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        ItemZodiacLayoutBinding binding = ItemZodiacLayoutBinding.inflate(LayoutInflater.from(context),parent,false);
+        ItemZodiacLayoutBinding binding = ItemZodiacLayoutBinding.inflate(LayoutInflater.from(context), parent, false);
         return new ZodiacViewHolder(binding);
     }
 
@@ -43,6 +43,7 @@ public class HomeZodiacAdapter extends RecyclerView.Adapter<HomeZodiacAdapter.Zo
 
     public class ZodiacViewHolder extends RecyclerView.ViewHolder {
         ItemZodiacLayoutBinding binding;
+
         public ZodiacViewHolder(ItemZodiacLayoutBinding binding) {
             super(binding.getRoot());
             this.binding = binding;

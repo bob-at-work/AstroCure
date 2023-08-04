@@ -2,7 +2,6 @@ package com.astrocure.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -26,7 +25,7 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHol
     @NonNull
     @Override
     public StoryViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        ItemVideoHighlightLayoutBinding binding = ItemVideoHighlightLayoutBinding.inflate(LayoutInflater.from(context),parent,false);
+        ItemVideoHighlightLayoutBinding binding = ItemVideoHighlightLayoutBinding.inflate(LayoutInflater.from(context), parent, false);
         return new StoryViewHolder(binding);
     }
 
@@ -44,6 +43,7 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHol
 
     public class StoryViewHolder extends RecyclerView.ViewHolder {
         ItemVideoHighlightLayoutBinding binding;
+
         public StoryViewHolder(ItemVideoHighlightLayoutBinding binding) {
             super(binding.getRoot());
             this.binding = binding;

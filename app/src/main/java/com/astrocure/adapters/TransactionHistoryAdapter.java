@@ -2,7 +2,6 @@ package com.astrocure.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -20,7 +19,7 @@ public class TransactionHistoryAdapter extends RecyclerView.Adapter<TransactionH
     @NonNull
     @Override
     public TransactionViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        ItemTransactionLayoutBinding binding = ItemTransactionLayoutBinding.inflate(LayoutInflater.from(context),parent,false);
+        ItemTransactionLayoutBinding binding = ItemTransactionLayoutBinding.inflate(LayoutInflater.from(context), parent, false);
         return new TransactionViewHolder(binding);
     }
 
@@ -36,6 +35,7 @@ public class TransactionHistoryAdapter extends RecyclerView.Adapter<TransactionH
 
     public class TransactionViewHolder extends RecyclerView.ViewHolder {
         ItemTransactionLayoutBinding binding;
+
         public TransactionViewHolder(ItemTransactionLayoutBinding binding) {
             super(binding.getRoot());
             this.binding = binding;

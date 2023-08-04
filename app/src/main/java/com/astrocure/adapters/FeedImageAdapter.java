@@ -3,7 +3,6 @@ package com.astrocure.adapters;
 import android.content.Context;
 import android.net.Uri;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -28,7 +27,7 @@ public class FeedImageAdapter extends RecyclerView.Adapter<FeedImageAdapter.Feed
     @NonNull
     @Override
     public FeedImageViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        ItemFeedPostLayoutBinding binding = ItemFeedPostLayoutBinding.inflate(LayoutInflater.from(context),parent,false);
+        ItemFeedPostLayoutBinding binding = ItemFeedPostLayoutBinding.inflate(LayoutInflater.from(context), parent, false);
         return new FeedImageViewHolder(binding);
     }
 
@@ -45,19 +44,20 @@ public class FeedImageAdapter extends RecyclerView.Adapter<FeedImageAdapter.Feed
         return list.size();
     }
 
+    public void setOnItemClick(OnItemClick onItemClick) {
+        this.onItemClick = onItemClick;
+    }
+
+    public interface OnItemClick {
+        void getPosition(int position);
+    }
+
     public class FeedImageViewHolder extends RecyclerView.ViewHolder {
         ItemFeedPostLayoutBinding binding;
+
         public FeedImageViewHolder(ItemFeedPostLayoutBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
         }
-    }
-
-    public void setOnItemClick(OnItemClick onItemClick){
-        this.onItemClick = onItemClick;
-    }
-
-    public interface OnItemClick{
-        void getPosition(int position);
     }
 }

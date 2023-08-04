@@ -2,7 +2,6 @@ package com.astrocure.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -24,7 +23,7 @@ public class VideoCategoryAdapter extends RecyclerView.Adapter<VideoCategoryAdap
     @NonNull
     @Override
     public CategoryViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        ItemVideoCategoryBinding binding = ItemVideoCategoryBinding.inflate(LayoutInflater.from(context),parent,false);
+        ItemVideoCategoryBinding binding = ItemVideoCategoryBinding.inflate(LayoutInflater.from(context), parent, false);
         return new CategoryViewHolder(binding);
     }
 
@@ -40,6 +39,7 @@ public class VideoCategoryAdapter extends RecyclerView.Adapter<VideoCategoryAdap
 
     public class CategoryViewHolder extends RecyclerView.ViewHolder {
         ItemVideoCategoryBinding binding;
+
         public CategoryViewHolder(ItemVideoCategoryBinding binding) {
             super(binding.getRoot());
             this.binding = binding;

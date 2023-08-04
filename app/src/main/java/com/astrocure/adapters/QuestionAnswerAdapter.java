@@ -2,9 +2,7 @@ package com.astrocure.adapters;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Paint;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
@@ -61,7 +59,7 @@ public class QuestionAnswerAdapter extends RecyclerView.Adapter {
                 context.startActivity(intent);
             });
 
-        }else {
+        } else {
             AdminViewHolder adminViewHolder = (AdminViewHolder) holder;
             adminViewHolder.binding.message.setText(model.getMessage());
             adminViewHolder.binding.time.setText(model.getTime());
@@ -76,17 +74,14 @@ public class QuestionAnswerAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemViewType(int position) {
-        switch (models.get(position).getSentBy()) {
-            case "admin":
-                if (!models.get(position).isLink()) {
-                    return 1;
-                } else {
-                    return 2;
-                }
-
-            default:
-                return 0;
+        if (models.get(position).getSentBy().equals("admin")) {
+            if (!models.get(position).isLink()) {
+                return 1;
+            } else {
+                return 2;
+            }
         }
+        return 0;
 //        return position % 2 * 2;
     }
 

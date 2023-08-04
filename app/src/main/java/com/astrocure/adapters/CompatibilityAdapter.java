@@ -8,67 +8,53 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.astrocure.databinding.ItemCompatibilityFirstBinding;
-import com.astrocure.databinding.ItemCompatibilitySecondBinding;
+import com.astrocure.models.CompatibilityZodiacModel;
+import com.bumptech.glide.Glide;
 
-public class CompatibilityAdapter extends RecyclerView.Adapter {
+import java.util.List;
+
+public class CompatibilityAdapter extends RecyclerView.Adapter<CompatibilityAdapter.ZodiacViewHolder> {
     Context context;
-    private static final int VIEW_TYPE_PADDING = 1;
-    private static final int VIEW_TYPE_ITEM = 2;
-    private int paddingWidthDate = 0;
+    List<CompatibilityZodiacModel> list;
 
-    private int selectedItem = -1;
-
-    public CompatibilityAdapter(Context context) {
+    public CompatibilityAdapter(Context context, List<CompatibilityZodiacModel> list) {
         this.context = context;
+        this.list = list;
     }
 
     @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-//        if (viewType == VIEW_TYPE_ITEM) {
-            ItemCompatibilityFirstBinding binding = ItemCompatibilityFirstBinding.inflate(LayoutInflater.from(context), parent, false);
-            return new ZodiacViewHolder(binding);
-//        }else {
-//            ItemCompatibilitySecondBinding binding = ItemCompatibilitySecondBinding.inflate(LayoutInflater.from(context), parent, false);
-//            RecyclerView.LayoutParams layoutParams = (RecyclerView.LayoutParams) binding.getRoot().getLayoutParams();
-//            layoutParams.width = paddingWidthDate;
-//            binding.getRoot().setLayoutParams(layoutParams);
-//            return new ZodiacTextViewHolder(binding);
-//        }
+    public ZodiacViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        ItemCompatibilityFirstBinding binding = ItemCompatibilityFirstBinding.inflate(LayoutInflater.from(context), parent, false);
+        return new ZodiacViewHolder(binding);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-
-    }
-
-    @Override
-    public int getItemViewType(int position) {
-        return super.getItemViewType(position);
+    public void onBindViewHolder(@NonNull ZodiacViewHolder holder, int position) {
+        Glide.with(context).load(list.get(position % list.size()).getZodiacImg()).into(holder.binding.zodiacImage);
+        holder.binding.zodacName.setText(list.get(position % list.size()).getZodiacName());
     }
 
     @Override
     public int getItemCount() {
-        return 12*2+1;
-    }
-
-    public void setSelectedItem(int selectedItem) {
-        this.selectedItem = selectedItem;
-        notifyDataSetChanged();
+        return list == null ? 0 : list.size() * 2;
     }
 
     public class ZodiacViewHolder extends RecyclerView.ViewHolder {
         ItemCompatibilityFirstBinding binding;
+
         public ZodiacViewHolder(ItemCompatibilityFirstBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
         }
     }
-    public class ZodiacTextViewHolder extends RecyclerView.ViewHolder {
+
+    /*public class ZodiacTextViewHolder extends RecyclerView.ViewHolder {
         ItemCompatibilitySecondBinding binding;
+
         public ZodiacTextViewHolder(ItemCompatibilitySecondBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
         }
-    }
+    }*/
 }

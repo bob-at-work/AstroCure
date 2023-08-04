@@ -6,23 +6,37 @@
     android:paddingBottom="30dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:id="@+id/predictedText"
-        android:layout_width="350dp"
-        android:layout_height="550dp"
-        android:text="@string/dummy_1"
-        android:gravity="center"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:background="#81D4FA"
-        android:letterSpacing=".1"
-        android:lineSpacingExtra="10dp"
+    <ImageView
+        android:id="@+id/color_card_back"
+        android:layout_width="380dp"
+        android:layout_height="560dp"
+        android:visibility="gone"
+        android:src="@drawable/color_therapy_back_card_1"
         app:layout_constraintHeight_percent=".5"
         app:layout_constraintWidth_percent=".7"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/predictedText"
+        android:layout_width="380dp"
+        android:layout_height="560dp"
+        android:text="@string/dummy_1"
+        android:padding="20dp"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:letterSpacing=".1"
+        android:background="@drawable/color_therapy_back_card_1"
+        android:lineSpacingExtra="10dp"
+        app:layout_constraintHeight_percent=".5"
+        app:layout_constraintWidth_percent=".7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,15 +14,17 @@ import com.astrocure.ui.fragments.YesterdayFragment;
 public class BottomSheetHoroscopeAdapter extends FragmentPagerAdapter {
     Context context;
     int totalTabs;
-    public BottomSheetHoroscopeAdapter(@NonNull FragmentManager fm, Context context,int totalTabs) {
+
+    public BottomSheetHoroscopeAdapter(@NonNull FragmentManager fm, Context context, int totalTabs) {
         super(fm);
         this.context = context;
         this.totalTabs = totalTabs;
     }
+
     @NonNull
     @Override
     public Fragment getItem(int position) {
-        switch (position){
+        switch (position) {
             case 0:
                 return new YesterdayFragment();
             case 1:

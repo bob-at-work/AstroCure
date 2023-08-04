@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -27,7 +26,7 @@ public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.FeedViewHold
     @NonNull
     @Override
     public FeedsAdapter.FeedViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        ItemFeedTextLayoutBinding binding = ItemFeedTextLayoutBinding.inflate(LayoutInflater.from(context),parent,false);
+        ItemFeedTextLayoutBinding binding = ItemFeedTextLayoutBinding.inflate(LayoutInflater.from(context), parent, false);
         return new FeedViewHolder(binding);
     }
 
@@ -36,16 +35,16 @@ public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.FeedViewHold
 
         holder.binding.comment.setOnClickListener(v -> {
             Intent intent = new Intent(context, FeedDetailActivity.class);
-            intent.putExtra("image","https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80");
+            intent.putExtra("image", "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80");
             context.startActivity(intent);
         });
 
         Glide.with(context).load("https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80")
-                        .centerCrop()
-                                .into(holder.binding.profile);
+                .centerCrop()
+                .into(holder.binding.profile);
         Glide.with(context).load("https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80")
-                        .centerCrop()
-                                .into(holder.binding.profileImage);
+                .centerCrop()
+                .into(holder.binding.profileImage);
 
         Glide.with(context)
                 .load("https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80")
@@ -62,6 +61,7 @@ public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.FeedViewHold
             dialog.setContentView(R.layout.dialog_more_option);
             dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+//            dialog.getWindow().addFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND);
             dialog.setCancelable(true);
             dialog.show();
         });
@@ -83,6 +83,7 @@ public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.FeedViewHold
 
     public class FeedViewHolder extends RecyclerView.ViewHolder {
         ItemFeedTextLayoutBinding binding;
+
         public FeedViewHolder(ItemFeedTextLayoutBinding binding) {
             super(binding.getRoot());
             this.binding = binding;

@@ -66,7 +66,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         binding.videosFab.setOnClickListener(v -> {
             if (!isVideoFabClicked){
                 isVideoFabClicked = true;
-                binding.videosFab.setImageResource(R.drawable.bottom_nav_video);
+                binding.videosFab.setImageResource(R.drawable.bottom_nav_active_video);
                 binding.bottomNav.setSelectedItemId(R.id.videos);
             }
         });
@@ -76,7 +76,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.horoscope) {
             isVideoFabClicked = false;
-            binding.videosFab.setImageResource(R.drawable.bottom_nav_outline_video);
+            binding.videosFab.setImageResource(R.drawable.bottom_nav_inactive_video);
             fragment = new HoroscopeFragment();
             fragmentManager = getSupportFragmentManager();
             fragmentTransaction = fragmentManager.beginTransaction();
@@ -85,7 +85,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             return true;
         } else if (item.getItemId() == R.id.feeds) {
             isVideoFabClicked = false;
-            binding.videosFab.setImageResource(R.drawable.bottom_nav_outline_video);
+            binding.videosFab.setImageResource(R.drawable.bottom_nav_inactive_video);
             fragment = new HomeFeedFragment();
             fragmentManager = getSupportFragmentManager();
             fragmentTransaction = fragmentManager.beginTransaction();
@@ -101,7 +101,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             return true;
         } else if (item.getItemId() == R.id.entertainment) {
             isVideoFabClicked = false;
-            binding.videosFab.setImageResource(R.drawable.bottom_nav_outline_video);
+            binding.videosFab.setImageResource(R.drawable.bottom_nav_inactive_video);
             fragment = new EntertainmentFragment();
             fragmentManager = getSupportFragmentManager();
             fragmentTransaction = fragmentManager.beginTransaction();
@@ -110,7 +110,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             return true;
         } else if (item.getItemId() == R.id.profile) {
             isVideoFabClicked = false;
-            binding.videosFab.setImageResource(R.drawable.bottom_nav_outline_video);
+            binding.videosFab.setImageResource(R.drawable.bottom_nav_inactive_video);
             fragment = new ProfileFragment();
             fragmentManager = getSupportFragmentManager();
             fragmentTransaction = fragmentManager.beginTransaction();

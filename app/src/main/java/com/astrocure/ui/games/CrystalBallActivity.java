@@ -23,12 +23,15 @@ import java.util.Random;
 
 public class CrystalBallActivity extends AppCompatActivity{
     ActivityCrystallBallBinding binding;
+    private Vibrator vibrator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityCrystallBallBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
 
         TextPaint paint = binding.title.getPaint();
         Shader textShader = new LinearGradient(0, 0, paint.measureText(binding.title.getText().toString()), binding.title.getTextSize(),
@@ -45,6 +48,11 @@ public class CrystalBallActivity extends AppCompatActivity{
 
         binding.crystalBall.setOnClickListener(v -> {
             binding.output.setText(randomString());
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                vibrator.vibrate(VibrationEffect.createOneShot(300, VibrationEffect.DEFAULT_AMPLITUDE));
+            }else {
+                vibrator.vibrate(300);
+            }
             binding.output.setVisibility(View.VISIBLE);
             binding.askAgain.setVisibility(View.VISIBLE);
             binding.crystalBall.setVisibility(View.GONE);

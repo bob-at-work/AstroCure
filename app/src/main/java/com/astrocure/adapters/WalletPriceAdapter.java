@@ -2,7 +2,6 @@ package com.astrocure.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -20,7 +19,7 @@ public class WalletPriceAdapter extends RecyclerView.Adapter<WalletPriceAdapter.
     @NonNull
     @Override
     public PriceViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        ItemWalletOfferLayoutBinding binding = ItemWalletOfferLayoutBinding.inflate(LayoutInflater.from(context),parent,false);
+        ItemWalletOfferLayoutBinding binding = ItemWalletOfferLayoutBinding.inflate(LayoutInflater.from(context), parent, false);
         return new PriceViewHolder(binding);
     }
 
@@ -36,6 +35,7 @@ public class WalletPriceAdapter extends RecyclerView.Adapter<WalletPriceAdapter.
 
     public class PriceViewHolder extends RecyclerView.ViewHolder {
         ItemWalletOfferLayoutBinding binding;
+
         public PriceViewHolder(ItemWalletOfferLayoutBinding binding) {
             super(binding.getRoot());
         }

@@ -25,24 +25,22 @@ public class AstrologerChatAdapter extends RecyclerView.Adapter {
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        ItemChatUserBinding userBinding = ItemChatUserBinding.inflate(LayoutInflater.from(context),parent,false);
-        ItemChatAstrologerBinding astrologerBinding = ItemChatAstrologerBinding.inflate(LayoutInflater.from(context),parent,false);
-        switch (viewType){
-            case 1:
-                return new AstrologerViewHolder(astrologerBinding);
-            default:
-                return new UserChatViewHolder(userBinding);
+        ItemChatUserBinding userBinding = ItemChatUserBinding.inflate(LayoutInflater.from(context), parent, false);
+        ItemChatAstrologerBinding astrologerBinding = ItemChatAstrologerBinding.inflate(LayoutInflater.from(context), parent, false);
+        if (viewType == 1) {
+            return new AstrologerViewHolder(astrologerBinding);
         }
+        return new UserChatViewHolder(userBinding);
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         AstrologerChatModel model = list.get(position);
-        if (!list.get(position).getAdmin()){
+        if (!list.get(position).getAdmin()) {
             UserChatViewHolder viewHolder = (UserChatViewHolder) holder;
             viewHolder.binding.message.setText(model.getMessage());
             viewHolder.binding.time.setText(model.getTime());
-        }else {
+        } else {
             AstrologerViewHolder viewHolder = (AstrologerViewHolder) holder;
             viewHolder.binding.message.setText(model.getMessage());
             viewHolder.binding.time.setText(model.getTime());
@@ -51,9 +49,9 @@ public class AstrologerChatAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemViewType(int position) {
-        if (!list.get(position).getAdmin()){
+        if (!list.get(position).getAdmin()) {
             return 0;
-        }else {
+        } else {
             return 1;
         }
     }
@@ -65,6 +63,7 @@ public class AstrologerChatAdapter extends RecyclerView.Adapter {
 
     public class UserChatViewHolder extends RecyclerView.ViewHolder {
         ItemChatUserBinding binding;
+
         public UserChatViewHolder(ItemChatUserBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
@@ -73,6 +72,7 @@ public class AstrologerChatAdapter extends RecyclerView.Adapter {
 
     public class AstrologerViewHolder extends RecyclerView.ViewHolder {
         ItemChatAstrologerBinding binding;
+
         public AstrologerViewHolder(ItemChatAstrologerBinding binding) {
             super(binding.getRoot());
             this.binding = binding;

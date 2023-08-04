@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<soup.neumorphism.NeumorphCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardCornerRadius="30dp"
-    android:layout_margin="20dp"
-    app:strokeColor="@color/white"
+    app:neumorph_strokeColor="@color/white"
+    app:neumorph_strokeWidth="1dp"
+    app:neumorph_shadowColorLight="#33FFFFFF"
+    app:neumorph_shadowColorDark="#80FFFFFF"
+    app:neumorph_shapeAppearance="@style/VideoCardNeumorphismShapeAppearance"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="20dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
         android:background="@drawable/content_box_bg">
 
         <com.google.android.material.imageview.ShapeableImageView
@@ -75,8 +81,8 @@
             android:id="@+id/favourite"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:src="@drawable/ic_heart_video"
+            android:padding="20dp"
+            android:src="@drawable/ic_fav_star_outlined"
             app:layout_constraintEnd_toEndOf="@+id/video_container"
             app:layout_constraintTop_toTopOf="@+id/video_container" />
 
@@ -140,4 +146,4 @@
             app:layout_constraintBottom_toBottomOf="@id/likes"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</com.google.android.material.card.MaterialCardView>
+</soup.neumorphism.NeumorphCardView>

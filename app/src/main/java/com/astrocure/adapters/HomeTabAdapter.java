@@ -45,7 +45,7 @@ public class HomeTabAdapter extends FragmentPagerAdapter {
     @Nullable
     @Override
     public CharSequence getPageTitle(int position) {
-        switch (position){
+        switch (position) {
             case 0:
                 return context.getString(R.string.yesterday);
             case 1:

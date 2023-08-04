@@ -90,7 +90,10 @@ public class BookOfLoveActivity extends AppCompatActivity{
     }
 
     public String randomString(){
-        final String[] proper_noun = { "Yes","Probably", "Perhaps","Doubtful","Maybe","Its Fate!","Not Yet","Definitely","Not Advisable", "No"};
+        final String[] proper_noun = { "Yes","Probably", "Perhaps","Doubtful","Maybe","Its Fate!","Not Yet","Definitely","Not Advisable", "No",
+        "Conceivably","Unlikely","Quite credible","Obtainable","Possible","Most likely",
+        "Uncertain","Contingent","Indecisive","Unsure","Borderline","Ambiguous","Equivocal","Destiny","Kismat",
+        "Euphoria","Contentment"};
         Random random = new Random();
         int index = random.nextInt(proper_noun.length);
         return proper_noun[index];

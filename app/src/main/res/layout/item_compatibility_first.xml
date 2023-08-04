@@ -18,12 +18,14 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
+            android:id="@+id/zodiac_image"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:src="@drawable/aries"
             android:layout_weight="4"/>
 
         <TextView
+            android:id="@+id/zodac_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Aries"
