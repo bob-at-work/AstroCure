@@ -1,6 +1,7 @@
 package com.astrocure.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,7 +23,7 @@ public class CreateAccountActivity extends AppCompatActivity {
 
         binding.fullName.setOnFocusChangeListener((v, hasFocus) -> {
             if (hasFocus){
-                binding.fullName.setBackground(getDrawable(R.drawable.text_input_focused));
+                binding.fullName.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.text_input_focused));
                 binding.nameHelperText.setText(binding.fullName.getHint());
                 binding.fullName.setHint("");
             }else {

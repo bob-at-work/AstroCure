@@ -43,13 +43,14 @@
             android:layout_height="wrap_content"
             app:contentInsetStart="0dp"
             android:layout_gravity="bottom"
-            android:backgroundTint="#210F39"
+            android:backgroundTint="#E67015A8"
+            android:theme="@style/Theme.Material3.Light"
             style="@style/Widget.MaterialComponents.BottomAppBar.Colored">
 
             <com.google.android.material.bottomnavigation.BottomNavigationView
                 android:id="@+id/bottomNav"
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="65dp"
                 app:menu="@menu/bottom_nav_menu"
                 app:itemTextColor="@color/bottom_nav_text_color"
                 android:background="@android:color/transparent"
@@ -61,9 +62,10 @@
             android:id="@+id/videos_fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/bottom_nav_inactive_video"
+            android:src="@drawable/bottom_nav_video_inactive"
             app:layout_anchor="@id/bottomAppBar"
-            android:backgroundTint="#E6FFFFFF"
+            android:backgroundTint="#FFFFFF"
+            app:maxImageSize="35dp"
             app:shapeAppearance="?attr/shapeAppearance"/>
 <!--        android:src="@drawable/bottom_nav_outline_video"-->
 

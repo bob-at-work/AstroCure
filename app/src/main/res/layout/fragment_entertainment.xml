@@ -32,7 +32,6 @@
         android:id="@+id/games"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_marginStart="10dp"
         android:text="Games"
         android:textColor="@color/black"
@@ -53,7 +52,6 @@
         android:id="@+id/compatibility"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:backgroundTint="@android:color/transparent"
         android:text="Compatibility"
@@ -85,6 +83,7 @@
             android:layout_height="0dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/bg_demo"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHeight_percent=".4"
             app:layout_constraintTop_toTopOf="parent"
@@ -92,10 +91,12 @@
 
         <soup.neumorphism.NeumorphCardView
             android:id="@+id/fortune_cookie"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             app:neumorph_strokeColor="@color/white"
             app:neumorph_strokeWidth="1dp"
+            app:layout_constraintDimensionRatio="89:122"
+            app:layout_constraintHeight_percent=".29"
             app:neumorph_shadowColorLight="#1AFFFFFF"
             app:neumorph_shadowColorDark="#99FFFFFF"
             app:layout_constraintEnd_toStartOf="@id/crystal_ball"
@@ -103,16 +104,18 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:padding="10dp"
                 android:gravity="center"
+                android:weightSum="6"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/cookie" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/cookie"
+                    android:layout_weight="6"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -120,7 +123,8 @@
                     android:layout_marginTop="10dp"
                     android:gravity="center"
                     android:text="Fortune\nCookie"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/white"
+                    android:layout_weight="2"/>
 
             </LinearLayout>
 
@@ -128,10 +132,11 @@
 
         <soup.neumorphism.NeumorphCardView
             android:id="@+id/crystal_ball"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             app:neumorph_strokeColor="@color/white"
             app:neumorph_strokeWidth="1dp"
+            app:layout_constraintDimensionRatio="89:122"
             app:neumorph_shadowColorLight="#1AFFFFFF"
             app:neumorph_shadowColorDark="#99FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
@@ -139,16 +144,18 @@
             app:layout_constraintTop_toTopOf="@id/fortune_cookie">
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:gravity="center"
                 android:padding="10dp"
+                android:weightSum="6"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/magical_crystal" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/magical_crystal"
+                    android:layout_weight="6"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -163,27 +170,32 @@
 
         <soup.neumorphism.NeumorphCardView
             android:id="@+id/book_of_love"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             app:neumorph_strokeColor="@color/white"
             app:neumorph_strokeWidth="1dp"
             app:neumorph_shadowColorLight="#1AFFFFFF"
             app:neumorph_shadowColorDark="#99FFFFFF"
+            app:layout_constraintDimensionRatio="89:122"
+            app:layout_constraintHeight_percent=".29"
             app:layout_constraintEnd_toStartOf="@id/astro_genie"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/color_therapy"
             app:layout_constraintTop_toBottomOf="@id/fortune_cookie">
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:padding="10dp"
                 android:gravity="center"
+                android:weightSum="6"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/book_of_love" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/book_of_love"
+                    android:layout_weight="6"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -191,17 +203,19 @@
                     android:layout_marginTop="10dp"
                     android:gravity="center"
                     android:text="Book of\nLove"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/white"
+                    android:layout_weight="2"/>
 
             </LinearLayout>
         </soup.neumorphism.NeumorphCardView>
 
         <soup.neumorphism.NeumorphCardView
             android:id="@+id/astro_genie"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             app:neumorph_strokeColor="@color/white"
             app:neumorph_strokeWidth="1dp"
+            app:layout_constraintDimensionRatio="89:122"
             app:neumorph_shadowColorLight="#1AFFFFFF"
             app:neumorph_shadowColorDark="#99FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
@@ -209,16 +223,18 @@
             app:layout_constraintTop_toTopOf="@id/book_of_love">
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:padding="10dp">
+                android:padding="10dp"
+                android:weightSum="6">
 
                 <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/genie_purple" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/genie_purple"
+                    android:layout_weight="6"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -234,27 +250,33 @@
 
         <soup.neumorphism.NeumorphCardView
             android:id="@+id/color_therapy"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:neumorph_strokeColor="@color/white"
-            app:neumorph_strokeWidth="1dp"
-            app:neumorph_shadowColorLight="#1AFFFFFF"
-            app:neumorph_shadowColorDark="#99FFFFFF"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="75dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="89:122"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent=".29"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/book_of_love">
+            app:layout_constraintTop_toBottomOf="@id/book_of_love"
+            app:neumorph_shadowColorDark="#99FFFFFF"
+            app:neumorph_shadowColorLight="#1AFFFFFF"
+            app:neumorph_strokeColor="@color/white"
+            app:neumorph_strokeWidth="1dp">
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:padding="10dp">
+                android:padding="10dp"
+                android:weightSum="6">
 
                 <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:padding="10dp"
+                    android:layout_weight="6"
                     android:src="@drawable/color_therapy" />
 
                 <TextView
@@ -262,8 +284,8 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="Color\nTherapy"
-                    android:textColor="@color/white"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_weight="4"
+                    android:textColor="@color/white" />
 
             </LinearLayout>
 
@@ -288,6 +310,7 @@
             app:cardCornerRadius="20dp"
             app:strokeWidth=".5dp"
             app:strokeColor="@color/white"
+            android:theme="@style/Theme.Material3.Light"
             app:layout_constraintVertical_bias=".2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -411,6 +434,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Match Making"
+            android:theme="@style/Theme.Material3.Light"
             app:layout_constraintTop_toTopOf="@id/view2"
             app:layout_constraintBottom_toBottomOf="@id/view2"
             app:layout_constraintStart_toStartOf="parent"

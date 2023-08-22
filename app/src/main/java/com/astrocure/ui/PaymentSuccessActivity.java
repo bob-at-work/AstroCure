@@ -17,11 +17,6 @@ public class PaymentSuccessActivity extends AppCompatActivity {
         binding = ActivityPaymentSuccessBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.gotoHome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), HomeActivity.class));
-            }
-        });
+        binding.gotoHome.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(), HomeActivity.class)));
     }
 }

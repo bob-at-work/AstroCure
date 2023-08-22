@@ -1,6 +1,6 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="Base.Theme.AstroCure" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.AstroCure" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <!--        <item name="colorPrimary">@null</item>-->
@@ -11,10 +11,6 @@
 
     <style name="Theme.AstroCure" parent="Base.Theme.AstroCure">
         <item name="android:statusBarColor">@color/black</item>
-    </style>
-
-    <style name="ShapeAppearanceOverlay.App.CornerSize50Percent" parent="">
-        <item name="cornerSize">50%</item>
     </style>
 
     <style name="ShapeAppearanceOverlay.App.CornerSize10Percent" parent="">
@@ -59,5 +55,10 @@
     </style>
     <style name="VideoCardNeumorphismShapeAppearance">
         <item name="neumorph_cornerSize">40dp</item>
+    </style>
+
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">#FFFFFF</item>
+        <item name="colorControlActivated">#FF9500</item>
     </style>
 </resources>

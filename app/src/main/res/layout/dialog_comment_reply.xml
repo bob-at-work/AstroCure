@@ -37,13 +37,14 @@
         android:textColorHint="#86878B"
         android:textColor="@color/black"
         android:maxLines="5"
+        android:inputType="textMultiLine"
         android:background="@drawable/comment_reply_edittext_bg"
-        app:layout_constraintEnd_toStartOf="@+id/imageView9"
+        app:layout_constraintEnd_toStartOf="@id/send"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView23" />
+        app:layout_constraintTop_toBottomOf="@id/textView23" />
 
     <ImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/send"
         android:layout_width="?attr/actionBarSize"
         android:layout_height="?attr/actionBarSize"
         android:src="@drawable/send"

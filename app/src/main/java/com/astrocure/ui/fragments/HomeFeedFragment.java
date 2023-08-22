@@ -1,14 +1,13 @@
 package com.astrocure.ui.fragments;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import com.astrocure.R;
 import com.astrocure.databinding.FragmentHomeFeedBinding;
@@ -31,9 +30,8 @@ public class HomeFeedFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        binding = FragmentHomeFeedBinding.inflate(inflater,container,false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        binding = FragmentHomeFeedBinding.inflate(inflater, container, false);
         fragment = new FeedsFragment();
         fragmentTransaction = getFragmentManager().beginTransaction();
         fragmentTransaction.replace(binding.container.getId(), fragment);

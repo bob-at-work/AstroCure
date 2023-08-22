@@ -60,6 +60,7 @@
                     android:textColor="@color/black"
                     android:insetBottom="0dp"
                     android:insetTop="0dp"
+                    android:theme="@style/Theme.Material3.Light"
                     app:layout_constraintBottom_toBottomOf="@+id/search_view"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/search_view" />
@@ -78,8 +79,6 @@
 
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
-
-
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/content_list"

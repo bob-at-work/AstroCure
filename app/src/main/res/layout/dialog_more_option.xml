@@ -1,47 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<soup.neumorphism.NeumorphCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:cardCornerRadius="20dp"
-    android:layout_margin="40dp"
-    app:neumorph_shadowColorLight="#33FFFFFF"
-    app:neumorph_shadowColorDark="#80FFFFFF"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="wrap_content">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
+    <soup.neumorphism.NeumorphCardView
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#0A0321"
-        android:padding="20dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent=".85">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/edit"
-            android:layout_width="0dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Edit Post"
-            android:textColor="@color/white"
-            android:textAllCaps="false"
-            android:background="@drawable/feed_edit_bg"
-            app:layout_constraintWidth_percent=".7"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            android:background="#0A0321"
+            android:padding="20dp">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/delete"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Delete"
-            android:textColor="@color/white"
-            app:strokeColor="@color/white"
-            app:strokeWidth="1dp"
-            android:backgroundTint="#0A0321"
-            app:layout_constraintWidth_percent=".7"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/edit"/>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/edit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/feed_edit_bg"
+                android:layout_marginTop="20dp"
+                android:text="Edit Post"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent=".7" />
 
-</soup.neumorphism.NeumorphCardView>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/delete"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:backgroundTint="#0A0321"
+                android:text="Delete"
+                android:textColor="@color/white"
+                android:padding="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edit"
+                app:layout_constraintWidth_percent=".7"
+                app:strokeColor="@color/white"
+                app:strokeWidth="1dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </soup.neumorphism.NeumorphCardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

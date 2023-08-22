@@ -9,14 +9,22 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.astrocure.databinding.ItemFeedRepliesBinding;
-import com.bumptech.glide.Glide;
+import com.astrocure.models.CommentModel;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class FeedRepliesAdapter extends RecyclerView.Adapter<FeedRepliesAdapter.RepliesViewHolder> {
     Context context;
     private ItemViewHeight itemViewHeight;
+    private Integer maxHeight = 0;
+    private List<Integer> heights;
+    private List<CommentModel> list;
 
-    public FeedRepliesAdapter(Context context) {
+    public FeedRepliesAdapter(Context context,List<CommentModel> list) {
         this.context = context;
+        heights = new ArrayList<>();
+        this.list = list;
     }
 
     @NonNull
@@ -29,12 +37,22 @@ public class FeedRepliesAdapter extends RecyclerView.Adapter<FeedRepliesAdapter.
     @Override
     public void onBindViewHolder(@NonNull RepliesViewHolder holder, int position) {
         holder.binding.getRoot().measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
-        itemViewHeight.getItemHeight(holder.binding.getRoot().getMeasuredHeight());
+        holder.binding.userName.setText(list.get(position).getName());
+        holder.binding.reply.setText(list.get(position).getMessage());
+        holder.binding.getRoot().getViewTreeObserver().addOnGlobalLayoutListener(() -> {
+            if (holder.binding.getRoot().getHeight() !=0 ) {
+                maxHeight = holder.binding.getRoot().getHeight();
+                heights.add(maxHeight);
+            }
+        });
+
+
+        itemViewHeight.getItemHeight(holder.binding.reply.getMeasuredHeight(), heights);
     }
 
     @Override
     public int getItemCount() {
-        return 6;
+        return list.size();
     }
 
     public class RepliesViewHolder extends RecyclerView.ViewHolder {
@@ -51,6 +69,6 @@ public class FeedRepliesAdapter extends RecyclerView.Adapter<FeedRepliesAdapter.
     }
 
     public interface ItemViewHeight {
-        void getItemHeight(int height);
+        void getItemHeight(int height, List<Integer> heights);
     }
 }

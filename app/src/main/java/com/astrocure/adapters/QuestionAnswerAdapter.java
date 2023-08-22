@@ -56,6 +56,7 @@ public class QuestionAnswerAdapter extends RecyclerView.Adapter {
             astrologerViewHolder.binding.call.setOnClickListener(v -> Toast.makeText(context, "Unavailable, Please try after some time.", Toast.LENGTH_SHORT).show());
             astrologerViewHolder.binding.chat.setOnClickListener(v -> {
                 Intent intent = new Intent(context, AstrologerChatActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
             });
 

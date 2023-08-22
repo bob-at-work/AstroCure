@@ -20,15 +20,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <com.google.android.material.imageview.ShapeableImageView
+            <androidx.cardview.widget.CardView
                 android:id="@+id/profile_img"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
+                app:cardCornerRadius="100dp"
                 android:background="@drawable/gradient_stroke_bg"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent" />
+                app:layout_constraintTop_toTopOf="parent">
 
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:cardCornerRadius="100dp"/>
+
+            </androidx.cardview.widget.CardView>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -119,7 +125,8 @@
             app:backgroundTint="#7015A8"
             android:src="@drawable/bi_mic"
             app:shapeAppearance="?attr/shapeAppearance"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@id/message"
+            app:layout_constraintBottom_toBottomOf="@id/message"
             app:layout_constraintEnd_toEndOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

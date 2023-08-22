@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.astrocure.R;
 import com.astrocure.adapters.HelpHeadAdapter;
@@ -22,6 +23,8 @@ public class HelpCenterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityHelpCenterBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        binding.toolbar.setNavigationOnClickListener(v -> onBackPressed());
 
         adapter = new HelpHeadAdapter(getApplicationContext());
         binding.headingList.setLayoutManager(new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.HORIZONTAL,false));

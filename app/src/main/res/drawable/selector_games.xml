@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <animated-selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/state_on"
-        android:drawable="@drawable/bottom_nav_active_games"
+        android:drawable="@drawable/bottom_nav_games_active"
         android:state_checked="true"/>
 <!--    android:drawable="@drawable/bottom_nav_games"-->
 
     <item android:id="@+id/state_off"
-        android:drawable="@drawable/bottom_nav_inactive_games"/>
+        android:drawable="@drawable/bottom_nav_games_inactive"/>
 <!--    android:drawable="@drawable/bottom_nav_outline_games"-->
 
     <!-- specify transitions -->
     <transition
-        android:drawable="@drawable/bottom_nav_active_games"
+        android:drawable="@drawable/bottom_nav_games_active"
         android:fromId="@id/state_off"
         android:toId="@id/state_on" />
 </animated-selector>

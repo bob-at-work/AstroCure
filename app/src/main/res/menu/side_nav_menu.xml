@@ -7,14 +7,9 @@
             android:title="Profile" />
 
         <item
-            android:id="@+id/rate_the_app"
-            android:icon="@drawable/side_rate_star"
-            android:title="Rate The App" />
-
-        <item
-            android:id="@+id/feedback"
-            android:icon="@drawable/side_feedback"
-            android:title="Feedback" />
+            android:id="@+id/favourites"
+            android:icon="@drawable/side_favourite"
+            android:title="Favourites" />
 
         <item
             android:id="@+id/wallet_nav"
@@ -25,6 +20,17 @@
             android:id="@+id/transaction_history"
             android:icon="@drawable/side_transaction_history"
             android:title="Transaction History" />
+
+        <item
+            android:id="@+id/chat_history"
+            android:icon="@drawable/side_chat_history"
+            android:title="Chat History" />
+
+        <item
+            android:id="@+id/feedback"
+            android:icon="@drawable/side_feedback"
+            android:title="Feedback" />
+
     </group>
 
 
@@ -49,9 +55,9 @@
             android:title="Terms &amp; conditions" />
 
         <item
-            android:id="@+id/favourites"
-            android:icon="@drawable/side_favourite"
-            android:title="Favourites" />
+            android:id="@+id/rate_the_app"
+            android:icon="@drawable/side_rate_star"
+            android:title="Rate The App" />
 
     </group>
 

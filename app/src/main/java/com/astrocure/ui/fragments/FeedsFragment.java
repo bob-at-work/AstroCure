@@ -30,41 +30,36 @@ public class FeedsFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        binding = FragmentFeedsBinding.inflate(inflater,container,false);
-
-        binding.tabLayout.addTab(binding.tabLayout.newTab().setText("New Feed"));
-        binding.tabLayout.addTab(binding.tabLayout.newTab().setText("Most Commented"));
-        binding.tabLayout.addTab(binding.tabLayout.newTab().setText("Most Liked"));
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        binding = FragmentFeedsBinding.inflate(inflater, container, false);
 
         binding.newest.setOnClickListener(v -> {
-            binding.newest.setBackground(ContextCompat.getDrawable(requireContext(),R.drawable.feed_selected_bg));
-            binding.newest.setTextColor(ContextCompat.getColor(requireContext(),R.color.black));
-            binding.mostCommented.setTextColor(ContextCompat.getColor(requireContext(),R.color.white));
-            binding.mostCommented.setBackground(ContextCompat.getDrawable(requireContext(),R.drawable.feed_unselected_bg));
-            binding.mostLiked.setTextColor(ContextCompat.getColor(requireContext(),R.color.white));
-            binding.mostLiked.setBackground(ContextCompat.getDrawable(requireContext(),R.drawable.feed_unselected_bg));
+            binding.newest.setBackground(ContextCompat.getDrawable(requireContext(), R.drawable.feed_selected_bg));
+            binding.newest.setTextColor(ContextCompat.getColor(requireContext(), R.color.black));
+            binding.mostCommented.setTextColor(ContextCompat.getColor(requireContext(), R.color.white));
+            binding.mostCommented.setBackground(ContextCompat.getDrawable(requireContext(), R.drawable.feed_unselected_bg));
+            binding.mostLiked.setTextColor(ContextCompat.getColor(requireContext(), R.color.white));
+            binding.mostLiked.setBackground(ContextCompat.getDrawable(requireContext(), R.drawable.feed_unselected_bg));
         });
         binding.mostCommented.setOnClickListener(v -> {
-            binding.mostCommented.setBackground(ContextCompat.getDrawable(requireContext(),R.drawable.feed_selected_bg));
-            binding.mostCommented.setTextColor(ContextCompat.getColor(requireContext(),R.color.black));
-            binding.newest.setTextColor(ContextCompat.getColor(requireContext(),R.color.white));
-            binding.newest.setBackground(ContextCompat.getDrawable(requireContext(),R.drawable.feed_unselected_bg));
-            binding.mostLiked.setTextColor(ContextCompat.getColor(requireContext(),R.color.white));
-            binding.mostLiked.setBackground(ContextCompat.getDrawable(requireContext(),R.drawable.feed_unselected_bg));
+            binding.mostCommented.setBackground(ContextCompat.getDrawable(requireContext(), R.drawable.feed_selected_bg));
+            binding.mostCommented.setTextColor(ContextCompat.getColor(requireContext(), R.color.black));
+            binding.newest.setTextColor(ContextCompat.getColor(requireContext(), R.color.white));
+            binding.newest.setBackground(ContextCompat.getDrawable(requireContext(), R.drawable.feed_unselected_bg));
+            binding.mostLiked.setTextColor(ContextCompat.getColor(requireContext(), R.color.white));
+            binding.mostLiked.setBackground(ContextCompat.getDrawable(requireContext(), R.drawable.feed_unselected_bg));
         });
         binding.mostLiked.setOnClickListener(v -> {
-            binding.mostLiked.setBackground(ContextCompat.getDrawable(requireContext(),R.drawable.feed_selected_bg));
-            binding.mostLiked.setTextColor(ContextCompat.getColor(requireContext(),R.color.black));
-            binding.newest.setTextColor(ContextCompat.getColor(requireContext(),R.color.white));
-            binding.newest.setBackground(ContextCompat.getDrawable(requireContext(),R.drawable.feed_unselected_bg));
-            binding.mostCommented.setTextColor(ContextCompat.getColor(requireContext(),R.color.white));
-            binding.mostCommented.setBackground(ContextCompat.getDrawable(requireContext(),R.drawable.feed_unselected_bg));
+            binding.mostLiked.setBackground(ContextCompat.getDrawable(requireContext(), R.drawable.feed_selected_bg));
+            binding.mostLiked.setTextColor(ContextCompat.getColor(requireContext(), R.color.black));
+            binding.newest.setTextColor(ContextCompat.getColor(requireContext(), R.color.white));
+            binding.newest.setBackground(ContextCompat.getDrawable(requireContext(), R.drawable.feed_unselected_bg));
+            binding.mostCommented.setTextColor(ContextCompat.getColor(requireContext(), R.color.white));
+            binding.mostCommented.setBackground(ContextCompat.getDrawable(requireContext(), R.drawable.feed_unselected_bg));
         });
 
         FeedsAdapter adapter = new FeedsAdapter(getContext());
-        binding.feedList.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false));
+        binding.feedList.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
         binding.feedList.setAdapter(adapter);
         binding.addPost.setOnClickListener(v -> startActivity(new Intent(getContext(), AddPostActivity.class)));
         return binding.getRoot();

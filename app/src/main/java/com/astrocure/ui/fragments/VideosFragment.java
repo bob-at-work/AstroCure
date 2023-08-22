@@ -47,51 +47,29 @@ public class VideosFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        binding = FragmentVideosBinding.inflate(inflater,container,false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        binding = FragmentVideosBinding.inflate(inflater, container, false);
 
         storyList = new ArrayList<>();
-        storyList.add(new StoryModel(R.drawable.video_gold,"Commodities"));
-        storyList.add(new StoryModel(R.drawable.video_sports,"Sports"));
-        storyList.add(new StoryModel(R.drawable.video_stock,"Stock"));
-        storyList.add(new StoryModel(R.drawable.video_bolly,"Bollywood"));
-        storyList.add(new StoryModel(R.drawable.video_bolly,"Miscellaneous"));
-        adapter = new StoryAdapter(getContext(),storyList);
-        binding.storyList.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
+        storyList.add(new StoryModel(R.drawable.video_gold, "Commodities"));
+        storyList.add(new StoryModel(R.drawable.video_sports, "Sports"));
+        storyList.add(new StoryModel(R.drawable.video_stock, "Stock"));
+        storyList.add(new StoryModel(R.drawable.video_bolly, "Bollywood"));
+        storyList.add(new StoryModel(R.drawable.video_bolly, "Miscellaneous"));
+        adapter = new StoryAdapter(getContext(), storyList);
+        binding.storyList.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
         binding.storyList.setAdapter(adapter);
 
         videoContentModelList = new ArrayList<>();
-        videoContentModelList.add(new VideoContentModel(profileImg,
-                "20 BSE500 stocks delivered double-digit weekly returns as markets turn wary of heights",
-                "07:03 pm", "R.string.dummy_video_text",
-                contentImg, "", "", false));
-        videoContentModelList.add(new VideoContentModel(profileImg,
-                "20 BSE500 stocks delivered double-digit weekly returns as markets turn wary of heights",
-                "07:03 pm", "R.string.dummy_video_text",
-                contentImg, videoUrl, thumbnail, true));
-        videoContentModelList.add(new VideoContentModel(profileImg,
-                "20 BSE500 stocks delivered double-digit weekly returns as markets turn wary of heights",
-                "07:03 pm", "R.string.dummy_video_text",
-                contentImg, videoUrl1, thumbnail, true));
-        videoContentModelList.add(new VideoContentModel(profileImg,
-                "20 BSE500 stocks delivered double-digit weekly returns as markets turn wary of heights",
-                "07:03 pm", "R.string.dummy_video_text",
-                contentImg, videoUrl2, thumbnail, false));
-        videoContentModelList.add(new VideoContentModel(profileImg,
-                "20 BSE500 stocks delivered double-digit weekly returns as markets turn wary of heights",
-                "07:03 pm", "R.string.dummy_video_text",
-                contentImg, videoUrl2, thumbnail, false));
-        videoContentModelList.add(new VideoContentModel(profileImg,
-                "20 BSE500 stocks delivered double-digit weekly returns as markets turn wary of heights",
-                "07:03 pm", "R.string.dummy_video_text",
-                contentImg, videoUrl2, thumbnail, true));
-        videoContentModelList.add(new VideoContentModel(profileImg,
-                "20 BSE500 stocks delivered double-digit weekly returns as markets turn wary of heights",
-                "07:03 pm", "R.string.dummy_video_text",
-                contentImg, videoUrl3, thumbnail, true));
-        contentAdapter = new VideoContentAdapter(getContext(),videoContentModelList);
-        binding.contentList.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false));
+        videoContentModelList.add(new VideoContentModel(profileImg, "20 BSE500 stocks delivered double-digit weekly returns as markets turn wary of heights", "07:03 pm", "R.string.dummy_video_text", contentImg, "", "", false));
+        videoContentModelList.add(new VideoContentModel(profileImg, "20 BSE500 stocks delivered double-digit weekly returns as markets turn wary of heights", "07:03 pm", "R.string.dummy_video_text", contentImg, videoUrl, thumbnail, true));
+        videoContentModelList.add(new VideoContentModel(profileImg, "20 BSE500 stocks delivered double-digit weekly returns as markets turn wary of heights", "07:03 pm", "R.string.dummy_video_text", contentImg, videoUrl1, thumbnail, true));
+        videoContentModelList.add(new VideoContentModel(profileImg, "20 BSE500 stocks delivered double-digit weekly returns as markets turn wary of heights", "07:03 pm", "R.string.dummy_video_text", contentImg, videoUrl2, thumbnail, false));
+        videoContentModelList.add(new VideoContentModel(profileImg, "20 BSE500 stocks delivered double-digit weekly returns as markets turn wary of heights", "07:03 pm", "R.string.dummy_video_text", contentImg, videoUrl2, thumbnail, false));
+        videoContentModelList.add(new VideoContentModel(profileImg, "20 BSE500 stocks delivered double-digit weekly returns as markets turn wary of heights", "07:03 pm", "R.string.dummy_video_text", contentImg, videoUrl2, thumbnail, true));
+        videoContentModelList.add(new VideoContentModel(profileImg, "20 BSE500 stocks delivered double-digit weekly returns as markets turn wary of heights", "07:03 pm", "R.string.dummy_video_text", contentImg, videoUrl3, thumbnail, true));
+        contentAdapter = new VideoContentAdapter(getContext(), videoContentModelList);
+        binding.contentList.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
         binding.contentList.setAdapter(contentAdapter);
 
         category = new ArrayList<>();
@@ -107,8 +85,8 @@ public class VideosFragment extends Fragment {
             dialog.setContentView(cardBinding.getRoot());
 
             cardBinding.close.setOnClickListener(v1 -> dialog.dismiss());
-            VideoCategoryAdapter adapter1 = new VideoCategoryAdapter(getContext(),category);
-            cardBinding.categoryList.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false));
+            VideoCategoryAdapter adapter1 = new VideoCategoryAdapter(getContext(), category);
+            cardBinding.categoryList.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
             cardBinding.categoryList.setAdapter(adapter1);
             dialog.show();
         });

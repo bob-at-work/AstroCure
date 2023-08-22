@@ -53,6 +53,7 @@
         app:strokeWidth=".5dp"
         android:textColor="@color/black"
         android:textStyle="bold"
+        android:theme="@style/Theme.Material3.Light"
         app:layout_constraintEnd_toStartOf="@id/career_btn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/career_btn" />
@@ -69,6 +70,7 @@
         android:textStyle="bold"
         android:backgroundTint="@color/btn_transparent"
         android:layout_marginTop="20dp"
+        android:theme="@style/Theme.Material3.Light"
         app:layout_constraintTop_toBottomOf="@id/line"
         app:layout_constraintStart_toEndOf="@id/love_btn"
         app:layout_constraintEnd_toStartOf="@id/health_btn"/>
@@ -84,6 +86,7 @@
         android:textColor="@color/white"
         android:textStyle="bold"
         android:backgroundTint="@color/btn_transparent"
+        android:theme="@style/Theme.Material3.Light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/career_btn"
         app:layout_constraintTop_toTopOf="@+id/career_btn" />

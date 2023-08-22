@@ -2,16 +2,16 @@
 <animated-selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/state_on"
-        android:drawable="@drawable/bottom_nav_feed"
+        android:drawable="@drawable/bottom_nav_feeds_active"
         android:state_checked="true" />
 
     <item
         android:id="@+id/state_off"
-        android:drawable="@drawable/bottom_nav_outline_feed" />
+        android:drawable="@drawable/bottom_nav_feeds_inactive" />
 
     <!-- specify transitions -->
     <transition
-        android:drawable="@drawable/bottom_nav_feed"
+        android:drawable="@drawable/bottom_nav_feeds_active"
         android:fromId="@id/state_off"
         android:toId="@id/state_on" />
 </animated-selector>

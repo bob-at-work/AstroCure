@@ -16,6 +16,7 @@ import java.util.List;
 public class HomeZodiacAdapter extends RecyclerView.Adapter<HomeZodiacAdapter.ZodiacViewHolder> {
     Context context;
     List<HomeZodiacModel> zodiacModels;
+    OnItemClickListener onItemClickListener;
 
     public HomeZodiacAdapter(Context context, List<HomeZodiacModel> zodiacModels) {
         this.context = context;
@@ -34,6 +35,9 @@ public class HomeZodiacAdapter extends RecyclerView.Adapter<HomeZodiacAdapter.Zo
         holder.binding.name.setText(zodiacModels.get(position).getName());
         Glide.with(context).load(zodiacModels.get(position).getLogo())
                 .into(holder.binding.logo);
+        holder.binding.logo.setOnClickListener(v -> {
+            onItemClickListener.onItemClick(position);
+        });
     }
 
     @Override
@@ -48,5 +52,13 @@ public class HomeZodiacAdapter extends RecyclerView.Adapter<HomeZodiacAdapter.Zo
             super(binding.getRoot());
             this.binding = binding;
         }
+    }
+
+    public void setOnItemClick(OnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
+    }
+
+    public interface OnItemClickListener {
+        void onItemClick(int position);
     }
 }

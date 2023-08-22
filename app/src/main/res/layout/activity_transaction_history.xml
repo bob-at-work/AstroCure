@@ -35,7 +35,7 @@
         app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:strokeColor="@color/white"
         app:strokeWidth=".5dp"
-        tools:layout_editor_absoluteX="10dp">
+        android:theme="@style/Theme.Material3.Light">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

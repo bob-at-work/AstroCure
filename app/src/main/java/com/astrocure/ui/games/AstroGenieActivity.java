@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.text.TextPaint;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 
@@ -24,7 +23,6 @@ import java.util.Random;
 public class AstroGenieActivity extends AppCompatActivity {
     ActivityAstroGenieBinding binding;
     private boolean isShaken;
-
     private Vibrator vibrator;
 
     @Override
@@ -40,14 +38,10 @@ public class AstroGenieActivity extends AppCompatActivity {
         vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
 
         TextPaint paint = binding.title.getPaint();
-        Shader textShader = new LinearGradient(0, 0, paint.measureText(binding.title.getText().toString()), binding.title.getTextSize(),
-                new int[]{
-                        Color.parseColor("#53129E"),
-                        Color.parseColor("#FFFFFF"),/*
+        Shader textShader = new LinearGradient(0, 0, paint.measureText(binding.title.getText().toString()), binding.title.getTextSize(), new int[]{Color.parseColor("#53129E"), Color.parseColor("#FFFFFF"),/*
                         Color.parseColor("#64B678"),
                         Color.parseColor("#478AEA"),
-                        Color.parseColor("#8446CC"),*/
-                }, null, Shader.TileMode.CLAMP);
+                        Color.parseColor("#8446CC"),*/}, null, Shader.TileMode.CLAMP);
         binding.title.getPaint().setShader(textShader);
 
         binding.pot.setOnClickListener(v -> {
@@ -57,11 +51,11 @@ public class AstroGenieActivity extends AppCompatActivity {
         });
 
         binding.genieAnim.setOnLongClickListener(v -> {
-            if (!isShaken && binding.askAgain.getVisibility() == View.INVISIBLE){
+            if (!isShaken && binding.askAgain.getVisibility() == View.INVISIBLE) {
                 isShaken = true;
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                     vibrator.vibrate(VibrationEffect.createOneShot(300, VibrationEffect.DEFAULT_AMPLITUDE));
-                }else {
+                } else {
                     vibrator.vibrate(300);
                 }
                 binding.genieAnim.playAnimation();
@@ -82,24 +76,8 @@ public class AstroGenieActivity extends AppCompatActivity {
             return false;
         });
 
-        /*binding.genieAnim.setOnClickListener(v -> {
-            binding.genieAnim.playAnimation();
-            binding.genieAnim.addAnimatorListener(new AnimatorListenerAdapter() {
-                @Override
-                public void onAnimationEnd(Animator animation) {
-                    super.onAnimationEnd(animation);
-                    binding.askAgain.setVisibility(View.VISIBLE);
-                    binding.result.setText(randomString());
-                    binding.result.setVisibility(View.VISIBLE);
-                    binding.textView1.setVisibility(View.GONE);
-                    binding.genieAnim.removeAllAnimatorListeners();
-                }
-            });
-
-        });*/
-
         binding.askAgain.setOnClickListener(v -> {
-            if (isShaken){
+            if (isShaken) {
                 isShaken = false;
                 binding.genieAnim.reverseAnimationSpeed();
                 binding.genieAnim.playAnimation();

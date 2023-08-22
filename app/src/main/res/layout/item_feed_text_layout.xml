@@ -5,12 +5,13 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="10dp"
     android:layout_marginBottom="10dp"
-    android:layout_marginStart="20dp"
-    android:layout_marginEnd="20dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
     app:strokeColor="@color/white"
     app:strokeWidth=".8dp"
     app:cardElevation="5dp"
     app:cardCornerRadius="20dp"
+    android:theme="@style/Theme.Material3.Light"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -22,27 +23,35 @@
         android:paddingEnd="10dp"
         android:background="@drawable/content_box_bg">
 
-        <com.google.android.material.imageview.ShapeableImageView
+        <androidx.cardview.widget.CardView
             android:id="@+id/img_border"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:background="#FFFFFF"
-            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
-            app:layout_constraintTop_toTopOf="@id/profile_image"
-            app:layout_constraintStart_toStartOf="@id/profile_image"
-            app:layout_constraintBottom_toBottomOf="@id/profile_image"
-            app:layout_constraintEnd_toEndOf="@id/profile_image"/>
+            app:cardCornerRadius="100dp"
+            app:layout_constraintTop_toTopOf="@id/profile_image_container"
+            app:layout_constraintStart_toStartOf="@id/profile_image_container"
+            app:layout_constraintBottom_toBottomOf="@id/profile_image_container"
+            app:layout_constraintEnd_toEndOf="@id/profile_image_container"/>
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/profile_image"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/profile_image_container"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_margin="3dp"
             android:background="@color/white"
-            android:src="@drawable/black"
-            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
+            app:cardCornerRadius="100dp"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/profile_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:importantForAccessibility="no"
+                android:src="@drawable/black" />
+
+        </androidx.cardview.widget.CardView>
 
         <TextView
             android:id="@+id/name"
@@ -52,8 +61,8 @@
             android:text="Anisha"
             android:textColor="@color/white"
             android:textSize="16sp"
-            app:layout_constraintStart_toEndOf="@id/profile_image"
-            app:layout_constraintTop_toTopOf="@id/profile_image"
+            app:layout_constraintStart_toEndOf="@id/profile_image_container"
+            app:layout_constraintTop_toTopOf="@id/profile_image_container"
             app:layout_constraintBottom_toTopOf="@id/post_time"/>
 
         <TextView
@@ -63,7 +72,7 @@
             android:text="30 min"
             android:textSize="12sp"
             android:textColor="#979797"
-            app:layout_constraintBottom_toBottomOf="@id/profile_image"
+            app:layout_constraintBottom_toBottomOf="@id/profile_image_container"
             app:layout_constraintStart_toStartOf="@+id/name"
             app:layout_constraintTop_toBottomOf="@id/name" />
 
@@ -73,8 +82,8 @@
             android:layout_height="wrap_content"
             android:src="@drawable/more_horiz"
             android:padding="10dp"
-            app:layout_constraintTop_toTopOf="@id/profile_image"
-            app:layout_constraintBottom_toBottomOf="@id/profile_image"
+            app:layout_constraintTop_toTopOf="@id/profile_image_container"
+            app:layout_constraintBottom_toBottomOf="@id/profile_image_container"
             app:layout_constraintEnd_toEndOf="parent"
             app:tint="#B8FFFFFF" />
 
@@ -86,7 +95,7 @@
             android:textColor="@color/white"
             android:layout_marginTop="20dp"
             android:lineSpacingExtra="5dp"
-            app:layout_constraintTop_toBottomOf="@id/profile_image"/>
+            app:layout_constraintTop_toBottomOf="@id/profile_image_container"/>
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/image_container"
@@ -151,16 +160,23 @@
             android:background="@drawable/feed_edittext_bg"
             app:layout_constraintTop_toBottomOf="@id/likes">
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/profile"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/profile_container"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:src="@drawable/likes"
                 android:background="@color/black"
-                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
+                app:cardCornerRadius="50dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"/>
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:id="@+id/profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </androidx.cardview.widget.CardView>
 
             <TextView
                 android:id="@+id/comment"
@@ -172,10 +188,10 @@
                 android:padding="10dp"
                 android:textColor="@color/black"
                 android:textColorHint="#AFAFAF"
-                app:layout_constraintBottom_toBottomOf="@id/profile"
+                app:layout_constraintBottom_toBottomOf="@id/profile_container"
                 app:layout_constraintEnd_toStartOf="@+id/comment_count"
-                app:layout_constraintStart_toEndOf="@id/profile"
-                app:layout_constraintTop_toTopOf="@id/profile" />
+                app:layout_constraintStart_toEndOf="@id/profile_container"
+                app:layout_constraintTop_toTopOf="@id/profile_container" />
 
             <include
                 android:layout_width="wrap_content"

@@ -11,24 +11,24 @@
         android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/back_app"
-        android:padding="5dp"
         android:layout_margin="20dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        android:padding="5dp"
+        android:src="@drawable/back_app"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/poppins_semibold"
         android:text="ASTRO GENIE"
         android:textColor="@color/white"
         android:textSize="36sp"
-        android:fontFamily="@font/poppins_semibold"
         app:layout_constraintBottom_toBottomOf="@+id/back"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/back"
         app:layout_constraintTop_toTopOf="@+id/back" />
 
     <TextView
@@ -36,27 +36,29 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:textSize="20dp"
-        android:text="Rub the magical lamp to get your answer from the Genie"
         android:gravity="center"
+        android:text="Rub the magical lamp to get your answer from the Genie"
         android:textColor="@color/white"
-        app:layout_constraintWidth_percent=".7"
-        app:layout_constraintVertical_bias="0"
+        android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@+id/imageView4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title" />
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintWidth_percent=".7" />
 
     <TextView
         android:id="@+id/result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20dp"
-        app:layout_constraintVertical_bias=".1"
+        android:textColor="@color/white"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/imageView4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title" />
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        app:layout_constraintVertical_bias=".1" />
 
     <ImageView
         android:id="@+id/main"
@@ -64,7 +66,7 @@
         android:layout_height="wrap_content"
         android:src="@drawable/genie"
         android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -85,6 +87,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/sun_center_gradient_bg"
+        app:layout_constraintBottom_toBottomOf="@id/genie_anim"
+        app:layout_constraintStart_toStartOf="@id/genie_anim" />
+
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/genie_anim"
         android:layout_width="match_parent"
@@ -97,27 +106,27 @@
         android:id="@+id/ask_again"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:neumorph_strokeColor="@color/white"
-        app:neumorph_strokeWidth=".5dp"
         android:visibility="invisible"
-        app:neumorph_shadowColorLight="#33FFFFFF"
-        app:neumorph_shadowColorDark="#66FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:neumorph_shadowColorDark="#66FFFFFF"
+        app:neumorph_shadowColorLight="#33FFFFFF"
+        app:neumorph_strokeColor="@color/white"
+        app:neumorph_strokeWidth=".5dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ask Again"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textSize="18sp"
             android:letterSpacing=".1"
             android:paddingStart="30dp"
-            android:paddingEnd="30dp"
             android:paddingTop="15dp"
-            android:paddingBottom="15dp"/>
+            android:paddingEnd="30dp"
+            android:paddingBottom="15dp"
+            android:text="Ask Again"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
     </soup.neumorphism.NeumorphCardView>
 

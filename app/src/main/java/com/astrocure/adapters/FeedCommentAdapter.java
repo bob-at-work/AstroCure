@@ -1,6 +1,7 @@
 package com.astrocure.adapters;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,17 +14,20 @@ import androidx.transition.TransitionManager;
 
 import com.astrocure.databinding.ItemFeedCommentBinding;
 import com.astrocure.utils.DrawDotedLine;
-import com.astrocure.utils.DrawLine;
 import com.bumptech.glide.Glide;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class FeedCommentAdapter extends RecyclerView.Adapter<FeedCommentAdapter.CommentViewHolder> {
     Context context;
     private OnItemClickListener onItemClickListener;
+    private List<Integer> heights;
 
     public FeedCommentAdapter(Context context) {
         this.context = context;
+        this.heights = new ArrayList<>();
     }
 
     @NonNull
@@ -50,11 +54,12 @@ public class FeedCommentAdapter extends RecyclerView.Adapter<FeedCommentAdapter.
                 FeedReplyAdapter adapter = new FeedReplyAdapter(context);
                 holder.binding.replyList.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false));
                 holder.binding.replyList.setAdapter(adapter);
-                adapter.setOnHeight(height -> {
+                adapter.setOnHeight((height,heights) -> {
                     itemHeight.set(height);
-                    DrawDotedLine drawDotedLine = new DrawDotedLine(context, holder.binding.logo.getHeight(), itemHeight.get());
+                    DrawDotedLine drawDotedLine = new DrawDotedLine(context, holder.binding.logo.getHeight(),holder.binding.threadView.getWidth(), heights);
                     holder.binding.threadView.addView(drawDotedLine);
                 });
+
                 adapter.setOnClick(position1 -> {
                     onItemClickListener.onItemClick(position);
                 });
@@ -63,10 +68,9 @@ public class FeedCommentAdapter extends RecyclerView.Adapter<FeedCommentAdapter.
                 holder.binding.replyList.setVisibility(View.GONE);
 //                TransitionManager.beginDelayedTransition(holder.binding.getRoot(), new AutoTransition());
             }
-
-            holder.binding.moreOption.setOnClickListener(v1 -> {
-
-            });
+        });
+        holder.binding.moreOption.setOnClickListener(v1 -> {
+            onItemClickListener.onItemMoreOption(position,holder.binding.comment.getText().toString());
         });
     }
 
@@ -81,6 +85,8 @@ public class FeedCommentAdapter extends RecyclerView.Adapter<FeedCommentAdapter.
 
     public interface OnItemClickListener {
         void onItemClick(int position);
+
+        void onItemMoreOption(int position,String comment);
     }
 
     public class CommentViewHolder extends RecyclerView.ViewHolder {

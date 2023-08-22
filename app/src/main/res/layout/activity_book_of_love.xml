@@ -22,13 +22,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/poppins_semibold"
         android:text="BOOK OF LOVE"
         android:textColor="@color/white"
         android:textSize="34sp"
-        android:fontFamily="@font/poppins_semibold"
         app:layout_constraintBottom_toBottomOf="@+id/back"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/back"
         app:layout_constraintTop_toTopOf="@+id/back" />
 
     <TextView

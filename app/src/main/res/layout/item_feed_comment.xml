@@ -11,16 +11,23 @@
     android:background="@drawable/border_comment_bg"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/logo"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/logo_container"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_margin="20dp"
-        android:src="@drawable/genie"
+        app:cardCornerRadius="100dp"
         android:background="@color/white"
-        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/genie"/>
+
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/username"
@@ -30,8 +37,8 @@
         android:layout_marginStart="10dp"
         android:textColor="#FDFDFD"
         android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@id/logo"
-        app:layout_constraintTop_toTopOf="@id/logo"/>
+        app:layout_constraintStart_toEndOf="@id/logo_container"
+        app:layout_constraintTop_toTopOf="@id/logo_container"/>
 
     <TextView
         android:id="@+id/time"
@@ -72,7 +79,8 @@
         android:layout_height="wrap_content"
         android:padding="5dp"
         android:text="Reply"
-        android:textColor="@color/white"
+        android:textColor="#FFEB3B"
+        android:drawableTint="#FFEB3B"
         android:drawableStart="@drawable/ic_reply"
         app:layout_constraintStart_toStartOf="@id/comment"
         app:layout_constraintTop_toTopOf="@+id/like"/>
@@ -83,7 +91,7 @@
         android:layout_height="wrap_content"
         android:padding="5sp"
         android:text="Comments"
-        android:textColor="@color/white"
+        android:textColor="#FFEB3B"
         app:layout_constraintEnd_toStartOf="@id/like"
         app:layout_constraintStart_toEndOf="@id/reply"
         app:layout_constraintTop_toTopOf="@id/like" />
@@ -96,7 +104,8 @@
         android:layout_marginTop="10dp"
         android:text="8098"
         android:drawablePadding="5dp"
-        android:textColor="@color/white"
+        android:textColor="#FFEB3B"
+        android:drawableTint="#FFEB3B"
         android:drawableLeft="@drawable/ic_heart_like"
         app:layout_constraintEnd_toEndOf="@id/comment"
         app:layout_constraintTop_toBottomOf="@+id/comment" />
@@ -108,7 +117,7 @@
         android:visibility="gone"
         tools:listitem="@layout/item_feed_reply"
         app:layout_constraintEnd_toEndOf="@id/like"
-        app:layout_constraintStart_toEndOf="@id/logo"
+        app:layout_constraintStart_toEndOf="@id/logo_container"
         app:layout_constraintTop_toBottomOf="@id/reply" />
 
     <RelativeLayout
@@ -117,8 +126,8 @@
         android:layout_height="0dp"
         android:visibility="gone"
         app:layout_constraintEnd_toStartOf="@id/reply_list"
-        app:layout_constraintTop_toBottomOf="@id/logo"
-        app:layout_constraintStart_toStartOf="@id/logo"
+        app:layout_constraintTop_toBottomOf="@id/logo_container"
+        app:layout_constraintStart_toStartOf="@id/logo_container"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,11 +7,11 @@ import static com.astrocure.utils.AstrologyApiConstants.LOVE_HOUSE;
 import static com.astrocure.utils.AstrologyApiConstants.TOPOCENTRIC;
 
 import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -84,8 +84,7 @@ public class HoroscopeFragment extends Fragment implements Toolbar.OnMenuItemCli
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentHoroscopeBinding.inflate(inflater, container, false);
 
         binding.toolbar.setOnMenuItemClickListener(this::onMenuItemClick);
@@ -106,6 +105,10 @@ public class HoroscopeFragment extends Fragment implements Toolbar.OnMenuItemCli
         modelList.add(new HomeZodiacModel("Pisces", R.drawable.piseces_top));
         homeZodiacAdapter = new HomeZodiacAdapter(getContext(), modelList);
         binding.zodiacList.setAdapter(homeZodiacAdapter);
+        homeZodiacAdapter.setOnItemClick(position -> {
+            Dialog dialog = new Dialog(getActivity());
+
+        });
 
         binding.time.setText(new SimpleDateFormat("EEEE,dd MMM").format(new Date()));
         binding.zodiacLayout2.time.setText(new SimpleDateFormat("EEEE,MMMM d ").format(new Date()));
@@ -117,9 +120,9 @@ public class HoroscopeFragment extends Fragment implements Toolbar.OnMenuItemCli
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 Calendar calendar = Calendar.getInstance();
-                switch (tab.getPosition()){
+                switch (tab.getPosition()) {
                     case 0:
-                        calendar.add(Calendar.DATE,-1);
+                        calendar.add(Calendar.DATE, -1);
                         binding.zodiacLayout2.time.setText(new SimpleDateFormat("EEEE,MMMM d ").format(calendar.getTime()));
                         binding.zodiacLayout1.currentDate.setText(new SimpleDateFormat("EEEE d MMMM").format(calendar.getTime()));
                         break;
@@ -129,7 +132,7 @@ public class HoroscopeFragment extends Fragment implements Toolbar.OnMenuItemCli
                         binding.zodiacLayout1.currentDate.setText(new SimpleDateFormat("EEEE d MMMM").format(new Date()));
                         break;
                     case 2:
-                        calendar.add(Calendar.DATE,1);
+                        calendar.add(Calendar.DATE, 1);
                         binding.zodiacLayout2.time.setText(new SimpleDateFormat("EEEE,MMMM d ").format(calendar.getTime()));
                         binding.zodiacLayout1.currentDate.setText(new SimpleDateFormat("EEEE d MMMM").format(calendar.getTime()));
                         break;
@@ -147,38 +150,20 @@ public class HoroscopeFragment extends Fragment implements Toolbar.OnMenuItemCli
             }
         });
         zodiacViewPagerModel = new ZodiacViewPagerModel("Cancer");
-        ZodiacViewpagerAdapter viewpagerAdapter = new ZodiacViewpagerAdapter(getContext(),zodiacViewPagerModel);
+        ZodiacViewpagerAdapter viewpagerAdapter = new ZodiacViewpagerAdapter(getContext(), zodiacViewPagerModel);
         binding.chartPercent.setAdapter(viewpagerAdapter);
         binding.tabLayout.setupWithViewPager(binding.chartPercent);
         binding.tabLayout.selectTab(binding.tabLayout.getTabAt(1));
 
         binding.zodiacLayout2.loveBtn.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.white));
         binding.zodiacLayout2.loveBtn.setOnClickListener(v -> {
-            binding.zodiacLayout2.description.setText(R.string.dummy_1);
-            binding.zodiacLayout2.loveBtn.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.white));
-            binding.zodiacLayout2.loveBtn.setTextColor(ContextCompat.getColor(getContext(), R.color.black));
-            binding.zodiacLayout2.careerBtn.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.btn_transparent));
-            binding.zodiacLayout2.careerBtn.setTextColor(ContextCompat.getColor(getContext(), R.color.white));
-            binding.zodiacLayout2.healthBtn.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.btn_transparent));
-            binding.zodiacLayout2.healthBtn.setTextColor(ContextCompat.getColor(getContext(), R.color.white));
+            setZodiacLayout2("love", R.string.dummy_1);
         });
         binding.zodiacLayout2.careerBtn.setOnClickListener(v -> {
-            binding.zodiacLayout2.description.setText(R.string.dummy_2);
-            binding.zodiacLayout2.careerBtn.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.white));
-            binding.zodiacLayout2.careerBtn.setTextColor(ContextCompat.getColor(getContext(), R.color.black));
-            binding.zodiacLayout2.loveBtn.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.btn_transparent));
-            binding.zodiacLayout2.loveBtn.setTextColor(ContextCompat.getColor(getContext(), R.color.white));
-            binding.zodiacLayout2.healthBtn.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.btn_transparent));
-            binding.zodiacLayout2.healthBtn.setTextColor(ContextCompat.getColor(getContext(), R.color.white));
+            setZodiacLayout2("career", R.string.dummy_2);
         });
         binding.zodiacLayout2.healthBtn.setOnClickListener(v -> {
-            binding.zodiacLayout2.description.setText(R.string.dummy_3);
-            binding.zodiacLayout2.healthBtn.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.white));
-            binding.zodiacLayout2.healthBtn.setTextColor(ContextCompat.getColor(getContext(), R.color.black));
-            binding.zodiacLayout2.careerBtn.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.btn_transparent));
-            binding.zodiacLayout2.careerBtn.setTextColor(ContextCompat.getColor(getContext(), R.color.white));
-            binding.zodiacLayout2.loveBtn.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.btn_transparent));
-            binding.zodiacLayout2.loveBtn.setTextColor(ContextCompat.getColor(getContext(), R.color.white));
+            setZodiacLayout2("health", R.string.dummy_3);
         });
 
         binding.seeNew.setOnClickListener(v -> {
@@ -198,9 +183,7 @@ public class HoroscopeFragment extends Fragment implements Toolbar.OnMenuItemCli
                 int selectedYear = 2000;
                 int selectedMonth = 5;
                 int selectedDayOfMonth = 10;
-                DatePickerDialog datePickerDialog = new DatePickerDialog(getContext(),
-                        android.R.style.Theme_Holo_Dialog_NoActionBar,
-                        (view, year, month, dayOfMonth) -> dialogBinding.dob.setText(dayOfMonth + "/" + month + "/" + year), selectedYear, selectedMonth, selectedDayOfMonth);
+                DatePickerDialog datePickerDialog = new DatePickerDialog(getContext(), android.R.style.Theme_Holo_Dialog_NoActionBar, (view, year, month, dayOfMonth) -> dialogBinding.dob.setText(dayOfMonth + "/" + month + "/" + year), selectedYear, selectedMonth, selectedDayOfMonth);
                 datePickerDialog.show();
             });
 
@@ -238,6 +221,31 @@ public class HoroscopeFragment extends Fragment implements Toolbar.OnMenuItemCli
         return binding.getRoot();
     }
 
+    private void setZodiacLayout2(String name, int prediction) {
+        switch (name) {
+            case "love":
+                setButtonLayout(R.color.white, R.color.black, R.color.btn_transparent, R.color.white, R.color.btn_transparent, R.color.white);
+                break;
+            case "career":
+                setButtonLayout(R.color.btn_transparent, R.color.white, R.color.white, R.color.black, R.color.btn_transparent, R.color.white);
+                break;
+            case "health":
+                setButtonLayout(R.color.btn_transparent, R.color.white, R.color.btn_transparent, R.color.white, R.color.white, R.color.black);
+                break;
+        }
+        binding.zodiacLayout2.description.setText(prediction);
+
+    }
+
+    private void setButtonLayout(int loveBg, int loveTxt, int careerBg, int careerTxt, int healthBg, int healthTxt) {
+        binding.zodiacLayout2.healthBtn.setBackgroundColor(ContextCompat.getColor(getContext(), healthBg));
+        binding.zodiacLayout2.healthBtn.setTextColor(ContextCompat.getColor(getContext(), healthTxt));
+        binding.zodiacLayout2.careerBtn.setBackgroundColor(ContextCompat.getColor(getContext(), careerBg));
+        binding.zodiacLayout2.careerBtn.setTextColor(ContextCompat.getColor(getContext(), careerTxt));
+        binding.zodiacLayout2.loveBtn.setBackgroundColor(ContextCompat.getColor(getContext(), loveBg));
+        binding.zodiacLayout2.loveBtn.setTextColor(ContextCompat.getColor(getContext(), loveTxt));
+    }
+
     private void setPercentData(int hour, int min, int sec, int date, int month, int year, float latitude, float longitude) {
         PlanetsRequestModel requestModel = new PlanetsRequestModel();
         requestModel.setYear(year);
@@ -255,17 +263,17 @@ public class HoroscopeFragment extends Fragment implements Toolbar.OnMenuItemCli
             public void onResponse(Call<PlanetsResponseModel> call, Response<PlanetsResponseModel> response) {
                 try {
                     if (response.isSuccessful()) {
-                        PlanetsHouse healthPlanet = new PlanetsHouse(getContext(),response.body());
+                        PlanetsHouse healthPlanet = new PlanetsHouse(getContext(), response.body());
                         String planets = healthPlanet.getLovePlanetNum();
                         String zodiac = healthPlanet.getZodiacSign();
 //                        binding.zodiacName.setText(zodiac);
                         binding.zodiacLayout1.zodiac.setText(zodiac);
-                        if(!planets.isEmpty()){
+                        if (!planets.isEmpty()) {
                             healthPlanet.getHouseCurrentSign(LOVE_HOUSE);
                             JSONObject jsonObject = new JSONObject(Objects.requireNonNull(loadJSONFromAsset(requireActivity(), "Predictions.json")));
                             JSONArray jsonArray = jsonObject.getJSONArray("double");
                             love = jsonArray.getJSONObject(0).getJSONObject(planets).get("Prediction").toString();
-                        }else {
+                        } else {
                             JSONObject jsonObject = new JSONObject(Objects.requireNonNull(loadJSONFromAsset(requireActivity(), "Predictions.json")));
                             JSONArray jsonArray = jsonObject.getJSONArray("zodiac-ruling-planet");
                             love = jsonArray.getJSONObject(0).getJSONObject(planets).get("Prediction").toString();

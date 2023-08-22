@@ -2,13 +2,13 @@ package com.astrocure.ui.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.core.content.ContextCompat;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
 
 import com.astrocure.R;
 import com.astrocure.databinding.FragmentEntertainmentBinding;
@@ -23,6 +23,7 @@ import com.astrocure.ui.games.FortuneCookieActivity;
 
 public class EntertainmentFragment extends Fragment {
     FragmentEntertainmentBinding binding;
+
     public EntertainmentFragment() {
         // Required empty public constructor
     }
@@ -33,9 +34,8 @@ public class EntertainmentFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        binding = FragmentEntertainmentBinding.inflate(inflater,container,false);
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        binding = FragmentEntertainmentBinding.inflate(inflater, container, false);
 
 //        binding.back.setOnClickListener(v -> onBackPressed());
         binding.fortuneCookie.setOnClickListener(v -> startActivity(new Intent(getContext(), FortuneCookieActivity.class)));
@@ -65,12 +65,7 @@ public class EntertainmentFragment extends Fragment {
             binding.gamesContainer.setVisibility(View.GONE);
         });
 
-        binding.gotoMatch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getContext(), CompatibilitySecondActivity.class));
-            }
-        });
+        binding.gotoMatch.setOnClickListener(v -> startActivity(new Intent(getContext(), CompatibilitySecondActivity.class)));
 
         binding.go.setOnClickListener(v -> startActivity(new Intent(getContext(), CompatibilityActivity.class)));
         return binding.getRoot();

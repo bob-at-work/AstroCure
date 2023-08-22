@@ -22,13 +22,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
+        android:fontFamily="@font/poppins_semibold"
         android:text="@string/fortune_cookie"
         android:textSize="30sp"
-        android:fontFamily="@font/poppins_semibold"
+        android:layout_marginStart="10dp"
         app:layout_constraintBottom_toBottomOf="@+id/back"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/back"/>
+        app:layout_constraintStart_toEndOf="@+id/back"
+        app:layout_constraintTop_toTopOf="@+id/back" />
 
     <TextView
         android:id="@+id/textView4"
@@ -62,7 +62,7 @@
         android:id="@+id/output"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/inknut_antiqua_semibold"
+        android:fontFamily="@font/poppins_semibold"
         android:gravity="center"
         android:padding="20dp"
         android:text="Connected to process 20557 on device 'motorola_edge_30-192.168.0.104:5555'."
