@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.astrocure.R;
 import com.astrocure.databinding.ItemVideoHighlightLayoutBinding;
 import com.astrocure.models.StoryModel;
 import com.bumptech.glide.Glide;
@@ -31,6 +32,9 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHol
 
     @Override
     public void onBindViewHolder(@NonNull StoryViewHolder holder, int position) {
+        if (position == 0) {
+            holder.binding.imageView8.setBackground(context.getDrawable(R.drawable.video_highlight_bg_active));
+        }
         Glide.with(context).load(storyList.get(position).getImage())
                 .into(holder.binding.logo);
         holder.binding.storyCatName.setText(storyList.get(position).getName());

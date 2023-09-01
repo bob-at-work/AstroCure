@@ -3,16 +3,11 @@ package com.astrocure.utils;
 import android.content.Context;
 import android.graphics.Paint;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.ActionMode;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.astrocure.R;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class AppTextInputLayout extends TextInputLayout implements com.astrocure.callback.AppTextInputLayout {
@@ -24,6 +19,7 @@ public class AppTextInputLayout extends TextInputLayout implements com.astrocure
     private Paint mLinesPaint;
     private OnClickListener mClickListener;
     private OnFocusChangeListener onFocusChangeListener;
+
     public AppTextInputLayout(@NonNull Context context) {
         super(context);
     }
@@ -37,10 +33,10 @@ public class AppTextInputLayout extends TextInputLayout implements com.astrocure
         float multi = context.getResources().getDisplayMetrics().density;
         setHelperText(getHint());
         super.setOnFocusChangeListener((v, hasFocus) -> {
-            if (onFocusChangeListener!=null){
-                onFocusChangeListener.onFocusChange(v,hasFocus);
+            if (onFocusChangeListener != null) {
+                onFocusChangeListener.onFocusChange(v, hasFocus);
             }
-            if (hasFocus){
+            if (hasFocus) {
                 setHelperText(getHint());
                 setHint("");
             }

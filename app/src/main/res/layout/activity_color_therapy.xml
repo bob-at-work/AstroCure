@@ -20,8 +20,8 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
         android:fontFamily="@font/poppins_semibold"
         android:text="@string/color_therapy"
         android:textSize="36sp"
@@ -34,15 +34,15 @@
         android:id="@+id/label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:gravity="center"
         android:text="Choose any color, and get your\nreadings in few seconds!"
         android:textColor="@color/white"
         android:textSize="20sp"
-        android:gravity="center"
-        android:layout_marginTop="15dp"
-        android:fontFamily="@font/poppins_semibold"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title" />
 
     <ImageView
         android:id="@+id/red"
@@ -51,9 +51,9 @@
         android:layout_margin="20dp"
         android:src="@drawable/red"
         app:layout_constraintBottom_toTopOf="@id/brown"
-        app:layout_constraintTop_toBottomOf="@id/label"
+        app:layout_constraintEnd_toStartOf="@id/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/white"/>
+        app:layout_constraintTop_toBottomOf="@id/label" />
 
     <ImageView
         android:id="@+id/white"
@@ -81,12 +81,12 @@
         android:id="@+id/brown"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:src="@drawable/brown"
         android:layout_margin="20dp"
+        android:src="@drawable/brown"
         app:layout_constraintBottom_toTopOf="@id/gray"
-        app:layout_constraintTop_toBottomOf="@id/red"
+        app:layout_constraintEnd_toStartOf="@id/purple"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/purple"/>
+        app:layout_constraintTop_toBottomOf="@id/red" />
 
     <ImageView
         android:id="@+id/purple"
@@ -117,9 +117,9 @@
         android:layout_margin="20dp"
         android:src="@drawable/color_therapy_grey"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/brown"
+        app:layout_constraintEnd_toStartOf="@id/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/black"/>
+        app:layout_constraintTop_toBottomOf="@id/brown" />
 
     <ImageView
         android:id="@+id/black"

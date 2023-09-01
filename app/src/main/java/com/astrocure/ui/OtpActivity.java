@@ -1,10 +1,9 @@
 package com.astrocure.ui;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.astrocure.R;
 import com.astrocure.databinding.ActivityOtpBinding;
@@ -22,7 +21,7 @@ public class OtpActivity extends AppCompatActivity {
         binding.otp.setTextColor(getColor(R.color.white));
 
         binding.send.setOnClickListener(v -> {
-           startActivity(new Intent(getApplicationContext(), CreateAccountActivity.class));
+            startActivity(new Intent(getApplicationContext(), CreateAccountActivity.class));
         });
 
     }

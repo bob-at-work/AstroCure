@@ -9,7 +9,7 @@
         <item
             android:id="@+id/favourites"
             android:icon="@drawable/side_favourite"
-            android:title="Favourites" />
+            android:title="Favourites Videos" />
 
         <item
             android:id="@+id/wallet_nav"
@@ -22,9 +22,9 @@
             android:title="Transaction History" />
 
         <item
-            android:id="@+id/chat_history"
+            android:id="@+id/chat_call_logs"
             android:icon="@drawable/side_chat_history"
-            android:title="Chat History" />
+            android:title="Chat &amp; Call Log" />
 
         <item
             android:id="@+id/feedback"
@@ -62,9 +62,9 @@
     </group>
 
     <group>
-        <item
+        <!--<item
             android:icon="@drawable/side_settings"
-            android:title="Settings" />
+            android:title="Settings" />-->
 
         <item
             android:id="@+id/logout"

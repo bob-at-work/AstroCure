@@ -2,7 +2,6 @@ package com.astrocure.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -23,7 +22,7 @@ public class WalletActivity extends AppCompatActivity {
 
         binding.back.setOnClickListener(v -> onBackPressed());
         adapter = new WalletPriceAdapter(getApplicationContext());
-        binding.priceList.setLayoutManager(new GridLayoutManager(getApplicationContext(),4, RecyclerView.VERTICAL,false));
+        binding.priceList.setLayoutManager(new GridLayoutManager(getApplicationContext(), 4, RecyclerView.VERTICAL, false));
         binding.priceList.setAdapter(adapter);
 
         binding.proceed.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(), PaymentActivity.class)));

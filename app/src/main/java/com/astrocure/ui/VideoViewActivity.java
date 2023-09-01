@@ -42,9 +42,7 @@ public class VideoViewActivity extends AppCompatActivity {
 
         long millis = Long.parseLong(Objects.requireNonNull(retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION)));
         @SuppressLint("DefaultLocale") String hour = String.format("%02d", TimeUnit.MILLISECONDS.toHours(millis));
-        @SuppressLint("DefaultLocale") String duration = String.format("%02d:%02d",
-                TimeUnit.MILLISECONDS.toMinutes(millis) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(millis)),
-                TimeUnit.MILLISECONDS.toSeconds(millis) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis)));
+        @SuppressLint("DefaultLocale") String duration = String.format("%02d:%02d", TimeUnit.MILLISECONDS.toMinutes(millis) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(millis)), TimeUnit.MILLISECONDS.toSeconds(millis) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis)));
 
         binding.duration.setText(" / " + (hour.matches("00") ? "" : hour + ":") + duration);
         binding.seek.setMax((int) millis);
@@ -61,13 +59,11 @@ public class VideoViewActivity extends AppCompatActivity {
         binding.seek.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                if (fromUser){
+                if (fromUser) {
                     binding.videoView.seekTo(progress);
                     final int duration1 = binding.videoView.getDuration();
                     int time = (duration1 - binding.videoView.getCurrentPosition());
-                    @SuppressLint("DefaultLocale") String interval = String.format("%02d:%02d",
-                            TimeUnit.MILLISECONDS.toMinutes(time) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(time)),
-                            TimeUnit.MILLISECONDS.toSeconds(time) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(time)));
+                    @SuppressLint("DefaultLocale") String interval = String.format("%02d:%02d", TimeUnit.MILLISECONDS.toMinutes(time) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(time)), TimeUnit.MILLISECONDS.toSeconds(time) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(time)));
                     binding.interval.setText(interval);
                 }
             }
@@ -87,8 +83,7 @@ public class VideoViewActivity extends AppCompatActivity {
         binding.videoView.start();
         binding.videoView.setOnPreparedListener(mp -> {
             float videoRatio = mp.getVideoWidth() / (float) mp.getVideoHeight();
-            float screenRatio = binding.videoView.getWidth() / (float)
-                    binding.videoView.getHeight();
+            float screenRatio = binding.videoView.getWidth() / (float) binding.videoView.getHeight();
             float scaleX = videoRatio / screenRatio;
             if (scaleX >= 1f) {
                 binding.videoView.setScaleX(scaleX);
@@ -107,9 +102,7 @@ public class VideoViewActivity extends AppCompatActivity {
                     binding.interval.post(() -> {
 
                         int time = (duration1 - binding.videoView.getCurrentPosition());
-                        @SuppressLint("DefaultLocale") String interval = String.format("%02d:%02d",
-                                TimeUnit.MILLISECONDS.toMinutes(time) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(time)),
-                                TimeUnit.MILLISECONDS.toSeconds(time) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(time)));
+                        @SuppressLint("DefaultLocale") String interval = String.format("%02d:%02d", TimeUnit.MILLISECONDS.toMinutes(time) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(time)), TimeUnit.MILLISECONDS.toSeconds(time) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(time)));
                         binding.interval.setText(interval);
                         binding.seek.setProgress(binding.videoView.getCurrentPosition());
                     });
@@ -119,8 +112,7 @@ public class VideoViewActivity extends AppCompatActivity {
                         e.printStackTrace();
                     }
 //
-                }
-                while (binding.videoView.getCurrentPosition() < duration1);
+                } while (binding.videoView.getCurrentPosition() < duration1);
             }).start();
         });
 

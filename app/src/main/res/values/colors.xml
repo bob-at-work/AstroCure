@@ -8,4 +8,6 @@
 
     <color name="otp_base">#FFFFFF</color>
     <color name="dialog_bg_color">#4DFFFFFF</color>
+
+    <color name="filter_purple">#8813E4</color>
 </resources>

@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="HoroscopeView">
-<!--        <attr name="dateTimeText" format="string" />-->
-<!--        <attr name="darkTheme" format="boolean"/>-->
-        <attr name="title" format="string"/>
-        <attr name="lovePercent" format="string"/>
-        <attr name="wellBeingPercent" format="string"/>
-        <attr name="moodPercent" format="string"/>
-        <attr name="socialPercent" format="string"/>
-        <attr name="careerPercent" format="string"/>
-        <attr name="financePercent" format="string"/>
+        <!--        <attr name="dateTimeText" format="string" />-->
+        <!--        <attr name="darkTheme" format="boolean"/>-->
+        <attr name="title" format="string" />
+        <attr name="lovePercent" format="string" />
+        <attr name="wellBeingPercent" format="string" />
+        <attr name="moodPercent" format="string" />
+        <attr name="socialPercent" format="string" />
+        <attr name="careerPercent" format="string" />
+        <attr name="financePercent" format="string" />
     </declare-styleable>
 
     <declare-styleable name="AppEditText">
-        <attr name="active_hint" format="string"/>
-        <attr name="hint" format="string"/>
+        <attr name="active_hint" format="string" />
+        <attr name="hint" format="string" />
     </declare-styleable>
 </resources>

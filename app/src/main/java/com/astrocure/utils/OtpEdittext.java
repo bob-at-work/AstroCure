@@ -1,24 +1,42 @@
 package com.astrocure.utils;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.text.Editable;
 import android.util.AttributeSet;
 import android.view.ActionMode;
 
 import androidx.appcompat.widget.AppCompatEditText;
-import androidx.core.content.ContextCompat;
 
 import com.astrocure.R;
 
 public class OtpEdittext extends AppCompatEditText implements com.astrocure.callback.OtpEdittext {
+    public static final String XML_NAMESPACE_ANDROID = "http://schemas.android.com/apk/res/android";
     private float mSpace = 24; //24 dp by default, space between the lines
     private float mNumChars = 4;
     private float mLineSpacing = 8; //8dp by default, height of the text from our lines
     private int mMaxLength = 6;
     private float mLineStroke = 2;
     private Paint mLinesPaint;
+    int[][] mStates = new int[][]{
+            new int[]{android.R.attr.state_selected}, // selected
+            new int[]{android.R.attr.state_focused}, // focused
+            new int[]{-android.R.attr.state_focused}, // unfocused
+    };
+
+    int[] mColors = new int[]{
+            Color.WHITE,
+            Color.WHITE,
+            Color.WHITE
+//            Color.GREEN,
+//            Color.BLACK,
+//            Color.GRAY
+    };
+    ColorStateList mColorStates = new ColorStateList(mStates, mColors);
+
     private OnClickListener mClickListener;
 
     public OtpEdittext(Context context) {
@@ -41,11 +59,13 @@ public class OtpEdittext extends AppCompatEditText implements com.astrocure.call
         mLinesPaint = new Paint(getPaint());
         mLinesPaint.setStrokeWidth(mLineStroke);
         mLinesPaint.setColor(getResources().getColor(R.color.otp_base));
+        setTextColor(Color.WHITE);
         setBackgroundResource(0);
         mSpace = multi * mSpace; //convert to pixels for our density
         mLineSpacing = multi * mLineSpacing; //convert to pixels for our density
+        mMaxLength = attrs.getAttributeIntValue(XML_NAMESPACE_ANDROID, "maxLength", 6);
         mNumChars = mMaxLength;
-        setTextColor(ContextCompat.getColor(getContext(),R.color.white));
+
         super.setOnClickListener(v -> {
             // When tapped, move cursor to end of text.
             setSelection(getText().length());
@@ -53,6 +73,24 @@ public class OtpEdittext extends AppCompatEditText implements com.astrocure.call
                 mClickListener.onClick(v);
             }
         });
+    }
+
+    private int getColorForState(int... states) {
+        return mColorStates.getColorForState(states, Color.GRAY);
+    }
+
+    private void updateColorForLines(boolean next) {
+        if (isFocused()) {
+            mLinesPaint.setColor(
+                    getColorForState(android.R.attr.state_focused));
+            if (next) {
+                mLinesPaint.setColor(
+                        getColorForState(android.R.attr.state_selected));
+            }
+        } else {
+            mLinesPaint.setColor(
+                    getColorForState(-android.R.attr.state_focused));
+        }
     }
 
     @Override
@@ -67,6 +105,7 @@ public class OtpEdittext extends AppCompatEditText implements com.astrocure.call
 
     @Override
     protected void onDraw(Canvas canvas) {
+//        super.onDraw(canvas);
         int availableWidth = getWidth() - getPaddingRight() - getPaddingLeft();
         float mCharSize;
         if (mSpace < 0) {
@@ -85,6 +124,7 @@ public class OtpEdittext extends AppCompatEditText implements com.astrocure.call
         getPaint().getTextWidths(getText(), 0, textLength, textWidths);
 
         for (int i = 0; i < mNumChars; i++) {
+            updateColorForLines(i == textLength);
             canvas.drawLine(startX, bottom, startX + mCharSize, bottom, mLinesPaint);
             if (getText().length() > i) {
                 float middle = startX + mCharSize / 2;

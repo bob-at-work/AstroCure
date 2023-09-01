@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginStart="10dp"
-    android:layout_marginEnd="10dp"
     android:layout_marginTop="5dp"
+    android:layout_marginEnd="10dp"
     android:layout_marginBottom="5dp"
-    android:paddingBottom="10dp"
     android:background="@drawable/border_comment_bg"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:paddingBottom="10dp">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/logo_container"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_margin="20dp"
-        app:cardCornerRadius="100dp"
         android:background="@color/white"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:cardCornerRadius="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/logo"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/genie"/>
+            android:src="@drawable/genie" />
 
     </androidx.cardview.widget.CardView>
 
@@ -33,12 +33,12 @@
         android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ricardopedrolini"
         android:layout_marginStart="10dp"
+        android:text="ricardopedrolini"
         android:textColor="#FDFDFD"
         android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@id/logo_container"
-        app:layout_constraintTop_toTopOf="@id/logo_container"/>
+        app:layout_constraintTop_toTopOf="@id/logo_container" />
 
     <TextView
         android:id="@+id/time"
@@ -57,33 +57,33 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
-        android:textColor="#FDFDFD"
         android:text="Это комментарий номер 1. Я первый. Класс! Я написал комментарий."
+        android:textColor="#FDFDFD"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/username"
-        app:layout_constraintTop_toBottomOf="@id/username"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/username" />
 
     <ImageView
         android:id="@+id/more_option"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="10dp"
         android:layout_marginEnd="10dp"
+        android:padding="10dp"
         android:src="@drawable/more_horiz_red"
         app:layout_constraintBottom_toTopOf="@+id/comment"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/reply"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_reply"
+        android:drawableTint="#FFEB3B"
         android:padding="5dp"
         android:text="Reply"
         android:textColor="#FFEB3B"
-        android:drawableTint="#FFEB3B"
-        android:drawableStart="@drawable/ic_reply"
         app:layout_constraintStart_toStartOf="@id/comment"
-        app:layout_constraintTop_toTopOf="@+id/like"/>
+        app:layout_constraintTop_toTopOf="@+id/like" />
 
     <TextView
         android:id="@+id/comment_count"
@@ -100,13 +100,13 @@
         android:id="@+id/like"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="5dp"
         android:layout_marginTop="10dp"
-        android:text="8098"
-        android:drawablePadding="5dp"
-        android:textColor="#FFEB3B"
-        android:drawableTint="#FFEB3B"
         android:drawableLeft="@drawable/ic_heart_like"
+        android:drawablePadding="5dp"
+        android:drawableTint="#FFEB3B"
+        android:padding="5dp"
+        android:text="8098"
+        android:textColor="#FFEB3B"
         app:layout_constraintEnd_toEndOf="@id/comment"
         app:layout_constraintTop_toBottomOf="@+id/comment" />
 
@@ -115,19 +115,19 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:visibility="gone"
-        tools:listitem="@layout/item_feed_reply"
         app:layout_constraintEnd_toEndOf="@id/like"
         app:layout_constraintStart_toEndOf="@id/logo_container"
-        app:layout_constraintTop_toBottomOf="@id/reply" />
+        app:layout_constraintTop_toBottomOf="@id/reply"
+        tools:listitem="@layout/item_feed_reply" />
 
     <RelativeLayout
         android:id="@+id/thread_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/reply_list"
-        app:layout_constraintTop_toBottomOf="@id/logo_container"
         app:layout_constraintStart_toStartOf="@id/logo_container"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/logo_container" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -77,6 +77,7 @@ public class ColorTherapyActivity extends AppCompatActivity {
         therapyBinding.cardLayout.colorCard.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), drawableFront));
         therapyBinding.textLayout.colorCardBack.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), drawableBack));
         therapyBinding.textLayout.predictedText.setBackground(ContextCompat.getDrawable(getApplicationContext(), drawableBack));
+        therapyBinding.textLayout.close.setOnClickListener(v -> dialog.dismiss());
         AppConstantMethods.flipCard(getApplicationContext(), therapyBinding.viewBack, therapyBinding.viewFront);
         dialog.show();
     }

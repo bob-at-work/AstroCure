@@ -34,6 +34,7 @@ public class PlanetsRequestModel {
     @SerializedName("settings")
     @Expose
     public Settings settings;
+
     public static class Settings {
 
         @SerializedName("observation_point")

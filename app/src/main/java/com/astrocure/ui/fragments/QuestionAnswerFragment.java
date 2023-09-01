@@ -79,9 +79,9 @@ public class QuestionAnswerFragment extends Fragment {
             startActivity(new Intent(requireContext(), AdminChatActivity.class));
         });
 
-        binding.astrologerChat.setOnClickListener(v -> startActivity(new Intent(requireContext(), AstrologerChatListActivity.class)));
+        binding.gotoChat.setOnClickListener(v -> startActivity(new Intent(requireContext(), AstrologerChatListActivity.class)));
 
-        binding.astrologerCall.setOnClickListener(v -> startActivity(new Intent(requireContext(), AstrologerCallListActivity.class)));
+        binding.gotoCall.setOnClickListener(v -> startActivity(new Intent(requireContext(), AstrologerCallListActivity.class)));
 
         /*binding.message.setOnTouchListener((v, event) -> {
             final int DRAWABLE_LEFT = 0;

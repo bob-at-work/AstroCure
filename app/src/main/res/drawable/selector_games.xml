@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <animated-selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/state_on"
+    <item
+        android:id="@+id/state_on"
         android:drawable="@drawable/bottom_nav_games_active"
-        android:state_checked="true"/>
-<!--    android:drawable="@drawable/bottom_nav_games"-->
+        android:state_checked="true" />
+    <!--    android:drawable="@drawable/bottom_nav_games"-->
 
-    <item android:id="@+id/state_off"
-        android:drawable="@drawable/bottom_nav_games_inactive"/>
-<!--    android:drawable="@drawable/bottom_nav_outline_games"-->
+    <item
+        android:id="@+id/state_off"
+        android:drawable="@drawable/bottom_nav_games_inactive" />
+    <!--    android:drawable="@drawable/bottom_nav_outline_games"-->
 
     <!-- specify transitions -->
     <transition

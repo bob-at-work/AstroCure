@@ -1,13 +1,11 @@
 package com.astrocure.ui;
 
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.LinearSnapHelper;
 import androidx.recyclerview.widget.PagerSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SnapHelper;
@@ -45,7 +43,7 @@ public class CompatibilityActivity extends AppCompatActivity {
         zodiacModels.add(new CompatibilityZodiacModel("Pisces", R.drawable.piseces_top));
         SnapHelper snapHelper = new PagerSnapHelper();
 //        LinearSnapHelper snapHelper = new LinearSnapHelper();
-        CompatibilityAdapter adapter = new CompatibilityAdapter(getApplicationContext(),zodiacModels);
+        CompatibilityAdapter adapter = new CompatibilityAdapter(getApplicationContext(), zodiacModels);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
         binding.firstList.setLayoutManager(layoutManager);
         snapHelper.attachToRecyclerView(binding.firstList);
@@ -55,15 +53,15 @@ public class CompatibilityActivity extends AppCompatActivity {
             @Override
             public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
-                Log .i("TAG", "onCreate: "+layoutManager.findFirstCompletelyVisibleItemPosition()+" "+layoutManager.findLastCompletelyVisibleItemPosition());
+                Log.i("TAG", "onCreate: " + layoutManager.findFirstCompletelyVisibleItemPosition() + " " + layoutManager.findLastCompletelyVisibleItemPosition());
                 int firstItemVisible = layoutManager.findFirstVisibleItemPosition();
 //                if (firstItemVisible != 0 && firstItemVisible % zodiacModels.size() == 0) {
 //                    recyclerView.getLayoutManager().scrollToPosition(0);
 //                }
-                if (firstItemVisible!=1 && firstItemVisible % zodiacModels.size() == 1){
+                if (firstItemVisible != 1 && firstItemVisible % zodiacModels.size() == 1) {
                     layoutManager.scrollToPosition(1);
-                }else {
-                    layoutManager.scrollToPositionWithOffset(zodiacModels.size(),-recyclerView.computeHorizontalScrollOffset());
+                } else {
+                    layoutManager.scrollToPositionWithOffset(zodiacModels.size(), -recyclerView.computeHorizontalScrollOffset());
                 }
             }
         });

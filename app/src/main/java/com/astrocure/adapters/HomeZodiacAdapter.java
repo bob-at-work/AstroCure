@@ -36,7 +36,7 @@ public class HomeZodiacAdapter extends RecyclerView.Adapter<HomeZodiacAdapter.Zo
         Glide.with(context).load(zodiacModels.get(position).getLogo())
                 .into(holder.binding.logo);
         holder.binding.logo.setOnClickListener(v -> {
-            onItemClickListener.onItemClick(position);
+            onItemClickListener.onItemClick(position, zodiacModels.get(position).getName(), zodiacModels.get(position).getLogo());
         });
     }
 
@@ -59,6 +59,6 @@ public class HomeZodiacAdapter extends RecyclerView.Adapter<HomeZodiacAdapter.Zo
     }
 
     public interface OnItemClickListener {
-        void onItemClick(int position);
+        void onItemClick(int position, String name, int icon);
     }
 }

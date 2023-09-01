@@ -1,6 +1,7 @@
 package com.astrocure.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -8,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.astrocure.databinding.ItemTransactionLayoutBinding;
+import com.astrocure.ui.TransactionDetailActivity;
 
 public class TransactionHistoryAdapter extends RecyclerView.Adapter<TransactionHistoryAdapter.TransactionViewHolder> {
     Context context;
@@ -25,7 +27,11 @@ public class TransactionHistoryAdapter extends RecyclerView.Adapter<TransactionH
 
     @Override
     public void onBindViewHolder(@NonNull TransactionViewHolder holder, int position) {
-
+        holder.binding.getRoot().setOnClickListener(v -> {
+            Intent intent = new Intent(context, TransactionDetailActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(intent);
+        });
     }
 
     @Override

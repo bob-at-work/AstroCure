@@ -66,7 +66,7 @@ public class BookOfLoveActivity extends AppCompatActivity {
                     binding.textView6.setVisibility(View.VISIBLE);
                     binding.mainImage.animate().alpha(1.0f);
                     binding.mainImage.setVisibility(View.VISIBLE);
-                    binding.mainImage.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(),R.drawable.book_of_love));
+                    binding.mainImage.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.book_of_love));
                     binding.animationView.removeAllAnimatorListeners();
                 }
             });

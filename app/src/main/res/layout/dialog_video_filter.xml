@@ -1,133 +1,209 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/video_filter_bg">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/call_chat_filter_bg">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/line"
-        android:layout_width="50dp"
+    <View
+        android:id="@+id/collapse_line"
+        android:layout_width="0dp"
         android:layout_height="3dp"
         android:layout_marginTop="10dp"
-        android:background="@color/white"
-        app:cardCornerRadius="10dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:background="#80C4C4C4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent=".2" />
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/label_filter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
-        android:text="Sort &amp; Filter"
-        android:textColor="@color/white"
-        android:textSize="22sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/line" />
-
-    <ImageView
-        android:id="@+id/close"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:src="@drawable/round_close"
-        android:layout_marginEnd="30dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView15"
+        android:layout_marginTop="10dp"
+        android:text="Filter"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView15"
-        app:tint="@color/white" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/collapse_line" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:background="#80C4C4C4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_filter" />
 
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/label_commodities"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:text="Sort by"
-        android:textColor="@color/white"
+        android:text="Commodities"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+        app:layout_constraintTop_toBottomOf="@id/line" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/filter_container"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/commodities_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:background="#120c28"
-        app:layout_constraintTop_toBottomOf="@id/textView17">
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/label_commodities"
+        tools:itemCount="5"
+        tools:listitem="@layout/item_call_chat_filter" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/category_list"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:minHeight="200dp"
-            android:layout_marginTop="20dp"
-            android:background="#413d50"
-            tools:itemCount="5"
-            tools:listitem="@layout/item_video_category"
-            app:layout_constraintWidth_percent=".35"
-            app:layout_constraintHorizontal_bias="0"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+    <TextView
+        android:id="@+id/label_sports"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="Sports"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/commodities_list" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/category_list"
-            app:layout_constraintTop_toTopOf="@id/category_list" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-    
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/sports_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="20dp"
-        android:background="#26203a"
-        app:layout_constraintTop_toBottomOf="@id/filter_container">
+        android:layout_marginTop="10dp"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/label_sports"
+        tools:itemCount="5"
+        tools:listitem="@layout/item_call_chat_filter" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/reset"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#3d354f"
-            android:outlineAmbientShadowColor="@color/white"
-            android:outlineSpotShadowColor="@color/white"
-            android:shadowColor="@color/white"
-            android:shadowRadius="5"
-            android:text="Reset"
-            android:textColor="@color/white"
-            app:cornerRadius="10dp"
-            android:theme="@style/Theme.Material3.Light"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/apply_filter"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintWidth_percent=".4" />
+    <TextView
+        android:id="@+id/label_stock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="Stock"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sports_list" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/apply_filter"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:backgroundTint="#660887"
-            android:shadowColor="@color/white"
-            android:shadowRadius="5"
-            android:text="Apply Filter"
-            android:textColor="@color/white"
-            app:cornerRadius="10dp"
-            android:theme="@style/Theme.Material3.Light"
-            app:layout_constraintBottom_toBottomOf="@+id/reset"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/reset"
-            app:layout_constraintTop_toTopOf="@id/reset"
-            app:layout_constraintWidth_percent=".4" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/stock_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/label_stock"
+        tools:itemCount="5"
+        tools:listitem="@layout/item_call_chat_filter" />
 
+    <TextView
+        android:id="@+id/label_movies"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="Movies"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/stock_list" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/movies_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/label_movies"
+        tools:itemCount="5"
+        tools:listitem="@layout/item_call_chat_filter" />
 
+    <TextView
+        android:id="@+id/label_miscellaneous"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="Miscellaneous"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/movies_list" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/miscellaneous_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:paddingStart="15dp"
+        android:paddingEnd="20dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/label_miscellaneous"
+        tools:itemCount="5"
+        tools:listitem="@layout/item_video_misc_filter" />
+
+    <View
+        android:id="@+id/line_2"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:background="#80C4C4C4"
+        app:layout_constraintTop_toBottomOf="@id/miscellaneous_list" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/reset"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="@color/white"
+        android:text="Reset"
+        android:textColor="#8813E4"
+        android:theme="@style/Theme.Material3.Light"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toStartOf="@id/apply"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line_2"
+        app:strokeColor="#8813E4"
+        app:strokeWidth=".5dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/apply"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="#8813E4"
+        android:text="Apply Filter"
+        android:textColor="@color/white"
+        android:theme="@style/Theme.Material3.Light"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/reset"
+        app:layout_constraintTop_toTopOf="@id/reset" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

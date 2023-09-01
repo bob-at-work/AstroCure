@@ -15,6 +15,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.astrocure.R;
 import com.astrocure.adapters.FeedCommentAdapter;
 import com.astrocure.databinding.ActivityFeedDetailBinding;
 import com.astrocure.databinding.DialogBottomCommentMoreBinding;
@@ -42,9 +43,7 @@ public class FeedDetailActivity extends AppCompatActivity {
 
         Glide.with(getApplicationContext())
 //                .load(getIntent().getStringExtra("image"))
-                .load(imageUrl)
-                .centerCrop()
-                .into(binding.image);
+                .load(imageUrl).centerCrop().into(binding.image);
 
         adapter = new FeedCommentAdapter(getApplicationContext());
         binding.commentList.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
@@ -53,7 +52,7 @@ public class FeedDetailActivity extends AppCompatActivity {
             @Override
             public void onItemClick(int position) {
                 DialogCommentReplyBinding replyBinding = DialogCommentReplyBinding.inflate(getLayoutInflater());
-                BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(FeedDetailActivity.this);
+                BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(FeedDetailActivity.this, R.style.BottomSheetDialog);
                 bottomSheetDialog.setContentView(replyBinding.getRoot());
                 replyBinding.send.setOnClickListener(v -> {
                     Toast.makeText(FeedDetailActivity.this, "Comment Posted", Toast.LENGTH_SHORT).show();

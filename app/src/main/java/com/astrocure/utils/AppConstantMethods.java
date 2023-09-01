@@ -16,6 +16,7 @@ import com.astrocure.R;
 
 import java.io.IOException;
 import java.io.InputStream;
+
 public class AppConstantMethods {
 
     public static String loadJSONFromAsset(Activity activity, String fileName) {
@@ -55,12 +56,12 @@ public class AppConstantMethods {
         try {
             visibleView.setVisibility(View.VISIBLE);
             Float scale = context.getResources().getDisplayMetrics().density;
-            Float cameraDistance = 8000*scale;
+            Float cameraDistance = 8000 * scale;
             visibleView.setCameraDistance(cameraDistance);
             inVisibleView.setCameraDistance(cameraDistance);
             AnimatorSet flipOutAnimatorSet = (AnimatorSet) AnimatorInflater.loadAnimator(context, R.animator.flip_out);
             flipOutAnimatorSet.setTarget(inVisibleView);
-            AnimatorSet flipInAnimatorSet = (AnimatorSet) AnimatorInflater.loadAnimator(context,R.animator.flip_in);
+            AnimatorSet flipInAnimatorSet = (AnimatorSet) AnimatorInflater.loadAnimator(context, R.animator.flip_in);
             flipInAnimatorSet.setTarget(visibleView);
             flipOutAnimatorSet.start();
             flipInAnimatorSet.start();
@@ -87,7 +88,7 @@ public class AppConstantMethods {
             });
 
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -103,7 +104,7 @@ public class AppConstantMethods {
         int width = activity.getWindowManager().getDefaultDisplay().getWidth();
         int height = activity.getWindowManager().getDefaultDisplay().getHeight();
 
-        Bitmap b = Bitmap.createBitmap(b1, 0, statusBarHeight, width, height  - statusBarHeight);
+        Bitmap b = Bitmap.createBitmap(b1, 0, statusBarHeight, width, height - statusBarHeight);
         view.destroyDrawingCache();
         return b;
     }
@@ -260,7 +261,7 @@ public class AppConstantMethods {
             stackpointer = radius;
             for (y = 0; y < h; y++) {
                 // Preserve alpha channel: ( 0xff000000 & pix[yi] )
-                pix[yi] = ( 0xff000000 & pix[yi] ) | ( dv[rsum] << 16 ) | ( dv[gsum] << 8 ) | dv[bsum];
+                pix[yi] = (0xff000000 & pix[yi]) | (dv[rsum] << 16) | (dv[gsum] << 8) | dv[bsum];
 
                 rsum -= routsum;
                 gsum -= goutsum;

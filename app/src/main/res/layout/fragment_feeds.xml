@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragments.FeedsFragment">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/Theme.Material3.Light"
-        android:background="@android:color/transparent">
+        android:background="@android:color/transparent"
+        android:theme="@style/Theme.Material3.Light">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            app:contentInsetStart="0dp"
             android:backgroundTint="@android:color/transparent"
-            app:layout_scrollFlags="scroll|enterAlways|snap"
-            app:layout_constraintTop_toTopOf="parent">
+            app:contentInsetStart="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_scrollFlags="scroll|enterAlways|snap">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -31,40 +31,40 @@
                     android:id="@+id/newest"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="New Feed"
-                    android:textSize="12sp"
-                    android:textColor="@color/black"
                     android:background="@drawable/feed_selected_bg"
+                    android:text="New Feed"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/most_commented"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/most_commented"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/most_commented"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Most Commented"
-                    app:strokeColor="@color/white"
-                    app:strokeWidth="1dp"
-                    android:textSize="12sp"
-                    android:textColor="@color/white"
                     android:background="@drawable/feed_unselected_bg"
-                    app:layout_constraintTop_toTopOf="@id/newest"
+                    android:text="Most Commented"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
                     app:layout_constraintEnd_toStartOf="@id/most_liked"
-                    app:layout_constraintStart_toEndOf="@id/newest"/>
+                    app:layout_constraintStart_toEndOf="@id/newest"
+                    app:layout_constraintTop_toTopOf="@id/newest"
+                    app:strokeColor="@color/white"
+                    app:strokeWidth="1dp" />
 
                 <TextView
                     android:id="@+id/most_liked"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Most Liked"
-                    android:textSize="12sp"
-                    android:textColor="@color/white"
                     android:background="@drawable/feed_unselected_bg"
-                    app:layout_constraintTop_toTopOf="@id/newest"
+                    android:text="Most Liked"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/most_commented"/>
+                    app:layout_constraintStart_toEndOf="@id/most_commented"
+                    app:layout_constraintTop_toTopOf="@id/newest" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -79,26 +79,26 @@
         android:clipToPadding="false"
         android:paddingBottom="100dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:listitem="@layout/item_feed_text_layout"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/newest"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        tools:listitem="@layout/item_feed_text_layout" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/add_post"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="70dp"
-        app:fabSize="mini"
-        app:maxImageSize="30dp"
-        app:tint="@color/white"
-        app:backgroundTint="#7015A8"
         android:src="@drawable/baseline_add"
-        android:layout_gravity="end|bottom"
         android:theme="@style/Theme.Material3.Light"
-        app:shapeAppearance="?attr/shapeAppearance"
+        app:backgroundTint="#7015A8"
+        app:fabSize="mini"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:maxImageSize="30dp"
+        app:shapeAppearance="?attr/shapeAppearance"
+        app:tint="@color/white" />
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

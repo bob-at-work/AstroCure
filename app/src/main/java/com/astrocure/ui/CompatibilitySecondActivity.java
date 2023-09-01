@@ -1,11 +1,10 @@
 package com.astrocure.ui;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 
-import com.astrocure.R;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.astrocure.databinding.ActivityCompatibilitySecondBinding;
 
 public class CompatibilitySecondActivity extends AppCompatActivity {

@@ -192,7 +192,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/shapeableImageView5"
         app:layout_constraintEnd_toEndOf="@id/shapeableImageView5"
         app:layout_constraintStart_toStartOf="@id/shapeableImageView5"
-        app:layout_constraintTop_toTopOf="@id/shapeableImageView5"/>
+        app:layout_constraintTop_toTopOf="@id/shapeableImageView5" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/shapeableImageView5"
@@ -210,11 +210,11 @@
             android:id="@+id/finance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:gravity="center"
             android:text="Finances\n45%"
             android:textColor="@color/white"
-            android:textSize="12sp"
-            android:layout_gravity="center"/>
+            android:textSize="12sp" />
 
     </androidx.cardview.widget.CardView>
 

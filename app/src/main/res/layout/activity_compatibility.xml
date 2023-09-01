@@ -36,27 +36,27 @@
         android:id="@+id/first_list"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:orientation="vertical"
-        tools:itemCount="5"
-        tools:listitem="@layout/item_compatibility_first"
-        app:layout_constraintWidth_percent=".45"
-        app:layout_constraintHorizontal_bias="0"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView22" />
+        app:layout_constraintTop_toBottomOf="@+id/textView22"
+        app:layout_constraintWidth_percent=".45"
+        tools:itemCount="5"
+        tools:listitem="@layout/item_compatibility_first" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/second_list"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintWidth_percent=".45"
-        app:layout_constraintHorizontal_bias="1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView22" />
+        app:layout_constraintTop_toBottomOf="@+id/textView22"
+        app:layout_constraintWidth_percent=".45" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

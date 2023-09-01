@@ -21,7 +21,7 @@ public class FeedRepliesAdapter extends RecyclerView.Adapter<FeedRepliesAdapter.
     private List<Integer> heights;
     private List<CommentModel> list;
 
-    public FeedRepliesAdapter(Context context,List<CommentModel> list) {
+    public FeedRepliesAdapter(Context context, List<CommentModel> list) {
         this.context = context;
         heights = new ArrayList<>();
         this.list = list;
@@ -40,7 +40,7 @@ public class FeedRepliesAdapter extends RecyclerView.Adapter<FeedRepliesAdapter.
         holder.binding.userName.setText(list.get(position).getName());
         holder.binding.reply.setText(list.get(position).getMessage());
         holder.binding.getRoot().getViewTreeObserver().addOnGlobalLayoutListener(() -> {
-            if (holder.binding.getRoot().getHeight() !=0 ) {
+            if (holder.binding.getRoot().getHeight() != 0) {
                 maxHeight = holder.binding.getRoot().getHeight();
                 heights.add(maxHeight);
             }

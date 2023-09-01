@@ -37,7 +37,6 @@ public class EntertainmentFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentEntertainmentBinding.inflate(inflater, container, false);
 
-//        binding.back.setOnClickListener(v -> onBackPressed());
         binding.fortuneCookie.setOnClickListener(v -> startActivity(new Intent(getContext(), FortuneCookieActivity.class)));
         binding.crystalBall.setOnClickListener(v -> startActivity(new Intent(getContext(), CrystalBallActivity.class)));
         binding.bookOfLove.setOnClickListener(v -> startActivity(new Intent(getContext(), BookOfLoveActivity.class)));
@@ -46,7 +45,6 @@ public class EntertainmentFragment extends Fragment {
         binding.games.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.white));
         binding.games.setOnClickListener(v -> {
 //            binding.getRoot().setBackground(getContext().getDrawable(R.drawable.background_2));
-            binding.view2.setVisibility(View.GONE);
             binding.games.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.white));
             binding.games.setTextColor(ContextCompat.getColor(getContext(), R.color.black));
             binding.compatibility.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.btn_inactive));
@@ -56,7 +54,6 @@ public class EntertainmentFragment extends Fragment {
         });
         binding.compatibility.setOnClickListener(v -> {
 //            binding.getRoot().setBackground(getContext().getDrawable(R.drawable.entertainment_bg));
-            binding.view2.setVisibility(View.VISIBLE);
             binding.compatibility.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.white));
             binding.compatibility.setTextColor(ContextCompat.getColor(getContext(), R.color.black));
             binding.games.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.btn_inactive));
@@ -65,9 +62,9 @@ public class EntertainmentFragment extends Fragment {
             binding.gamesContainer.setVisibility(View.GONE);
         });
 
-        binding.gotoMatch.setOnClickListener(v -> startActivity(new Intent(getContext(), CompatibilitySecondActivity.class)));
+        binding.bondCard.setOnClickListener(v -> startActivity(new Intent(getContext(), CompatibilitySecondActivity.class)));
 
-        binding.go.setOnClickListener(v -> startActivity(new Intent(getContext(), CompatibilityActivity.class)));
+        binding.compatibilityCard.setOnClickListener(v -> startActivity(new Intent(getContext(), CompatibilityActivity.class)));
         return binding.getRoot();
     }
 }

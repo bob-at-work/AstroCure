@@ -7,7 +7,7 @@
 
     <soup.neumorphism.NeumorphCardView
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         app:cardCornerRadius="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -69,6 +69,7 @@
                 android:insetBottom="0dp"
                 android:text="Yes"
                 android:textColor="#9425C9"
+                android:theme="@style/Theme.Material3.Light"
                 app:backgroundTint="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/not_selected"

@@ -21,5 +21,7 @@ public class AuthActivity extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(), OtpActivity.class));
         });
 
+        binding.recoverAccount.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(), RecoverAccountActivity.class)));
+
     }
 }

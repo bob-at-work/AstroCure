@@ -33,14 +33,14 @@ public class FeedReplyAdapter extends RecyclerView.Adapter<FeedReplyAdapter.Repl
         this.context = context;
         commentModels = new ArrayList<>();
         this.heights = new ArrayList<>();
-        commentModels.add(new CommentModel("Apple","If you're new to Apollo and GraphQL, a great way to learn is to actually build something in real life. "));
-        commentModels.add(new CommentModel("Baby","If you're new to Apollo and GraphQL "));
-        commentModels.add(new CommentModel("Cat Walk","If you're new to Apollo and GraphQL, a great way to learn"));
-        commentModels.add(new CommentModel("Dumped","You're new to Apollo ."));
-        commentModels.add(new CommentModel("Elephant","If you're new to Apollo, a great way to learn is to actually build something in real life. "));
-        commentModels.add(new CommentModel("Cat Walk","If you're new to Apollo and GraphQL, a great way to learn"));
-        commentModels.add(new CommentModel("Dumped","You're new to Apollo ."));
-        commentModels.add(new CommentModel("Elephant","If you're new to Apollo, a great way to learn is to actually build something in real life. "));
+        commentModels.add(new CommentModel("Apple", "If you're new to Apollo and GraphQL, a great way to learn is to actually build something in real life. "));
+        commentModels.add(new CommentModel("Baby", "If you're new to Apollo and GraphQL "));
+        commentModels.add(new CommentModel("Cat Walk", "If you're new to Apollo and GraphQL, a great way to learn"));
+        commentModels.add(new CommentModel("Dumped", "You're new to Apollo ."));
+        commentModels.add(new CommentModel("Elephant", "If you're new to Apollo, a great way to learn is to actually build something in real life. "));
+        commentModels.add(new CommentModel("Cat Walk", "If you're new to Apollo and GraphQL, a great way to learn"));
+        commentModels.add(new CommentModel("Dumped", "You're new to Apollo ."));
+        commentModels.add(new CommentModel("Elephant", "If you're new to Apollo, a great way to learn is to actually build something in real life. "));
     }
 
     @NonNull
@@ -68,12 +68,12 @@ public class FeedReplyAdapter extends RecyclerView.Adapter<FeedReplyAdapter.Repl
                 TransitionManager.beginDelayedTransition(holder.binding.getRoot(), new AutoTransition());
                 holder.binding.replyList.setVisibility(View.VISIBLE);
                 holder.binding.thread.setVisibility(View.VISIBLE);
-                FeedRepliesAdapter adapter = new FeedRepliesAdapter(context,commentModels);
+                FeedRepliesAdapter adapter = new FeedRepliesAdapter(context, commentModels);
                 holder.binding.replyList.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false));
                 holder.binding.replyList.setAdapter(adapter);
                 adapter.setOnHeight((height, heights) -> {
                     itemHeight.set(height);
-                    DrawLine drawLine = new DrawLine(context, holder.binding.logo.getHeight(), holder.binding.thread.getWidth(),heights);
+                    DrawLine drawLine = new DrawLine(context, holder.binding.logo.getHeight(), holder.binding.thread.getWidth(), heights);
                     holder.binding.thread.addView(drawLine);
                 });
 
@@ -85,13 +85,13 @@ public class FeedReplyAdapter extends RecyclerView.Adapter<FeedReplyAdapter.Repl
         });
 
         holder.binding.getRoot().getViewTreeObserver().addOnGlobalLayoutListener(() -> {
-            if (holder.binding.getRoot().getHeight() !=0 ) {
+            if (holder.binding.getRoot().getHeight() != 0) {
                 maxHeight = holder.binding.getRoot().getHeight();
                 heights.add(maxHeight);
             }
         });
 
-        itemViewHeight.getItemHeight(holder.binding.getRoot().getMeasuredHeight(),heights);
+        itemViewHeight.getItemHeight(holder.binding.getRoot().getMeasuredHeight(), heights);
     }
 
     @Override
@@ -108,7 +108,7 @@ public class FeedReplyAdapter extends RecyclerView.Adapter<FeedReplyAdapter.Repl
     }
 
     public interface ItemViewHeight {
-        void getItemHeight(int height,List<Integer> heights);
+        void getItemHeight(int height, List<Integer> heights);
     }
 
     public interface OnItemClickListener {

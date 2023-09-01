@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_1"
+    tools:context=".ui.TransactionDetailActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#54147E"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/back_app">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Transaction History"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/top_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:theme="@style/Theme.Material3.Light"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintTop_toBottomOf="@id/line">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/content_box_bg">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/border"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="20dp"
+                android:backgroundTint="@color/white"
+                app:cardCornerRadius="100dp"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent=".1" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/logo_container"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="2dp"
+                app:cardCornerRadius="100dp"
+                app:layout_constraintBottom_toBottomOf="@id/border"
+                app:layout_constraintEnd_toEndOf="@id/border"
+                app:layout_constraintStart_toStartOf="@id/border"
+                app:layout_constraintTop_toTopOf="@id/border">
+
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/wallet_transaction" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/plan_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Paid to Basic Plan"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toEndOf="@id/border"
+                app:layout_constraintTop_toTopOf="@id/border" />
+
+            <TextView
+                android:id="@+id/validity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Call Duration : 17 minutes"
+                android:textColor="#BBC6E0"
+                android:textSize="11sp"
+                app:layout_constraintEnd_toStartOf="@+id/textView13"
+                app:layout_constraintStart_toStartOf="@id/plan_name"
+                app:layout_constraintTop_toBottomOf="@id/plan_name" />
+
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="06 July, 02:34PM"
+                android:textColor="#87898E"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@id/plan_name"
+                app:layout_constraintTop_toBottomOf="@id/validity" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:text="Amount"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/plan_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/plan_name" />
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:text="₹10000"
+                android:textColor="#D5D5D5"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/time"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <View
+                android:id="@+id/line_2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/price" />
+
+            <TextView
+                android:id="@+id/duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Duration Period : 7 July 2023 to 7 August  2023 "
+                android:textColor="#FFF50C"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/line_2" />
+
+            <View
+                android:id="@+id/line_3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/duration" />
+
+            <TextView
+                android:id="@+id/transaction_id_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:text="Transaction ID"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/line_3" />
+
+            <TextView
+                android:id="@+id/transaction_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="T23232944342323223"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/transaction_id_label"
+                app:layout_constraintTop_toBottomOf="@id/transaction_id_label" />
+
+            <TextView
+                android:id="@+id/transaction_mode_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Transaction Mode"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="@id/transaction_id_label"
+                app:layout_constraintTop_toBottomOf="@id/transaction_id" />
+
+            <TextView
+                android:id="@+id/transaction_mode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:text="NetBanking"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/transaction_mode_label"
+                app:layout_constraintTop_toBottomOf="@id/transaction_mode_label" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/ic_copy"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/transaction_id" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:theme="@style/Theme.Material3.Light"
+        app:layout_constraintTop_toBottomOf="@id/top_container">
+
+        <TextView
+            android:id="@+id/support_team"
+            android:layout_width="wrap_content"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@drawable/content_box_bg"
+            android:drawableStart="@drawable/ic_support_agent"
+            android:drawablePadding="20dp"
+            android:gravity="center_vertical"
+            android:paddingStart="30dp"
+            android:text="Contact AstroCure Support"
+            android:textColor="@color/white" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,7 +1,6 @@
 package com.astrocure.adapters;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,9 +53,9 @@ public class FeedCommentAdapter extends RecyclerView.Adapter<FeedCommentAdapter.
                 FeedReplyAdapter adapter = new FeedReplyAdapter(context);
                 holder.binding.replyList.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false));
                 holder.binding.replyList.setAdapter(adapter);
-                adapter.setOnHeight((height,heights) -> {
+                adapter.setOnHeight((height, heights) -> {
                     itemHeight.set(height);
-                    DrawDotedLine drawDotedLine = new DrawDotedLine(context, holder.binding.logo.getHeight(),holder.binding.threadView.getWidth(), heights);
+                    DrawDotedLine drawDotedLine = new DrawDotedLine(context, holder.binding.logo.getHeight(), holder.binding.threadView.getWidth(), heights);
                     holder.binding.threadView.addView(drawDotedLine);
                 });
 
@@ -70,7 +69,7 @@ public class FeedCommentAdapter extends RecyclerView.Adapter<FeedCommentAdapter.
             }
         });
         holder.binding.moreOption.setOnClickListener(v1 -> {
-            onItemClickListener.onItemMoreOption(position,holder.binding.comment.getText().toString());
+            onItemClickListener.onItemMoreOption(position, holder.binding.comment.getText().toString());
         });
     }
 
@@ -86,7 +85,7 @@ public class FeedCommentAdapter extends RecyclerView.Adapter<FeedCommentAdapter.
     public interface OnItemClickListener {
         void onItemClick(int position);
 
-        void onItemMoreOption(int position,String comment);
+        void onItemMoreOption(int position, String comment);
     }
 
     public class CommentViewHolder extends RecyclerView.ViewHolder {

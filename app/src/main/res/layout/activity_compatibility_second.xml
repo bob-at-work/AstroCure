@@ -51,13 +51,13 @@
         app:layout_constraintHorizontal_bias=".3"
         app:layout_constraintStart_toStartOf="@+id/lottieAnimationView"
         app:layout_constraintTop_toTopOf="@+id/lottieAnimationView"
-        app:layout_constraintVertical_bias=".2" >
+        app:layout_constraintVertical_bias=".2">
 
         <ImageView
             android:id="@+id/first_user"
-            android:background="#FFC107"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:background="#FFC107" />
 
     </androidx.cardview.widget.CardView>
 
@@ -78,37 +78,25 @@
             android:id="@+id/second_user"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#8BC34A"/>
+            android:background="#8BC34A" />
 
     </androidx.cardview.widget.CardView>
-
-    <View
-        android:id="@+id/view2"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/bg_demo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHeight_percent=".4"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias=".75" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/you_container"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:background="#8BC34A"
         android:layout_marginStart="20dp"
+        android:background="#8BC34A"
         app:cardCornerRadius="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/view2"
         app:layout_constraintVertical_bias=".2">
 
         <ImageView
             android:id="@+id/you"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
 
     </androidx.cardview.widget.CardView>
 
@@ -132,13 +120,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/create_custom_container"
         app:layout_constraintStart_toEndOf="@+id/you_container"
-        app:layout_constraintTop_toBottomOf="@id/view2"
         app:layout_constraintVertical_bias=".2">
 
         <ImageView
             android:id="@+id/public_figures"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
 
     </androidx.cardview.widget.CardView>
 
@@ -158,19 +145,19 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginStart="96dp"
-        android:background="#8BC34A"
         android:layout_marginEnd="20dp"
+        android:background="#8BC34A"
         app:cardCornerRadius="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/view2"
         app:layout_constraintVertical_bias=".2">
 
         <ImageView
             android:id="@+id/create_custom"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
     </androidx.cardview.widget.CardView>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

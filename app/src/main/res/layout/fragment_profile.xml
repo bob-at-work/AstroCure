@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/background_2"
+    android:background="@drawable/background_1"
     tools:context=".ui.fragments.ProfileFragment">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
@@ -18,15 +19,15 @@
             android:layout_height="wrap_content"
             android:text="My Account"
             android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textSize="18sp"/>
+            android:textSize="18sp"
+            android:textStyle="bold" />
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -37,30 +38,40 @@
                 android:id="@+id/top_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="20dp"
                 android:background="@drawable/border_profile_top"
                 android:paddingStart="10dp"
-                android:paddingEnd="10dp"
                 android:paddingTop="10dp"
+                android:paddingEnd="10dp"
                 android:paddingBottom="30dp"
-                android:layout_margin="20dp"
                 app:layout_constraintTop_toTopOf="parent">
+
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/profile_img_container"
                     android:layout_width="75dp"
                     android:layout_height="75dp"
+                    app:cardBackgroundColor="#BE04FF"
                     app:cardCornerRadius="100dp"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent">
+                    app:layout_constraintTop_toTopOf="parent">
 
-                    <ImageView
-                        android:id="@+id/profile_img"
+                    <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:src="@drawable/brown"
-                        android:scaleType="centerCrop"/>
+                        android:layout_margin="2dp"
+                        app:cardCornerRadius="100dp">
+
+                        <ImageView
+                            android:id="@+id/profile_img"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/brown" />
+
+                    </androidx.cardview.widget.CardView>
 
                 </androidx.cardview.widget.CardView>
 
@@ -71,7 +82,7 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="10dp"
                     android:text="Shakespeare"
-                    android:textColor="@color/white"
+                    android:textColor="#262626"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toEndOf="@id/profile_img_container"
@@ -82,29 +93,30 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="shakespeare@gmail.com"
-                    android:textColor="@color/white"
+                    android:textColor="#262626"
                     android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@id/member_no"
                     app:layout_constraintStart_toStartOf="@id/name"
-                    app:layout_constraintTop_toBottomOf="@id/name"
-                    app:layout_constraintBottom_toTopOf="@id/member_no"/>
+                    app:layout_constraintTop_toBottomOf="@id/name" />
 
                 <TextView
                     android:id="@+id/member_no"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Member No. 1239475605"
-                    android:textColor="@color/white"
+                    android:textColor="#262626"
                     android:textSize="12sp"
-                    app:layout_constraintStart_toStartOf="@id/name"
-                    app:layout_constraintBottom_toBottomOf="@id/profile_img_container"/>
+                    app:layout_constraintBottom_toBottomOf="@id/profile_img_container"
+                    app:layout_constraintStart_toStartOf="@id/name" />
 
                 <ImageView
+                    android:id="@+id/camera"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/camera_outline"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:tint="#777777" />
+                    app:tint="#4C0F74" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -114,11 +126,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="Account Details"
-                android:textStyle="bold"
-                android:textSize="16sp"
                 android:textColor="@color/white"
-                app:layout_constraintTop_toBottomOf="@id/top_container"
-                app:layout_constraintStart_toStartOf="@id/top_container"/>
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/top_container"
+                app:layout_constraintTop_toBottomOf="@id/top_container" />
 
             <TextView
                 android:id="@+id/edit_profile"
@@ -127,8 +139,8 @@
                 android:layout_marginTop="20dp"
                 android:text="@string/edit_profile"
                 android:textColor="@color/white"
-                app:layout_constraintTop_toBottomOf="@id/top_container"
-                app:layout_constraintEnd_toEndOf="@id/top_container"/>
+                app:layout_constraintEnd_toEndOf="@id/top_container"
+                app:layout_constraintTop_toBottomOf="@id/top_container" />
 
             <TextView
                 android:id="@+id/label_name"
@@ -137,25 +149,25 @@
                 android:layout_marginTop="20dp"
                 android:text="@string/name_label"
                 android:textColor="#A5A5A5"
-                app:layout_constraintTop_toBottomOf="@id/label_account"
-                app:layout_constraintStart_toStartOf="@id/label_account"/>
+                app:layout_constraintStart_toStartOf="@id/label_account"
+                app:layout_constraintTop_toBottomOf="@id/label_account" />
 
             <EditText
                 android:id="@+id/full_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
                 android:layout_marginTop="5dp"
-                android:text="Shakespeare"
-                android:textColor="#80838E"
-                android:enabled="false"
-                android:inputType="textPersonName"
-                android:imeOptions="actionNext"
+                android:layout_marginEnd="20dp"
                 android:background="@drawable/text_profile_border_white"
+                android:enabled="false"
+                android:imeOptions="actionNext"
+                android:inputType="textPersonName"
+                android:text="Shakespeare"
+                android:textColor="#0A0A0A"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/label_name"/>
+                app:layout_constraintTop_toBottomOf="@id/label_name" />
 
 
             <TextView
@@ -165,8 +177,8 @@
                 android:layout_marginTop="20dp"
                 android:text="@string/dob_label"
                 android:textColor="#A5A5A5"
-                app:layout_constraintTop_toBottomOf="@id/full_name"
-                app:layout_constraintStart_toStartOf="@id/full_name"/>
+                app:layout_constraintStart_toStartOf="@id/full_name"
+                app:layout_constraintTop_toBottomOf="@id/full_name" />
 
             <EditText
                 android:id="@+id/date_of_birth"
@@ -175,11 +187,11 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="30dp"
                 android:background="@drawable/text_profile_border_white"
-                android:text="12/12/1996"
-                android:textColor="#80838E"
-                android:inputType="date"
-                android:imeOptions="actionNext"
                 android:enabled="false"
+                android:imeOptions="actionNext"
+                android:inputType="date"
+                android:text="12/12/1996"
+                android:textColor="#0A0A0A"
                 app:layout_constraintEnd_toStartOf="@+id/time_of_birth"
                 app:layout_constraintStart_toStartOf="@+id/full_name"
                 app:layout_constraintTop_toBottomOf="@id/label_dob" />
@@ -201,13 +213,13 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/text_profile_border_white"
-                android:text="00:00 AM"
-                android:textColor="#80838E"
-                android:inputType="time"
-                android:imeOptions="actionNext"
                 android:enabled="false"
-                app:layout_constraintStart_toEndOf="@id/date_of_birth"
+                android:imeOptions="actionNext"
+                android:inputType="time"
+                android:text="00:00 AM"
+                android:textColor="#0A0A0A"
                 app:layout_constraintEnd_toEndOf="@+id/full_name"
+                app:layout_constraintStart_toEndOf="@id/date_of_birth"
                 app:layout_constraintTop_toBottomOf="@id/label_dob" />
 
             <TextView
@@ -225,17 +237,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
                 android:layout_marginTop="5dp"
-                android:text="Delhi"
-                android:inputType="textCapCharacters"
-                android:imeOptions="actionNext"
-                android:textColor="#80838E"
-                android:enabled="false"
+                android:layout_marginEnd="20dp"
                 android:background="@drawable/text_profile_border_white"
-                app:layout_constraintStart_toStartOf="parent"
+                android:enabled="false"
+                android:imeOptions="actionNext"
+                android:inputType="textCapCharacters"
+                android:text="Delhi"
+                android:textColor="#0A0A0A"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/label_location"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_location" />
 
             <TextView
                 android:id="@+id/label_email"
@@ -252,17 +264,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
                 android:layout_marginTop="5dp"
-                android:text="shakespeare@gmail.com"
-                android:textColor="#80838E"
-                android:inputType="textEmailAddress"
-                android:imeOptions="actionNext"
-                android:enabled="false"
+                android:layout_marginEnd="20dp"
                 android:background="@drawable/text_profile_border_white"
-                app:layout_constraintStart_toStartOf="parent"
+                android:enabled="false"
+                android:imeOptions="actionNext"
+                android:inputType="textEmailAddress"
+                android:text="shakespeare@gmail.com"
+                android:textColor="#0A0A0A"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/label_email"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_email" />
 
             <TextView
                 android:id="@+id/label_language"
@@ -279,18 +291,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
                 android:layout_marginTop="5dp"
-                android:text="Hindi"
-                android:textColor="#80838E"
-                android:inputType="textCapCharacters"
-                android:imeOptions="actionDone"
-                android:enabled="false"
-                android:drawableEnd="@drawable/ccp_ic_arrow_drop_down"
+                android:layout_marginEnd="20dp"
                 android:background="@drawable/text_profile_border_white"
-                app:layout_constraintStart_toStartOf="parent"
+                android:drawableEnd="@drawable/ccp_ic_arrow_drop_down"
+                android:enabled="false"
+                android:imeOptions="actionDone"
+                android:inputType="textCapCharacters"
+                android:text="Hindi"
+                android:textColor="#0A0A0A"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/label_language"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_language" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/save_profile"

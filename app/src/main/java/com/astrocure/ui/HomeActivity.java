@@ -8,7 +8,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -22,6 +21,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.astrocure.R;
 import com.astrocure.callback.SideNavigationCallback;
 import com.astrocure.databinding.ActivityHomeBinding;
+import com.astrocure.ui.fragments.AccountFragment;
 import com.astrocure.ui.fragments.EntertainmentFragment;
 import com.astrocure.ui.fragments.HomeFeedFragment;
 import com.astrocure.ui.fragments.HoroscopeFragment;
@@ -36,6 +36,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     VideosFragment videosFragment;
     EntertainmentFragment entertainmentFragment;
     ProfileFragment profileFragment;
+    AccountFragment accountFragment;
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
     boolean doubleBackToExitPressedOnce = false;
@@ -54,6 +55,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         videosFragment = new VideosFragment();
         entertainmentFragment = new EntertainmentFragment();
         profileFragment = new ProfileFragment();
+        accountFragment = new AccountFragment();
         setFragment(horoscopeFragment);
 
         binding.bottomNav.setItemIconTintList(null);
@@ -94,10 +96,12 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         } else if (item.getItemId() == R.id.profile) {
             isVideoFabClicked = false;
             binding.videosFab.setImageResource(R.drawable.bottom_nav_video_inactive);
-            setFragment(profileFragment);
+            setFragment(accountFragment);
             return true;
         } else if (item.getItemId() == R.id.logout) {
             startActivity(new Intent(getApplicationContext(), AuthActivity.class));
+        } else if (item.getItemId() == R.id.chat_call_logs) {
+            startActivity(new Intent(getApplicationContext(), ChatCallLogActivity.class));
         } else if (item.getItemId() == R.id.transaction_history) {
             startActivity(new Intent(getApplicationContext(), TransactionHistoryActivity.class));
         } else if (item.getItemId() == R.id.wallet_nav) {

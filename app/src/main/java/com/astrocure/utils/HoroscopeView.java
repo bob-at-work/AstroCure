@@ -55,6 +55,7 @@ public class HoroscopeView extends ConstraintLayout {
 
         initComponents();
     }
+
     private void initComponents() {
         mood = findViewById(R.id.mood);
         love = findViewById(R.id.love);

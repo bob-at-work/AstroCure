@@ -11,6 +11,8 @@ import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -28,6 +30,7 @@ import com.astrocure.adapters.HomeZodiacAdapter;
 import com.astrocure.adapters.ZodiacViewpagerAdapter;
 import com.astrocure.callback.SideNavigationCallback;
 import com.astrocure.databinding.CheckHoroBottomSheetBinding;
+import com.astrocure.databinding.DialogHomeZodiacPreviewBinding;
 import com.astrocure.databinding.FragmentHoroscopeBinding;
 import com.astrocure.models.HomeZodiacModel;
 import com.astrocure.models.PlanetsRequestModel;
@@ -36,6 +39,7 @@ import com.astrocure.models.ZodiacViewPagerModel;
 import com.astrocure.network.RetrofitClient;
 import com.astrocure.ui.WalletActivity;
 import com.astrocure.utils.PlanetsHouse;
+import com.bumptech.glide.Glide;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.tabs.TabLayout;
 
@@ -105,9 +109,19 @@ public class HoroscopeFragment extends Fragment implements Toolbar.OnMenuItemCli
         modelList.add(new HomeZodiacModel("Pisces", R.drawable.piseces_top));
         homeZodiacAdapter = new HomeZodiacAdapter(getContext(), modelList);
         binding.zodiacList.setAdapter(homeZodiacAdapter);
-        homeZodiacAdapter.setOnItemClick(position -> {
+        homeZodiacAdapter.setOnItemClick((position, name, icon) -> {
             Dialog dialog = new Dialog(getActivity());
-
+            DialogHomeZodiacPreviewBinding zodiacPreviewBinding = DialogHomeZodiacPreviewBinding.inflate(inflater, container, false);
+            dialog.setContentView(zodiacPreviewBinding.getRoot());
+            dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.argb(50, 255, 255, 255)));
+            zodiacPreviewBinding.zodiacName.setText(name);
+            Glide.with(requireContext()).load(icon).into(zodiacPreviewBinding.zodiacLogo);
+            zodiacPreviewBinding.imageContainer.setBackgroundResource(R.drawable.gradient_stroke_bg);
+            zodiacPreviewBinding.getRoot().setOnClickListener(v -> dialog.cancel());
+            zodiacPreviewBinding.mainContainer.setOnClickListener(v -> {
+            });
+            dialog.show();
         });
 
         binding.time.setText(new SimpleDateFormat("EEEE,dd MMM").format(new Date()));
@@ -165,10 +179,19 @@ public class HoroscopeFragment extends Fragment implements Toolbar.OnMenuItemCli
         binding.zodiacLayout2.healthBtn.setOnClickListener(v -> {
             setZodiacLayout2("health", R.string.dummy_3);
         });
+        binding.zodiacLayout1.share.setOnClickListener(v -> {
+            String sendContent = binding.zodiacLayout1.zodiac.getText() + "\n\n" + binding.zodiacLayout1.content.getText().toString() + "\n\n" + "Hey check out this app at: https://play.google.com/store/apps/details?id=" + getActivity().getApplicationContext().getPackageName();
+            Intent sendIntent = new Intent();
+            sendIntent.setAction(Intent.ACTION_SEND);
+            sendIntent.putExtra(Intent.EXTRA_TEXT, sendContent);
+            sendIntent.setType("text/plain");
+            startActivity(sendIntent);
+        });
 
         binding.seeNew.setOnClickListener(v -> {
             CheckHoroBottomSheetBinding dialogBinding = CheckHoroBottomSheetBinding.inflate(getLayoutInflater());
-            BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(getContext());
+            BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(getContext(), R.style.BottomSheetDialog);
+            bottomSheetDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             bottomSheetDialog.setContentView(dialogBinding.getRoot());
             dialogBinding.tob.setOnClickListener(v1 -> {
                 Calendar mcurrentTime = Calendar.getInstance();

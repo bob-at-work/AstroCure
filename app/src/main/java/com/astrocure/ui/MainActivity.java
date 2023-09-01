@@ -2,7 +2,6 @@ package com.astrocure.ui;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -34,7 +33,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-import np.com.susanthapa.curved_bottom_navigation.CbnMenuItem;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -53,12 +51,6 @@ public class MainActivity extends AppCompatActivity implements Toolbar.OnMenuIte
 
         String currentDate = new SimpleDateFormat("EEEE,dd MMM").format(new Date());
         binding.time.setText(currentDate);
-
-        CbnMenuItem[] menuItem = new CbnMenuItem[]{
-                new CbnMenuItem(R.drawable.aquarius,
-                        R.drawable.taurus, androidx.constraintlayout.widget.R.id.accelerate)
-
-        };
 
         modelList = new ArrayList<>();
         modelList.add(new HomeZodiacModel("Aries", R.drawable.aries_top));
@@ -124,7 +116,7 @@ public class MainActivity extends AppCompatActivity implements Toolbar.OnMenuIte
             public void onResponse(Call<PlanetsResponseModel> call, Response<PlanetsResponseModel> response) {
                 try {
                     if (response.isSuccessful()) {
-                        PlanetsHouse healthPlanet = new PlanetsHouse(getApplicationContext(),response.body());
+                        PlanetsHouse healthPlanet = new PlanetsHouse(getApplicationContext(), response.body());
                     }
                 } catch (Exception e) {
                     Log.e("TAG", "onResponse: ", e);
@@ -146,7 +138,7 @@ public class MainActivity extends AppCompatActivity implements Toolbar.OnMenuIte
                 int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);
                 int minute = mcurrentTime.get(Calendar.MINUTE);
                 TimePickerDialog mTimePicker;
-                mTimePicker= new TimePickerDialog(MainActivity.this,android.R.style.Theme_Holo_Dialog_NoActionBar, (timePicker, selectedHour, selectedMinute) -> dialogBinding.tob.setText( selectedHour + ":" + selectedMinute), hour, minute, true);
+                mTimePicker = new TimePickerDialog(MainActivity.this, android.R.style.Theme_Holo_Dialog_NoActionBar, (timePicker, selectedHour, selectedMinute) -> dialogBinding.tob.setText(selectedHour + ":" + selectedMinute), hour, minute, true);
                 mTimePicker.setTitle("Select Time");
                 mTimePicker.show();
             });
@@ -154,9 +146,7 @@ public class MainActivity extends AppCompatActivity implements Toolbar.OnMenuIte
                 int selectedYear = 2000;
                 int selectedMonth = 5;
                 int selectedDayOfMonth = 10;
-                DatePickerDialog datePickerDialog = new DatePickerDialog(this,
-                        android.R.style.Theme_Holo_Dialog_NoActionBar,
-                        (view, year, month, dayOfMonth) -> dialogBinding.dob.setText(dayOfMonth+"/"+month+"/"+year), selectedYear, selectedMonth, selectedDayOfMonth);
+                DatePickerDialog datePickerDialog = new DatePickerDialog(this, android.R.style.Theme_Holo_Dialog_NoActionBar, (view, year, month, dayOfMonth) -> dialogBinding.dob.setText(dayOfMonth + "/" + month + "/" + year), selectedYear, selectedMonth, selectedDayOfMonth);
                 datePickerDialog.show();
             });
 
@@ -167,7 +157,7 @@ public class MainActivity extends AppCompatActivity implements Toolbar.OnMenuIte
                 binding1.tabLayout.addTab(binding1.tabLayout.newTab().setText("Yesterday"));
                 binding1.tabLayout.addTab(binding1.tabLayout.newTab().setText("Today"));
                 binding1.tabLayout.addTab(binding1.tabLayout.newTab().setText("Tomorrow"));
-                BottomSheetHoroscopeAdapter adapter1 = new BottomSheetHoroscopeAdapter(getSupportFragmentManager(),MainActivity.this,binding1.tabLayout.getTabCount());
+                BottomSheetHoroscopeAdapter adapter1 = new BottomSheetHoroscopeAdapter(getSupportFragmentManager(), MainActivity.this, binding1.tabLayout.getTabCount());
                 binding1.viewPager.setAdapter(adapter1);
                 binding1.viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(binding1.tabLayout));
                 binding1.tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -199,7 +189,7 @@ public class MainActivity extends AppCompatActivity implements Toolbar.OnMenuIte
     public boolean onMenuItemClick(MenuItem item) {
 
         if (item.getItemId() == R.id.wallet) {
-            startActivity(new Intent(getApplicationContext(), FeedsActivity.class));
+//            startActivity(new Intent(getApplicationContext(), FeedsActivity.class));
             Toast.makeText(this, "Wallet Clicked", Toast.LENGTH_SHORT).show();
             return true;
         } else if (item.getItemId() == R.id.menu) {

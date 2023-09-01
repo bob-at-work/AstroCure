@@ -1,11 +1,9 @@
 package com.astrocure.ui;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
-import android.view.View;
-
-import com.astrocure.R;
 import com.astrocure.databinding.ActivityFeedbackBinding;
 
 public class FeedbackActivity extends AppCompatActivity {

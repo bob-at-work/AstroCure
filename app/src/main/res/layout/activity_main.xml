@@ -57,13 +57,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="15dp"
+                        android:drawablePadding="5dp"
+                        android:textAllCaps="true"
                         android:textColor="@color/white"
                         android:textSize="10sp"
-                        android:textAllCaps="true"
-                        app:layout_constraintBottom_toBottomOf="@id/greet"
-                        app:layout_constraintStart_toEndOf="@id/greet"
                         app:drawableEndCompat="@drawable/ic_morning"
-                        android:drawablePadding="5dp"/>
+                        app:layout_constraintBottom_toBottomOf="@id/greet"
+                        app:layout_constraintStart_toEndOf="@id/greet" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -75,9 +75,9 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:scrollbars="none"
             android:fillViewport="true"
             android:nestedScrollingEnabled="false"
+            android:scrollbars="none"
             app:layout_constraintBottom_toTopOf="@id/bottom_nav"
             app:layout_constraintTop_toBottomOf="@id/appbar">
 
@@ -102,7 +102,7 @@
                     android:layout_width="match_parent"
                     android:layout_height=".5dp"
                     android:background="@color/white"
-                    app:layout_constraintTop_toBottomOf="@id/zodiac_list"/>
+                    app:layout_constraintTop_toBottomOf="@id/zodiac_list" />
 
                 <com.google.android.material.tabs.TabLayout
                     android:id="@+id/tab_layout"
@@ -110,11 +110,11 @@
                     android:layout_height="wrap_content"
                     android:background="#00000000"
                     android:contentDescription="@string/app_name"
+                    app:layout_constraintTop_toBottomOf="@+id/zodiac_list"
+                    app:tabIndicatorAnimationMode="elastic"
                     app:tabIndicatorColor="#FDF657"
                     app:tabSelectedTextColor="@color/white"
-                    app:tabTextColor="#8D8D8D"
-                    app:tabIndicatorAnimationMode="elastic"
-                    app:layout_constraintTop_toBottomOf="@+id/zodiac_list">
+                    app:tabTextColor="#8D8D8D">
 
                     <!--<com.google.android.material.tabs.TabItem
                         android:layout_width="wrap_content"
@@ -133,7 +133,6 @@
 
 
                 </com.google.android.material.tabs.TabLayout>
-
 
 
                 <androidx.viewpager.widget.ViewPager
@@ -157,12 +156,12 @@
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:backgroundTint="#4b40ca"
-            app:fabSize="mini"
+            android:importantForAccessibility="no"
             android:src="@drawable/baseline_add"
-            app:shapeAppearance="?attr/shapeAppearance"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:fabSize="mini"
             app:layout_constraintBottom_toTopOf="@id/bottom_nav"
-            android:importantForAccessibility="no" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:shapeAppearance="?attr/shapeAppearance" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_nav"
@@ -171,7 +170,7 @@
             android:visibility="visible"
             app:labelVisibilityMode="unlabeled"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:menu="@menu/bottom_nav_menu"/>
+            app:menu="@menu/bottom_nav_menu" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

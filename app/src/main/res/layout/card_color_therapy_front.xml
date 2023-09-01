@@ -11,11 +11,11 @@
         android:layout_width="380dp"
         android:layout_height="560dp"
         android:src="@drawable/green"
-        app:layout_constraintHeight_percent=".5"
-        app:layout_constraintWidth_percent=".7"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent=".5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent=".7" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

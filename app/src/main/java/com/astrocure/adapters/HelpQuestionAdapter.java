@@ -41,7 +41,7 @@ public class HelpQuestionAdapter extends RecyclerView.Adapter<HelpQuestionAdapte
 
     @Override
     public int getItemCount() {
-        return 10;
+        return 5;
     }
 
     public class AnswerViewHolder extends RecyclerView.ViewHolder {

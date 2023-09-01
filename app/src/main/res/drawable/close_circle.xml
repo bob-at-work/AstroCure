@@ -3,7 +3,8 @@
     android:height="31.25dp"
     android:viewportWidth="25"
     android:viewportHeight="31.25">
-    <group android:scaleX="1.5"
+    <group
+        android:scaleX="1.5"
         android:scaleY="1.5"
         android:translateX="-6"
         android:translateY="-3">

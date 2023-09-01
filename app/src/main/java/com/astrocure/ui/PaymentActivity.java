@@ -2,10 +2,10 @@ package com.astrocure.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.astrocure.R;
 import com.astrocure.databinding.ActivityPaymentBinding;
 import com.astrocure.databinding.DialogAddNewCardBinding;
 import com.astrocure.databinding.DialogAddUpiBinding;
@@ -25,21 +25,21 @@ public class PaymentActivity extends AppCompatActivity {
 
         binding.card.setOnClickListener(v -> {
             DialogAddNewCardBinding cardBinding = DialogAddNewCardBinding.inflate(getLayoutInflater());
-            BottomSheetDialog dialog = new BottomSheetDialog(PaymentActivity.this);
+            BottomSheetDialog dialog = new BottomSheetDialog(PaymentActivity.this, R.style.BottomSheetDialog);
             dialog.setContentView(cardBinding.getRoot());
             dialog.show();
         });
 
         binding.addNewUpi.setOnClickListener(v -> {
             DialogAddUpiBinding upiBinding = DialogAddUpiBinding.inflate(getLayoutInflater());
-            BottomSheetDialog dialog = new BottomSheetDialog(PaymentActivity.this);
+            BottomSheetDialog dialog = new BottomSheetDialog(PaymentActivity.this, R.style.BottomSheetDialog);
             dialog.setContentView(upiBinding.getRoot());
             dialog.show();
         });
 
         binding.netBanking.setOnClickListener(v -> {
             DialogNetBankingBinding netBankingBinding = DialogNetBankingBinding.inflate(getLayoutInflater());
-            BottomSheetDialog dialog = new BottomSheetDialog(PaymentActivity.this);
+            BottomSheetDialog dialog = new BottomSheetDialog(PaymentActivity.this, R.style.BottomSheetDialog);
             dialog.setContentView(netBankingBinding.getRoot());
             dialog.show();
         });

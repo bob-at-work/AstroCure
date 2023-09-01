@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_4"
+    tools:context=".ui.VerifyAccountActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/back_app"
+        app:title="Verify Account"
+        app:titleTextColor="@color/white" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="A verification code has been sent to the email id or mobile number provided. Please enter the code below.The code will be void for 10 minutes"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:cardCornerRadius="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView27"
+        app:layout_constraintVertical_bias=".05"
+        app:layout_constraintWidth_percent=".3">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="We just sent you an OTP check out your\ninbox."
+        android:textColor="#13CEC3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView2" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieAnimationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias=".8"
+        app:lottie_autoPlay="true"
+        app:lottie_rawRes="@raw/progress_anim_2nd_stop" />
+
+    <EditText
+        android:id="@id/input_one"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/verify_otp_bg"
+        android:gravity="center"
+        android:imeOptions="actionNext"
+        android:maxLength="1"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintEnd_toStartOf="@id/input_two"
+        app:layout_constraintStart_toStartOf="@+id/textView27"
+        app:layout_constraintTop_toBottomOf="@+id/textView28"
+        app:layout_constraintWidth_percent=".1" />
+
+    <EditText
+        android:id="@id/input_two"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/verify_otp_bg"
+        android:gravity="center"
+        android:imeOptions="actionNext"
+        android:maxLength="1"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintEnd_toStartOf="@id/input_three"
+        app:layout_constraintStart_toEndOf="@id/input_one"
+        app:layout_constraintTop_toTopOf="@id/input_one"
+        app:layout_constraintWidth_percent=".1" />
+
+    <EditText
+        android:id="@id/input_three"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/verify_otp_bg"
+        android:gravity="center"
+        android:imeOptions="actionNext"
+        android:maxLength="1"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintEnd_toStartOf="@id/input_four"
+        app:layout_constraintStart_toEndOf="@id/input_two"
+        app:layout_constraintTop_toTopOf="@id/input_one"
+        app:layout_constraintWidth_percent=".1" />
+
+    <EditText
+        android:id="@id/input_four"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/verify_otp_bg"
+        android:gravity="center"
+        android:imeOptions="actionNext"
+        android:maxLength="1"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintEnd_toStartOf="@id/input_five"
+        app:layout_constraintStart_toEndOf="@id/input_three"
+        app:layout_constraintTop_toTopOf="@id/input_one"
+        app:layout_constraintWidth_percent=".1" />
+
+    <EditText
+        android:id="@id/input_five"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/verify_otp_bg"
+        android:gravity="center"
+        android:imeOptions="actionNext"
+        android:maxLength="1"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintEnd_toStartOf="@id/input_six"
+        app:layout_constraintStart_toEndOf="@id/input_four"
+        app:layout_constraintTop_toTopOf="@id/input_one"
+        app:layout_constraintWidth_percent=".1" />
+
+    <EditText
+        android:id="@id/input_six"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/verify_otp_bg"
+        android:gravity="center"
+        android:imeOptions="actionNext"
+        android:maxLength="1"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintEnd_toEndOf="@+id/textView27"
+        app:layout_constraintStart_toEndOf="@id/input_five"
+        app:layout_constraintTop_toTopOf="@id/input_one"
+        app:layout_constraintWidth_percent=".1" />
+
+    <TextView
+        android:id="@+id/resend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:text="Resend code"
+        android:textColor="#13CEC3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/input_one" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Didn’t receive a verification code?"
+        android:textColor="#BDFFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/resend" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/button_bg"
+        android:text="Verify"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

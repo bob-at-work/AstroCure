@@ -1,5 +1,8 @@
 package com.astrocure.ui.fragments;
 
+import static android.app.Activity.RESULT_OK;
+
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -7,6 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
@@ -16,6 +23,7 @@ import com.bumptech.glide.Glide;
 public class ProfileFragment extends Fragment {
 
     FragmentProfileBinding binding;
+    ActivityResultLauncher<Intent> launcher;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -69,6 +77,29 @@ public class ProfileFragment extends Fragment {
             Toast.makeText(getContext(), "Profile Updated Successfully", Toast.LENGTH_SHORT).show();
         });
 
+        binding.camera.setOnClickListener(v -> {
+            Intent intent = new Intent();
+            intent.setType("image/*");
+//            intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
+            intent.setAction(Intent.ACTION_GET_CONTENT);
+            launcher.launch(Intent.createChooser(intent, "Select Picture"));
+        });
+
+        launcher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+            @Override
+            public void onActivityResult(ActivityResult result) {
+                if (result.getResultCode() == RESULT_OK) {
+                    try {
+                        if (result.getData() != null) {
+                            Glide.with(requireContext()).load(result.getData().getData())
+                                    .into(binding.profileImg);
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
 
         return binding.getRoot();
     }

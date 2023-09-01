@@ -26,5 +26,8 @@
     <string name="edit_profile"><u><font fgcolor='#CBBA1E'>Edit Profile</font></u></string>
     <string name="dummy_video_text">The market expects EPS of $0.26 on the quarter, higher by 12.97% compared to the same period last year.\n\n\n1915 Buy more\nTP1 1923\nTP3 1930\nTP2 1926\nTP4 1935\nSL 1908</string>
     <string name="more">see more\n</string>
+    <string name="language">Language<sup><font fgcolor='#931D1D'>*</font></sup></string>
+    <string name="gender">Gender<sup><font fgcolor='#931D1D'>*</font></sup></string>
+    <string name="upload_photo">Upload Photo<sup><font fgcolor='#931D1D'>*</font></sup></string>
 
 </resources>

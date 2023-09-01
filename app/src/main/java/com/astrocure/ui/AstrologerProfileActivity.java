@@ -4,9 +4,9 @@ import android.os.Bundle;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
-import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.astrocure.R;
@@ -27,34 +27,52 @@ public class AstrologerProfileActivity extends AppCompatActivity {
 
         binding.back.setOnClickListener(v -> onBackPressed());
 
-//        String myReallyLongText = "Bacon ipsum dolor amet porchetta venison ham fatback alcatra tri-tip, turducken strip steak sausage rump burgdoggen pork loin. Spare ribs filet mignon salami, strip steak ball tip shank frankfurter corned beef venison. Pig pork belly pork chop andouille. Porchetta pork belly ground round, filet mignon bresaola chuck swine shoulder leberkas jerky boudin. Landjaeger pork chop corned beef, tri-tip brisket rump pastrami flank.";
+        String myReallyLongText = "If you want the 'View More' part of your Text to be clickable (but not the entire TextView), utilize ClickableSpan as outlined here in this StackOverflow for How to set the part of the text view is clickable. I would caution you to be aware of the UX implications of this, as normally you truncate your text because you have a lot of it and you don't have much space, so your font size is already probably small.";
+
+        aboutTextPost(myReallyLongText);
+        binding.about.setOnClickListener(v -> {
+            if (binding.about.getLineCount() == MAX_LINES + 1) {
+                binding.about.setText(myReallyLongText);
+            } else if (binding.about.getLineCount() > MAX_LINES) {
+                aboutTextPost(myReallyLongText);
+            }
+        });
+
+        SimilarAstrologerListAdapter adapter = new SimilarAstrologerListAdapter(getApplicationContext());
+        binding.astrologerList.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false));
+        binding.astrologerList.setAdapter(adapter);
+
+        ProfileReviewAdapter reviewAdapter = new ProfileReviewAdapter(getApplicationContext());
+        binding.reviewList.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
+        binding.reviewList.setAdapter(reviewAdapter);
+
+//        binding.chat.setText("Chat\n" + Html.fromHtml(setTextSize("Currently Offline", (int) binding.chat.getTextSize() - 4)));
+    }
+
+    private void aboutTextPost(String text) {
 
         binding.about.post(() -> {
-            // Past the maximum number of lines we want to display.
             if (binding.about.getLineCount() > MAX_LINES) {
                 int lastCharShown = binding.about.getLayout().getLineVisibleEnd(MAX_LINES - 1);
 
-                binding.about.setMaxLines(MAX_LINES);
+//                binding.about.setMaxLines(MAX_LINES);
 
                 String moreString = getApplicationContext().getString(R.string.more);
                 String suffix = TWO_SPACES + moreString;
 
                 // 3 is a "magic number" but it's just basically the length of the ellipsis we're going to insert
-                String actionDisplayText = binding.about.getText().toString().substring(0, lastCharShown - suffix.length() - 3) + "..." + suffix;
+                String actionDisplayText = text.substring(0, lastCharShown - suffix.length() - 3) + "..." + suffix;
 
                 SpannableString truncatedSpannableString = new SpannableString(actionDisplayText);
                 int startIndex = actionDisplayText.indexOf(moreString);
                 truncatedSpannableString.setSpan(new ForegroundColorSpan(getApplicationContext().getColor(android.R.color.holo_blue_bright)), startIndex, startIndex + moreString.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
                 binding.about.setText(truncatedSpannableString);
+
+                binding.call.text.setText("Call");
+                binding.call.icon.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_profile_calling));
+
+
             }
         });
-
-        SimilarAstrologerListAdapter adapter = new SimilarAstrologerListAdapter(getApplicationContext());
-        binding.astrologerList.setLayoutManager(new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.HORIZONTAL,false));
-        binding.astrologerList.setAdapter(adapter);
-
-        ProfileReviewAdapter reviewAdapter = new ProfileReviewAdapter(getApplicationContext());
-        binding.reviewList.setLayoutManager(new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.VERTICAL,false));
-        binding.reviewList.setAdapter(reviewAdapter);
     }
 }

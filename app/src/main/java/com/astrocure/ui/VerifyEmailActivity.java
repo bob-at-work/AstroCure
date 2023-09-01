@@ -1,10 +1,9 @@
 package com.astrocure.ui;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
-import com.astrocure.R;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.astrocure.databinding.ActivityVerifyEmailBinding;
 
 public class VerifyEmailActivity extends AppCompatActivity {

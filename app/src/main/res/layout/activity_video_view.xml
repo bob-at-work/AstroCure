@@ -18,10 +18,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:src="@drawable/ic_video_close"
         android:background="?android:attr/actionBarItemBackground"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        android:src="@drawable/ic_video_close"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/video_contoller"
@@ -34,20 +34,20 @@
             android:id="@+id/play_pause"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_video_pause"
             android:padding="20dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+            android:src="@drawable/ic_video_pause"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatSeekBar
             android:id="@+id/seek"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:progress="194"
-            app:layout_constraintTop_toTopOf="@id/play_pause"
             app:layout_constraintBottom_toBottomOf="@id/play_pause"
+            app:layout_constraintEnd_toStartOf="@id/interval"
             app:layout_constraintStart_toEndOf="@id/play_pause"
-            app:layout_constraintEnd_toStartOf="@id/interval"/>
+            app:layout_constraintTop_toTopOf="@id/play_pause" />
 
         <TextView
             android:id="@+id/interval"
@@ -55,9 +55,9 @@
             android:layout_height="wrap_content"
             android:text="2.14"
             android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/play_pause"
             app:layout_constraintEnd_toStartOf="@id/duration"
-            app:layout_constraintTop_toTopOf="@id/play_pause"
-            app:layout_constraintBottom_toBottomOf="@id/play_pause"/>
+            app:layout_constraintTop_toTopOf="@id/play_pause" />
 
         <TextView
             android:id="@+id/duration"
@@ -66,40 +66,40 @@
             android:layout_marginEnd="20dp"
             android:text=" / 3.14"
             android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/play_pause"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/play_pause"
-            app:layout_constraintBottom_toBottomOf="@id/play_pause"/>
+            app:layout_constraintTop_toTopOf="@id/play_pause" />
 
         <TextView
             android:id="@+id/likes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="20dp"
-            android:layout_marginStart="20dp"
-            android:textSize="12sp"
-            android:text="0 Likes"
-            android:gravity="center"
-            android:textColor="@color/white"
             android:drawablePadding="5dp"
+            android:gravity="center"
+            android:text="0 Likes"
+            android:textColor="@color/white"
+            android:textSize="12sp"
             app:drawableLeftCompat="@drawable/likes"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/play_pause"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@id/play_pause" />
 
         <TextView
             android:id="@+id/views"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:drawablePadding="5dp"
+            android:gravity="center"
             android:text="0 Views"
             android:textColor="@color/white"
-            app:drawableLeftCompat="@drawable/views"
-            android:drawablePadding="5dp"
             android:textSize="12sp"
-            android:gravity="center"
+            app:drawableLeftCompat="@drawable/views"
             app:layout_constraintBottom_toBottomOf="@+id/likes"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/likes" />
 
         <ImageView
@@ -107,12 +107,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="20dp"
-            android:textColor="@color/white"
-            android:src="@drawable/sharing"
             android:padding="5dp"
-            app:layout_constraintTop_toTopOf="@id/likes"
+            android:src="@drawable/sharing"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/likes"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="@id/likes"/>
+            app:layout_constraintTop_toTopOf="@id/likes" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

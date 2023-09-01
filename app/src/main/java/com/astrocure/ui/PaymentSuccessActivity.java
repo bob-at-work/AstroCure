@@ -1,16 +1,15 @@
 package com.astrocure.ui;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
-import com.astrocure.R;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.astrocure.databinding.ActivityPaymentSuccessBinding;
 
 public class PaymentSuccessActivity extends AppCompatActivity {
     ActivityPaymentSuccessBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

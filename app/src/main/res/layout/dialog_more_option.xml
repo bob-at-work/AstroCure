@@ -24,8 +24,8 @@
                 android:id="@+id/edit"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/feed_edit_bg"
                 android:layout_marginTop="20dp"
+                android:background="@drawable/feed_edit_bg"
                 android:text="Edit Post"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
@@ -40,9 +40,10 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
                 android:backgroundTint="#0A0321"
+                android:padding="15dp"
                 android:text="Delete"
                 android:textColor="@color/white"
-                android:padding="15dp"
+                android:theme="@style/Theme.Material3.Light"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -50,6 +51,7 @@
                 app:layout_constraintWidth_percent=".7"
                 app:strokeColor="@color/white"
                 app:strokeWidth="1dp" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </soup.neumorphism.NeumorphCardView>

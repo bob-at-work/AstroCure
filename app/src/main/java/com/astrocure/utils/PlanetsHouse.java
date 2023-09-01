@@ -26,7 +26,7 @@ public class PlanetsHouse {
     List<String> careerPlanets;
     List<String> lovePlanets;
 
-    public PlanetsHouse(Context context,PlanetsResponseModel planetsResponseModel) {
+    public PlanetsHouse(Context context, PlanetsResponseModel planetsResponseModel) {
         this.context = context;
         this.planetsResponseModel = planetsResponseModel;
         healthPlanets = new ArrayList<>();
@@ -273,10 +273,10 @@ public class PlanetsHouse {
     public String getPercent(int houseNum) {
         List<String> planets = null;
         String objName = null;
-        if (houseNum == LOVE_HOUSE){
+        if (houseNum == LOVE_HOUSE) {
             planets = getLovePlanets();
             objName = "love_planet_effect";
-        }else if (houseNum == CAREER_HOUSE){
+        } else if (houseNum == CAREER_HOUSE) {
             planets = getCareerPlanets();
             objName = "career_planet_effect";
         } else if (houseNum == HEALTH_HOUSE) {
@@ -285,18 +285,18 @@ public class PlanetsHouse {
         }
 
 
-        double totalScore=100;
-        int max,min,finalScore;
-        if (planets.isEmpty()){
+        double totalScore = 100;
+        int max, min, finalScore;
+        if (planets.isEmpty()) {
             totalScore = 50;
-        }else {
-            double singleValue = 100/planets.size();
-            for (String planet : planets){
+        } else {
+            double singleValue = 100 / planets.size();
+            for (String planet : planets) {
                 try {
-                    JSONObject jsonObject = new JSONObject(AppConstantMethods.loadJSONFromAssets(context,"Predictions.json"));
+                    JSONObject jsonObject = new JSONObject(AppConstantMethods.loadJSONFromAssets(context, "Predictions.json"));
                     JSONObject jObj = jsonObject.getJSONObject(objName);
-                    if (jObj.get(planet).toString().matches("1")){
-                        totalScore = totalScore-singleValue;
+                    if (jObj.get(planet).toString().matches("1")) {
+                        totalScore = totalScore - singleValue;
                     }
                 } catch (JSONException e) {
                     throw new RuntimeException(e);
@@ -304,9 +304,9 @@ public class PlanetsHouse {
             }
         }
 
-        max = (int) (totalScore+3);
-        min = (int) (totalScore-3);
-        finalScore = new Random().nextInt(max-min+1)+min;
+        max = (int) (totalScore + 3);
+        min = (int) (totalScore - 3);
+        finalScore = new Random().nextInt(max - min + 1) + min;
         return String.valueOf(finalScore);
     }
 }

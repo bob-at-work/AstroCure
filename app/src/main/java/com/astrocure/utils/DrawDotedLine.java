@@ -5,7 +5,6 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.util.Log;
 import android.view.View;
 
 import java.util.List;
@@ -24,6 +23,7 @@ public class DrawDotedLine extends View {
         this.width = width;
         this.heights = heights;
     }
+
     public DrawDotedLine(Context context) {
         super(context);
     }
@@ -38,7 +38,7 @@ public class DrawDotedLine extends View {
     public void onDraw(Canvas canvas) {
         int w = getWidth();
         int h = getHeight();
-        int actualHeight = (h - heights.get(heights.size() - 1))+55;
+        int actualHeight = (h - heights.get(heights.size() - 1)) + 55;
 
         Path pathLine = new Path();
         paintLine.setColor(Color.WHITE);
@@ -47,8 +47,8 @@ public class DrawDotedLine extends View {
         paintCircle.setStyle(Paint.Style.FILL);
         paintCircle.setColor(Color.WHITE);
         pathLine.moveTo(w / 2, 0);
-        pathLine.lineTo(w / 2,actualHeight);
-        pathLine.lineTo(w,actualHeight);
+        pathLine.lineTo(w / 2, actualHeight);
+        pathLine.lineTo(w, actualHeight);
 //        pathLine.moveTo(w/2,h-heights.get(heights.size()-2)+20);
 //        pathLine.lineTo(w,h-heights.get(heights.size()-2)+20);
 //        for (int i = heights.size(); i > 0; i--) {

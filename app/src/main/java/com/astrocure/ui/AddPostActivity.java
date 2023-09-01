@@ -5,7 +5,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
@@ -63,32 +62,29 @@ public class AddPostActivity extends AppCompatActivity {
             launcher.launch(Intent.createChooser(intent, "Select Picture"));
         });
 
-        launcher = registerForActivityResult(
-                new ActivityResultContracts.StartActivityForResult(),
-                result -> {
-                    if (result.getResultCode() == RESULT_OK) {
-                        try {
-                            if (result.getData().getClipData() != null) {
-                                int count = result.getData().getClipData().getItemCount();
-                                for (int i = 0; i < count; i++) {
-                                    if ((imageUriList.size() <= 3)) {
-                                        imageUriList.add(result.getData().getClipData().getItemAt(i).getUri());
-                                    }
-                                }
-                                imageAdapter.notifyDataSetChanged();
-                            } else if (result.getData() != null) {
-                                if (imageUriList.size() <= 3) {
-                                    imageUriList.add(result.getData().getData());
-                                }
-                                imageAdapter.notifyDataSetChanged();
+        launcher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
+            if (result.getResultCode() == RESULT_OK) {
+                try {
+                    if (result.getData().getClipData() != null) {
+                        int count = result.getData().getClipData().getItemCount();
+                        for (int i = 0; i < count; i++) {
+                            if ((imageUriList.size() <= 3)) {
+                                imageUriList.add(result.getData().getClipData().getItemAt(i).getUri());
                             }
-                        } catch (Exception e) {
-                            throw e;
                         }
-
+                        imageAdapter.notifyDataSetChanged();
+                    } else if (result.getData() != null) {
+                        if (imageUriList.size() <= 3) {
+                            imageUriList.add(result.getData().getData());
+                        }
+                        imageAdapter.notifyDataSetChanged();
                     }
+                } catch (Exception e) {
+                    throw e;
                 }
-        );
+
+            }
+        });
         processImage();
     }
 

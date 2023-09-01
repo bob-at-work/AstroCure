@@ -2,10 +2,13 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Report"
+    <item android:id="@+id/report_astrologer"
+        android:title="Report"
         app:showAsAction="collapseActionView"/>
-    <item android:title="End Chat"
+    <item android:id="@+id/end_chat"
+        android:title="End Chat"
         app:showAsAction="collapseActionView"/>
-    <item android:title="Delete Chat"
+    <item android:id="@+id/delete_chat"
+        android:title="Delete Chat"
         app:showAsAction="collapseActionView"/>
 </menu>

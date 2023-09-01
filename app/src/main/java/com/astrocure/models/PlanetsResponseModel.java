@@ -184,6 +184,7 @@ public class PlanetsResponseModel {
             @SerializedName("isRetro")
             @Expose
             public String isRetro;
+
             public Integer getCurrentSign() {
                 return currentSign;
             }
@@ -216,6 +217,7 @@ public class PlanetsResponseModel {
             @SerializedName("isRetro")
             @Expose
             public String isRetro;
+
             public Integer getCurrentSign() {
                 return currentSign;
             }
@@ -248,6 +250,7 @@ public class PlanetsResponseModel {
             @SerializedName("isRetro")
             @Expose
             public String isRetro;
+
             public Integer getCurrentSign() {
                 return currentSign;
             }
@@ -312,6 +315,7 @@ public class PlanetsResponseModel {
             @SerializedName("isRetro")
             @Expose
             public String isRetro;
+
             public Integer getCurrentSign() {
                 return currentSign;
             }
@@ -343,6 +347,7 @@ public class PlanetsResponseModel {
             @SerializedName("isRetro")
             @Expose
             public String isRetro;
+
             public Integer getCurrentSign() {
                 return currentSign;
             }
@@ -374,6 +379,7 @@ public class PlanetsResponseModel {
             @SerializedName("isRetro")
             @Expose
             public String isRetro;
+
             public Integer getCurrentSign() {
                 return currentSign;
             }
@@ -405,6 +411,7 @@ public class PlanetsResponseModel {
             @SerializedName("isRetro")
             @Expose
             public String isRetro;
+
             public Integer getCurrentSign() {
                 return currentSign;
             }
@@ -436,6 +443,7 @@ public class PlanetsResponseModel {
             @SerializedName("isRetro")
             @Expose
             public String isRetro;
+
             public Integer getCurrentSign() {
                 return currentSign;
             }
@@ -467,6 +475,7 @@ public class PlanetsResponseModel {
             @SerializedName("isRetro")
             @Expose
             public String isRetro;
+
             public Integer getCurrentSign() {
                 return currentSign;
             }
@@ -498,6 +507,7 @@ public class PlanetsResponseModel {
             @SerializedName("isRetro")
             @Expose
             public String isRetro;
+
             public Integer getCurrentSign() {
                 return currentSign;
             }
@@ -529,6 +539,7 @@ public class PlanetsResponseModel {
             @SerializedName("isRetro")
             @Expose
             public String isRetro;
+
             public Integer getCurrentSign() {
                 return currentSign;
             }

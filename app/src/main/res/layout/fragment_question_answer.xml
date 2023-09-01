@@ -29,11 +29,11 @@
         android:layout_marginBottom="20dp"
         android:theme="@style/Theme.Material3.Light"
         app:cardCornerRadius="10dp"
-        app:neumorph_shadowColorLight="#33FFFFFF"
-        app:neumorph_shadowColorDark="#80FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/astrologer_chat"
         app:layout_constraintTop_toBottomOf="@id/text"
         app:layout_constraintVertical_bias="0"
+        app:neumorph_shadowColorDark="#80FFFFFF"
+        app:neumorph_shadowColorLight="#33FFFFFF"
         app:neumorph_strokeColor="@color/white"
         app:neumorph_strokeWidth="1dp">
 
@@ -61,12 +61,12 @@
                 android:gravity="fill_horizontal"
                 android:hint="What do you want to ask?"
                 android:imeOptions="actionDone"
+                android:inputType="textMultiLine"
                 android:maxLength="470"
                 android:padding="10dp"
                 android:textColor="@color/white"
                 android:textColorHint="#AEAEAE"
                 android:textStyle="bold"
-                android:inputType="textMultiLine"
                 app:layout_constraintBottom_toTopOf="@+id/send"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/image"
@@ -79,60 +79,75 @@
                 android:layout_margin="10dp"
                 android:text="0/470"
                 android:textColor="#AEAEAE"
-                app:layout_constraintTop_toTopOf="@id/send"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="parent" />
+                app:layout_constraintTop_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="@id/send" />
 
             <ImageView
                 android:id="@+id/send"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
                 android:layout_marginBottom="10dp"
+                android:padding="10dp"
                 android:src="@drawable/send"
                 android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/msg_input"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:tint="@color/white" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </soup.neumorphism.NeumorphCardView>
 
-    <androidx.appcompat.widget.AppCompatButton
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/astrologer_chat"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="35dp"
-        android:paddingStart="10dp"
-        android:paddingEnd="10dp"
-        android:text="Chat with Astrologer"
-        android:textColor="@color/white"
-        android:textAllCaps="false"
-        android:foregroundTint="@color/white"
-        android:background="@drawable/counselling_button_bg"
         android:theme="@style/Theme.Material3.Light"
-        app:layout_constraintEnd_toStartOf="@id/astrologer_call"
+        app:cardCornerRadius="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@id/astrologer_call"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent=".45">
 
-    <androidx.appcompat.widget.AppCompatButton
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/goto_chat"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/content_box_bg"
+            android:foregroundTint="@color/white"
+            android:text="Chat with Astrologer"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/astrologer_call"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Call with Astrologer"
-        android:textColor="@color/white"
-        android:paddingStart="10dp"
-        android:paddingEnd="10dp"
-        android:textAllCaps="false"
-        android:background="@drawable/counselling_button_bg"
         android:theme="@style/Theme.Material3.Light"
+        app:cardCornerRadius="100dp"
         app:layout_constraintBottom_toBottomOf="@+id/astrologer_chat"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/astrologer_chat"
-        app:layout_constraintTop_toTopOf="@+id/astrologer_chat" />
+        app:layout_constraintTop_toTopOf="@+id/astrologer_chat"
+        app:layout_constraintWidth_percent=".45">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/goto_call"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/content_box_bg"
+            android:foregroundTint="@color/white"
+            android:text="Call with Astrologer"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+
+    </com.google.android.material.card.MaterialCardView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

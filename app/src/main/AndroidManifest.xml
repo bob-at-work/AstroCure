@@ -5,6 +5,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -15,7 +17,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AstroCure"
-        tools:targetApi="31">
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31"
+        android:requestLegacyExternalStorage="true">
+        <activity
+            android:name=".ui.ChatCallLogActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.VerifyAccountActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.TransactionDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.HelpChatActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.RecoverAccountActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.AstrologerProfileActivity"
             android:exported="true" />
@@ -27,7 +46,7 @@
             android:exported="true" />
         <activity
             android:name=".ui.AdminChatActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".ui.VideoViewActivity"
             android:exported="false" />
@@ -51,19 +70,19 @@
             android:exported="false" />
         <activity
             android:name=".ui.TransactionHistoryActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".ui.CreateAccountSecondActivity"
             android:exported="false" />
         <activity
             android:name=".ui.CreateAccountActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".ui.OtpActivity"
             android:exported="false" />
         <activity
             android:name=".ui.AuthActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".ui.PaymentActivity"
             android:exported="false" />
