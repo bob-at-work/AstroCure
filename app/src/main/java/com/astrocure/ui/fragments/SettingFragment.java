@@ -1,6 +1,8 @@
 package com.astrocure.ui.fragments;
 
 import android.app.Dialog;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -55,6 +57,16 @@ public class SettingFragment extends Fragment {
             dialog.setCancelable(true);
             dialog.show();
         });
+
+        try {
+            PackageInfo pInfo = requireContext().getPackageManager().getPackageInfo(requireContext().getPackageName(), 0);
+            String version = pInfo.versionName;
+            binding.appVersion.setText("App version "+version);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+
+
 
         return binding.getRoot();
     }

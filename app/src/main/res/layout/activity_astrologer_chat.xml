@@ -12,11 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#38055E"
-        app:contentInsetLeft="0dp"
-        app:contentInsetStart="0dp"
         app:layout_constraintTop_toTopOf="parent"
-        app:menu="@menu/astrologer_chat_menu"
-        app:navigationIcon="@drawable/back_app">
+        app:menu="@menu/astrologer_chat_menu">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -129,6 +126,7 @@
             android:padding="10dp"
             android:textColor="#030303"
             android:textColorHint="#80030303"
+            android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/voice_record"
             app:layout_constraintStart_toStartOf="parent" />

@@ -158,7 +158,7 @@
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/lottieAnimationView"
         app:layout_constraintTop_toTopOf="@id/lottieAnimationView"
-        app:layout_constraintVertical_bias=".83" />
+        app:layout_constraintVertical_bias="0" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottieAnimationView"
@@ -166,7 +166,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias=".8"
+        app:layout_constraintVertical_bias=".85"
         app:lottie_autoPlay="true"
         app:lottie_rawRes="@raw/progress_anim_3rd_stop"
         app:lottie_speed="0.3" />

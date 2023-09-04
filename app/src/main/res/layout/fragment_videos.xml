@@ -11,6 +11,7 @@
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:theme="@style/Theme.Material3.Light"
         android:background="@android:color/transparent">
 
         <androidx.appcompat.widget.Toolbar
@@ -46,6 +47,7 @@
                     android:textColor="@color/black"
                     android:textColorHint="#7D7F88"
                     android:textSize="14sp"
+                    android:focusable="auto"
                     app:layout_constraintEnd_toStartOf="@+id/filter"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />

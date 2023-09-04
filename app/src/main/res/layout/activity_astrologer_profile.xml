@@ -38,11 +38,11 @@
                 style="@style/ShapeAppearanceOverlay.Material3.FloatingActionButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="20dp"
+                android:layout_margin="15dp"
                 android:backgroundTint="@color/white"
                 android:src="@drawable/baseline_share_24"
                 android:theme="@style/Theme.Material3.Light"
-                app:fabCustomSize="45dp"
+                app:fabCustomSize="35dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:shapeAppearance="@style/ShapeAppearance" />
@@ -51,7 +51,7 @@
                 android:id="@+id/image_container"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:background="@drawable/border_profile_top"
+                android:background="@drawable/border_otp"
                 android:padding="8dp"
                 app:layout_constraintDimensionRatio="1"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -155,7 +155,7 @@
                 app:layout_constraintEnd_toStartOf="@id/line_1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/line_1"
-                app:layout_constraintWidth_percent=".1" />
+                app:layout_constraintWidth_percent=".08" />
 
             <TextView
                 android:id="@+id/followers_count"
@@ -176,7 +176,7 @@
                 app:layout_constraintEnd_toStartOf="@id/line_2"
                 app:layout_constraintStart_toEndOf="@id/line_1"
                 app:layout_constraintTop_toTopOf="@id/follow_img"
-                app:layout_constraintWidth_percent=".1" />
+                app:layout_constraintWidth_percent=".08" />
 
             <TextView
                 android:id="@+id/consult_count"
@@ -198,7 +198,7 @@
                 app:layout_constraintEnd_toStartOf="@id/rating_img"
                 app:layout_constraintStart_toEndOf="@id/consult_img"
                 app:layout_constraintTop_toTopOf="@id/follow_img"
-                app:layout_constraintWidth_percent=".1" />
+                app:layout_constraintWidth_percent=".08" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -219,7 +219,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/line_3"
                 app:layout_constraintTop_toTopOf="@id/follow_img"
-                app:layout_constraintWidth_percent=".1" />
+                app:layout_constraintWidth_percent=".08" />
 
             <TextView
                 android:id="@+id/rating"

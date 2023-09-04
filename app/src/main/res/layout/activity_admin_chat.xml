@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_1"
+    android:background="@drawable/background_7"
     tools:context=".ui.AdminChatActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -20,7 +20,7 @@
             android:layout_gravity="center"
             android:text="Talk to Admin"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
     </androidx.appcompat.widget.Toolbar>
 
@@ -73,6 +73,7 @@
             android:layout_marginStart="10dp"
             android:background="@color/white"
             android:hint="Type your message here..."
+            android:textSize="14sp"
             app:layout_constraintEnd_toStartOf="@id/send"
             app:layout_constraintStart_toEndOf="@id/camera"
             app:layout_constraintTop_toTopOf="parent" />

@@ -69,7 +69,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/name" />
 
-    <EditText
+    <TextView
         android:id="@+id/tob"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -80,6 +80,7 @@
         android:inputType="time"
         android:padding="10dp"
         android:textColor="#BF000000"
+        android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@id/dob"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tob_label" />
@@ -96,7 +97,7 @@
         app:layout_constraintStart_toStartOf="@id/dob"
         app:layout_constraintTop_toBottomOf="@id/name" />
 
-    <EditText
+    <TextView
         android:id="@+id/dob"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -107,6 +108,7 @@
         android:inputType="date"
         android:padding="10dp"
         android:textColor="#BF000000"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/tob"
         app:layout_constraintTop_toBottomOf="@id/dob_label" />

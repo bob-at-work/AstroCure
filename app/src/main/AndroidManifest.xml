@@ -5,8 +5,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
-    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -14,12 +14,15 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AstroCure"
         android:usesCleartextTraffic="true"
-        tools:targetApi="31"
-        android:requestLegacyExternalStorage="true">
+        tools:targetApi="31">
+        <activity
+            android:name=".ui.StoryPlayerActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.ChatCallLogActivity"
             android:exported="false" />
@@ -89,7 +92,7 @@
         <activity
             android:name=".ui.WalletActivity"
             android:exported="false"
-            android:windowSoftInputMode="adjustPan" />
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".ui.CompatibilityActivity"
             android:exported="true" />
@@ -101,10 +104,8 @@
             android:exported="true" />
         <activity
             android:name=".ui.AddPostActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.FeedsActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan"/>
         <activity
             android:name=".ui.games.ColorTherapyActivity"
             android:exported="false" />

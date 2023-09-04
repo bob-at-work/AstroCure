@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/color_therapy_bg"
+    android:background="@drawable/background_1"
     tools:context=".ui.games.ColorTherapyActivity">
 
     <ImageView
@@ -20,7 +20,7 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="5dp"
         android:fontFamily="@font/poppins_semibold"
         android:text="@string/color_therapy"
@@ -115,7 +115,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="20dp"
-        android:src="@drawable/color_therapy_grey"
+        android:src="@drawable/grey"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/black"
         app:layout_constraintStart_toStartOf="parent"
@@ -137,7 +137,7 @@
         android:layout_height="0dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:src="@drawable/color_therapy_green"
+        android:src="@drawable/green"
         app:layout_constraintBottom_toBottomOf="@+id/gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/black"

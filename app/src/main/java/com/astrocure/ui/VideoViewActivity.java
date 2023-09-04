@@ -26,6 +26,7 @@ public class VideoViewActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         binding = ActivityVideoViewBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
@@ -117,5 +118,11 @@ public class VideoViewActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 }

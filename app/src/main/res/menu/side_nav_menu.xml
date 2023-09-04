@@ -3,6 +3,7 @@
 
     <group>
         <item
+            android:id="@+id/side_profile"
             android:icon="@drawable/side_profile"
             android:title="Profile" />
 
@@ -65,6 +66,11 @@
         <!--<item
             android:icon="@drawable/side_settings"
             android:title="Settings" />-->
+
+        <item
+            android:id="@+id/following"
+            android:icon="@drawable/ic_profile_followers"
+            android:title="Following" />
 
         <item
             android:id="@+id/logout"

@@ -98,6 +98,11 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             binding.videosFab.setImageResource(R.drawable.bottom_nav_video_inactive);
             setFragment(accountFragment);
             return true;
+        } else if (item.getItemId() == R.id.side_profile) {
+            isVideoFabClicked = false;
+            binding.videosFab.setImageResource(R.drawable.bottom_nav_video_inactive);
+            setFragment(accountFragment);
+            binding.bottomNav.setSelectedItemId(R.id.profile);
         } else if (item.getItemId() == R.id.logout) {
             startActivity(new Intent(getApplicationContext(), AuthActivity.class));
         } else if (item.getItemId() == R.id.chat_call_logs) {

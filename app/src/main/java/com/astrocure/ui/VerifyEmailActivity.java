@@ -1,6 +1,8 @@
 package com.astrocure.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,6 +18,6 @@ public class VerifyEmailActivity extends AppCompatActivity {
         binding = ActivityVerifyEmailBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-
+        binding.verify.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(),HomeActivity.class)));
     }
 }

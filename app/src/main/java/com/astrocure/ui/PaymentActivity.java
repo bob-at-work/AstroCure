@@ -27,6 +27,7 @@ public class PaymentActivity extends AppCompatActivity {
             DialogAddNewCardBinding cardBinding = DialogAddNewCardBinding.inflate(getLayoutInflater());
             BottomSheetDialog dialog = new BottomSheetDialog(PaymentActivity.this, R.style.BottomSheetDialog);
             dialog.setContentView(cardBinding.getRoot());
+            cardBinding.close.setOnClickListener(v1 -> dialog.dismiss());
             dialog.show();
         });
 
@@ -34,6 +35,7 @@ public class PaymentActivity extends AppCompatActivity {
             DialogAddUpiBinding upiBinding = DialogAddUpiBinding.inflate(getLayoutInflater());
             BottomSheetDialog dialog = new BottomSheetDialog(PaymentActivity.this, R.style.BottomSheetDialog);
             dialog.setContentView(upiBinding.getRoot());
+            upiBinding.close.setOnClickListener(v13 -> dialog.dismiss());
             dialog.show();
         });
 
@@ -41,6 +43,7 @@ public class PaymentActivity extends AppCompatActivity {
             DialogNetBankingBinding netBankingBinding = DialogNetBankingBinding.inflate(getLayoutInflater());
             BottomSheetDialog dialog = new BottomSheetDialog(PaymentActivity.this, R.style.BottomSheetDialog);
             dialog.setContentView(netBankingBinding.getRoot());
+            netBankingBinding.close.setOnClickListener(v12 -> dialog.dismiss());
             dialog.show();
         });
 

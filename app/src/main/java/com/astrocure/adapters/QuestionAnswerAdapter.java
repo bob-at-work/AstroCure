@@ -76,7 +76,7 @@ public class QuestionAnswerAdapter extends RecyclerView.Adapter {
 
         } else if (model.getSentBy().matches("app")) {
             StaticViewHolder staticViewHolder = (StaticViewHolder) holder;
-            staticViewHolder.binding.text.setText("Feel Free to Ask Anything");
+            staticViewHolder.binding.text.setText("Feel Free to ask anything to personalized therapist");
         } /*else if (model.isImage()) {
             UImageViewHolder uImageViewHolder = (UImageViewHolder) holder;
             Glide.with(context).load(model.getUri()).into(uImageViewHolder.binding.messageImage);

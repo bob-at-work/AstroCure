@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_4"
+    android:background="@drawable/background_5"
     tools:context=".ui.PaymentSuccessActivity">
 
     <ImageView
@@ -39,7 +39,7 @@
         android:layout_marginTop="10dp"
         android:text="You have completed your payment"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView21" />
@@ -47,10 +47,11 @@
     <com.airbnb.lottie.LottieAnimationView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:lottie_autoPlay="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias=".8"
-        app:lottie_rawRes="@raw/progress_anim_1st_stop" />
+        app:lottie_rawRes="@raw/progress_anim" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/goto_home"

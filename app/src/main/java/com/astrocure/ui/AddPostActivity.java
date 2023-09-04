@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
@@ -29,7 +30,7 @@ public class AddPostActivity extends AppCompatActivity {
         binding = ActivityAddPostBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.back.setOnClickListener(v -> onBackPressed());
+        binding.toolbar.setNavigationOnClickListener(v -> onBackPressed());
         imageUriList = new ArrayList<>();
         binding.postInput.addTextChangedListener(new TextWatcher() {
             @Override
@@ -61,6 +62,8 @@ public class AddPostActivity extends AppCompatActivity {
             intent.setAction(Intent.ACTION_GET_CONTENT);
             launcher.launch(Intent.createChooser(intent, "Select Picture"));
         });
+
+        binding.post.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(),HomeActivity.class)));
 
         launcher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
             if (result.getResultCode() == RESULT_OK) {

@@ -6,9 +6,8 @@ import static com.astrocure.utils.AstrologyApiConstants.LAHIRI;
 import static com.astrocure.utils.AstrologyApiConstants.LOVE_HOUSE;
 import static com.astrocure.utils.AstrologyApiConstants.TOPOCENTRIC;
 
-import android.app.DatePickerDialog;
+import android.annotation.SuppressLint;
 import android.app.Dialog;
-import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -30,7 +29,9 @@ import com.astrocure.adapters.HomeZodiacAdapter;
 import com.astrocure.adapters.ZodiacViewpagerAdapter;
 import com.astrocure.callback.SideNavigationCallback;
 import com.astrocure.databinding.CheckHoroBottomSheetBinding;
+import com.astrocure.databinding.DialogDateBinding;
 import com.astrocure.databinding.DialogHomeZodiacPreviewBinding;
+import com.astrocure.databinding.DialogTimeBinding;
 import com.astrocure.databinding.FragmentHoroscopeBinding;
 import com.astrocure.models.HomeZodiacModel;
 import com.astrocure.models.PlanetsRequestModel;
@@ -87,6 +88,7 @@ public class HoroscopeFragment extends Fragment implements Toolbar.OnMenuItemCli
         super.onCreate(savedInstanceState);
     }
 
+    @SuppressLint({"SetTextI18n", "SimpleDateFormat"})
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentHoroscopeBinding.inflate(inflater, container, false);
@@ -191,23 +193,33 @@ public class HoroscopeFragment extends Fragment implements Toolbar.OnMenuItemCli
         binding.seeNew.setOnClickListener(v -> {
             CheckHoroBottomSheetBinding dialogBinding = CheckHoroBottomSheetBinding.inflate(getLayoutInflater());
             BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(getContext(), R.style.BottomSheetDialog);
-            bottomSheetDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            Objects.requireNonNull(bottomSheetDialog.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             bottomSheetDialog.setContentView(dialogBinding.getRoot());
             dialogBinding.tob.setOnClickListener(v1 -> {
-                Calendar mcurrentTime = Calendar.getInstance();
-                int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);
-                int minute = mcurrentTime.get(Calendar.MINUTE);
-                TimePickerDialog mTimePicker;
-                mTimePicker = new TimePickerDialog(getContext(), android.R.style.Theme_Holo_Dialog_NoActionBar, (timePicker, selectedHour, selectedMinute) -> dialogBinding.tob.setText(selectedHour + ":" + selectedMinute), hour, minute, true);
-                mTimePicker.setTitle("Select Time");
-                mTimePicker.show();
+                DialogTimeBinding timeBinding = DialogTimeBinding.inflate(getLayoutInflater());
+                Dialog timeDialog = new Dialog(requireActivity());
+                timeDialog.setContentView(timeBinding.getRoot());
+                Objects.requireNonNull(timeDialog.getWindow()).setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+                timeDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.argb(50, 255, 255, 255)));
+                timeBinding.timePicker.setOnClickListener(v2 -> timeDialog.dismiss());
+                timeBinding.ok.setOnClickListener(v22 -> {
+                    dialogBinding.tob.setText(timeBinding.timePicker.getHour() + ":" + timeBinding.timePicker.getMinute());
+                    timeDialog.dismiss();
+                });
+                timeDialog.show();
             });
             dialogBinding.dob.setOnClickListener(v12 -> {
-                int selectedYear = 2000;
-                int selectedMonth = 5;
-                int selectedDayOfMonth = 10;
-                DatePickerDialog datePickerDialog = new DatePickerDialog(getContext(), android.R.style.Theme_Holo_Dialog_NoActionBar, (view, year, month, dayOfMonth) -> dialogBinding.dob.setText(dayOfMonth + "/" + month + "/" + year), selectedYear, selectedMonth, selectedDayOfMonth);
-                datePickerDialog.show();
+                DialogDateBinding dateBinding = DialogDateBinding.inflate(getLayoutInflater());
+                Dialog dateDialog = new Dialog(requireActivity());
+                dateDialog.setContentView(dateBinding.getRoot());
+                Objects.requireNonNull(dateDialog.getWindow()).setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+                dateDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.argb(50, 255, 255, 255)));
+                dateBinding.datePicker.setOnClickListener(v2 -> dateDialog.dismiss());
+                dateBinding.ok.setOnClickListener(v22 -> {
+                    dialogBinding.dob.setText(dateBinding.datePicker.getDayOfMonth() + "/" + dateBinding.datePicker.getMonth() + "/" + dateBinding.datePicker.getYear());
+                    dateDialog.dismiss();
+                });
+                dateDialog.show();
             });
 
             /*dialogBinding.checkHoro.setOnClickListener(v13 -> {
