@@ -54,7 +54,7 @@
         android:textColor="#030303"
         android:textColorHint="#80030303"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/voice_record"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
@@ -89,18 +89,5 @@
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/voice_record"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:src="@drawable/bi_mic"
-        app:backgroundTint="#7015A8"
-        app:fabCustomSize="43dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/message_container"
-        app:shapeAppearance="?attr/shapeAppearance"
-        app:tint="@color/white" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

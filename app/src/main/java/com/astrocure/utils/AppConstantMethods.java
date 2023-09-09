@@ -312,5 +312,4 @@ public class AppConstantMethods {
         return (bitmap);
     }
 
-
 }

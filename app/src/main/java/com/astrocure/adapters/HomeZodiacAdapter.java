@@ -45,6 +45,14 @@ public class HomeZodiacAdapter extends RecyclerView.Adapter<HomeZodiacAdapter.Zo
         return zodiacModels.size();
     }
 
+    public void setOnItemClick(OnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
+    }
+
+    public interface OnItemClickListener {
+        void onItemClick(int position, String name, int icon);
+    }
+
     public class ZodiacViewHolder extends RecyclerView.ViewHolder {
         ItemZodiacLayoutBinding binding;
 
@@ -52,13 +60,5 @@ public class HomeZodiacAdapter extends RecyclerView.Adapter<HomeZodiacAdapter.Zo
             super(binding.getRoot());
             this.binding = binding;
         }
-    }
-
-    public void setOnItemClick(OnItemClickListener onItemClickListener) {
-        this.onItemClickListener = onItemClickListener;
-    }
-
-    public interface OnItemClickListener {
-        void onItemClick(int position, String name, int icon);
     }
 }

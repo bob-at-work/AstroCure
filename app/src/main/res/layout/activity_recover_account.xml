@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_5"
+    android:background="@drawable/background_4"
     tools:context=".ui.RecoverAccountActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -14,12 +14,13 @@
         app:layout_constraintTop_toTopOf="parent"
         app:navigationIcon="@drawable/back_app"
         app:title="Recover your account"
+        android:background="#6D0AA7"
         app:titleTextColor="@color/white" />
 
     <View
         android:id="@+id/line"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height=".5dp"
         android:background="@color/white"
         app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
@@ -47,24 +48,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textView14" />
 
-    <androidx.cardview.widget.CardView
+    <ImageView
         android:id="@+id/cardView2"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:cardCornerRadius="100dp"
+        android:src="@drawable/recovery_illustration"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView26"
         app:layout_constraintVertical_bias=".05"
-        app:layout_constraintWidth_percent=".3">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </androidx.cardview.widget.CardView>
+        app:layout_constraintWidth_percent=".3" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout"
@@ -102,14 +98,16 @@
 
     <AutoCompleteTextView
         android:id="@+id/country_code"
-        android:layout_width="wrap_content"
+        android:layout_width="40dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:maxLength="3"
         android:text="+91"
+        android:background="@drawable/text_input_complete"
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="@+id/lottieAnimationView"
         app:layout_constraintStart_toStartOf="@+id/lottieAnimationView"
         app:layout_constraintTop_toBottomOf="@id/tab_layout"
@@ -120,6 +118,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
+        android:layout_marginStart="10dp"
         android:background="@drawable/text_input_complete"
         android:hint="Your Phone Number"
         android:textColor="@color/white"

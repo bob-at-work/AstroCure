@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0A0220"
+    tools:context=".ui.OnboardingActivity">
+
+    <ImageView
+        android:id="@+id/bg_1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/onboarding_stars"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="893:540"
+        app:layout_constraintHeight_percent=".9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0" />
+
+    <ImageView
+        android:id="@+id/bg_2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/onboarding_stars"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="893:540"
+        app:layout_constraintHeight_percent=".9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/onboarding_bottom_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent=".6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/logo_astro_cure"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="296:215"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias=".4"
+        app:layout_constraintWidth_percent=".8" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/anim_slider"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:animateLayoutChanges="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/tab_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent=".28"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="0dp"
+        android:layout_height="4dp"
+        android:layout_marginBottom="40dp"
+        android:animateLayoutChanges="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent=".15"
+        app:tabBackground="@drawable/onboarding_tab_unselected_bg"
+        app:tabGravity="center"
+        app:tabIndicator="@drawable/onboarding_tab_selected_bg"
+        app:tabIndicatorAnimationMode="elastic"
+        app:tabIndicatorColor="#422078"
+        app:tabIndicatorGravity="stretch"
+        app:tabIndicatorHeight="4dp"
+        app:tabMode="fixed"
+        app:tabRippleColor="@android:color/transparent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/login"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/black"
+        android:drawableLeft="@drawable/ic_phone"
+        android:text="Continue with phone number"
+        android:textColor="@color/white"
+        android:theme="@style/Theme.Material3.Light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias=".8"
+        app:layout_constraintWidth_percent=".8"
+        app:strokeColor="@color/white"
+        app:strokeWidth="1dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/recover"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#F69A1B"
+        android:text="Recovery Account"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:theme="@style/Theme.Material3.Light"
+        app:layout_constraintBottom_toTopOf="@+id/textView32"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/login"
+        app:layout_constraintVertical_bias=".3"
+        app:layout_constraintWidth_percent=".8"
+        app:strokeWidth="0dp" />
+
+    <TextView
+        android:id="@+id/textView32"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:gravity="fill_horizontal"
+        android:text="By continuing, you are setting up a account and agree to our User Agreement and Privacy Policy."
+        android:textColor="@color/white"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent=".75" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

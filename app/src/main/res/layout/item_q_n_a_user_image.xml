@@ -7,24 +7,24 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/chat_user_bg"
+        app:layout_constraintDimensionRatio="3:2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_percent=".91">
+        app:layout_constraintWidth_percent=".78">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/message"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
             android:layout_marginTop="10dp"
+            android:layout_marginBottom="15dp"
             android:layout_marginEnd="10dp"
-            android:maxWidth="300dp"
-            android:minWidth="100dp"
             app:cardCornerRadius="18dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -33,7 +33,7 @@
             <ImageView
                 android:id="@+id/message_image"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="match_parent" />
 
         </androidx.cardview.widget.CardView>
 

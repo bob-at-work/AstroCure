@@ -21,7 +21,7 @@ public class PaymentActivity extends AppCompatActivity {
         binding = ActivityPaymentBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.back.setOnClickListener(v -> onBackPressed());
+        binding.toolbar.setNavigationOnClickListener(v -> onBackPressed());
 
         binding.card.setOnClickListener(v -> {
             DialogAddNewCardBinding cardBinding = DialogAddNewCardBinding.inflate(getLayoutInflater());

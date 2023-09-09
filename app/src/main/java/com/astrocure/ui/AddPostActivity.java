@@ -1,11 +1,13 @@
 package com.astrocure.ui;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.View;
+import android.util.Log;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
@@ -24,6 +26,7 @@ public class AddPostActivity extends AppCompatActivity {
     List<Uri> imageUriList;
     FeedImageAdapter imageAdapter;
 
+    @SuppressLint("NotifyDataSetChanged")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +34,9 @@ public class AddPostActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         binding.toolbar.setNavigationOnClickListener(v -> onBackPressed());
+        if (getIntent().getStringExtra("feed_content") != null) {
+            binding.postInput.setText(getIntent().getStringExtra("feed_content"));
+        }
         imageUriList = new ArrayList<>();
         binding.postInput.addTextChangedListener(new TextWatcher() {
             @Override
@@ -51,21 +57,15 @@ public class AddPostActivity extends AppCompatActivity {
         });
 
         binding.camera.setOnClickListener(v -> {
-            /*Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-            intent.addCategory(Intent.CATEGORY_OPENABLE);
-            intent.setType("image/*");
-            intent.putExtra(Intent.EXTRA_MIME_TYPES, true);
-            launcher.launch(intent);*/
-            Intent intent = new Intent();
-            intent.setType("image/*");
+            Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
             intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
-            intent.setAction(Intent.ACTION_GET_CONTENT);
-            launcher.launch(Intent.createChooser(intent, "Select Picture"));
+            launcher.launch(intent);
         });
 
-        binding.post.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(),HomeActivity.class)));
+        binding.post.setOnClickListener(v -> finish());
 
         launcher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
+            Log.i("TAG", "onCreate: gallery " + result.getResultCode());
             if (result.getResultCode() == RESULT_OK) {
                 try {
                     if (result.getData().getClipData() != null) {

@@ -15,11 +15,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FeedRepliesAdapter extends RecyclerView.Adapter<FeedRepliesAdapter.RepliesViewHolder> {
+    private final List<Integer> heights;
+    private final List<CommentModel> list;
     Context context;
     private ItemViewHeight itemViewHeight;
     private Integer maxHeight = 0;
-    private List<Integer> heights;
-    private List<CommentModel> list;
 
     public FeedRepliesAdapter(Context context, List<CommentModel> list) {
         this.context = context;
@@ -55,6 +55,14 @@ public class FeedRepliesAdapter extends RecyclerView.Adapter<FeedRepliesAdapter.
         return list.size();
     }
 
+    public void setOnHeight(ItemViewHeight itemViewHeight) {
+        this.itemViewHeight = itemViewHeight;
+    }
+
+    public interface ItemViewHeight {
+        void getItemHeight(int height, List<Integer> heights);
+    }
+
     public class RepliesViewHolder extends RecyclerView.ViewHolder {
         ItemFeedRepliesBinding binding;
 
@@ -62,13 +70,5 @@ public class FeedRepliesAdapter extends RecyclerView.Adapter<FeedRepliesAdapter.
             super(binding.getRoot());
             this.binding = binding;
         }
-    }
-
-    public void setOnHeight(ItemViewHeight itemViewHeight) {
-        this.itemViewHeight = itemViewHeight;
-    }
-
-    public interface ItemViewHeight {
-        void getItemHeight(int height, List<Integer> heights);
     }
 }

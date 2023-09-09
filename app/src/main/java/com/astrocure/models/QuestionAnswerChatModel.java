@@ -1,38 +1,20 @@
 package com.astrocure.models;
 
-import android.net.Uri;
-
 public class QuestionAnswerChatModel {
     String message;
     String sentBy;
     String time;
     boolean isLink;
     boolean isImage;
-    Uri uri;
+    String imageUrl;
 
-    public QuestionAnswerChatModel(String message, String sentBy, String time, boolean isLink, boolean isImage, Uri uri) {
+    public QuestionAnswerChatModel(String message, String sentBy, String time, boolean isLink, boolean isImage, String imageUrl) {
         this.message = message;
         this.sentBy = sentBy;
         this.time = time;
         this.isLink = isLink;
         this.isImage = isImage;
-        this.uri = uri;
-    }
-
-    public boolean isImage() {
-        return isImage;
-    }
-
-    public void setImage(boolean image) {
-        isImage = image;
-    }
-
-    public Uri getUri() {
-        return uri;
-    }
-
-    public void setUri(Uri uri) {
-        this.uri = uri;
+        this.imageUrl = imageUrl;
     }
 
     public String getMessage() {
@@ -65,5 +47,21 @@ public class QuestionAnswerChatModel {
 
     public void setLink(boolean link) {
         isLink = link;
+    }
+
+    public boolean isImage() {
+        return isImage;
+    }
+
+    public void setImage(boolean image) {
+        isImage = image;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }

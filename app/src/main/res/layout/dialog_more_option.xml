@@ -7,6 +7,8 @@
     <soup.neumorphism.NeumorphCardView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:neumorph_shadowColorDark="#66FFFFFF"
+        app:neumorph_shadowColorLight="#33FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

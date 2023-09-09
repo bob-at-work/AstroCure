@@ -1,23 +1,20 @@
 package com.astrocure.adapters;
 
-import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.astrocure.R;
 import com.astrocure.databinding.ItemFeedTextLayoutBinding;
 import com.astrocure.ui.FeedDetailActivity;
 import com.bumptech.glide.Glide;
 
 public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.FeedViewHolder> {
     Context context;
+    OnItemClickListener onItemClickListener;
 
     public FeedsAdapter(Context context) {
         this.context = context;
@@ -33,10 +30,18 @@ public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.FeedViewHold
     @Override
     public void onBindViewHolder(@NonNull FeedsAdapter.FeedViewHolder holder, int position) {
 
-        holder.binding.comment.setOnClickListener(v -> {
+        holder.binding.image.setOnClickListener(v -> {
             Intent intent = new Intent(context, FeedDetailActivity.class);
             intent.putExtra("image", "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80");
             context.startActivity(intent);
+        });
+        holder.binding.content.setOnClickListener(v -> {
+            Intent intent = new Intent(context, FeedDetailActivity.class);
+            intent.putExtra("image", "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80");
+            context.startActivity(intent);
+        });
+        holder.binding.comment.setOnClickListener(v -> {
+            onItemClickListener.onCommentItemClick(position);
         });
 
         Glide.with(context).load("https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80")
@@ -57,13 +62,7 @@ public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.FeedViewHold
 //            context.startActivity(intent);
 //        });
         holder.binding.moreOption.setOnClickListener(v -> {
-            Dialog dialog = new Dialog(context);
-            dialog.setContentView(R.layout.dialog_more_option);
-            dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-//            dialog.getWindow().addFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND);
-            dialog.setCancelable(true);
-            dialog.show();
+            onItemClickListener.onItemClick(position);
         });
         holder.binding.share.setOnClickListener(v -> {
             Intent intent = new Intent(Intent.ACTION_SEND);
@@ -89,4 +88,15 @@ public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.FeedViewHold
             this.binding = binding;
         }
     }
+
+    public void setOnClick(OnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
+    }
+
+    public interface OnItemClickListener {
+        void onItemClick(int position);
+
+        void onCommentItemClick(int position);
+    }
+
 }

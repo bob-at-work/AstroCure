@@ -1,0 +1,9 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <solid android:color="#0A0220" />
+        </shape>
+    </item>
+    <item android:drawable="@drawable/bg_1_item_3" />
+
+</layer-list>

@@ -4,47 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_6"
     tools:context=".ui.PaymentActivity">
 
-    <ImageView
-        android:id="@+id/back"
-        android:layout_width="wrap_content"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:padding="5dp"
-        android:src="@drawable/back_app"
-        app:layout_constraintBottom_toTopOf="@+id/nestedScrollView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:background="#6D0AA7"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/back_app">
 
-    <TextView
-        android:id="@+id/text_pm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20sp"
-        android:text="Payment Information"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/back"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/back" />
+        <TextView
+            android:id="@+id/text_pm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="20sp"
+            android:text="Payment Information"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/back" />
+
+    </androidx.appcompat.widget.Toolbar>
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="?attr/actionBarSize"
-        android:paddingStart="10dp"
-        android:paddingEnd="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_5">
 
             <TextView
                 android:id="@+id/text_pay"
@@ -56,6 +54,8 @@
                 android:gravity="center_vertical"
                 android:text="Please follow the steps below to fill in the information truthfully."
                 android:textColor="#E4AF18"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 app:drawableStartCompat="@drawable/ic_rocket"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -64,6 +64,8 @@
                 android:layout_height="wrap_content"
                 android:scaleType="centerCrop"
                 android:src="@drawable/dot_line"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 app:layout_constraintBottom_toBottomOf="@id/mod_1"
                 app:layout_constraintEnd_toStartOf="@id/mod_3"
                 app:layout_constraintStart_toEndOf="@id/mod_1"
@@ -73,8 +75,9 @@
                 android:id="@+id/mod_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
+                android:layout_marginStart="20dp"
                 android:src="@drawable/ic_payment_1"
+                android:layout_marginTop="25dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/text_pay" />
 
@@ -111,6 +114,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_payment_3"
+                android:layout_marginEnd="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@id/mod_1" />
 
@@ -118,11 +122,13 @@
                 android:id="@+id/amount_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="70dp"
+                android:layout_marginStart="10dp"
                 android:theme="@style/Theme.Material3.Light"
                 app:cardCornerRadius="20dp"
                 app:layout_constraintTop_toBottomOf="@id/mod_1"
                 app:strokeColor="@color/white"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="10dp"
                 app:strokeWidth="1dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -254,13 +260,15 @@
                 android:id="@+id/coupon"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
+                android:layout_marginStart="10dp"
                 android:background="@drawable/payment_voucher_bg"
                 android:drawableEnd="@drawable/ic_check_circle"
                 android:drawablePadding="10dp"
                 android:text="Voucher Terpakai Rs 5.00"
                 android:textColor="@color/white"
                 android:textSize="16sp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
                 app:drawableStartCompat="@drawable/ic_voucher"
                 app:layout_constraintTop_toBottomOf="@id/amount_container" />
 
@@ -268,13 +276,14 @@
                 android:id="@+id/text_pm_method"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="20dp"
                 android:drawablePadding="5dp"
                 android:gravity="center"
                 android:text="Payment Methods"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold"
+                app:drawableEndCompat="@drawable/star_yellow"
                 app:drawableStartCompat="@drawable/star_yellow"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -289,6 +298,8 @@
                 app:cardCornerRadius="15dp"
                 app:layout_constraintTop_toBottomOf="@id/text_pm_method"
                 app:strokeColor="@color/white"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 app:strokeWidth="1dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -331,6 +342,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:layout_marginStart="10dp"
                 android:text="UPI"
                 android:textColor="@color/white"
                 android:textSize="18sp"
@@ -347,6 +359,8 @@
                 app:cardCornerRadius="15dp"
                 app:layout_constraintTop_toBottomOf="@id/label_upi"
                 app:strokeColor="@color/white"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 app:strokeWidth="1dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -396,22 +410,29 @@
 
             </com.google.android.material.card.MaterialCardView>
 
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/progress_anim"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/upi_container"
+                app:lottie_autoPlay="true"
+                app:lottie_rawRes="@raw/progress_anim_2nd_stop" />
+
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/proceed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="80dp"
-                android:layout_marginBottom="25dp"
-                android:background="@drawable/payment_btn_bg"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="70dp"
+                android:background="@drawable/button_bg"
                 android:text="Proceed to Pay"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:theme="@style/Theme.Material3.Light"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/upi_container" />
+                app:layout_constraintTop_toBottomOf="@id/progress_anim" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

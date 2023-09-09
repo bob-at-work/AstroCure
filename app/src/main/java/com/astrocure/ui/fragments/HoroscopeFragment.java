@@ -112,7 +112,7 @@ public class HoroscopeFragment extends Fragment implements Toolbar.OnMenuItemCli
         homeZodiacAdapter = new HomeZodiacAdapter(getContext(), modelList);
         binding.zodiacList.setAdapter(homeZodiacAdapter);
         homeZodiacAdapter.setOnItemClick((position, name, icon) -> {
-            Dialog dialog = new Dialog(getActivity());
+            Dialog dialog = new Dialog(getActivity(), R.style.Theme_AstroCure);
             DialogHomeZodiacPreviewBinding zodiacPreviewBinding = DialogHomeZodiacPreviewBinding.inflate(inflater, container, false);
             dialog.setContentView(zodiacPreviewBinding.getRoot());
             dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
@@ -197,7 +197,7 @@ public class HoroscopeFragment extends Fragment implements Toolbar.OnMenuItemCli
             bottomSheetDialog.setContentView(dialogBinding.getRoot());
             dialogBinding.tob.setOnClickListener(v1 -> {
                 DialogTimeBinding timeBinding = DialogTimeBinding.inflate(getLayoutInflater());
-                Dialog timeDialog = new Dialog(requireActivity());
+                Dialog timeDialog = new Dialog(requireActivity(), R.style.Theme_AstroCure);
                 timeDialog.setContentView(timeBinding.getRoot());
                 Objects.requireNonNull(timeDialog.getWindow()).setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
                 timeDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.argb(50, 255, 255, 255)));
@@ -210,7 +210,7 @@ public class HoroscopeFragment extends Fragment implements Toolbar.OnMenuItemCli
             });
             dialogBinding.dob.setOnClickListener(v12 -> {
                 DialogDateBinding dateBinding = DialogDateBinding.inflate(getLayoutInflater());
-                Dialog dateDialog = new Dialog(requireActivity());
+                Dialog dateDialog = new Dialog(requireActivity(), R.style.Theme_AstroCure);
                 dateDialog.setContentView(dateBinding.getRoot());
                 Objects.requireNonNull(dateDialog.getWindow()).setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
                 dateDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.argb(50, 255, 255, 255)));

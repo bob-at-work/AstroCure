@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity implements Toolbar.OnMenuIte
 
         binding.checkHoro.setOnClickListener(v -> {
             CheckHoroBottomSheetBinding dialogBinding = CheckHoroBottomSheetBinding.inflate(getLayoutInflater());
-            BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(MainActivity.this);
+            BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(MainActivity.this, R.style.BottomSheetDialog);
             bottomSheetDialog.setContentView(dialogBinding.getRoot());
             dialogBinding.tob.setOnClickListener(v1 -> {
                 Calendar mcurrentTime = Calendar.getInstance();
@@ -152,7 +152,7 @@ public class MainActivity extends AppCompatActivity implements Toolbar.OnMenuIte
 
             dialogBinding.checkHoro.setOnClickListener(v13 -> {
                 HoroResultBottomSheetBinding binding1 = HoroResultBottomSheetBinding.inflate(getLayoutInflater());
-                BottomSheetDialog bottomDialog = new BottomSheetDialog(MainActivity.this);
+                BottomSheetDialog bottomDialog = new BottomSheetDialog(MainActivity.this, R.style.BottomSheetDialog);
                 bottomDialog.setContentView(binding1.getRoot());
                 binding1.tabLayout.addTab(binding1.tabLayout.newTab().setText("Yesterday"));
                 binding1.tabLayout.addTab(binding1.tabLayout.newTab().setText("Today"));

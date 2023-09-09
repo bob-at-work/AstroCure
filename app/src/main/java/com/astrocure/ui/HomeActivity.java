@@ -105,6 +105,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             binding.bottomNav.setSelectedItemId(R.id.profile);
         } else if (item.getItemId() == R.id.logout) {
             startActivity(new Intent(getApplicationContext(), AuthActivity.class));
+        } else if (item.getItemId() == R.id.favourite_astrologer) {
+            startActivity(new Intent(getApplicationContext(), FavouriteAstrologerActivity.class));
         } else if (item.getItemId() == R.id.chat_call_logs) {
             startActivity(new Intent(getApplicationContext(), ChatCallLogActivity.class));
         } else if (item.getItemId() == R.id.transaction_history) {

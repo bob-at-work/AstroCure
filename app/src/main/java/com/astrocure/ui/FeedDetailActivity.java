@@ -64,11 +64,11 @@ public class FeedDetailActivity extends AppCompatActivity {
             @Override
             public void onItemMoreOption(int position, String comment) {
                 DialogBottomCommentMoreBinding bottomBinding = DialogBottomCommentMoreBinding.inflate(getLayoutInflater());
-                BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(FeedDetailActivity.this);
+                BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(FeedDetailActivity.this, R.style.BottomSheetDialog);
                 bottomSheetDialog.setContentView(bottomBinding.getRoot());
                 bottomBinding.editComment.setOnClickListener(v -> {
                     DialogCommentReplyBinding replyBinding = DialogCommentReplyBinding.inflate(getLayoutInflater());
-                    BottomSheetDialog bottomSheetDialog1 = new BottomSheetDialog(FeedDetailActivity.this);
+                    BottomSheetDialog bottomSheetDialog1 = new BottomSheetDialog(FeedDetailActivity.this, R.style.BottomSheetDialog);
                     bottomSheetDialog1.setContentView(replyBinding.getRoot());
                     replyBinding.textComment.setText(comment);
                     bottomSheetDialog1.show();
@@ -76,7 +76,7 @@ public class FeedDetailActivity extends AppCompatActivity {
                 });
                 bottomBinding.deleteComment.setOnClickListener(v -> {
                     DialogCommentDeleteConfirmBinding deleteBinding = DialogCommentDeleteConfirmBinding.inflate(getLayoutInflater());
-                    Dialog dialog = new Dialog(FeedDetailActivity.this);
+                    Dialog dialog = new Dialog(FeedDetailActivity.this, R.style.Theme_AstroCure);
 //                    Bitmap bitmap = AppConstantMethods.takeScreenShot(FeedDetailActivity.this);
 //                    Bitmap fast = AppConstantMethods.fastBlur(bitmap, 5);
 //                    final Drawable draw = new BitmapDrawable(getResources(), fast);
@@ -103,7 +103,7 @@ public class FeedDetailActivity extends AppCompatActivity {
                 });
                 bottomBinding.reportComment.setOnClickListener(v -> {
                     DialogCommentMoreConfirmBinding moreConfirmBinding = DialogCommentMoreConfirmBinding.inflate(getLayoutInflater());
-                    Dialog confirmDialog = new Dialog(FeedDetailActivity.this);
+                    Dialog confirmDialog = new Dialog(FeedDetailActivity.this, R.style.Theme_AstroCure);
                     confirmDialog.setContentView(moreConfirmBinding.getRoot());
                     confirmDialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
                     confirmDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.argb(50, 255, 255, 255)));
@@ -128,7 +128,7 @@ public class FeedDetailActivity extends AppCompatActivity {
 
         binding.moreOption.setOnClickListener(v -> {
             DialogMoreOptionBinding moreOptionBinding = DialogMoreOptionBinding.inflate(getLayoutInflater());
-            Dialog dialog = new Dialog(FeedDetailActivity.this);
+            Dialog dialog = new Dialog(FeedDetailActivity.this, R.style.Theme_AstroCure);
             dialog.setContentView(moreOptionBinding.getRoot());
             dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
             dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.argb(50, 255, 255, 255)));
@@ -139,11 +139,14 @@ public class FeedDetailActivity extends AppCompatActivity {
             moreOptionBinding.container.setOnClickListener(v16 -> {
             });
             moreOptionBinding.edit.setOnClickListener(v17 -> {
+                Intent intent = new Intent(getApplicationContext(), AddPostActivity.class);
+                intent.putExtra("feed_content", binding.content.getText().toString());
+                startActivity(intent);
                 dialog.cancel();
             });
             moreOptionBinding.delete.setOnClickListener(v18 -> {
                 DialogCommentDeleteConfirmBinding confirmBinding = DialogCommentDeleteConfirmBinding.inflate(getLayoutInflater());
-                Dialog deleteDialog = new Dialog(FeedDetailActivity.this);
+                Dialog deleteDialog = new Dialog(FeedDetailActivity.this, R.style.Theme_AstroCure);
                 deleteDialog.setContentView(confirmBinding.getRoot());
                 deleteDialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
                 deleteDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.argb(50, 255, 255, 255)));
@@ -176,6 +179,17 @@ public class FeedDetailActivity extends AppCompatActivity {
             shareIntent.putExtra(Intent.EXTRA_TEXT, binding.content.getText().toString());
             shareIntent.setType("image/png");
             startActivity(Intent.createChooser(shareIntent, "Share with"));
+        });
+
+        binding.commentContainer.setOnClickListener(v -> {
+            DialogCommentReplyBinding replyBinding = DialogCommentReplyBinding.inflate(getLayoutInflater());
+            BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(FeedDetailActivity.this, R.style.BottomSheetDialog);
+            bottomSheetDialog.setContentView(replyBinding.getRoot());
+            replyBinding.send.setOnClickListener(v33 -> {
+                Toast.makeText(getApplicationContext(), "Comment Posted", Toast.LENGTH_SHORT).show();
+                bottomSheetDialog.dismiss();
+            });
+            bottomSheetDialog.show();
         });
 
     }

@@ -20,9 +20,9 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class FeedCommentAdapter extends RecyclerView.Adapter<FeedCommentAdapter.CommentViewHolder> {
+    private final List<Integer> heights;
     Context context;
     private OnItemClickListener onItemClickListener;
-    private List<Integer> heights;
 
     public FeedCommentAdapter(Context context) {
         this.context = context;

@@ -22,12 +22,12 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class FeedReplyAdapter extends RecyclerView.Adapter<FeedReplyAdapter.ReplyViewHolder> {
 
+    private final List<Integer> heights;
     Context context;
+    List<CommentModel> commentModels;
     private OnItemClickListener onItemClickListener;
     private ItemViewHeight itemViewHeight;
     private Integer maxHeight = 0;
-    private List<Integer> heights;
-    List<CommentModel> commentModels;
 
     public FeedReplyAdapter(Context context) {
         this.context = context;

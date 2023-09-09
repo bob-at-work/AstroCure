@@ -4,11 +4,15 @@ public class AstrologerChatModel {
     String message;
     String time;
     Boolean admin;
+    String audioFile;
+    String imageUrl;
 
-    public AstrologerChatModel(String message, String time, Boolean admin) {
+    public AstrologerChatModel(String message, String time, Boolean admin, String audioFile, String imageUrl) {
         this.message = message;
         this.time = time;
         this.admin = admin;
+        this.audioFile = audioFile;
+        this.imageUrl = imageUrl;
     }
 
     public String getMessage() {
@@ -33,5 +37,21 @@ public class AstrologerChatModel {
 
     public void setAdmin(Boolean admin) {
         this.admin = admin;
+    }
+
+    public String getAudioFile() {
+        return audioFile;
+    }
+
+    public void setAudioFile(String audioFile) {
+        this.audioFile = audioFile;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_5"
+    android:background="@drawable/background_4"
     tools:context=".ui.VerifyAccountActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -14,12 +14,13 @@
         app:layout_constraintTop_toTopOf="parent"
         app:navigationIcon="@drawable/back_app"
         app:title="Verify Account"
+        android:background="#6D0AA7"
         app:titleTextColor="@color/white" />
 
     <View
         android:id="@+id/line"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height=".5dp"
         android:background="@color/white"
         app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
@@ -34,24 +35,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/line" />
 
-    <androidx.cardview.widget.CardView
+    <ImageView
         android:id="@+id/cardView2"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:cardCornerRadius="100dp"
+        android:src="@drawable/ic_otp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView27"
         app:layout_constraintVertical_bias=".05"
-        app:layout_constraintWidth_percent=".3">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </androidx.cardview.widget.CardView>
+        app:layout_constraintWidth_percent=".3" />
 
     <TextView
         android:id="@+id/textView28"

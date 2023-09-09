@@ -1,10 +1,14 @@
 package com.astrocure.ui.fragments;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
@@ -13,8 +17,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.astrocure.R;
 import com.astrocure.adapters.FeedsAdapter;
+import com.astrocure.databinding.DialogCommentReplyBinding;
+import com.astrocure.databinding.DialogMoreOptionBinding;
 import com.astrocure.databinding.FragmentFeedsBinding;
 import com.astrocure.ui.AddPostActivity;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 public class FeedsFragment extends Fragment {
 
@@ -62,6 +69,36 @@ public class FeedsFragment extends Fragment {
         binding.feedList.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
         binding.feedList.setAdapter(adapter);
         binding.addPost.setOnClickListener(v -> startActivity(new Intent(getContext(), AddPostActivity.class)));
+
+        adapter.setOnClick(new FeedsAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                Dialog dialog = new Dialog(requireContext(), R.style.Theme_AstroCure);
+                DialogMoreOptionBinding moreOptionBinding = DialogMoreOptionBinding.inflate(inflater, container, false);
+                dialog.setContentView(moreOptionBinding.getRoot());
+                dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.argb(50, 255, 255, 255)));
+//            dialog.getWindow().addFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND);
+                moreOptionBinding.delete.setOnClickListener(v -> dialog.dismiss());
+                moreOptionBinding.getRoot().setOnClickListener(v -> dialog.cancel());
+                dialog.setCancelable(true);
+                dialog.show();
+            }
+
+            @Override
+            public void onCommentItemClick(int position) {
+                DialogCommentReplyBinding replyBinding = DialogCommentReplyBinding.inflate(getLayoutInflater());
+                BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext(), R.style.BottomSheetDialog);
+                bottomSheetDialog.setContentView(replyBinding.getRoot());
+                replyBinding.send.setOnClickListener(v -> {
+                    Toast.makeText(requireContext(), "Comment Posted", Toast.LENGTH_SHORT).show();
+                    bottomSheetDialog.dismiss();
+                });
+                bottomSheetDialog.show();
+            }
+        });
+
         return binding.getRoot();
     }
 }

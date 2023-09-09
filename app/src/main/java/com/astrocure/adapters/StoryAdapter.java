@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.astrocure.R;
 import com.astrocure.databinding.ItemVideoHighlightLayoutBinding;
 import com.astrocure.models.StoryModel;
 import com.astrocure.ui.StoryPlayerActivity;
@@ -42,8 +41,8 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoryViewHol
         holder.binding.storyCatName.setText(storyList.get(position).getName());
         holder.binding.logo.setOnClickListener(v -> {
             Intent intent = new Intent(context, StoryPlayerActivity.class);
-            intent.putExtra("title",storyList.get(position).getName());
-            intent.putExtra("subImage",storyList.get(position).getImage());
+            intent.putExtra("title", storyList.get(position).getName());
+            intent.putExtra("subImage", storyList.get(position).getImage());
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(intent);
         });

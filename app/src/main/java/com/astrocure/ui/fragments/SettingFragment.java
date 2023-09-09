@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 
+import com.astrocure.R;
 import com.astrocure.databinding.DialogCeoFeedbackBinding;
 import com.astrocure.databinding.DialogLogoutBinding;
 import com.astrocure.databinding.FragmentSettingBinding;
@@ -38,10 +39,10 @@ public class SettingFragment extends Fragment {
 
         binding.logout.setOnClickListener(v -> {
             DialogLogoutBinding dialogBinding = DialogLogoutBinding.inflate(getLayoutInflater());
-            Dialog dialog = new Dialog(requireContext());
+            Dialog dialog = new Dialog(requireContext(), R.style.Theme_AstroCure);
             dialog.setContentView(dialogBinding.getRoot());
-            Objects.requireNonNull(dialog.getWindow()).setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            Objects.requireNonNull(dialog.getWindow()).setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.argb(50, 255, 255, 255)));
             dialog.setCancelable(true);
             dialogBinding.yes.setOnClickListener(v1 -> dialog.dismiss());
             dialogBinding.no.setOnClickListener(v12 -> dialog.cancel());
@@ -50,11 +51,12 @@ public class SettingFragment extends Fragment {
 
         binding.ceoFeedback.setOnClickListener(v -> {
             DialogCeoFeedbackBinding dialogBinding = DialogCeoFeedbackBinding.inflate(getLayoutInflater());
-            Dialog dialog = new Dialog(requireContext());
+            Dialog dialog = new Dialog(requireContext(), R.style.Theme_AstroCure);
             dialog.setContentView(dialogBinding.getRoot());
-            Objects.requireNonNull(dialog.getWindow()).setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            Objects.requireNonNull(dialog.getWindow()).setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.argb(50, 255, 255, 255)));
             dialog.setCancelable(true);
+            dialogBinding.gotoChat.setOnClickListener(v13 -> dialog.dismiss());
             dialog.show();
         });
 

@@ -68,9 +68,9 @@
             android:title="Settings" />-->
 
         <item
-            android:id="@+id/following"
-            android:icon="@drawable/ic_profile_followers"
-            android:title="Following" />
+            android:id="@+id/favourite_astrologer"
+            android:icon="@drawable/ic_heart_like"
+            android:title="Favourite" />
 
         <item
             android:id="@+id/logout"

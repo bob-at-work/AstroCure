@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_1"
+    android:background="@drawable/background_8"
     tools:context=".ui.AstrologerChatActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -29,6 +29,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
+                    android:id="@+id/image"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     app:cardCornerRadius="100dp" />
@@ -97,52 +98,76 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/chat_container"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chat_list"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:padding="5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar">
+        android:clipToPadding="false"
+        android:paddingBottom="?attr/actionBarSize"
+        app:layout_constraintBottom_toBottomOf="@id/message_container"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/chat_list"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toTopOf="@id/message"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/message_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/chat_edittext_bg"
+        android:imeOptions="actionSend"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/voice_record"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="5dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:src="@drawable/fluent_camera"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/message"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
+            android:paddingStart="5dp"
             android:background="@drawable/chat_edittext_bg"
-            android:drawableLeft="@drawable/fluent_camera"
-            android:drawablePadding="10dp"
             android:hint="Type your message here..."
-            android:imeOptions="actionSend"
-            android:padding="10dp"
             android:textColor="#030303"
             android:textColorHint="#80030303"
             android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@id/send"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/voice_record"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toEndOf="@id/camera"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/voice_record"
+        <ImageView
+            android:id="@+id/send"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/bi_mic"
-            app:backgroundTint="#7015A8"
-            app:fabSize="mini"
-            app:layout_constraintBottom_toBottomOf="@id/message"
+            android:padding="5dp"
+            android:src="@drawable/send"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/message"
-            app:shapeAppearance="?attr/shapeAppearance" />
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/voice_record"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/bi_mic"
+        app:backgroundTint="#7015A8"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toBottomOf="@id/message_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/message_container"
+        app:shapeAppearance="?attr/shapeAppearance" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
