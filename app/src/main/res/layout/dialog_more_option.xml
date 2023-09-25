@@ -7,13 +7,13 @@
     <soup.neumorphism.NeumorphCardView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:neumorph_shadowColorDark="#66FFFFFF"
-        app:neumorph_shadowColorLight="#33FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_percent=".85">
+        app:layout_constraintWidth_percent=".85"
+        app:neumorph_shadowColorDark="#66FFFFFF"
+        app:neumorph_shadowColorLight="#33FFFFFF">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/container"

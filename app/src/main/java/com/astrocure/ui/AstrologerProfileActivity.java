@@ -7,17 +7,29 @@ import android.text.style.ForegroundColorSpan;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.astrocure.R;
+import com.astrocure.adapters.ConsultationPriceAdapter;
 import com.astrocure.adapters.ProfileReviewAdapter;
 import com.astrocure.adapters.SimilarAstrologerListAdapter;
 import com.astrocure.databinding.ActivityAstrologerProfileBinding;
+import com.astrocure.databinding.DialogBottomInstantCounsellingBinding;
+import com.astrocure.models.ConsultationPriceModel;
+import com.astrocure.utils.AppConstants;
+import com.bumptech.glide.Glide;
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class AstrologerProfileActivity extends AppCompatActivity {
-    ActivityAstrologerProfileBinding binding;
     public static final int MAX_LINES = 7;
     public static final String TWO_SPACES = " ";
+    ActivityAstrologerProfileBinding binding;
+    List<ConsultationPriceModel> priceModels;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +57,23 @@ public class AstrologerProfileActivity extends AppCompatActivity {
         ProfileReviewAdapter reviewAdapter = new ProfileReviewAdapter(getApplicationContext());
         binding.reviewList.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
         binding.reviewList.setAdapter(reviewAdapter);
+
+        priceModels = new ArrayList<>();
+        priceModels.add(new ConsultationPriceModel("75/Minutes", "#FF0000", "30 Minutes", "₹ 2250"));
+        priceModels.add(new ConsultationPriceModel("70/Minutes", "#FF00B8", "45 Minutes", "₹ 3375"));
+        priceModels.add(new ConsultationPriceModel("60/Minutes", "#4200FF", "1 hour", "₹ 4500"));
+        priceModels.add(new ConsultationPriceModel("55/Minutes", "#0085FF", "2 hour", "₹ 9000"));
+        binding.instantConsultation.setOnClickListener(v -> {
+            DialogBottomInstantCounsellingBinding customBinding = DialogBottomInstantCounsellingBinding.inflate(getLayoutInflater());
+            BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(AstrologerProfileActivity.this, R.style.BottomSheetDialog);
+            bottomSheetDialog.getBehavior().setState(BottomSheetBehavior.STATE_EXPANDED);
+            bottomSheetDialog.setContentView(customBinding.getRoot());
+            ConsultationPriceAdapter priceAdapter = new ConsultationPriceAdapter(getApplicationContext(), priceModels);
+            customBinding.priceList.setLayoutManager(new GridLayoutManager(getApplicationContext(), 3, LinearLayoutManager.VERTICAL, false));
+            customBinding.priceList.setAdapter(priceAdapter);
+            Glide.with(getApplicationContext()).load(AppConstants.profileImg).into(customBinding.astrologetImg);
+            bottomSheetDialog.show();
+        });
 
 //        binding.chat.setText("Chat\n" + Html.fromHtml(setTextSize("Currently Offline", (int) binding.chat.getTextSize() - 4)));
     }

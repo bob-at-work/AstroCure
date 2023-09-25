@@ -20,7 +20,7 @@ public class StoryPlayerActivity extends AppCompatActivity {
         binding.close.setOnClickListener(v -> onBackPressed());
 
         String title = getIntent().getStringExtra("title");
-        int subImage = getIntent().getIntExtra("subImage",0);
+        int subImage = getIntent().getIntExtra("subImage", 0);
 
         binding.name.setText(title);
         Glide.with(getApplicationContext()).load(subImage)

@@ -29,5 +29,6 @@
     <string name="language">Language<sup><font fgcolor='#931D1D'>*</font></sup></string>
     <string name="gender">Gender<sup><font fgcolor='#931D1D'>*</font></sup></string>
     <string name="upload_photo">Upload Photo<sup><font fgcolor='#931D1D'>*</font></sup></string>
+    <string name="premium_feature_text">We provide predictions for Commodities, Movie , Stock , Sports, Miscellaneous...<font fgcolor='#05FF00'>Learn More</font></string>
 
 </resources>

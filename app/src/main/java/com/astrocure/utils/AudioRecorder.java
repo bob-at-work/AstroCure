@@ -8,8 +8,8 @@ import java.io.File;
 import java.io.IOException;
 
 public class AudioRecorder {
-    MediaRecorder recorder = new MediaRecorder();
     public final String path;
+    MediaRecorder recorder = new MediaRecorder();
 
     public AudioRecorder(String path) {
         this.path = sanitizePath(path);

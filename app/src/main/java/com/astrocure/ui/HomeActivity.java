@@ -141,10 +141,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public void callBackAction(String action) {
-        switch (action) {
-            case OPEN_DRAWER:
-                binding.drawer.openDrawer(GravityCompat.END);
-                break;
+        if (action.equals(OPEN_DRAWER)) {
+            binding.drawer.openDrawer(GravityCompat.END);
         }
     }
 

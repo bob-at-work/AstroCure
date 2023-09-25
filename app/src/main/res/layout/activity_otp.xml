@@ -66,7 +66,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias=".85"
         app:lottie_autoPlay="true"
-        app:lottie_rawRes="@raw/progress_anim_normal"
+        app:lottie_rawRes="@raw/progress_anim_1st_stop"
         app:lottie_speed="0.3" />
 
     <com.astrocure.utils.OtpEdittext

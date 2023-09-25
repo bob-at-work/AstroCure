@@ -100,6 +100,25 @@
 
         </androidx.cardview.widget.CardView>
 
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/white"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            android:lines="1"
+            android:minHeight="0dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="Chat Again"
+            android:textColor="#690971"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/image_container"
+            app:layout_constraintStart_toStartOf="@id/image_container"
+            app:layout_constraintTop_toBottomOf="@id/image_container" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

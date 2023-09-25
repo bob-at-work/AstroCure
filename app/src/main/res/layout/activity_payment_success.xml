@@ -47,10 +47,10 @@
     <com.airbnb.lottie.LottieAnimationView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:lottie_autoPlay="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias=".8"
+        app:lottie_autoPlay="true"
         app:lottie_rawRes="@raw/progress_anim" />
 
     <androidx.appcompat.widget.AppCompatButton

@@ -51,6 +51,7 @@ import java.util.List;
 import java.util.Locale;
 
 public class AstrologerChatActivity extends AppCompatActivity {
+    public static final int REQUEST_AUDIO_PERMISSION_CODE = 1;
     private static final int CAMERA_REQUEST = 603;
     ActivityAstrologerChatBinding binding;
     AstrologerChatAdapter adapter;
@@ -59,7 +60,6 @@ public class AstrologerChatActivity extends AppCompatActivity {
     MediaPlayer mediaPlayer;
     String fileName;
     boolean isRecording = false;
-    public static final int REQUEST_AUDIO_PERMISSION_CODE = 1;
     ActivityResultLauncher<Intent> launcher;
     Intent cameraIntent;
     private Uri photoUri;

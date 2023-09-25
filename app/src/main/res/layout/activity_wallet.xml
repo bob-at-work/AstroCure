@@ -68,26 +68,26 @@
                 android:id="@+id/label_available"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
                 android:text="Available Balance"
                 android:textColor="@color/white"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="30dp"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                app:layout_constraintTop_toTopOf="@id/wallet_container"
-                app:layout_constraintStart_toStartOf="@id/wallet_container"/>
+                app:layout_constraintStart_toStartOf="@id/wallet_container"
+                app:layout_constraintTop_toTopOf="@id/wallet_container" />
 
             <TextView
                 android:id="@+id/price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
                 android:text=" ₹ 576"
                 android:textColor="@color/white"
-                android:layout_marginTop="6dp"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                app:layout_constraintTop_toBottomOf="@id/label_available"
-                app:layout_constraintStart_toStartOf="@id/label_available"/>
+                app:layout_constraintStart_toStartOf="@id/label_available"
+                app:layout_constraintTop_toBottomOf="@id/label_available" />
 
             <TextView
                 android:id="@+id/text_wallet"
@@ -146,9 +146,9 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/text_add_money"
+                app:layout_constraintVertical_bias="0"
                 app:spanCount="4"
                 tools:itemCount="8"
-                app:layout_constraintVertical_bias="0"
                 tools:listitem="@layout/item_wallet_offer_layout" />
 
             <com.airbnb.lottie.LottieAnimationView
@@ -163,11 +163,11 @@
                 android:id="@+id/proceed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="20dp"
                 android:background="@drawable/button_bg"
                 android:text="Proceed"
                 android:textColor="@color/white"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

@@ -65,10 +65,19 @@
             app:layout_constraintTop_toTopOf="@id/name" />
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="5dp"
+            android:src="@drawable/ic_heart"
+            app:layout_constraintEnd_toEndOf="@+id/btn_action"
+            app:layout_constraintTop_toTopOf="@+id/image_container" />
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_margin="5dp"
             android:src="@drawable/ic_verified"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/image_container"
             app:layout_constraintTop_toTopOf="@id/image_container" />
 
         <TextView

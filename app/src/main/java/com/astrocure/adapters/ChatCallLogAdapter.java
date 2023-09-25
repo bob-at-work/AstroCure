@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.astrocure.databinding.ItemContactLogHistoryBinding;
 import com.astrocure.ui.AstrologerChatActivity;
+import com.astrocure.utils.AppConstants;
+import com.bumptech.glide.Glide;
 
 public class ChatCallLogAdapter extends RecyclerView.Adapter<ChatCallLogAdapter.LogViewHolder> {
     Context context;
@@ -33,6 +35,7 @@ public class ChatCallLogAdapter extends RecyclerView.Adapter<ChatCallLogAdapter.
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(intent);
         });
+        Glide.with(context).load(AppConstants.profileImg).into(holder.binding.profileImage);
     }
 
     @Override

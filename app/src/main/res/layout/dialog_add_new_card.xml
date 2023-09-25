@@ -46,8 +46,8 @@
         android:background="@drawable/feed_edittext_bg"
         android:hint="Enter 12 digit card number"
         android:padding="10dp"
-        android:textSize="14sp"
         android:textColorHint="#979797"
+        android:textSize="14sp"
         app:layout_constraintTop_toBottomOf="@id/label_add_card" />
 
     <TextView
@@ -69,8 +69,8 @@
         android:hint="Month "
         android:minWidth="100dp"
         android:padding="10dp"
-        android:textSize="14sp"
         android:textColorHint="#979797"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/label_valid" />
 
@@ -83,8 +83,8 @@
         android:hint="Year "
         android:minWidth="100dp"
         android:padding="10dp"
-        android:textSize="14sp"
         android:textColorHint="#979797"
+        android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@id/month"
         app:layout_constraintTop_toTopOf="@id/month" />
 
@@ -105,9 +105,9 @@
         android:hint="CVV "
         android:minWidth="100dp"
         android:padding="10dp"
-        android:textSize="14sp"
         android:textColor="@color/white"
         android:textColorHint="#979797"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/year"
         app:layout_constraintTop_toTopOf="@id/month" />

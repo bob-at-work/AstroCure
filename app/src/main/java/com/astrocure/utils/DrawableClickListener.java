@@ -152,9 +152,7 @@ public abstract class DrawableClickListener implements OnTouchListener {
             if (x >= (view.getPaddingLeft() - fuzz)) {
                 if (x <= (view.getPaddingLeft() + drawableBounds.width() + fuzz)) {
                     if (y >= (view.getPaddingTop() - fuzz)) {
-                        if (y <= (view.getHeight() - view.getPaddingBottom() + fuzz)) {
-                            return true;
-                        }
+                        return y <= (view.getHeight() - view.getPaddingBottom() + fuzz);
                     }
                 }
             }
@@ -200,9 +198,7 @@ public abstract class DrawableClickListener implements OnTouchListener {
             if (x >= (view.getPaddingLeft() - fuzz)) {
                 if (x <= (view.getWidth() - view.getPaddingRight() + fuzz)) {
                     if (y >= (view.getPaddingTop() - fuzz)) {
-                        if (y <= (view.getPaddingTop() + drawableBounds.height() + fuzz)) {
-                            return true;
-                        }
+                        return y <= (view.getPaddingTop() + drawableBounds.height() + fuzz);
                     }
                 }
             }
@@ -248,9 +244,7 @@ public abstract class DrawableClickListener implements OnTouchListener {
             if (x >= (view.getWidth() - view.getPaddingRight() - drawableBounds.width() - fuzz)) {
                 if (x <= (view.getWidth() - view.getPaddingRight() + fuzz)) {
                     if (y >= (view.getPaddingTop() - fuzz)) {
-                        if (y <= (view.getHeight() - view.getPaddingBottom() + fuzz)) {
-                            return true;
-                        }
+                        return y <= (view.getHeight() - view.getPaddingBottom() + fuzz);
                     }
                 }
             }
@@ -296,9 +290,7 @@ public abstract class DrawableClickListener implements OnTouchListener {
             if (x >= (view.getPaddingLeft() - fuzz)) {
                 if (x <= (view.getWidth() - view.getPaddingRight() + fuzz)) {
                     if (y >= (view.getHeight() - view.getPaddingBottom() - drawableBounds.height() - fuzz)) {
-                        if (y <= (view.getHeight() - view.getPaddingBottom() + fuzz)) {
-                            return true;
-                        }
+                        return y <= (view.getHeight() - view.getPaddingBottom() + fuzz);
                     }
                 }
             }

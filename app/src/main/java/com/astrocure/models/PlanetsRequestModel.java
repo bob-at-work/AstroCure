@@ -35,21 +35,6 @@ public class PlanetsRequestModel {
     @Expose
     public Settings settings;
 
-    public static class Settings {
-
-        @SerializedName("observation_point")
-        @Expose
-        public String observationPoint;
-        @SerializedName("ayanamsha")
-        @Expose
-        public String ayanamsha;
-
-        public Settings(String observationPoint, String ayanamsha) {
-            this.observationPoint = observationPoint;
-            this.ayanamsha = ayanamsha;
-        }
-    }
-
     public void setYear(Integer year) {
         this.year = year;
     }
@@ -88,5 +73,20 @@ public class PlanetsRequestModel {
 
     public void setSettings(Settings settings) {
         this.settings = settings;
+    }
+
+    public static class Settings {
+
+        @SerializedName("observation_point")
+        @Expose
+        public String observationPoint;
+        @SerializedName("ayanamsha")
+        @Expose
+        public String ayanamsha;
+
+        public Settings(String observationPoint, String ayanamsha) {
+            this.observationPoint = observationPoint;
+            this.ayanamsha = ayanamsha;
+        }
     }
 }

@@ -27,14 +27,14 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class AstrologerChatAdapter extends RecyclerView.Adapter {
-    Context context;
-    List<AstrologerChatModel> list;
     private final static int USER = 0;
     private final static int ASTROLOGER = 1;
     private final static int USER_AUDIO = 2;
     private final static int ASTROLOGER_AUDIO = 3;
     private final static int USER_IMAGE = 4;
     private final static int ASTROLOGER_IMAGE = 5;
+    Context context;
+    List<AstrologerChatModel> list;
     MediaPlayer mediaPlayer;
     private OnItemClickListener onItemClickListener;
 

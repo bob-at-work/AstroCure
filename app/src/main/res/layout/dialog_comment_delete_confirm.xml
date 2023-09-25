@@ -9,14 +9,14 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:cardCornerRadius="30dp"
-        app:neumorph_shadowColorDark="#66FFFFFF"
-        app:neumorph_shadowColorLight="#33FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent=".35"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_percent=".85">
+        app:layout_constraintWidth_percent=".85"
+        app:neumorph_shadowColorDark="#66FFFFFF"
+        app:neumorph_shadowColorLight="#33FFFFFF">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/container"
@@ -50,17 +50,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/imageView11"
                 app:layout_constraintWidth_percent=".7" />
 
-            <TextView
-                android:id="@+id/textView25"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Please do not close this page"
-                android:textColor="#ACADAE"
-                app:layout_constraintBottom_toTopOf="@id/confirmed"
-                app:layout_constraintEnd_toEndOf="@+id/textView24"
-                app:layout_constraintStart_toStartOf="@+id/textView24"
-                app:layout_constraintTop_toBottomOf="@+id/textView24" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/confirmed"
@@ -76,7 +65,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/not_selected"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView25"
+                app:layout_constraintTop_toBottomOf="@+id/textView24"
                 app:layout_constraintWidth_percent=".3" />
 
             <androidx.appcompat.widget.AppCompatButton

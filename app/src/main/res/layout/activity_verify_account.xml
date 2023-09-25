@@ -11,10 +11,10 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#6D0AA7"
         app:layout_constraintTop_toTopOf="parent"
         app:navigationIcon="@drawable/back_app"
         app:title="Verify Account"
-        android:background="#6D0AA7"
         app:titleTextColor="@color/white" />
 
     <View
@@ -29,7 +29,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:text="A verification code has been sent to the email id or mobile number provided. Please enter the code below.The code will be void for 10 minutes"
+        android:text="A verification code has been sent to the email provided. Please enter the code below. The code will be Invaild in 10 minutes"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,8 +39,8 @@
         android:id="@+id/cardView2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:cardCornerRadius="100dp"
         android:src="@drawable/ic_otp"
+        app:cardCornerRadius="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="1"
         app:layout_constraintEnd_toEndOf="parent"

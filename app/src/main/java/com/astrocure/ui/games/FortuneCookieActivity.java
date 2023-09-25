@@ -19,12 +19,12 @@ import com.astrocure.databinding.ActivityFortuneCookieBinding;
 import java.util.Random;
 
 public class FortuneCookieActivity extends AppCompatActivity implements SensorEventListener {
+    private static final float SHAKE_THRESHOLD = 5.25f;
+    private static final int MIN_TIME_BETWEEN_SHAKES_MILLISECS = 1000;
     ActivityFortuneCookieBinding binding;
     private SensorManager sensorManager;
     private Sensor accelerometer;
     private Vibrator vibrator;
-    private static final float SHAKE_THRESHOLD = 5.25f;
-    private static final int MIN_TIME_BETWEEN_SHAKES_MILLISECS = 1000;
     private long mLastShakeTime;
     private boolean isShaken;
 

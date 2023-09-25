@@ -73,17 +73,6 @@ public class PlanetsResponseModel {
         @Expose
         public Settings settings;
 
-        public static class Settings {
-
-            @SerializedName("observation_point")
-            @Expose
-            public String observationPoint;
-            @SerializedName("ayanamsha")
-            @Expose
-            public String ayanamsha;
-
-        }
-
         public Integer getMonth() {
             return month;
         }
@@ -94,6 +83,17 @@ public class PlanetsResponseModel {
 
         public Integer getYear() {
             return year;
+        }
+
+        public static class Settings {
+
+            @SerializedName("observation_point")
+            @Expose
+            public String observationPoint;
+            @SerializedName("ayanamsha")
+            @Expose
+            public String ayanamsha;
+
         }
     }
 
@@ -137,6 +137,110 @@ public class PlanetsResponseModel {
         @SerializedName("Pluto")
         @Expose
         public Pluto pluto;
+
+        public Ascendant getAscendant() {
+            return ascendant;
+        }
+
+        public void setAscendant(Ascendant ascendant) {
+            this.ascendant = ascendant;
+        }
+
+        public Sun getSun() {
+            return sun;
+        }
+
+        public void setSun(Sun sun) {
+            this.sun = sun;
+        }
+
+        public Moon getMoon() {
+            return moon;
+        }
+
+        public void setMoon(Moon moon) {
+            this.moon = moon;
+        }
+
+        public Mars getMars() {
+            return mars;
+        }
+
+        public void setMars(Mars mars) {
+            this.mars = mars;
+        }
+
+        public Mercury getMercury() {
+            return mercury;
+        }
+
+        public void setMercury(Mercury mercury) {
+            this.mercury = mercury;
+        }
+
+        public Jupiter getJupiter() {
+            return jupiter;
+        }
+
+        public void setJupiter(Jupiter jupiter) {
+            this.jupiter = jupiter;
+        }
+
+        public Venus getVenus() {
+            return venus;
+        }
+
+        public void setVenus(Venus venus) {
+            this.venus = venus;
+        }
+
+        public Saturn getSaturn() {
+            return saturn;
+        }
+
+        public void setSaturn(Saturn saturn) {
+            this.saturn = saturn;
+        }
+
+        public Rahu getRahu() {
+            return rahu;
+        }
+
+        public void setRahu(Rahu rahu) {
+            this.rahu = rahu;
+        }
+
+        public Ketu getKetu() {
+            return ketu;
+        }
+
+        public void setKetu(Ketu ketu) {
+            this.ketu = ketu;
+        }
+
+        public Uranus getUranus() {
+            return uranus;
+        }
+
+        public void setUranus(Uranus uranus) {
+            this.uranus = uranus;
+        }
+
+        public Neptune getNeptune() {
+            return neptune;
+        }
+
+        public void setNeptune(Neptune neptune) {
+            this.neptune = neptune;
+        }
+
+        public Pluto getPluto() {
+            return pluto;
+        }
+
+        public void setPluto(Pluto pluto) {
+            this.pluto = pluto;
+        }
 
         public class Ascendant {
 
@@ -555,110 +659,6 @@ public class PlanetsResponseModel {
             public String getIsRetro() {
                 return isRetro;
             }
-        }
-
-        public Ascendant getAscendant() {
-            return ascendant;
-        }
-
-        public void setAscendant(Ascendant ascendant) {
-            this.ascendant = ascendant;
-        }
-
-        public Sun getSun() {
-            return sun;
-        }
-
-        public void setSun(Sun sun) {
-            this.sun = sun;
-        }
-
-        public Moon getMoon() {
-            return moon;
-        }
-
-        public void setMoon(Moon moon) {
-            this.moon = moon;
-        }
-
-        public Mars getMars() {
-            return mars;
-        }
-
-        public void setMars(Mars mars) {
-            this.mars = mars;
-        }
-
-        public Mercury getMercury() {
-            return mercury;
-        }
-
-        public void setMercury(Mercury mercury) {
-            this.mercury = mercury;
-        }
-
-        public Jupiter getJupiter() {
-            return jupiter;
-        }
-
-        public void setJupiter(Jupiter jupiter) {
-            this.jupiter = jupiter;
-        }
-
-        public Venus getVenus() {
-            return venus;
-        }
-
-        public void setVenus(Venus venus) {
-            this.venus = venus;
-        }
-
-        public Saturn getSaturn() {
-            return saturn;
-        }
-
-        public void setSaturn(Saturn saturn) {
-            this.saturn = saturn;
-        }
-
-        public Rahu getRahu() {
-            return rahu;
-        }
-
-        public void setRahu(Rahu rahu) {
-            this.rahu = rahu;
-        }
-
-        public Ketu getKetu() {
-            return ketu;
-        }
-
-        public void setKetu(Ketu ketu) {
-            this.ketu = ketu;
-        }
-
-        public Uranus getUranus() {
-            return uranus;
-        }
-
-        public void setUranus(Uranus uranus) {
-            this.uranus = uranus;
-        }
-
-        public Neptune getNeptune() {
-            return neptune;
-        }
-
-        public void setNeptune(Neptune neptune) {
-            this.neptune = neptune;
-        }
-
-        public Pluto getPluto() {
-            return pluto;
-        }
-
-        public void setPluto(Pluto pluto) {
-            this.pluto = pluto;
         }
         /*List<Planet> planets;
 

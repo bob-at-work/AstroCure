@@ -11,8 +11,8 @@
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/Theme.Material3.Light"
-        android:background="@android:color/transparent">
+        android:background="@android:color/transparent"
+        android:theme="@style/Theme.Material3.Light">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -34,6 +34,7 @@
                     android:drawableStart="@drawable/ic_search"
                     android:drawablePadding="10dp"
                     android:ellipsize="end"
+                    android:focusable="auto"
                     android:gravity="center_vertical"
                     android:hint="Search Commodities,Sports,Stock .etc"
                     android:imeOptions="actionGo"
@@ -46,7 +47,6 @@
                     android:textColor="@color/black"
                     android:textColorHint="#7D7F88"
                     android:textSize="14sp"
-                    android:focusable="auto"
                     app:layout_constraintEnd_toStartOf="@+id/filter"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -89,6 +89,12 @@
         android:paddingBottom="?attr/actionBarSize"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:listitem="@layout/item_video_content" />
+
+    <include
+        android:id="@+id/overlay"
+        layout="@layout/dialog_video_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

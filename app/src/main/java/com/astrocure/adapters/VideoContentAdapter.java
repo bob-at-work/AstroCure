@@ -2,6 +2,7 @@ package com.astrocure.adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ import com.astrocure.databinding.ItemVideoContentBinding;
 import com.astrocure.databinding.ItemVideoTextContentBinding;
 import com.astrocure.models.VideoContentModel;
 import com.astrocure.ui.VideoViewActivity;
+import com.astrocure.utils.AppConstantMethods;
 import com.bumptech.glide.Glide;
 
 import java.util.List;
@@ -59,6 +61,9 @@ public class VideoContentAdapter extends RecyclerView.Adapter {
                     .into(textViewHolder.binding.profileImg);
             Glide.with(context).load(model.getImageUrl())
                     .into(textViewHolder.binding.thumbnail);
+            String hashtag = AppConstantMethods.getColoredSpanned("#stock #gold", "#0EE3BC");
+            textViewHolder.binding.textContent.append(" \n");
+            textViewHolder.binding.textContent.append(Html.fromHtml(hashtag));
         } else {
             VideoViewHolder videoViewHolder = (VideoViewHolder) holder;
             Glide.with(context).load(model.getProfileImgUrl())
@@ -76,6 +81,9 @@ public class VideoContentAdapter extends RecyclerView.Adapter {
 //            holder.binding.thumbnail.setVisibility(View.GONE);
 //            holder.binding.video.start();
 //            });
+            String hashtag = AppConstantMethods.getColoredSpanned("#stock #gold", "#0EE3BC");
+            videoViewHolder.binding.title.append(" ");
+            videoViewHolder.binding.title.append(Html.fromHtml(hashtag));
             videoViewHolder.binding.favourite.setOnClickListener(v -> {
                 videoViewHolder.binding.favourite.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_fav_star_filled));
             });
@@ -85,8 +93,7 @@ public class VideoContentAdapter extends RecyclerView.Adapter {
                 context.startActivity(intent);
             });
             if (!videoViewHolder.binding.video.isPlaying()) {
-                videoViewHolder.binding.thumbnail.setVisibility(View.VISIBLE
-                );
+                videoViewHolder.binding.thumbnail.setVisibility(View.VISIBLE);
             }
         }
     }

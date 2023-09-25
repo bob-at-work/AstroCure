@@ -146,9 +146,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:paddingTop="2dp"
                 android:text="@string/name_label"
                 android:textColor="#A5A5A5"
-                android:paddingTop="2dp"
                 app:layout_constraintStart_toStartOf="@id/label_account"
                 app:layout_constraintTop_toBottomOf="@id/label_account" />
 
@@ -165,6 +165,7 @@
                 android:inputType="textPersonName"
                 android:text="Shakespeare"
                 android:textColor="#0A0A0A"
+                android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/label_name" />
@@ -175,9 +176,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:paddingTop="2dp"
                 android:text="@string/dob_label"
                 android:textColor="#A5A5A5"
-                android:paddingTop="2dp"
                 app:layout_constraintStart_toStartOf="@id/full_name"
                 app:layout_constraintTop_toBottomOf="@id/full_name" />
 
@@ -191,8 +192,8 @@
                 android:enabled="false"
                 android:inputType="date"
                 android:text="12/12/1996"
-                android:textSize="16sp"
                 android:textColor="#0A0A0A"
+                android:textSize="14sp"
                 app:layout_constraintEnd_toStartOf="@+id/time_of_birth"
                 app:layout_constraintStart_toStartOf="@+id/full_name"
                 app:layout_constraintTop_toBottomOf="@id/label_dob" />
@@ -202,9 +203,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:paddingTop="2dp"
                 android:text="@string/tob_label"
                 android:textColor="#A5A5A5"
-                android:paddingTop="2dp"
                 app:layout_constraintStart_toStartOf="@+id/time_of_birth"
                 app:layout_constraintTop_toBottomOf="@id/full_name" />
 
@@ -219,7 +220,7 @@
                 android:inputType="time"
                 android:text="00:00 AM"
                 android:textColor="#0A0A0A"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="@+id/full_name"
                 app:layout_constraintStart_toEndOf="@id/date_of_birth"
                 app:layout_constraintTop_toBottomOf="@id/label_dob" />
@@ -229,9 +230,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:paddingTop="2dp"
                 android:text="@string/location_label"
                 android:textColor="#A5A5A5"
-                android:paddingTop="2dp"
                 app:layout_constraintStart_toStartOf="@id/full_name"
                 app:layout_constraintTop_toBottomOf="@+id/date_of_birth" />
 
@@ -248,6 +249,7 @@
                 android:inputType="textCapCharacters"
                 android:text="Delhi"
                 android:textColor="#0A0A0A"
+                android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/label_location" />
@@ -257,9 +259,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:paddingTop="2dp"
                 android:text="@string/email"
                 android:textColor="#A5A5A5"
-                android:paddingTop="2dp"
                 app:layout_constraintStart_toStartOf="@id/full_name"
                 app:layout_constraintTop_toBottomOf="@+id/location" />
 
@@ -272,6 +274,7 @@
                 android:layout_marginEnd="20dp"
                 android:background="@drawable/text_profile_border_white"
                 android:enabled="false"
+                android:textSize="14sp"
                 android:imeOptions="actionNext"
                 android:inputType="textEmailAddress"
                 android:text="shakespeare@gmail.com"
@@ -285,9 +288,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:paddingTop="2dp"
                 android:text="Language"
                 android:textColor="#A5A5A5"
-                android:paddingTop="2dp"
                 app:layout_constraintStart_toStartOf="@id/full_name"
                 app:layout_constraintTop_toBottomOf="@id/email_address" />
 
@@ -305,6 +308,7 @@
                 android:inputType="textCapCharacters"
                 android:text="Hindi"
                 android:textColor="#0A0A0A"
+                android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/label_language" />

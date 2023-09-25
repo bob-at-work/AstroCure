@@ -134,14 +134,14 @@
             android:id="@+id/message"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:paddingStart="5dp"
             android:background="@drawable/chat_edittext_bg"
             android:hint="Type your message here..."
+            android:paddingStart="5dp"
             android:textColor="#030303"
             android:textColorHint="#80030303"
             android:textSize="14sp"
-            app:layout_constraintEnd_toStartOf="@id/send"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/send"
             app:layout_constraintStart_toEndOf="@id/camera"
             app:layout_constraintTop_toTopOf="parent" />
 

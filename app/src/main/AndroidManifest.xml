@@ -29,6 +29,18 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".ui.BillingPreviewActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.PlansActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.CompatibilitySecondResultActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.SelectPublicFigureActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.FavouriteAstrologerActivity"
             android:exported="true" />
         <activity
@@ -78,10 +90,10 @@
             android:exported="false" />
         <activity
             android:name=".ui.FavouritesActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".ui.CompatibilitySecondActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".ui.PaymentSuccessActivity"
             android:exported="false" />

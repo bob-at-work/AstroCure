@@ -63,11 +63,10 @@ public class SettingFragment extends Fragment {
         try {
             PackageInfo pInfo = requireContext().getPackageManager().getPackageInfo(requireContext().getPackageName(), 0);
             String version = pInfo.versionName;
-            binding.appVersion.setText("App version "+version);
+            binding.appVersion.setText("App version " + version);
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
-
 
 
         return binding.getRoot();

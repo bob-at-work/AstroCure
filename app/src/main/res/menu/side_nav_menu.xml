@@ -13,6 +13,11 @@
             android:title="Favourites Videos" />
 
         <item
+            android:id="@+id/favourite_astrologer"
+            android:icon="@drawable/ic_heart_like"
+            android:title="Favourite Astrologer" />
+
+        <item
             android:id="@+id/wallet_nav"
             android:icon="@drawable/side_wallet"
             android:title="Wallet" />
@@ -26,6 +31,11 @@
             android:id="@+id/chat_call_logs"
             android:icon="@drawable/side_chat_history"
             android:title="Chat &amp; Call Log" />
+
+        <item
+            android:id="@+id/consultation"
+            android:icon="@drawable/ic_consultation"
+            android:title="Instant Consultation" />
 
         <item
             android:id="@+id/feedback"
@@ -55,10 +65,6 @@
             android:icon="@drawable/side_terms_and_condition"
             android:title="Terms &amp; conditions" />
 
-        <item
-            android:id="@+id/rate_the_app"
-            android:icon="@drawable/side_rate_star"
-            android:title="Rate The App" />
 
     </group>
 
@@ -68,9 +74,10 @@
             android:title="Settings" />-->
 
         <item
-            android:id="@+id/favourite_astrologer"
-            android:icon="@drawable/ic_heart_like"
-            android:title="Favourite" />
+            android:id="@+id/rate_the_app"
+            android:icon="@drawable/side_rate_star"
+            android:title="Rate The App" />
+
 
         <item
             android:id="@+id/logout"

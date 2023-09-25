@@ -129,6 +129,14 @@ public class QuestionAnswerAdapter extends RecyclerView.Adapter {
         return models.size();
     }
 
+    public void setOnClick(HelpChatAdapter.OnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
+    }
+
+    public interface OnItemClickListener {
+        void onImageItemClick(int position, String imageUrl);
+    }
+
     public class UserViewHolder extends RecyclerView.ViewHolder {
         ItemChatUserBinding binding;
 
@@ -172,14 +180,6 @@ public class QuestionAnswerAdapter extends RecyclerView.Adapter {
             super(binding.getRoot());
             this.binding = binding;
         }
-    }
-
-    public void setOnClick(HelpChatAdapter.OnItemClickListener onItemClickListener) {
-        this.onItemClickListener = onItemClickListener;
-    }
-
-    public interface OnItemClickListener {
-        void onImageItemClick(int position, String imageUrl);
     }
 
     public class AImageViewHolder extends RecyclerView.ViewHolder {

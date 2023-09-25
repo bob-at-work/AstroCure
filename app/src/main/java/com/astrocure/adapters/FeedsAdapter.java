@@ -80,15 +80,6 @@ public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.FeedViewHold
         return 6;
     }
 
-    public class FeedViewHolder extends RecyclerView.ViewHolder {
-        ItemFeedTextLayoutBinding binding;
-
-        public FeedViewHolder(ItemFeedTextLayoutBinding binding) {
-            super(binding.getRoot());
-            this.binding = binding;
-        }
-    }
-
     public void setOnClick(OnItemClickListener onItemClickListener) {
         this.onItemClickListener = onItemClickListener;
     }
@@ -97,6 +88,15 @@ public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.FeedViewHold
         void onItemClick(int position);
 
         void onCommentItemClick(int position);
+    }
+
+    public class FeedViewHolder extends RecyclerView.ViewHolder {
+        ItemFeedTextLayoutBinding binding;
+
+        public FeedViewHolder(ItemFeedTextLayoutBinding binding) {
+            super(binding.getRoot());
+            this.binding = binding;
+        }
     }
 
 }

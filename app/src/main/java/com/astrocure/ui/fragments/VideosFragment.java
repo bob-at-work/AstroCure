@@ -1,5 +1,6 @@
 package com.astrocure.ui.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,7 @@ import com.astrocure.databinding.DialogVideoFilterBinding;
 import com.astrocure.databinding.FragmentVideosBinding;
 import com.astrocure.models.StoryModel;
 import com.astrocure.models.VideoContentModel;
+import com.astrocure.ui.PlansActivity;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
@@ -112,6 +114,15 @@ public class VideosFragment extends Fragment {
             cardBinding.miscellaneousList.setAdapter(miscAdapter);
 
             dialog.show();
+        });
+
+        binding.overlay.getRoot().setOnClickListener(v -> {
+        });
+        binding.overlay.later.setOnClickListener(v -> {
+            binding.overlay.getRoot().setVisibility(View.GONE);
+        });
+        binding.overlay.getRoot().setOnClickListener(v -> {
+            startActivity(new Intent(requireContext(), PlansActivity.class));
         });
 
         return binding.getRoot();

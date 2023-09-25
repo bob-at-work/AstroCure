@@ -1,25 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
         android:id="@+id/horoscope"
-        android:title="Horoscope"
-        android:icon="@drawable/selector_horoscope"/>
+        android:icon="@drawable/selector_horoscope"
+        android:title="Horoscope" />
     <item
         android:id="@+id/feeds"
-        android:title="Feeds"
-        android:icon="@drawable/selector_feed"/>
+        android:icon="@drawable/selector_feed"
+        android:title="Feeds" />
     <item
         android:id="@+id/videos"
         android:title="" />
     <item
         android:id="@+id/entertainment"
-        android:title="Games"
-        android:icon="@drawable/selector_games"/>
+        android:icon="@drawable/selector_games"
+        android:title="Games" />
 
     <item
         android:id="@+id/profile"
-        android:title="Profile"
-        android:icon="@drawable/selector_profile"/>
+        android:icon="@drawable/selector_profile"
+        android:title="Profile" />
 </menu>

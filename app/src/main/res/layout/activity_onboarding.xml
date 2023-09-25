@@ -72,7 +72,7 @@
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout"
-        android:layout_width="0dp"
+        android:layout_width="50dp"
         android:layout_height="4dp"
         android:layout_marginBottom="40dp"
         android:animateLayoutChanges="true"
@@ -80,7 +80,6 @@
         app:layout_constraintBottom_toTopOf="@id/login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintWidth_percent=".15"
         app:tabBackground="@drawable/onboarding_tab_unselected_bg"
         app:tabGravity="center"
         app:tabIndicator="@drawable/onboarding_tab_selected_bg"
