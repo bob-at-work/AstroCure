@@ -32,6 +32,8 @@ public class CompatibilitySecondResultActivity extends AppCompatActivity {
         binding = ActivityCompatibilitySecondResultBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        binding.toolbar.setNavigationOnClickListener(v -> onBackPressed());
+
         Glide.with(getApplicationContext()).load(AppConstants.profileImg).into(binding.userImg);
         Glide.with(getApplicationContext()).load("https://cdn4.sharechat.com/WhatsAppprofiledpboys_d7f9b06_1658641555734_sc_cmprsd_75.jpg?tenant=sc&referrer=pwa-sharechat-service&f=rsd_75.jpg").centerCrop().into(binding.partnerImg);
 
@@ -75,19 +77,23 @@ public class CompatibilitySecondResultActivity extends AppCompatActivity {
                 binding.one.startAnimation(animSelect);
                 binding.imgOne.startAnimation(animSelect);
                 binding.selectedText.setText(randomString(first));
+                binding.one.setStrokeWidth(8);
                 Glide.with(getApplicationContext()).load(R.drawable.ic_compatibility_four).into(binding.selectedImg);
                 one = true;
                 if (two) {
                     binding.two.startAnimation(animDeSelect);
                     binding.two.startAnimation(animDeSelect);
+                    binding.two.setStrokeWidth(0);
                     two = false;
                 } else if (three) {
                     binding.three.startAnimation(animDeSelect);
                     binding.imgThree.startAnimation(animDeSelect);
+                    binding.three.setStrokeWidth(0);
                     three = false;
                 } else if (four) {
                     binding.four.startAnimation(animDeSelect);
                     binding.imgFour.startAnimation(animDeSelect);
+                    binding.four.setStrokeWidth(0);
                     four = false;
                 }
                 break;
@@ -95,19 +101,23 @@ public class CompatibilitySecondResultActivity extends AppCompatActivity {
                 binding.two.startAnimation(animSelect);
                 binding.imgTwo.startAnimation(animSelect);
                 binding.selectedText.setText(randomString(second));
+                binding.two.setStrokeWidth(8);
                 Glide.with(getApplicationContext()).load(R.drawable.ic_compatibility_heart).into(binding.selectedImg);
                 two = true;
                 if (one) {
                     binding.one.startAnimation(animDeSelect);
                     binding.imgOne.startAnimation(animDeSelect);
+                    binding.one.setStrokeWidth(0);
                     one = false;
                 } else if (three) {
                     binding.three.startAnimation(animDeSelect);
                     binding.imgThree.startAnimation(animDeSelect);
+                    binding.three.setStrokeWidth(0);
                     three = false;
                 } else if (four) {
                     binding.four.startAnimation(animDeSelect);
                     binding.imgFour.startAnimation(animDeSelect);
+                    binding.four.setStrokeWidth(0);
                     four = false;
                 }
                 break;
@@ -115,19 +125,23 @@ public class CompatibilitySecondResultActivity extends AppCompatActivity {
                 binding.three.startAnimation(animSelect);
                 binding.imgThree.startAnimation(animSelect);
                 binding.selectedText.setText(randomString(third));
+                binding.three.setStrokeWidth(8);
                 Glide.with(getApplicationContext()).load(R.drawable.ic_compatibility_two).into(binding.selectedImg);
                 three = true;
                 if (one) {
                     binding.one.startAnimation(animDeSelect);
                     binding.imgOne.startAnimation(animDeSelect);
+                    binding.one.setStrokeWidth(0);
                     one = false;
                 } else if (two) {
                     binding.two.startAnimation(animDeSelect);
                     binding.imgTwo.startAnimation(animDeSelect);
+                    binding.two.setStrokeWidth(0);
                     two = false;
                 } else if (four) {
                     binding.four.startAnimation(animDeSelect);
                     binding.imgFour.startAnimation(animDeSelect);
+                    binding.four.setStrokeWidth(0);
                     four = false;
                 }
                 break;
@@ -135,19 +149,23 @@ public class CompatibilitySecondResultActivity extends AppCompatActivity {
                 binding.four.startAnimation(animSelect);
                 binding.imgFour.startAnimation(animSelect);
                 binding.selectedText.setText(randomString(fourth));
+                binding.four.setStrokeWidth(8);
                 Glide.with(getApplicationContext()).load(R.drawable.ic_compatibility_three).into(binding.selectedImg);
                 four = true;
                 if (one) {
                     binding.one.startAnimation(animDeSelect);
                     binding.imgOne.startAnimation(animDeSelect);
+                    binding.one.setStrokeWidth(0);
                     one = false;
                 } else if (two) {
                     binding.two.startAnimation(animDeSelect);
                     binding.imgTwo.startAnimation(animDeSelect);
+                    binding.two.setStrokeWidth(0);
                     two = false;
                 } else if (three) {
                     binding.three.startAnimation(animDeSelect);
                     binding.imgThree.startAnimation(animDeSelect);
+                    binding.three.setStrokeWidth(0);
                     three = false;
                 }
                 break;

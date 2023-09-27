@@ -85,7 +85,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
                         android:layout_marginEnd="20dp"
-                        android:text="Most likely this is a day when your diplomatic abilities aro put to test. Your Aries horoscope for this day, in regards to our love life looks complicated to say the least, patience and perseverance is needed."
+                        android:text="❤️ Most likely this is a day when your diplomatic abilities aro put to test. Your Aries horoscope for this day, in regards to our love life looks complicated to say the least, patience and perseverance is needed."
                         android:textColor="@color/white" />
 
                     <TextView
@@ -95,7 +95,7 @@
                         android:layout_marginStart="20dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="20dp"
-                        android:text="Most likely this is a day when your diplomatic abilities aro put to test. Your Aries horoscope for this day, in regards to our love life looks complicated to say the least, patience and perseverance is needed."
+                        android:text="💼 Most likely this is a day when your diplomatic abilities aro put to test. Your Aries horoscope for this day, in regards to our love life looks complicated to say the least, patience and perseverance is needed."
                         android:textColor="@color/white" />
 
                     <TextView
@@ -105,7 +105,7 @@
                         android:layout_marginStart="20dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="20dp"
-                        android:text="Most likely this is a day when your diplomatic abilities aro put to test. Your Aries horoscope for this day, in regards to our love life looks complicated to say the least, patience and perseverance is needed."
+                        android:text="💵 Most likely this is a day when your diplomatic abilities aro put to test. Your Aries horoscope for this day, in regards to our love life looks complicated to say the least, patience and perseverance is needed."
                         android:textColor="@color/white" />
 
                     <TextView
@@ -116,7 +116,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="20dp"
                         android:layout_marginBottom="20dp"
-                        android:text="@string/dummy_1"
+                        android:text="🩺 Most likely this is a day when your diplomatic abilities aro put to test. Your Aries horoscope for this day, in regards to our love life looks complicated to say the least, patience and perseverance is needed .Your revenue management something that requires more attention from your part, even if things appear to be on an effective slope, don't let your guard down. No abrupt changes are likely to happen today, stay alert and warn off any attempts to spend on thing you don't really need."
                         android:textColor="@color/white" />
 
                 </LinearLayout>

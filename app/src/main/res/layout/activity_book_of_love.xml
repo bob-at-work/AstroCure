@@ -59,6 +59,7 @@
         android:id="@+id/animation_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:theme="@style/Theme.AppCompat"
         android:scaleX="1.3"
         android:scaleY="1.4"
         android:visibility="gone"

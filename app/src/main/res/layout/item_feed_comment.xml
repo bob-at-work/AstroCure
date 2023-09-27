@@ -13,8 +13,8 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/logo_container"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
         android:layout_margin="20dp"
         android:background="@color/white"
         app:cardCornerRadius="100dp"
@@ -44,34 +44,32 @@
         android:id="@+id/time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
         android:text="6 days"
         android:textColor="#9A99A2"
-        app:layout_constraintBottom_toBottomOf="@+id/username"
-        app:layout_constraintStart_toEndOf="@+id/username"
-        app:layout_constraintTop_toTopOf="@id/username" />
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/username"
+        app:layout_constraintTop_toBottomOf="@id/username" />
 
     <TextView
         android:id="@+id/comment"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
         android:text="Это комментарий номер 1. Я первый. Класс! Я написал комментарий."
         android:textColor="#FDFDFD"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/username"
-        app:layout_constraintTop_toBottomOf="@id/username" />
+        app:layout_constraintTop_toBottomOf="@+id/logo_container" />
 
     <ImageView
         android:id="@+id/more_option"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
         android:padding="10dp"
         android:src="@drawable/more_horiz_red"
         app:layout_constraintBottom_toTopOf="@+id/comment"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/reply"
@@ -114,8 +112,8 @@
         android:id="@+id/reply_list"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="@id/like"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/logo_container"
         app:layout_constraintTop_toBottomOf="@id/reply"
         tools:listitem="@layout/item_feed_reply" />

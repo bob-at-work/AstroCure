@@ -34,7 +34,6 @@
                     android:background="@drawable/feed_selected_bg"
                     android:text="New Feed"
                     android:textColor="@color/black"
-                    android:textSize="12sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/most_commented"
                     app:layout_constraintStart_toStartOf="parent"
@@ -47,7 +46,6 @@
                     android:background="@drawable/feed_unselected_bg"
                     android:text="Most Commented"
                     android:textColor="@color/white"
-                    android:textSize="12sp"
                     app:layout_constraintEnd_toStartOf="@id/most_liked"
                     app:layout_constraintStart_toEndOf="@id/newest"
                     app:layout_constraintTop_toTopOf="@id/newest"
@@ -61,7 +59,6 @@
                     android:background="@drawable/feed_unselected_bg"
                     android:text="Most Liked"
                     android:textColor="@color/white"
-                    android:textSize="12sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/most_commented"
                     app:layout_constraintTop_toTopOf="@id/newest" />

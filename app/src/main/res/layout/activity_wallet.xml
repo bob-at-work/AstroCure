@@ -155,6 +155,7 @@
                 android:id="@+id/progress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:theme="@style/Theme.AppCompat"
                 app:layout_constraintTop_toBottomOf="@id/price_list"
                 app:lottie_autoPlay="true"
                 app:lottie_rawRes="@raw/progress_anim_1st_stop" />
